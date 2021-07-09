@@ -27,7 +27,7 @@ Bijective mapping of the Object subset of ADM avec a standard OSC grammar.
 * Easy to implement
 * Human readable
 * Supports wildcards and bundles
-* Specification:http://opensoundcontrol.org/introduction-osc
+* Specification: [Open Sound Control website](http://opensoundcontrol.org/)
 * Available in a plethora of professional audio hardware and software devices
 
 ## General principles
