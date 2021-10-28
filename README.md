@@ -9,7 +9,7 @@ An industry initiative to standardization of Object Based Audio (OBA) positionin
 d&b Audiotechnik, DiGiCo, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg.
 
 ## Context
-Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM xml files used in the studio.
+Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
 
 ## Motivation and goals
 * To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
