@@ -44,11 +44,13 @@ Some proofs of concept have been implemented by FLUX:: SE in the SPAT Revolution
 OSC Live test tool (talker and listener OSC Live test tool) is now available 
 
 ## Current Specification
-see repository
+See Repository.
 
+## Current Discussions
+See Issues.
 
 ## Currently supported in:
-SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg).
+SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound).
 
 
 
