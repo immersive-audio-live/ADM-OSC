@@ -20,7 +20,7 @@ Immersive audio is gaining ground in different industries, from music streaming 
 * Extend this small grammar to more ADM properties (beds, etc.) in the future.
 
 ## Approach
-Bijective mapping of the Object subset of ADM avec a standard OSC grammar.
+Bijective mapping of the Object subset of ADM with a standard OSC grammar.
 
 ## Why OSC ?
 * Lightweight network protocol
