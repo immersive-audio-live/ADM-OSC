@@ -1,0 +1,5 @@
+.vscode/
+.idea/
+cmake_build/
+Source/adm_osc.egg-info/
+checks.json
