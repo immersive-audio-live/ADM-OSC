@@ -2,4 +2,6 @@
 .idea/
 cmake_build/
 Source/adm_osc.egg-info/
+__pycache__/
 checks.json
+.DS_Store
