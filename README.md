@@ -40,7 +40,7 @@ Bijective mapping of the Object subset of ADM with a standard OSC grammar.
   
 ## Current status
 Initiative presented to the EBU, and currently being implemented by some Broadcast companies as well. 
-Some proofs of concept have been implemented by FLUX:: SE in the SPAT Revolution software, in L-Acoustics L-ISA Controller, in Ovation from Merging Technologies and with Nuendo from Steinberg
+ADM-OSC has been implemented by FLUX:: SE in the SPAT Revolution software, in L-Acoustics L-ISA Controller, in Ovation from Merging Technologies, in Nuendo from Steinberg, QLab 5 by Figure53, Space Controller by Sound Particles, SpaceMap Go by Meyer Sound, and the list is increasing steadily!
 OSC Live test tool (talker and listener OSC Live test tool) is now available 
 
 ## Current Specification
