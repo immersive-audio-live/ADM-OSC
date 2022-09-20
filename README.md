@@ -39,9 +39,9 @@ Bijective mapping of the Object subset of ADM with a standard OSC grammar.
   * The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
   
 ## Current status
-Initiative presented to the EBU, and currently being implemented by some Broadcast companies as well. 
-ADM-OSC has been implemented by FLUX:: SE in the SPAT Revolution software, in L-Acoustics L-ISA Controller, in Ovation from Merging Technologies, in Nuendo from Steinberg, QLab 5 by Figure53, Space Controller by Sound Particles, SpaceMap Go by Meyer Sound, and the list is increasing steadily!
-OSC Live test tool (talker and listener OSC Live test tool) is now available 
+The current dictionary covers most Object properties from the Audio Definition model.
+A more complete dictionary is being discussed to cover the remaining parts of the Audio Definition model.
+OSC Live test tool (talker and listener OSC Live test tool) is now available.
 
 ## Current Specification
 See Repository.
@@ -50,7 +50,7 @@ See Repository.
 See Issues.
 
 ## Currently supported in:
-SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound).
+SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles).
 
 
 
