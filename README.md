@@ -61,7 +61,7 @@ See Issues.
 + Validator, Test and Stress Test **Python Module** (Gael Martinet / FLUX:: SE)
   + adm_osc module is available to install through pip : 
   ```shell 
-    python3 -m pip install adm_osc
+    pip install adm-osc
     ```
   quick examples:
 
