@@ -1,6 +1,7 @@
 .vscode/
 .idea/
 cmake_build/
+dist/
 Source/adm_osc.egg-info/
 __pycache__/
 checks.json

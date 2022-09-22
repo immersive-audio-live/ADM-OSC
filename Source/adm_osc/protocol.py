@@ -1,7 +1,7 @@
 #  ==============================================================================
 # MIT License
 #
-# Copyright (c) 2021 immersive-audio-live
+# Copyright (c) 2022 immersive-audio-live
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -282,50 +282,3 @@ def dump_protocol() -> str:
         text += f'{param}\n\n'
     return text
 
-
-#   ____  _____ _____ ___ _   _ _____   ____  ____   ___ _____ ___   ____ ___  _       ____   _    ____      _    __  __ _____ _____ _____ ____  ____
-#  |  _ \| ____|  ___|_ _| \ | | ____| |  _ \|  _ \ / _ \_   _/ _ \ / ___/ _ \| |     |  _ \ / \  |  _ \    / \  |  \/  | ____|_   _| ____|  _ \/ ___|
-#  | | | |  _| | |_   | ||  \| |  _|   | |_) | |_) | | | || || | | | |  | | | | |     | |_) / _ \ | |_) |  / _ \ | |\/| |  _|   | | |  _| | |_) \___ \
-#  | |_| | |___|  _|  | || |\  | |___  |  __/|  _ <| |_| || || |_| | |__| |_| | |___  |  __/ ___ \|  _ <  / ___ \| |  | | |___  | | | |___|  _ < ___) |
-#  |____/|_____|_|   |___|_| \_|_____| |_|   |_| \_\\___/ |_| \___/ \____\___/|_____| |_| /_/   \_\_| \_\/_/   \_\_|  |_|_____| |_| |_____|_| \_\____/
-
-
-#               _                              _ _   _
-#   _ __   ___ | | __ _ _ __   _ __   ___  ___(_) |_(_) ___  _ __
-#  | '_ \ / _ \| |/ _` | '__| | '_ \ / _ \/ __| | __| |/ _ \| '_ \
-#  | |_) | (_) | | (_| | |    | |_) | (_) \__ \ | |_| | (_) | | | |
-#  | .__/ \___/|_|\__,_|_|    | .__/ \___/|___/_|\__|_|\___/|_| |_|
-#  |_|                        |_|
-a = Parameter(sub_element=SubElement.Position, attribute='azimuth', osc_command='azim', description='azimuth “theta” of sound location. -90 is on the Right, 0 is in front.',
-              units=Units.Degrees, type_=Type.Float, min_=-180.0, max_=180.0, def_=0.0, status=Status.Stable, comment='')
-e = Parameter(sub_element=SubElement.Position, attribute='elevation', osc_command='elev', description='elevation “phi” of sound location', units=Units.Degrees, type_=Type.Float,
-              min_=-90.0, max_=90.0, def_=0.0, status=Status.Stable, comment='')
-d = Parameter(sub_element=SubElement.Position, attribute='distance', osc_command='dist', description='distance “r” from origin', units=Units.Degrees, type_=Type.Float, min_=0.0,
-              max_=1.0, def_=1.0, status=Status.Stable, comment='In most renderers, the distance parameter has no impact on the object Gain')
-aed = PackedParameters(sub_element=SubElement.Position, attribute='aed', osc_command='aed', description='compact command for azimuth, elevation, distance', params=[a, e, d],
-                       status=Status.Stable, comment='')
-
-#                  _            _                               _ _   _
-#    ___ __ _ _ __| |_ ___  ___(_) __ _ _ __    _ __   ___  ___(_) |_(_) ___  _ __
-#   / __/ _` | '__| __/ _ \/ __| |/ _` | '_ \  | '_ \ / _ \/ __| | __| |/ _ \| '_ \
-#  | (_| (_| | |  | ||  __/\__ \ | (_| | | | | | |_) | (_) \__ \ | |_| | (_) | | | |
-#   \___\__,_|_|   \__\___||___/_|\__,_|_| |_| | .__/ \___/|___/_|\__|_|\___/|_| |_|
-#                                              |_|
-x = Parameter(sub_element=SubElement.Position, attribute='x', osc_command='x', description='left/right dimension', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
-              def_=0.0, status=Status.Stable, comment='The receiver can scale this normalized value into meters')
-y = Parameter(sub_element=SubElement.Position, attribute='y', osc_command='y', description='back/front dimension', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
-              def_=0.0, status=Status.Stable, comment='The receiver can scale this normalized value into meters')
-z = Parameter(sub_element=SubElement.Position, attribute='z', osc_command='z', description='bottom/top dimension', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
-              def_=0.0, status=Status.Stable, comment='The receiver can scale this normalized value into meters')
-xyz = PackedParameters(sub_element=SubElement.Position, attribute='xyz', osc_command='xyz', description='compact command for x, y and z', params=[x, y, z], status=Status.Stable,
-                       comment='')
-
-#               _
-#    __ _  __ _(_)_ __
-#   / _` |/ _` | | '_ \
-#  | (_| | (_| | | | | |
-#   \__, |\__,_|_|_| |_|
-#   |___/
-gain = Parameter(sub_element=SubElement.Gain, attribute='gain', osc_command='gain', description='Apply a gain to the audio in the object.', units=Units.LinearGain,
-                 type_=Type.Float, min_=0.0, max_=1.0, def_=1.0, status=Status.Stable,
-                 comment='In some Renderers (Spat, L-ISA), the Gain of an object can be optionally computed from the distance parameter.')

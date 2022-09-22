@@ -24,8 +24,11 @@
 
 from typing import Union
 
-from . import protocol
-from .client_server import AdmOscClientServer
+from . import stable_params
+from .protocol import get_stable_parameters
+from .client_server import OscClientServer
+
+__all__ = ['TestClient']
 
 
 #   _____         _      ____ _ _            _
@@ -33,7 +36,7 @@ from .client_server import AdmOscClientServer
 #    | |/ _ \/ __| __| | |   | | |/ _ \ '_ \| __|
 #    | |  __/\__ \ |_  | |___| | |  __/ | | | |_
 #    |_|\___||___/\__|  \____|_|_|\___|_| |_|\__|
-class TestClient(AdmOscClientServer):
+class TestClient(OscClientServer):
     default_object = 1
 
     def __init__(self, address: str = '127.0.0.1', out_port: int = 9000, in_port: int = 9001) -> None:
@@ -47,167 +50,167 @@ class TestClient(AdmOscClientServer):
     #                                                   |___/                   |__/
     def set_object_stable_parameters_to_minimum(self, object_number: Union[int, float, str] = default_object):
         """test all "stable" parameters of the specified object with minimum value..."""
-        for val in protocol.get_stable_parameters():
+        for val in get_stable_parameters():
             self.send_object_value_min(object_number, val)
 
     def set_object_stable_parameters_to_maximum(self, object_number: Union[int, float, str] = default_object):
         """test all "stable" parameters of the specified object with maximum value..."""
-        for val in protocol.get_stable_parameters():
+        for val in get_stable_parameters():
             self.send_object_value_max(object_number, val)
 
     def set_object_stable_parameters_to_default(self, object_number: Union[int, float, str] = default_object):
         """test all "stable" parameters of the specified object with default value..."""
-        for val in protocol.get_stable_parameters():
+        for val in get_stable_parameters():
             self.send_object_value_default(object_number, val)
 
     def set_object_stable_parameters_to_random(self, object_number: Union[int, float, str] = default_object):
         """test all "stable" parameters of the specified object with random value..."""
-        for val in protocol.get_stable_parameters():
+        for val in get_stable_parameters():
             self.send_object_value_random(object_number, val)
 
     def set_object_position_azimuth_minimum(self, object_number: Union[int, float, str] = default_object):
         """test position azimuth of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.a)
+        self.send_object_value_min(object_number, stable_params.a)
 
     def set_object_position_azimuth_maximum(self, object_number: Union[int, float, str] = default_object):
         """test position azimuth of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.a)
+        self.send_object_value_max(object_number, stable_params.a)
 
     def set_object_position_azimuth_default(self, object_number: Union[int, float, str] = default_object):
         """test position azimuth of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.a)
+        self.send_object_value_default(object_number, stable_params.a)
 
     def set_object_position_azimuth_random(self, object_number: Union[int, float, str] = default_object):
         """test position azimuth of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.a)
+        self.send_object_value_random(object_number, stable_params.a)
 
     def set_object_position_elevation_minimum(self, object_number: Union[int, float, str] = default_object):
         """test position elevation of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.e)
+        self.send_object_value_min(object_number, stable_params.e)
 
     def set_object_position_elevation_maximum(self, object_number: Union[int, float, str] = default_object):
         """test position elevation of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.e)
+        self.send_object_value_max(object_number, stable_params.e)
 
     def set_object_position_elevation_default(self, object_number: Union[int, float, str] = default_object):
         """test position elevation of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.e)
+        self.send_object_value_default(object_number, stable_params.e)
 
     def set_object_position_elevation_random(self, object_number: Union[int, float, str] = default_object):
         """test position elevation of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.e)
+        self.send_object_value_random(object_number, stable_params.e)
 
     def set_object_position_distance_minimum(self, object_number: Union[int, float, str] = default_object):
         """test position distance of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.d)
+        self.send_object_value_min(object_number, stable_params.d)
 
     def set_object_position_distance_maximum(self, object_number: Union[int, float, str] = default_object):
         """test position distance of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.d)
+        self.send_object_value_max(object_number, stable_params.d)
 
     def set_object_position_distance_default(self, object_number: Union[int, float, str] = default_object):
         """test position distance of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.d)
+        self.send_object_value_default(object_number, stable_params.d)
 
     def set_object_position_distance_random(self, object_number: Union[int, float, str] = default_object):
         """test position distance of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.d)
+        self.send_object_value_random(object_number, stable_params.d)
 
     def set_object_polar_position_minimum(self, object_number: Union[int, float, str] = default_object):
         """test polar position of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.aed)
+        self.send_object_value_min(object_number, stable_params.aed)
 
     def set_object_polar_position_maximum(self, object_number: Union[int, float, str] = default_object):
         """test polar position of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.aed)
+        self.send_object_value_max(object_number, stable_params.aed)
 
     def set_object_polar_position_default(self, object_number: Union[int, float, str] = default_object):
         """test polar position of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.aed)
+        self.send_object_value_default(object_number, stable_params.aed)
 
     def set_object_polar_position_random(self, object_number: Union[int, float, str] = default_object):
         """test polar position of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.aed)
+        self.send_object_value_random(object_number, stable_params.aed)
 
     def set_object_position_x_minimum(self, object_number: Union[int, float, str] = default_object):
         """test position x of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.x)
+        self.send_object_value_min(object_number, stable_params.x)
 
     def set_object_position_x_maximum(self, object_number: Union[int, float, str] = default_object):
         """test position x of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.x)
+        self.send_object_value_max(object_number, stable_params.x)
 
     def set_object_position_x_default(self, object_number: Union[int, float, str] = default_object):
         """test position x of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.x)
+        self.send_object_value_default(object_number, stable_params.x)
 
     def set_object_position_x_random(self, object_number: Union[int, float, str] = default_object):
         """test position x of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.x)
+        self.send_object_value_random(object_number, stable_params.x)
 
     def set_object_position_y_minimum(self, object_number: Union[int, float, str] = default_object):
         """test position y of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.y)
+        self.send_object_value_min(object_number, stable_params.y)
 
     def set_object_position_y_maximum(self, object_number: Union[int, float, str] = default_object):
         """test position y of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.y)
+        self.send_object_value_max(object_number, stable_params.y)
 
     def set_object_position_y_default(self, object_number: Union[int, float, str] = default_object):
         """test position y of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.y)
+        self.send_object_value_default(object_number, stable_params.y)
 
     def set_object_position_y_random(self, object_number: Union[int, float, str] = default_object):
         """test position y of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.y)
+        self.send_object_value_random(object_number, stable_params.y)
 
     def set_object_position_z_minimum(self, object_number: Union[int, float, str] = default_object):
         """test position z of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.z)
+        self.send_object_value_min(object_number, stable_params.z)
 
     def set_object_position_z_maximum(self, object_number: Union[int, float, str] = default_object):
         """test position z of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.z)
+        self.send_object_value_max(object_number, stable_params.z)
 
     def set_object_position_z_default(self, object_number: Union[int, float, str] = default_object):
         """test position z of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.z)
+        self.send_object_value_default(object_number, stable_params.z)
 
     def set_object_position_z_random(self, object_number: Union[int, float, str] = default_object):
         """test position z of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.z)
+        self.send_object_value_random(object_number, stable_params.z)
 
     def set_object_cartesian_position_minimum(self, object_number: Union[int, float, str] = default_object):
         """test cartesian position of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.xyz)
+        self.send_object_value_min(object_number, stable_params.xyz)
 
     def set_object_cartesian_position_maximum(self, object_number: Union[int, float, str] = default_object):
         """test cartesian position of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.xyz)
+        self.send_object_value_max(object_number, stable_params.xyz)
 
     def set_object_cartesian_position_default(self, object_number: Union[int, float, str] = default_object):
         """test cartesian position of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.xyz)
+        self.send_object_value_default(object_number, stable_params.xyz)
 
     def set_object_cartesian_position_random(self, object_number: Union[int, float, str] = default_object):
         """test cartesian position of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.xyz)
+        self.send_object_value_random(object_number, stable_params.xyz)
 
     def set_object_gain_minimum(self, object_number: Union[int, float, str] = default_object):
         """test gain of the specified object with minimum value..."""
-        self.send_object_value_min(object_number, protocol.gain)
+        self.send_object_value_min(object_number, stable_params.gain)
 
     def set_object_gain_maximum(self, object_number: Union[int, float, str] = default_object):
         """test gain of the specified object with maximum value..."""
-        self.send_object_value_max(object_number, protocol.gain)
+        self.send_object_value_max(object_number, stable_params.gain)
 
     def set_object_gain_default(self, object_number: Union[int, float, str] = default_object):
         """test gain of the specified object with default value..."""
-        self.send_object_value_default(object_number, protocol.gain)
+        self.send_object_value_default(object_number, stable_params.gain)
 
     def set_object_gain_random(self, object_number: Union[int, float, str] = default_object):
         """test gain of the specified object with random value..."""
-        self.send_object_value_random(object_number, protocol.gain)
+        self.send_object_value_random(object_number, stable_params.gain)
 
     #   _            _      __                              _ _   _       _              _     _           _
     #  | |_ ___  ___| |_   / _| ___  _ __   _ __ ___  _   _| | |_(_)_ __ | | ___    ___ | |__ (_) ___  ___| |_ ___

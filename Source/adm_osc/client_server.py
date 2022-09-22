@@ -29,15 +29,19 @@ from pythonosc.dispatcher import Dispatcher
 from pythonosc.osc_server import BlockingOSCUDPServer, ThreadingOSCUDPServer
 from pythonosc.udp_client import SimpleUDPClient
 
-from . import handler, protocol
+from . import stable_params
+from .handler import adm_handler
+from .protocol import message_root, Parameter, PackedParameters
+
+__all__ = ['OscClientServer']
 
 
-#   __  __       _            _    ____  __  __        ___  ____   ____    ____ _ _            _
-#  |  \/  | __ _(_)_ __      / \  |  _ \|  \/  |      / _ \/ ___| / ___|  / ___| (_) ___ _ __ | |_
-#  | |\/| |/ _` | | '_ \    / _ \ | | | | |\/| |_____| | | \___ \| |     | |   | | |/ _ \ '_ \| __|
-#  | |  | | (_| | | | | |  / ___ \| |_| | |  | |_____| |_| |___) | |___  | |___| | |  __/ | | | |_
-#  |_|  |_|\__,_|_|_| |_| /_/   \_\____/|_|  |_|      \___/|____/ \____|  \____|_|_|\___|_| |_|\__|
-class AdmOscClientServer(SimpleUDPClient):
+#   __  __       _          ___  ____   ____    ____ _ _            _      ______
+#  |  \/  | __ _(_)_ __    / _ \/ ___| / ___|  / ___| (_) ___ _ __ | |_   / / ___|  ___ _ ____   _____ _ __
+#  | |\/| |/ _` | | '_ \  | | | \___ \| |     | |   | | |/ _ \ '_ \| __| / /\___ \ / _ \ '__\ \ / / _ \ '__|
+#  | |  | | (_| | | | | | | |_| |___) | |___  | |___| | |  __/ | | | |_ / /  ___) |  __/ |   \ V /  __/ |
+#  |_|  |_|\__,_|_|_| |_|  \___/|____/ \____|  \____|_|_|\___|_| |_|\__/_/  |____/ \___|_|    \_/ \___|_|
+class OscClientServer(SimpleUDPClient):
     """Simple ADM OSC client inheriting from SimpleUDPClient"""
 
     default_object = 1
@@ -58,7 +62,7 @@ class AdmOscClientServer(SimpleUDPClient):
         super().__init__(address, out_port, allow_broadcast)
 
         self.dispatcher = Dispatcher()
-        self.dispatcher.map(f"/{protocol.message_root}/*", self.__adm_message_handler)
+        self.dispatcher.map(f"/{message_root}/*", self.__adm_message_handler)
         self.dispatcher.set_default_handler(self.__default_handler)
 
         BlockingOSCUDPServer.allow_reuse_address = True
@@ -78,23 +82,23 @@ class AdmOscClientServer(SimpleUDPClient):
     #  | (_| |  __/ | | |  __/ |  | | (__  \__ \  __/ | | | (_| |
     #   \__, |\___|_| |_|\___|_|  |_|\___| |___/\___|_| |_|\__,_|
     #   |___/
-    def send_object_value(self, object_number: Union[int, float, str], param: Union[protocol.Parameter, protocol.PackedParameters], v: Union[float, tuple, list]):
+    def send_object_value(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters], v: Union[float, tuple, list]):
         """Send a value to object defined by object_number."""
         self.send_message(param.get_osc_command(object_number), param.validate_value(v))
 
-    def send_object_value_min(self, object_number: Union[int, float, str], param: Union[protocol.Parameter, protocol.PackedParameters]):
+    def send_object_value_min(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
         """Send minimum value to object defined by object_number."""
         self.send_object_value(object_number, param, param.get_min_value())
 
-    def send_object_value_max(self, object_number: Union[int, float, str], param: Union[protocol.Parameter, protocol.PackedParameters]):
+    def send_object_value_max(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
         """Send maximum value to object defined by object_number."""
         self.send_object_value(object_number, param, param.get_max_value())
 
-    def send_object_value_default(self, object_number: Union[int, float, str], param: Union[protocol.Parameter, protocol.PackedParameters]):
+    def send_object_value_default(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
         """Send default value to object defined by object_number."""
         self.send_object_value(object_number, param, param.get_default_value())
 
-    def send_object_value_random(self, object_number: Union[int, float, str], param: Union[protocol.Parameter, protocol.PackedParameters]):
+    def send_object_value_random(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
         """Send random value to object defined by object_number."""
         self.send_object_value(object_number, param, param.get_random_value())
 
@@ -107,46 +111,46 @@ class AdmOscClientServer(SimpleUDPClient):
     def send_object_position_x(self, object_number: Union[int, float, str], v: float) -> None:
         """Send position X as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.x, v)
+        self.send_object_value(object_number, stable_params.x, v)
 
     def send_object_position_y(self, object_number: Union[int, float, str], v: float) -> None:
         """Send position Y as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.y, v)
+        self.send_object_value(object_number, stable_params.y, v)
 
     def send_object_position_z(self, object_number: Union[int, float, str], v: float) -> None:
         """Send position Z as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.z, v)
+        self.send_object_value(object_number, stable_params.z, v)
 
     def send_object_cartesian_position(self, object_number: Union[int, float, str], pos: Union[float, tuple, list]) -> None:
         """Send XYZ position as a list of double for object defined by object_number."""
         assert object_number > 0
         assert pos is not None
         assert len(pos) == 3
-        self.send_object_value(object_number, protocol.xyz, pos)
+        self.send_object_value(object_number, stable_params.xyz, pos)
 
     def send_object_position_azimuth(self, object_number: Union[int, float, str], v: float) -> None:
         """Send position azimuth as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.a, v)
+        self.send_object_value(object_number, stable_params.a, v)
 
     def send_object_position_elevation(self, object_number: Union[int, float, str], v: float) -> None:
         """Send position elevation as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.e, v)
+        self.send_object_value(object_number, stable_params.e, v)
 
     def send_object_position_distance(self, object_number: Union[int, float, str], v: float) -> None:
         """Send position distance as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.d, v)
+        self.send_object_value(object_number, stable_params.d, v)
 
     def send_object_polar_position(self, object_number: Union[int, float, str], pos: Union[float, tuple, list]) -> None:
         """Send AED position as a list of double for object defined by object_number."""
         assert object_number > 0
         assert pos is not None
         assert len(pos) == 3
-        self.send_object_value(object_number, protocol.aed, pos)
+        self.send_object_value(object_number, stable_params.aed, pos)
 
     #               _                            _
     #    __ _  __ _(_)_ __    ___  ___ _ __   __| |
@@ -157,7 +161,7 @@ class AdmOscClientServer(SimpleUDPClient):
     def send_object_gain(self, object_number: Union[int, float, str], v: float) -> None:
         """Send gain as a float for object defined by object_number."""
         assert object_number > 0
-        self.send_object_value(object_number, protocol.gain, v)
+        self.send_object_value(object_number, stable_params.gain, v)
 
     #                              _
     #    __ _  ___ _ __   ___ _ __(_) ___    __ _ _   _  ___ _ __ _   _
@@ -165,7 +169,7 @@ class AdmOscClientServer(SimpleUDPClient):
     #  | (_| |  __/ | | |  __/ |  | | (__  | (_| | |_| |  __/ |  | |_| |
     #   \__, |\___|_| |_|\___|_|  |_|\___|  \__, |\__,_|\___|_|   \__, |
     #   |___/                                  |_|                |___/
-    def query_object_value(self, object_number: Union[int, float, str], param: Union[protocol.Parameter, protocol.PackedParameters]):
+    def query_object_value(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
         """Send a value to object defined by object_number."""
         self.send_message(param.get_osc_query_command(object_number), None)
         # todo: listen for value from the connected server...
@@ -177,10 +181,10 @@ class AdmOscClientServer(SimpleUDPClient):
     #  | .__/ \___/|___/_|\__|_|\___/|_| |_|  \__, |\__,_|\___|_|   \__, |
     #  |_|                                       |_|                |___/
     def query_object_polar_position(self, object_number: Union[int, float, str]):
-        self.query_object_value(object_number, protocol.aed)
+        self.query_object_value(object_number, stable_params.aed)
 
     def query_object_cartesian_position(self, object_number: Union[int, float, str]):
-        self.query_object_value(object_number, protocol.xyz)
+        self.query_object_value(object_number, stable_params.xyz)
 
     #               _
     #    __ _  __ _(_)_ __     __ _ _   _  ___ _ __ _   _
@@ -189,7 +193,7 @@ class AdmOscClientServer(SimpleUDPClient):
     #   \__, |\__,_|_|_| |_|  \__, |\__,_|\___|_|   \__, |
     #   |___/                    |_|                |___/
     def query_object_gain(self, object_number: Union[int, float, str]):
-        self.query_object_value(object_number, protocol.gain)
+        self.query_object_value(object_number, stable_params.gain)
 
     #         _ _         _     _           _
     #    __ _| | |   ___ | |__ (_) ___  ___| |_    __ _ _   _  ___ _ __ _   _
@@ -197,16 +201,16 @@ class AdmOscClientServer(SimpleUDPClient):
     #  | (_| | | | | (_) | |_) | |  __/ (__| |_  | (_| | |_| |  __/ |  | |_| |
     #   \__,_|_|_|  \___/|_.__// |\___|\___|\__|  \__, |\__,_|\___|_|   \__, |
     #                        |__/                    |_|                |___/
-    def query_all_objects_value(self, param: Union[protocol.Parameter, protocol.PackedParameters]):
+    def query_all_objects_value(self, param: Union[Parameter, PackedParameters]):
         """Send a value to object defined by object_number."""
         self.send_message(param.get_osc_query_command('*'), None)
         # todo: listen for value from the connected server...
 
     def query_all_polar_positions(self):
-        self.query_all_objects_value(protocol.aed)
+        self.query_all_objects_value(stable_params.aed)
 
     def query_all_cartesian_positions(self):
-        self.query_all_objects_value(protocol.xyz)
+        self.query_all_objects_value(stable_params.xyz)
 
     #   _                           _
     #  (_)_ __   ___ ___  _ __ ___ (_)_ __   __ _   _ __ ___   ___  ___ ___  __ _  __ _  ___
@@ -220,13 +224,13 @@ class AdmOscClientServer(SimpleUDPClient):
 
     def __adm_message_handler(self, address, *args):
         try:
-            target, objects, parameter, args = handler.adm_handler(address, *args)
+            target, objects, parameter, args = adm_handler(address, *args)
             self.on_received_message(target, objects, parameter, *args)
         except ValueError as e:
             print(e)
 
     @staticmethod
-    def on_received_message(target: str, objects: Union[int, dict, list[int]], parameter: Union[protocol.Parameter, protocol.PackedParameters], *args: Union[Any, List[Any]]):
+    def on_received_message(target: str, objects: Union[int, dict, list[int]], parameter: Union[Parameter, PackedParameters], *args: Union[Any, List[Any]]):
         # unhandled message ! just print it
         name = parameter.attribute
         sub = str(parameter.sub_element)

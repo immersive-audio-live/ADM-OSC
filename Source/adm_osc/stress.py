@@ -24,8 +24,9 @@
 
 from math import *
 from time import sleep
-
 from .tests import TestClient
+
+__all__ = ['StressClient']
 
 
 #   ____  _                        ____ _ _            _
