@@ -14,7 +14,7 @@ Immersive audio is gaining ground in different industries, from music streaming 
 ## Motivation and goals
 * To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
 * To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
-* To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, [OSC](http://opensoundcontrol.org/introduction-osc).
+* To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, [OSC](https://opensoundcontrol.stanford.edu/index.html).
 * Keeping the grammar scope aligned with the ADM properties.
 * Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 * Extend this small grammar to more ADM properties (beds, etc.) in the future.
