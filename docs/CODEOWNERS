@@ -6,3 +6,6 @@
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
 *       @mzed @GuillaumeLeNost @gaelyvan
+
+# Python code
+/Source/adm_osc/ @gaelyvan
