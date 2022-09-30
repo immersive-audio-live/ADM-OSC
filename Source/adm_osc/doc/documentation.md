@@ -1,0 +1,293 @@
+# ADM-OSC
+### Python module
+
+This module implement ADM-OSC Validator, Test and Stress Test
+
+The module contains:
+
++ protocol definition and implementation (see [ADM-OSC message specification](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx))
++ stable parameters (defined in [ADM-OSC message specification](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx))
++ Client/Server object (Sender/Receiver) which implement command sending and receiving with full analyze/validation
++ TestClient, used to test how receiver will handle all kind of parameters and parameters value range
++ StressClient, used to send huge amount of data to stress test the receivers
+
+quick examples:
+
+  ```python 
+     from adm_osc import OscClientServer
+  
+     # create a basic client/server that implement basic ADM-OSC communication with stable parameters 
+     # + command monitoring and analyze
+     cs = OscClientServer(address='127.0.0.1', out_port=9000, in_port=9001)
+
+     # send some individual parameters  
+     cs.send_object_position_azimuth(object_number=1, v=-30.0)
+     cs.send_object_position_elevation(object_number=1, v=0.0)
+     cs.send_object_position_distance(object_number=1, v=2.0)
+
+     # or pack them
+     cs.send_object_polar_position(object_number=1, pos=[-30.0, 0.0, 2.0])
+  
+     # in cartesian coordinates
+     cs.send_object_cartesian_position(object_number=1, pos=[-5.0, 8.0, 0.0])
+  
+     # see below for full list of available functions
+  
+     # when receiving an adm osc command its analyze will be printed on the command output window
+     #
+     # e.g.
+     #
+     # >> received valid adm message for obj :: 1 :: gain (0.7943282127380371)
+     # >> received valid adm message for obj :: 1 :: position aed (20.33701515197754, 0.0, 0.8807612657546997)
+     # >> received valid adm message for obj :: 1 :: position xyz (-0.2606865465641022, 0.8273822069168091, 0.0)
+     # >>
+     # >> ERROR: unrecognized ADM address : "/adm/obj/1/bril" ! unknown command "/bril/"
+     # >> ERROR: arguments are malformed for "/adm/obj/1/gain :: (1.4791083335876465,)":
+     # >>     argument 0 "1.4791083335876465" out of range ! it should be less or equal than "1.0"     
+     
+   ```
+
+![myfile](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/receiving-command.gif "receiving-command")
+
+
+  ```python 
+     from adm_osc import TestClient
+     # create a test client, assume default address (local: '127.0.0.1')
+     # test client can be used to test how receiver will handle all kind of parameters and parameters value range
+     sender = TestClient(out_port=9000)
+  
+     # all stable parameters for a specific object
+     sender.set_object_stable_parameters_to_minimum(object_number=1)
+     sender.set_object_stable_parameters_to_maximum(object_number=1)
+     sender.set_object_stable_parameters_to_default(object_number=1)
+     sender.set_object_stable_parameters_to_random(object_number=1)
+  
+     # all stable parameters for a range of objects
+     sender.set_objects_stable_parameters_minimum(objects_range=range(1, 64))
+     sender.set_objects_stable_parameters_maximum(objects_range=range(1, 64))
+     sender.set_objects_stable_parameters_default(objects_range=range(1, 64))
+     sender.set_objects_stable_parameters_random(objects_range=range(1, 64))
+  
+     # all stable parameters for all objects
+     sender.set_all_objects_stable_parameters_minimum()
+     sender.set_all_objects_stable_parameters_maximum()
+     sender.set_all_objects_stable_parameters_default()
+     sender.set_all_objects_stable_parameters_random()
+  
+     # see below for full list of available functions
+   ```
+
+![myfile](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/testclient.gif "testclient")
+    
+  ```python 
+    from adm_osc import StressClient
+    # create a stress client, assume default address (local: '127.0.0.1')
+    # stress client will send huge amount of data to stress test the receivers
+    sender = StressClient(out_port=9000)
+    # do stress test in cartesian coordinates
+    sender.stress_cartesian_position(number_of_objects=67, duration_in_second=10.0, interval_in_milliseconds=10.0)
+    # do stress test in polar coordinates
+    sender.stress_polar_position(number_of_objects=64, duration_in_second=10.0, interval_in_milliseconds=10.0)
+   ```
+
+![myfile](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/stressclient.gif "stressclient")
+
+# OscClientServer
+  ```python 
+  class StressClient(TestClient):
+  
+    #                              _                           _
+    #    __ _  ___ _ __   ___ _ __(_) ___   ___  ___ _ __   __| |
+    #   / _` |/ _ \ '_ \ / _ \ '__| |/ __| / __|/ _ \ '_ \ / _` |
+    #  | (_| |  __/ | | |  __/ |  | | (__  \__ \  __/ | | | (_| |
+    #   \__, |\___|_| |_|\___|_|  |_|\___| |___/\___|_| |_|\__,_|
+    #   |___/
+    def send_object_value(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters], v: Union[float, tuple, list]):
+    def send_object_value_min(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
+    def send_object_value_max(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
+    def send_object_value_default(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
+    def send_object_value_random(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
+
+    #                   _ _   _                                  _
+    #   _ __   ___  ___(_) |_(_) ___  _ __    ___  ___ _ __   __| |
+    #  | '_ \ / _ \/ __| | __| |/ _ \| '_ \  / __|/ _ \ '_ \ / _` |
+    #  | |_) | (_) \__ \ | |_| | (_) | | | | \__ \  __/ | | | (_| |
+    #  | .__/ \___/|___/_|\__|_|\___/|_| |_| |___/\___|_| |_|\__,_|
+    #  |_|
+    def send_object_position_x(self, object_number: Union[int, float, str], v: float) -> None:
+    def send_object_position_y(self, object_number: Union[int, float, str], v: float) -> None:
+    def send_object_position_z(self, object_number: Union[int, float, str], v: float) -> None:
+    def send_object_cartesian_position(self, object_number: Union[int, float, str], pos: Union[float, tuple, list]) -> None:
+    def send_object_position_azimuth(self, object_number: Union[int, float, str], v: float) -> None:
+    def send_object_position_elevation(self, object_number: Union[int, float, str], v: float) -> None:
+    def send_object_position_distance(self, object_number: Union[int, float, str], v: float) -> None:
+    def send_object_polar_position(self, object_number: Union[int, float, str], pos: Union[float, tuple, list]) -> None:
+
+    #               _                            _
+    #    __ _  __ _(_)_ __    ___  ___ _ __   __| |
+    #   / _` |/ _` | | '_ \  / __|/ _ \ '_ \ / _` |
+    #  | (_| | (_| | | | | | \__ \  __/ | | | (_| |
+    #   \__, |\__,_|_|_| |_| |___/\___|_| |_|\__,_|
+    #   |___/
+    def send_object_gain(self, object_number: Union[int, float, str], v: float) -> None:
+
+    #                              _
+    #    __ _  ___ _ __   ___ _ __(_) ___    __ _ _   _  ___ _ __ _   _
+    #   / _` |/ _ \ '_ \ / _ \ '__| |/ __|  / _` | | | |/ _ \ '__| | | |
+    #  | (_| |  __/ | | |  __/ |  | | (__  | (_| | |_| |  __/ |  | |_| |
+    #   \__, |\___|_| |_|\___|_|  |_|\___|  \__, |\__,_|\___|_|   \__, |
+    #   |___/                                  |_|                |___/
+    def query_object_value(self, object_number: Union[int, float, str], param: Union[Parameter, PackedParameters]):
+
+    #                   _ _   _
+    #   _ __   ___  ___(_) |_(_) ___  _ __     __ _ _   _  ___ _ __ _   _
+    #  | '_ \ / _ \/ __| | __| |/ _ \| '_ \   / _` | | | |/ _ \ '__| | | |
+    #  | |_) | (_) \__ \ | |_| | (_) | | | | | (_| | |_| |  __/ |  | |_| |
+    #  | .__/ \___/|___/_|\__|_|\___/|_| |_|  \__, |\__,_|\___|_|   \__, |
+    #  |_|                                       |_|                |___/
+    def query_object_polar_position(self, object_number: Union[int, float, str]):
+    def query_object_cartesian_position(self, object_number: Union[int, float, str]):
+
+    #               _
+    #    __ _  __ _(_)_ __     __ _ _   _  ___ _ __ _   _
+    #   / _` |/ _` | | '_ \   / _` | | | |/ _ \ '__| | | |
+    #  | (_| | (_| | | | | | | (_| | |_| |  __/ |  | |_| |
+    #   \__, |\__,_|_|_| |_|  \__, |\__,_|\___|_|   \__, |
+    #   |___/                    |_|                |___/
+    def query_object_gain(self, object_number: Union[int, float, str]):
+
+    #         _ _         _     _           _
+    #    __ _| | |   ___ | |__ (_) ___  ___| |_    __ _ _   _  ___ _ __ _   _
+    #   / _` | | |  / _ \| '_ \| |/ _ \/ __| __|  / _` | | | |/ _ \ '__| | | |
+    #  | (_| | | | | (_) | |_) | |  __/ (__| |_  | (_| | |_| |  __/ |  | |_| |
+    #   \__,_|_|_|  \___/|_.__// |\___|\___|\__|  \__, |\__,_|\___|_|   \__, |
+    #                        |__/                    |_|                |___/
+    def query_all_objects_value(self, param: Union[Parameter, PackedParameters]):
+    def query_all_polar_positions(self):
+    def query_all_cartesian_positions(self):
+    
+   ```
+
+
+# TestClient
+  ```python 
+  class OscClientServer(SimpleUDPClient):
+  
+    #   _            _      __                  _             _              _     _           _
+    #  | |_ ___  ___| |_   / _| ___  _ __   ___(_)_ __   __ _| | ___    ___ | |__ (_) ___  ___| |_
+    #  | __/ _ \/ __| __| | |_ / _ \| '__| / __| | '_ \ / _` | |/ _ \  / _ \| '_ \| |/ _ \/ __| __|
+    #  | ||  __/\__ \ |_  |  _| (_) | |    \__ \ | | | | (_| | |  __/ | (_) | |_) | |  __/ (__| |_
+    #   \__\___||___/\__| |_|  \___/|_|    |___/_|_| |_|\__, |_|\___|  \___/|_.__// |\___|\___|\__|
+    #                                                   |___/                   |__/
+    def set_object_stable_parameters_to_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_stable_parameters_to_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_stable_parameters_to_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_stable_parameters_to_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_position_azimuth_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_azimuth_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_azimuth_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_azimuth_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_position_elevation_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_elevation_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_elevation_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_elevation_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_position_distance_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_distance_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_distance_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_distance_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_polar_position_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_polar_position_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_polar_position_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_polar_position_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_position_x_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_x_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_x_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_x_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_position_y_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_y_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_y_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_y_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_position_z_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_z_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_z_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_position_z_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_cartesian_position_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_cartesian_position_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_cartesian_position_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_cartesian_position_random(self, object_number: Union[int, float, str] = default_object):
+    
+    def set_object_gain_minimum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_gain_maximum(self, object_number: Union[int, float, str] = default_object):
+    def set_object_gain_default(self, object_number: Union[int, float, str] = default_object):
+    def set_object_gain_random(self, object_number: Union[int, float, str] = default_object):
+
+    #   _            _      __                              _ _   _       _              _     _           _
+    #  | |_ ___  ___| |_   / _| ___  _ __   _ __ ___  _   _| | |_(_)_ __ | | ___    ___ | |__ (_) ___  ___| |_ ___
+    #  | __/ _ \/ __| __| | |_ / _ \| '__| | '_ ` _ \| | | | | __| | '_ \| |/ _ \  / _ \| '_ \| |/ _ \/ __| __/ __|
+    #  | ||  __/\__ \ |_  |  _| (_) | |    | | | | | | |_| | | |_| | |_) | |  __/ | (_) | |_) | |  __/ (__| |_\__ \
+    #   \__\___||___/\__| |_|  \___/|_|    |_| |_| |_|\__,_|_|\__|_| .__/|_|\___|  \___/|_.__// |\___|\___|\__|___/
+    #                                                              |_|                      |__/
+    def set_objects_stable_parameters_minimum(self, objects_range: range = range(1)):
+    def set_objects_stable_parameters_maximum(self, objects_range: range = range(1)):
+    def set_objects_stable_parameters_default(self, objects_range: range = range(1)):
+    def set_objects_stable_parameters_random(self, objects_range: range = range(1)):
+    
+    def set_objects_polar_position_minimum(self, objects_range: range = range(1)):
+    def set_objects_polar_position_maximum(self, objects_range: range = range(1)):
+    def set_objects_polar_position_default(self, objects_range: range = range(1)):
+    def set_objects_polar_position_random(self, objects_range: range = range(1)):
+    
+    def set_objects_cartesian_position_minimum(self, objects_range: range = range(1)):
+    def set_objects_cartesian_position_maximum(self, objects_range: range = range(1)):
+    def set_objects_cartesian_position_default(self, objects_range: range = range(1)):
+    def set_objects_cartesian_position_random(self, objects_range: range = range(1)):
+    
+    def set_objects_gain_minimum(self, objects_range: range = range(1)):
+    def set_objects_gain_maximum(self, objects_range: range = range(1)):
+    def set_objects_gain_default(self, objects_range: range = range(1)):
+    def set_objects_gain_random(self, objects_range: range = range(1)):
+    
+    #   _            _        _    _ _         _     _           _
+    #  | |_ ___  ___| |_     / \  | | |   ___ | |__ (_) ___  ___| |_ ___
+    #  | __/ _ \/ __| __|   / _ \ | | |  / _ \| '_ \| |/ _ \/ __| __/ __|
+    #  | ||  __/\__ \ |_   / ___ \| | | | (_) | |_) | |  __/ (__| |_\__ \
+    #   \__\___||___/\__| /_/   \_\_|_|  \___/|_.__// |\___|\___|\__|___/
+    #                                             |__/
+    def set_all_objects_stable_parameters_minimum(self):
+    def set_all_objects_stable_parameters_maximum(self):
+    def set_all_objects_stable_parameters_default(self):
+    def set_all_objects_stable_parameters_random(self):
+    
+    def set_all_objects_polar_position_minimum(self):
+    def set_all_objects_polar_position_maximum(self):
+    def set_all_objects_polar_position_default(self):
+    def set_all_objects_polar_position_random(self):
+    
+    def set_all_objects_cartesian_position_minimum(self):
+    def set_all_objects_cartesian_position_maximum(self):
+    def set_all_objects_cartesian_position_default(self):
+    
+    def set_all_objects_gain_minimum(self):
+    def set_all_objects_gain_maximum(self):
+    def set_all_objects_gain_default(self):
+    
+   ```
+
+
+# StressClient
+  ```python 
+  class StressClient(TestClient):
+  
+    def stress_polar_position(self, number_of_objects: int = 1, duration_in_second: float = 10.0, interval_in_milliseconds: float = 10.0):
+    def stress_cartesian_position(self, number_of_objects: int = 1, duration_in_second: float = 10.0, interval_in_milliseconds: float = 10.0):
+    def stress_all(self, number_of_objects: int = 1, duration_in_second: float = 10.0, interval_in_milliseconds: float = 10.0):
+    
+   ```
