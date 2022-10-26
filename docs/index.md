@@ -5,7 +5,7 @@ An industry initiative to standardization of Object Based Audio (OBA) positionin
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 ## Project Contributors
-d&b Audiotechnik, DiGiCo, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg.
+d&b Audiotechnik, DiGiCo, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg, Dolby.
 
 ## Currently supported in
 - SPAT Revolution (FLUX::SE)
