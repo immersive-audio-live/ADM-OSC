@@ -1,4 +1,2 @@
-theme: jekyll-theme-minimal
-
-logo: ./images/MultiLayerPerceptron.png
+theme: jekyll-theme-modernist
 show_downloads: true
