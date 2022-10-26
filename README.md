@@ -1,12 +1,13 @@
 # ADM-OSC
 An industry initiative to standardization of Object Based Audio (OBA) positioning data in live production ecosystems, by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
+https://immersive-audio-live.github.io/ADM-OSC/
 
 ## Project Originators
 
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 ## Project Contributors
-d&b Audiotechnik, DiGiCo, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg.
+d&b Audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg.
 
 ## Context
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
