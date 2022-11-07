@@ -112,8 +112,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
     </thead>
     <tbody>
         <tr>
-            <td>/adm</td>
-            <td rowspan=8>/obj/<i>(object number)</i></td>
+            <td rowspan=8>/adm</td>
+            <td rowspan=6>/obj/<i>(object number)</i></td>
             <td>/x</td>
             <td>float</td>
             <td>normalized</td>
@@ -183,8 +183,15 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/adm/obj/4/x -0.9</td>
             <td bgcolor="LightYellow">proposed v0.5</td>
         </tr>
-        <tr>
-            <td>more</td>
+         <tr>
+            <td>/y</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>-1.</td>
+            <td>1.</td>
+            <td>front/back dimension</td>
+            <td>/adm/obj/4/y 0.15</td>
+            <td bgcolor="LightYellow">proposed v0.5</td>
         </tr>
     </tbody>
 </table>
