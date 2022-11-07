@@ -1,5 +1,5 @@
 # ADM-OSC Draft v0.5
-All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before and of the messages below.
+All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
 
 ## Dynamic messages
 
@@ -20,9 +20,9 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
     </thead>
     <tbody>
         <tr>
-            <td rowspan=8>/adm</td>
-            <td rowspan=2>/obj</td>
-            <td rowspan=2>/(object number)</td>
+            <td rowspan=810/adm</td>
+            <td rowspan=3>/obj</td>
+            <td rowspan=3>/(object number)</td>
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
@@ -32,12 +32,22 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
             <td>/adm/obj/4/azim -22.5</td>
         </tr>
         <tr>
-            <td>/elevation</td>
+            <td>/elev</td>
             <td>float</td>
             <td>degrees</td>
             <td>-90.</td>
             <td>90.</td>
             <td>elevation “phi” of sound location</td>
+            <td>/adm/obj/4/elev 12.7</td>
+        </tr>
+        <tr>
+            <td>/dist</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>0.</td>
+            <td>1.</td>
+            <td>distance “r” from origin</td>
+            <td>/adm/obj/4/dist 0.9</td>
         </tr>
         <tr>
             <td rowspan=2>/prog</td>
