@@ -22,8 +22,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
     <tbody>
         <tr>
             <td rowspan=8>/adm</td>
-            <td rowspan=4>/obj</td>
-            <td rowspan=4>/<i>(object number)</i></td>
+            <td rowspan=6>/obj</td>
+            <td rowspan=6>/<i>(object number)</i></td>
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
@@ -53,12 +53,32 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/adm/obj/4/dist 0.9</td>
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
-         <tr>
+        <tr>
             <td>/aed</td>
             <td>list</td>
             <td colspan=3>see above</td>
             <td>compact format enables synchronicity of position changes and also less network traffic</td>
             <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
+            <td bgcolor="LightGreen">stable v0.4</td>
+        </tr>
+        <tr>
+            <td>/w</td>
+            <td>float</td>
+            <td>linear</td>
+            <td></td>
+            <td></td>
+            <td>X-width</td>
+            <td>/adm/obj/3/w 45.2</td>
+            <td bgcolor="LightYellow">in progress</td>
+        </tr>
+        <tr>
+            <td>/gain</td>
+            <td>float</td>
+            <td>Normalized Units</td>
+            <td></td>
+            <td></td>
+            <td>Apply a gain to the audio in the object.</td>
+            <td>/adm/obj/3/gain 0.707</td>
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
         <tr>
@@ -134,11 +154,19 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
+        <td>/w</td>
+            <td>float</td>
+            <td>degrees</td>
+            <td>0.</td>
+            <td>180</td>
+            <td>horizontal extent</td>
+            <td>/adm/obj/3/w 45.2</td>
+            <td bgcolor="LightYellow">in progress</td>
         <tr>
             <td rowspan=2>/prog</td>
             <td rowspan=2>/<i>(program number)</i></td>
-            <td>more</td>
-            <td>more</td>
+            <td rowspan=2>/obj</td>
+            <td rowspan=2>/<i>(object number)</i></td>
             <td>more</td>
             <td>more</td>
         </tr>
