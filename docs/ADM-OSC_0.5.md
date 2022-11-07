@@ -80,10 +80,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
 <table>
     <thead>
         <tr>
-            <th>Address</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th colspan=4>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
