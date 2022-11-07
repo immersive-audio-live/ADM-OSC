@@ -1,10 +1,7 @@
+# ADM-OSC Draft v0.5
 All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before and of the messages below.
 
-| Address      |   |  | type |
-| ----------- | ----------- | ----------- | ----------- |
-| /obj      | /\<object number\>       | /azim | float
-|           |         | 
-| /prog | /\<program number\> |
+## Dynamic messages
 
 <table>
     <thead>
@@ -19,8 +16,9 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
     </thead>
     <tbody>
         <tr>
-            <td rowspan=4>/adm</td>
+            <td rowspan=8>/adm</td>
             <td rowspan=2>/obj</td>
+            <td rowspan=2>/(object number)</td>
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
@@ -34,6 +32,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
         </tr>
         <tr>
             <td rowspan=2>/prog</td>
+            <td rowspan=2>/(program number)</td>
             <td>more</td>
             <td>more</td>
             <td>more</td>
