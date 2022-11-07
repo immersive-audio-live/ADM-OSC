@@ -1,16 +1,3 @@
-<style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-}
-th {
-  text-align: left;
-}
-</style>
-
 # ADM-OSC Draft v0.5
 All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
 
