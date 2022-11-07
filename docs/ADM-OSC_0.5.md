@@ -15,12 +15,12 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
             <th>min</th>
             <th>max</th>
             <th width="400px">description</th>
-            <th width="200px">example</th>
+            <th width="300px">example</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td rowspan=810/adm</td>
+            <td rowspan=8>/adm</td>
             <td rowspan=3>/obj</td>
             <td rowspan=3>/(object number)</td>
             <td>/azim</td>
