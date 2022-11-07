@@ -9,9 +9,13 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
             <th>Address</th>
             <th></th>
             <th></th>
+            <th></th>
             <th>type</th>
             <th>units</th>
+            <th>min</th>
+            <th>max</th>
             <th>description</th>
+            <th>example</th>
         </tr>
     </thead>
     <tbody>
@@ -22,12 +26,17 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
+            <td>-180.</td>
+            <td>180.</td>
             <td>azimuth “theta” of sound location. -90 is on the Right, 0 is in front.</td>
+            <td>/adm/obj/4/azim -22.5</td>
         </tr>
         <tr>
             <td>/elevation</td>
             <td>float</td>
             <td>degrees</td>
+            <td>-90.</td>
+            <td>90.</td>
             <td>elevation “phi” of sound location</td>
         </tr>
         <tr>
