@@ -1,3 +1,16 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+</style>
+
 # ADM-OSC Draft v0.5
 All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
 
@@ -9,10 +22,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
 <table>
     <thead>
         <tr>
-            <th>Address</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th colspan=4>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
