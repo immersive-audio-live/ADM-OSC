@@ -69,12 +69,12 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td></td>
             <td>X-width</td>
             <td>/adm/obj/3/w 45.2</td>
-            <td bgcolor="LightYellow">in progress</td>
+            <td bgcolor="LightYellow"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
         </tr>
         <tr>
             <td>/gain</td>
             <td>float</td>
-            <td>Normalized Units</td>
+            <td>normalized</td>
             <td></td>
             <td></td>
             <td>Apply a gain to the audio in the object.</td>
@@ -113,8 +113,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
     <tbody>
         <tr>
             <td rowspan=8>/adm</td>
-            <td rowspan=4>/obj</td>
-            <td rowspan=4>/<i>(object number)</i></td>
+            <td rowspan=6>/obj</td>
+            <td rowspan=6>/<i>(object number)</i></td>
             <td>/x</td>
             <td>float</td>
             <td>normalized</td>
@@ -154,14 +154,25 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
-        <td>/w</td>
+            <td>/w</td>
             <td>float</td>
             <td>degrees</td>
             <td>0.</td>
             <td>180</td>
             <td>horizontal extent</td>
             <td>/adm/obj/3/w 45.2</td>
-            <td bgcolor="LightYellow">in progress</td>
+            <td bgcolor="LightYellow"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/2">in progress</a></td>
+        </tr>
+        <tr>
+            <td>/gain</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td></td>
+            <td></td>
+            <td>Apply a gain to the audio in the object.</td>
+            <td>/adm/obj/3/gain 0.707</td>
+            <td bgcolor="LightGreen">stable v0.4</td>
+        </tr>
         <tr>
             <td rowspan=2>/prog</td>
             <td rowspan=2>/<i>(program number)</i></td>
@@ -177,3 +188,36 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
 </table>
 
 ## Static messages
+
+Data which doesn't change very often is included in a `/config` namespace. This lets a receiver know that timing is not critical and the message can be handled at a lower priority.
+
+<table>
+    <thead>
+        <tr>
+            <th colspan=4>osc address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th width="500px">description</th>
+            <th width="300px">example</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=8>/adm</td>
+            <td rowspan=8>/config</td>
+            <td rowspan=8>/obj</td>
+            <td rowspan=8>/<i>(object number)</i></td>
+            <td>/cartesian</td>
+            <td>int</td>
+            <td>true/false</td>
+            <td>0</td>
+            <td>1</td>
+            <td>lif the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
+            <td>/adm/config/obj/1/cartesian 0</td>
+            <td bgcolor="LightGreen">stable v0.4</td>
+        </tr>
+    </tbody>
+</table>        
