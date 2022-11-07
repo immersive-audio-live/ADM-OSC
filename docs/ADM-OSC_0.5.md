@@ -9,7 +9,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
 <table>
     <thead>
         <tr>
-            <th colspan=4>osc address</th>
+            <th colspan=3>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -21,9 +21,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
     </thead>
     <tbody>
         <tr>
-            <td rowspan=8>/adm</td>
-            <td rowspan=6>/obj</td>
-            <td rowspan=6>/<i>(object number)</i></td>
+        <td rowspan=8>/adm</td>
+            <td rowspan=6>/obj/<i>(object number)</i></td>
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
@@ -81,16 +80,26 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/adm/obj/3/gain 0.707</td>
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
-        <tr>
-            <td rowspan=2>/prog</td>
-            <td rowspan=2>/<i>(program number)</i></td>
-            <td>more</td>
-            <td>more</td>
-            <td>more</td>
-            <td>more</td>
+         <tr>
+            <td rowspan=2>/prog/<i>(program number)</i>/obj/<i>(object number)</i></td>
+            <td>/azim</td>
+            <td>float</td>
+            <td>degrees</td>
+            <td>-180.</td>
+            <td>180.</td>
+            <td><b>azimuth</b> “theta - &#952;” of sound location. -90 is on the Right, 0 is in front.</td>
+            <td>/adm/obj/4/azim -22.5</td>
+            <td bgcolor="LightYellow">proposed v0.5</td>
         </tr>
-        <tr>
-            <td>more</td>
+         <tr>
+            <td>/elev</td>
+            <td>float</td>
+            <td>degrees</td>
+            <td>-90.</td>
+            <td>90.</td>
+            <td><b>elevation</b> “phi - &#632;” of sound location</td>
+            <td>/adm/obj/4/elev 12.7</td>
+            <td bgcolor="LightYellow">proposed v0.5</td>
         </tr>
     </tbody>
 </table>
@@ -100,7 +109,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
 <table>
     <thead>
         <tr>
-            <th colspan=2>osc address</th>
+            <th colspan=3>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
