@@ -1,7 +1,10 @@
 # ADM-OSC Draft v0.5
 All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
 
-## Dynamic messages for objects &mdash; polar coordinates
+## Dynamic messages
+Dynamic messages, such as object postions, have the potential to change rapidly over the course of a program. They exist in a separate namespace so they can be prioritized for maximum temporal accuracy.
+
+### Dynamic messages for objects &mdash; polar coordinates
 
 <table>
     <thead>
@@ -22,7 +25,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
         <tr>
             <td rowspan=8>/adm</td>
             <td rowspan=4>/obj</td>
-            <td rowspan=4>/(object number)</td>
+            <td rowspan=4>/<i>(object number)</i></td>
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
@@ -60,7 +63,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
         </tr>
         <tr>
             <td rowspan=2>/prog</td>
-            <td rowspan=2>/(program number)</td>
+            <td rowspan=2>/<i>(program number)</i></td>
             <td>more</td>
             <td>more</td>
             <td>more</td>
@@ -72,7 +75,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
     </tbody>
 </table>
 
-## Dynamic messages for objects &mdash; cartesian coordinates
+### Dynamic messages for objects &mdash; cartesian coordinates
 
 <table>
     <thead>
@@ -93,7 +96,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
         <tr>
             <td rowspan=8>/adm</td>
             <td rowspan=4>/obj</td>
-            <td rowspan=4>/(object number)</td>
+            <td rowspan=4>/<i>(object number)</i></td>
             <td>/x</td>
             <td>float</td>
             <td>normalized</td>
@@ -131,7 +134,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
         </tr>
         <tr>
             <td rowspan=2>/prog</td>
-            <td rowspan=2>/(program number)</td>
+            <td rowspan=2>/<i>(program number)</i></td>
             <td>more</td>
             <td>more</td>
             <td>more</td>
