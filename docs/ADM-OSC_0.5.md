@@ -88,8 +88,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>-180.</td>
             <td>180.</td>
             <td><b>azimuth</b> “theta - &#952;” of sound location. -90 is on the Right, 0 is in front.</td>
-            <td>/adm/obj/4/azim -22.5</td>
-            <td bgcolor="LightYellow">proposed v0.5</td>
+            <td>/adm/prog/2/obj/4/azim -22.5</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
          <tr>
             <td>/elev</td>
@@ -98,8 +98,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>-90.</td>
             <td>90.</td>
             <td><b>elevation</b> “phi - &#632;” of sound location</td>
-            <td>/adm/obj/4/elev 12.7</td>
-            <td bgcolor="LightYellow">proposed v0.5</td>
+            <td>/adm/prog/2/obj/4/elev 12.7</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
     </tbody>
 </table>
@@ -190,7 +190,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>1.</td>
             <td>left/right dimension. -1 is left</td>
             <td>/adm/obj/4/x -0.9</td>
-            <td bgcolor="LightYellow">proposed v0.5</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
          <tr>
             <td>/y</td>
@@ -200,7 +200,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>1.</td>
             <td>front/back dimension</td>
             <td>/adm/obj/4/y 0.15</td>
-            <td bgcolor="LightYellow">proposed v0.5</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
     </tbody>
 </table>
@@ -212,7 +212,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
 <table>
     <thead>
         <tr>
-            <th colspan=5>osc address</th>
+            <th colspan=2>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -224,10 +224,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
     </thead>
     <tbody>
         <tr>
-            <td rowspan=8>/adm</td>
-            <td rowspan=8>/config</td>
-            <td rowspan=8>/obj</td>
-            <td rowspan=8>/<i>(object number)</i></td>
+            <td rowspan=3>/adm/config/obj/<i>(object number)</i></td>
             <td>/cartesian</td>
             <td>int</td>
             <td>true/false</td>
@@ -236,6 +233,26 @@ Data which doesn't change very often is included in a `/config` namespace. This 
             <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
             <td>/adm/config/obj/1/cartesian 0</td>
             <td bgcolor="LightGreen">stable v0.4</td>
+        </tr>
+        <tr>
+            <td>/refdistance</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>0.</td>
+            <td>1,</td>
+            <td>Distance where dimensionless rendering is replaced with with physics-based rendering. (default = 1.0)</td>
+            <td>/adm/config/obj/1/refdistance 0.2</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td>/absdistance</td>
+            <td>float</td>
+            <td>meters</td>
+            <td></td>
+            <td></td>
+            <td>Distance signified by a normalized value of 1</td>
+            <td>/adm/config/obj/1/absdistance 21.3</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
     </tbody>
 </table>        
