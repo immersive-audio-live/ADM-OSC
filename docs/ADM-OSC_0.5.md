@@ -69,7 +69,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td></td>
             <td>X-width</td>
             <td>/adm/obj/3/w 45.2</td>
-            <td bgcolor="LightYellow"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
+            <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
         </tr>
         <tr>
             <td>/gain</td>
@@ -100,7 +100,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
 <table>
     <thead>
         <tr>
-            <th colspan=4>osc address</th>
+            <th colspan=2>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -112,9 +112,8 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
     </thead>
     <tbody>
         <tr>
-            <td rowspan=8>/adm</td>
-            <td rowspan=6>/obj</td>
-            <td rowspan=6>/<i>(object number)</i></td>
+            <td>/adm</td>
+            <td rowspan=8>/obj/<i>(object number)</i></td>
             <td>/x</td>
             <td>float</td>
             <td>normalized</td>
@@ -161,7 +160,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>180</td>
             <td>horizontal extent</td>
             <td>/adm/obj/3/w 45.2</td>
-            <td bgcolor="LightYellow"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/2">in progress</a></td>
+            <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/2">in progress</a></td>
         </tr>
         <tr>
             <td>/gain</td>
@@ -174,12 +173,15 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
         <tr>
-            <td rowspan=2>/prog</td>
-            <td rowspan=2>/<i>(program number)</i></td>
-            <td rowspan=2>/obj</td>
-            <td rowspan=2>/<i>(object number)</i></td>
-            <td>more</td>
-            <td>more</td>
+            <td rowspan=2>/prog/<i>(program number)</i>/obj/<i>(object number)</i></td>
+            <td>/x</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>-1.</td>
+            <td>1.</td>
+            <td>left/right dimension. -1 is left</td>
+            <td>/adm/obj/4/x -0.9</td>
+            <td bgcolor="LightYellow">proposed v0.5</td>
         </tr>
         <tr>
             <td>more</td>
@@ -194,7 +196,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
 <table>
     <thead>
         <tr>
-            <th colspan=4>osc address</th>
+            <th colspan=5>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -215,7 +217,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
             <td>true/false</td>
             <td>0</td>
             <td>1</td>
-            <td>lif the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
+            <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
             <td>/adm/config/obj/1/cartesian 0</td>
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
