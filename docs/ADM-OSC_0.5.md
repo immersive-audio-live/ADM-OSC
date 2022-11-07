@@ -15,7 +15,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
             <th>min</th>
             <th>max</th>
             <th>description</th>
-            <th>example</th>
+            <th width="300px">example</th>
         </tr>
     </thead>
     <tbody>
