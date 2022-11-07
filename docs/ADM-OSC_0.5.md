@@ -64,7 +64,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/w</td>
             <td>float</td>
             <td>linear</td>
-            <td></td>
+            <td>0.</td>
             <td></td>
             <td>X-width</td>
             <td>/adm/obj/3/w 45.2</td>
@@ -74,7 +74,7 @@ Dynamic messages, such as object postions, have the potential to change rapidly 
             <td>/gain</td>
             <td>float</td>
             <td>normalized</td>
-            <td></td>
+            <td>0.</td>
             <td></td>
             <td>Apply a gain to the audio in the object.</td>
             <td>/adm/obj/3/gain 0.707</td>
@@ -212,7 +212,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
 <table>
     <thead>
         <tr>
-            <th colspan=2>osc address</th>
+            <th colspan=3>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -224,7 +224,8 @@ Data which doesn't change very often is included in a `/config` namespace. This 
     </thead>
     <tbody>
         <tr>
-            <td rowspan=3>/adm/config/obj/<i>(object number)</i></td>
+            <td rowspan=6>/adm/config</td>
+            <td rowspan=3>/obj/<i>(object number)</i></td>
             <td>/cartesian</td>
             <td>int</td>
             <td>true/false</td>
@@ -235,16 +236,6 @@ Data which doesn't change very often is included in a `/config` namespace. This 
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
         <tr>
-            <td>/refdistance</td>
-            <td>float</td>
-            <td>normalized</td>
-            <td>0.</td>
-            <td>1,</td>
-            <td>Distance where dimensionless rendering is replaced with with physics-based rendering. (default = 1.0)</td>
-            <td>/adm/config/obj/1/refdistance 0.2</td>
-            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
-        </tr>
-        <tr>
             <td>/absdistance</td>
             <td>float</td>
             <td>meters</td>
@@ -252,6 +243,47 @@ Data which doesn't change very often is included in a `/config` namespace. This 
             <td></td>
             <td>Distance signified by a normalized value of 1</td>
             <td>/adm/config/obj/1/absdistance 21.3</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+         <tr>
+            <td>/refdistance</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>0.</td>
+            <td>1</td>
+            <td>Distance where dimensionless rendering is replaced with with physics-based rendering. (default = 1.0)</td>
+            <td>/adm/config/obj/1/refdistance 0.2</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td rowspan=3>/bed/<i>(bed number)</i></td>
+            <td>/chan</td>
+            <td>int</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+         <tr>
+            <td>/name</td>
+            <td>symbol</td>
+             <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+         <tr>
+            <td>/format</td>
+            <td>int</td>
+             <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
     </tbody>
