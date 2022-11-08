@@ -212,7 +212,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
 <table>
     <thead>
         <tr>
-            <th colspan=3>osc address</th>
+            <th colspan=4>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -224,7 +224,8 @@ Data which doesn't change very often is included in a `/config` namespace. This 
     </thead>
     <tbody>
         <tr>
-            <td rowspan=6>/adm/config</td>
+            <td rowspan=8>/adm</td>
+            <td rowspan=6>/config</td>
             <td rowspan=3>/obj/<i>(object number)</i></td>
             <td>/cartesian</td>
             <td>int</td>
@@ -284,6 +285,58 @@ Data which doesn't change very often is included in a `/config` namespace. This 
             <td></td>
             <td></td>
             <td></td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+     </tbody>
+</table>  
+
+### Static programme messages
+
+<table>
+    <thead>
+        <tr>
+            <th colspan=5>osc address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th width="500px">description</th>
+            <th width="300px">example</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=8>/adm</td>
+            <td rowspan=6>/prog/<i>(prog number)</i></td>
+            <td rowspan=3>/config</i></td>
+            <td rowspan=3>/template</td>
+            <td>/name</td>
+            <td>symbol</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>/adm/prog/2/template/name "English AD"</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+        <td>/version</td>
+            <td>symbol</td>
+            <td>x.x.x</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>/adm/prog/2/template/version 3.2.1</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <td>/format</td>
+            <td>int</td>
+            <td>see table</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>/adm/prog/2/template/format 23</td>
             <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
     </tbody>
