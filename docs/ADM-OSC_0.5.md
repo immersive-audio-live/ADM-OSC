@@ -280,7 +280,7 @@ Data which doesn't change very often is included in a `/config` namespace. This 
          <tr>
             <td>/format</td>
             <td>int</td>
-             <td></td>
+             <td>see table</td>
             <td></td>
             <td></td>
             <td></td>
@@ -330,9 +330,9 @@ Data which doesn't change very often is included in a `/config` namespace. This 
             <td>/adm/prog/2/template/version 3.2.1</td>
             <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
-        <td>/format</td>
+        <td>/level</td>
             <td>int</td>
-            <td>see table</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
