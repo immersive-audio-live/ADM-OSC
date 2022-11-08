@@ -1,7 +1,7 @@
 # ADM-OSC
 An industry initiative for standardization of Object Based Audio (OBA) positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
 
-## Current Specification
+## [Current Specification](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/ADM-OSC_0.5.md) (draft 0.5)
 
 ## Project Originators
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
@@ -19,8 +19,6 @@ An industry initiative for standardization of Object Based Audio (OBA) positioni
 - Space Controller (Sound Particles)
 - Modulo Kinetic (Modulo Pi)
 - Iosono (Barco)
-
----
 
 ## Context
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
