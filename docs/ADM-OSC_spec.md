@@ -1,3 +1,7 @@
+layout: page
+title: "ADM-OSC Spec"
+permalink: https://github.com/immersive-audio-live/ADM-OSC/
+
 # ADM-OSC Draft v0.5
 All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
 
