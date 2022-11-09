@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        table, td, th {
+          border: 1px solid;
+        }
+
+        th {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+        table {
+          border-collapse: collapse;
+        }
+
+        tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+</head>
 <body>
 
-    # ADM-OSC Draft v0.5
-    All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
+    <h1>ADM-OSC Draft v0.5</h1>
+    <p>All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.</p>
     
-    ## Dynamic messages
-    Dynamic messages, such as object postions, have the potential to change rapidly over the course of a program. They exist in a separate namespace so they can be prioritized for maximum temporal accuracy.
+    <h2>Dynamic messages</h2> 
+    <p>Dynamic messages, such as object postions, have the potential to change rapidly over the course of a program. They exist in a separate namespace so they can be prioritized for maximum temporal accuracy.</p>
     
-    ### Dynamic messages for objects &mdash; polar coordinates
+    <h3>Dynamic messages for objects &mdash; polar coordinates</h3> 
     
     <table>
         <thead>
@@ -127,7 +145,7 @@
         </tbody>
     </table>
     
-    ### Dynamic messages for objects &mdash; cartesian coordinates
+    <h3>Dynamic messages for objects &mdash; cartesian coordinates</h3>
     
     <table>
         <thead>
@@ -231,11 +249,11 @@
         </tbody>
     </table>
     
-    ## Static messages
+    <h2>Static messages</h2>
     
     Data which doesn't change very often is included in a `/config` namespace. This lets a receiver know that timing is not critical and the message can be handled at a lower priority.
     
-    ### static object messages
+    <h3>static object messages</h3>
     
     <table>
         <thead>
@@ -315,7 +333,7 @@
          </tbody>
     </table>  
     
-    #### Bed format values
+    <h4>Bed format values</h4>
     <table>
         <thead>
             <tr>
@@ -355,7 +373,7 @@
         </tbody>
     </table>
     
-    ### Static programme messages
+    <h3>Static programme messages</h3>
     
     <table>
         <thead>
