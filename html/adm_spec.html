@@ -19,7 +19,6 @@
     </style>
 </head>
 <body>
-
     <h1>ADM-OSC Draft v0.5</h1>
     <p>All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.</p>
     
@@ -44,7 +43,7 @@
         </thead>
         <tbody>
             <tr>
-            <td rowspan=8>/adm</td>
+            <td rowspan=9>/adm</td>
                 <td rowspan=6>/obj/<i>(object number)</i></td>
                 <td>/azim</td>
                 <td>float</td>
@@ -109,7 +108,7 @@
                 <td bgcolor="LightGreen">stable v0.4</td>
             </tr>
              <tr>
-                <td rowspan=2>/prog/<i>(program number)</i>/obj/<i>(object number)</i></td>
+                <td rowspan=3>/prog/<i>(program number)</i>/obj/<i>(object number)</i></td>
                 <td>/azim</td>
                 <td>float</td>
                 <td>degrees</td>
@@ -258,7 +257,7 @@
     <table>
         <thead>
             <tr>
-                <th colspan=4>osc address</th>
+                <th colspan=3>osc address</th>
                 <th>type</th>
                 <th>units</th>
                 <th>min</th>
@@ -270,8 +269,7 @@
         </thead>
         <tbody>
             <tr>
-                <td rowspan=8>/adm</td>
-                <td rowspan=6>/config</td>
+                <td rowspan=8>/adm/config</td>
                 <td rowspan=3>/obj/<i>(object number)</i></td>
                 <td>/cartesian</td>
                 <td>int</td>
