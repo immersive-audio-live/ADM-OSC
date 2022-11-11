@@ -43,7 +43,7 @@
         </thead>
         <tbody>
             <tr>
-                <td rowspan=10>/adm/obj/<i>n</i></td>
+                <td rowspan=11>/adm/obj/<i>n</i></td>
                 <td>/azim</td>
                 <td>float</td>
                 <td>degrees</td>
@@ -83,6 +83,17 @@
                 <td>compact format enables synchronicity of position changes and also less network traffic</td>
                 <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
                 <td bgcolor="LightGreen">stable v0.4</td>
+            </tr>
+            <tr>
+                <td>/widthDeg</td>
+                <td>float</td>
+                <td>degrees</td>
+                <td>0.0</td>
+                <td>180.0</td>
+                <td>0.0</td>
+                <td>horizontal extent in degrees. See also /w</td>
+                <td>/adm/obj/3/widthDeg 45.2</td>
+                <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
             </tr>
             <tr>
                 <td>/x</td>
@@ -129,12 +140,12 @@
             <tr>
                 <td>/w</td>
                 <td>float</td>
-                <td>degrees</td>
+                <td>normalized</td>
                 <td>0.0</td>
-                <td>180.0</td>
+                <td>1.0</td>
                 <td>0.0</td>
-                <td>horizontal extent</td>
-                <td>/adm/obj/3/w 45.2</td>
+                <td>horizontal extent in normalized units</td>
+                <td>/adm/obj/3/w 0.2</td>
                 <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
             </tr>
             <tr>
@@ -150,28 +161,25 @@
             </tr>
         </tbody>
     </table>
+
     <h3>static</h3>
     <table>
         <thead>
-            <tr>
-                <th colspan=2>osc address</th>
-                <th>type</th>
-                <th>units</th>
-                <th>min</th>
-                <th>max</th>
-                <th style="width:100px">default</th>
-                <th style="width:500px">description</th>
-                <th style="width:300px">example</th>
-                <th style="width:300px">status</th>
-            </tr>
+        <tr>
+            <th colspan=2>osc address</th>
+            <th>type</th>
+            <th>units</th>
+            <th style="width:100px">default</th>
+            <th style="width:500px">description</th>
+            <th style="width:300px">example</th>
+            <th style="width:300px">status</th>
+        </tr>
         </thead>
         <tbody>
             <tr>
                 <td rowspan=10>/adm/config/obj/<i>n</i></td>
                 <td>/chan</td>
                 <td>int</td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td>1</td>
                 <td><b>ADM:</b>ADM mapped to the wavefile chna data chunk. <b>S-ADM:</b> mapped to the listed elements and attributes.</td>
@@ -181,9 +189,7 @@
             <tr>
                 <td>/cartesian</td>
                 <td>int</td>
-                <td>true/false</td>
-                <td>0</td>
-                <td>1</td>
+                <td>0/1</td>
                 <td>0</td>
                 <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
                 <td>/adm/config/obj/1/cartesian 0</td>
@@ -193,50 +199,42 @@
                 <td>/name</td>
                 <td>symbol</td>
                 <td></td>
-                <td></td>
-                <td></td>
                 <td>'Content_n'</td>
                 <td>audioContentName, where ‘n’ is the object index value</td>
                 <td></td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
-            </tr>
-            <td>/lang</td>
+            </tr>            
+            <tr>
+                <td>/lang</td>
                 <td>symbol</td>
                 <td>ISO 639-1?</td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td>Used for local language labeling</td>
                 <td>/adm/config/obj/3/lang FR</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
             </tr>
+            <tr>
                 <td>/type</td>
                 <td>symbol</td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td>'O'</td>
                 <td>dialog content kind</td>
                 <td>/adm/config/obj/3/type AO</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
             </tr>
-            </tr>
-            <td>/gain</td>
-            <td>float</td>
-            <td>dB</td>
-            <td></td>
-            <td></td>
-            <td>0.0</td>
-            <td>Depending upon the template being used, gain is mapped to either an individual audio channel or a higher-level object (which could reference a number of audio channels)</td>
-            <td>/adm/config/obj/3/gain -6.0</td>
-            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+            <tr>
+                <td>/gain</td>
+                <td>float</td>
+                <td>dB</td>
+                <td>0.0</td>
+                <td>Depending upon the template being used, gain is mapped to either an individual audio channel or a higher-level object (which could reference a number of audio channels)</td>
+                <td>/adm/config/obj/3/gain -6.0</td>
+                <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
             </tr>
             <tr>
                 <td>/absdistance</td>
                 <td>float</td>
                 <td>meters</td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td>Distance signified by a normalized value of 1</td>
                 <td>/adm/config/obj/1/absdistance 21.3</td>
@@ -246,8 +244,6 @@
                 <td>/refdistance</td>
                 <td>float</td>
                 <td>normalized</td>
-                <td>0.0</td>
-                <td>1.0</td>
                 <td>1.0</td>
                 <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
                 <td>/adm/config/obj/1/refdistance 0.2</td>
@@ -311,7 +307,7 @@
     <table>
         <thead>
             <tr>
-                <th colspan=3>osc address</th>
+                <th colspan=2>osc address</th>
                 <th>type</th>
                 <th>units</th>
                 <th>min</th>
@@ -324,8 +320,7 @@
         </thead>
         <tbody>
         <tr>
-            <td rowspan=3>/adm/config/obj/<i>n</i></td>
-            <td rowspan=3>/virt</td>
+            <td rowspan=3>/adm/config/obj/<i>n</i>/virt</td>
             <td>/bypass</td>
             <td>int</td>
             <td>true/false</td>
@@ -421,7 +416,7 @@
             <td>dB</td>
             <td></td>
             <td></td>
-            <td>1.0</td>
+            <td>0.0</td>
             <td></td>
             <td>/adm/config/bed/1/gain -3.2</td>
             <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
@@ -477,8 +472,6 @@
                 <th colspan=2>osc address</th>
                 <th>type</th>
                 <th>units</th>
-                <th>min</th>
-                <th>max</th>
                 <th width="500px">description</th>
                 <th width="300px">example</th>
                 <th>status</th>
@@ -488,12 +481,8 @@
             <tr>
                 <td rowspan=3>/adm/config/template</td>
                 <td>/name</td>
-
                 <td>symbol</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td></td>             
                 <td rowspan="3">The template applies to all metadata compositions in the current preset path</td>
                 <td>/adm/prog/2/template/name "English AD"</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
@@ -502,18 +491,11 @@
                 <td>/version</td>
                 <td>symbol</td>
                 <td>x.x.x</td>
-                <td></td>
-                <td></td>
-                <td></td>
                 <td>/adm/prog/2/template/version 3.2.1</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
             </tr>
                 <td>/level</td>
                 <td>int</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            
                 <td></td>
                 <td>/adm/prog/2/template/format 23</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
@@ -530,8 +512,7 @@
             <th colspan=3>osc address</th>
             <th>type</th>
             <th>units</th>
-            <th>min</th>
-            <th>max</th>
+            <th>default</th>
             <th width="500px">description</th>
             <th width="300px">example</th>
             <th>status</th>
@@ -544,7 +525,6 @@
             <td>symbol</td>
             <td>x.x.x</td>
             <td></td>
-            <td></td>
             <td>The specification version that the ADM-OSC is compliant with</td>
             <td>/adm/config/version 0.5.0</td>
             <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
@@ -552,7 +532,6 @@
         <tr>
             <td colspan=2>/dprst</td>
             <td>int</td>
-            <td></td>
             <td></td>
             <td>1</td>
             <td>Shorthand mode specifies base preset</td>
@@ -563,7 +542,6 @@
             <td colspan=2>/dprog</td>
             <td>int</td>
             <td></td>
-            <td></td>
             <td>1</td>
             <td>Shorthand mode specifies base programme</td>
             <td>/adm/config/dprog 1</td>
@@ -573,7 +551,6 @@
             <td rowspan=4>/adm/prog/<i>n</i>/config</td>
             <td colspan=2>/name</td>
             <td>symbol</td>
-            <td></td>
             <td></td>
             <td>'Programme_n'</td>
             <td>Where n is the programme index value</td>
@@ -591,13 +568,10 @@
             <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
         </tr>
         </tr>
-        
-       
         <tr>
             <td rowspan="2">/label/<i>n</i></td>
             <td>/name</td>
             <td>symbol</td>
-            <td></td>
             <td></td>
             <td>'und'</td>
             <td>Used for local language labeling</td>
@@ -608,7 +582,6 @@
             <td>/lang</td>
             <td>symbol</td>
             <td>ISO 639-1?</td>
-            <td></td>
             <td>'und'</td>
             <td>audioProgrammeLabel</td>
             <td>/adm/prog/3/config/label/3/lang FR</td>
