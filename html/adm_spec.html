@@ -167,7 +167,7 @@
         </thead>
         <tbody>
             <tr>
-                <td rowspan=10>/adm/config/obj/<i>n</i>/</td>
+                <td rowspan=10>/adm/config/obj/<i>n</i></td>
                 <td>/chan</td>
                 <td>int</td>
                 <td></td>
@@ -324,7 +324,7 @@
         </thead>
         <tbody>
         <tr>
-            <td rowspan=3>/adm/config/obj/<i>n</i>/</td>
+            <td rowspan=3>/adm/config/obj/<i>n</i></td>
             <td rowspan=3>/virt</td>
             <td>/bypass</td>
             <td>int</td>
@@ -505,7 +505,6 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
                 <td>/adm/prog/2/template/version 3.2.1</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
             </tr>
@@ -514,7 +513,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+            
                 <td></td>
                 <td>/adm/prog/2/template/format 23</td>
                 <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
@@ -524,12 +523,99 @@
     </table> 
     <h2>Programme messages</h2>
 
-<h2>General /config</h2>
+<h2>General and Programme <code>/config</code></h2>
+<table>
+    <thead>
+        <tr>
+            <th colspan=3>osc address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th width="500px">description</th>
+            <th width="300px">example</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=3>/adm/config/template</td>
+            <td colspan=2>/version</td>
+            <td>symbol</td>
+            <td>x.x.x</td>
+            <td></td>
+            <td></td>
+            <td>The specification version that the ADM-OSC is compliant with</td>
+            <td>/adm/config/version 0.5.0</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td colspan=2>/dprst</td>
+            <td>int</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>Shorthand mode specifies base preset</td>
+            <td>/adm/config/dprst 1</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td colspan=2>/dprog</td>
+            <td>int</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>Shorthand mode specifies base programme</td>
+            <td>/adm/config/dprog 1</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>/adm/prog/<i>n</i>/config</td>
+            <td colspan=2>/name</td>
+            <td>symbol</td>
+            <td></td>
+            <td></td>
+            <td>'Programme_n'</td>
+            <td>Where n is the programme index value</td>
+            <td>/adm/prog/3/config/name 'Programme_3</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td colspan=2>/lang</td>
+            <td>symbol</td>
+            <td>ISO 639-1?</td>
+            <td></td>
+            <td>'und'</td>
+            <td>audioProgrammeLanguage</td>
+            <td>/adm/prog/3/config/lang FR</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        </tr>
+        
+       
+        <tr>
+            <td rowspan="2">/label/<i>n</i></td>
+            <td>/name</td>
+            <td>symbol</td>
+            <td></td>
+            <td></td>
+            <td>'und'</td>
+            <td>Used for local language labeling</td>
+            <td>/adm/prog/3/config/label/2/name</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+        <tr>
+            <td>/lang</td>
+            <td>symbol</td>
+            <td>ISO 639-1?</td>
+            <td></td>
+            <td>'und'</td>
+            <td>audioProgrammeLabel</td>
+            <td>/adm/prog/3/config/label/3/lang FR</td>
+            <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+        </tr>
+    </tbody>
+</table>
 
-    <h3>Questions</h3>
-    <ul>
-    <li>Width: cartesian vs polar?</li>
-    <li>Virtualization: Bypass vs hlock? -- solved</li>
-    </ul>
 </body>
 </html>
