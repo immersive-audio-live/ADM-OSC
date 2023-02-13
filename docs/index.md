@@ -1,5 +1,5 @@
 # ADM-OSC
-An industry initiative for standardization of Object Based Audio (OBA) positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
+An industry initiative for standardization of Object Based Audio (OBA) positioning data in live production ecosystems by implementing the [Audio Definition Model (ADM)](https://adm.ebu.io/) over [Open Sound Control (OSC)](https://opensoundcontrol.stanford.edu/).
 
 ## [Current Specification](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/ADM-OSC_spec.md) (draft 0.5)
 
