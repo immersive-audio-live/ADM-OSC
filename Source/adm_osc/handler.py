@@ -51,29 +51,33 @@ def extract_indexes(idx: str):
     idx = idx.replace('(', '[').replace(')', ']')
 
     if idx.startswith('[') and idx.endswith(']'):
-        # remove brackets
-        indexes = idx[1:-1]
-
-        # if 1 "-" founded it should be a range
-        if indexes.count('-') == 1:
-            indexes = indexes.split('-')
-            if len(indexes) == 2:
-                return {'from': int(indexes[0]), 'to': int(indexes[1])}
-
-        # if "," founded, it should be multiple index values
-        indexes = indexes.replace('-', ',').replace(' ', '').strip()
-        if indexes.startswith(','):
-            indexes = indexes[1:]
-        if indexes.endswith(','):
-            indexes = indexes[:-1]
-
-        indexes = indexes.split(',')
-        return [int(i) for i in indexes]
-
+        return _extracted_from_extract_indexes_20(idx)
     else:
         # no range or multiple value found !
         # so, consider single object value and just convert it to int
         return int(idx)
+
+
+# TODO Rename this here and in `extract_indexes`
+def _extracted_from_extract_indexes_20(idx):
+    # remove brackets
+    indexes = idx[1:-1]
+
+    # if 1 "-" founded it should be a range
+    if indexes.count('-') == 1:
+        indexes = indexes.split('-')
+        if len(indexes) == 2:
+            return {'from': int(indexes[0]), 'to': int(indexes[1])}
+
+    # if "," founded, it should be multiple index values
+    indexes = indexes.replace('-', ',').replace(' ', '').strip()
+    if indexes.startswith(','):
+        indexes = indexes[1:]
+    if indexes.endswith(','):
+        indexes = indexes[:-1]
+
+    indexes = indexes.split(',')
+    return [int(i) for i in indexes]
 
 
 #   _                     _ _
@@ -102,7 +106,7 @@ def adm_handler(address, *args):
 
     # 2
     target = it[2]
-    if target != 'obj' and target != 'setup':
+    if target not in ['obj', 'setup']:
         raise ValueError(f'ERROR: unrecognized ADM address : "{address}" ! unknown target "/{target}/"')
 
     # 3
@@ -116,7 +120,11 @@ def adm_handler(address, *args):
 
     # filter touch / release messages for now !!!
     # TODO: check with ADM-OSC group how we want to handle this
-    is_touch_release = len(args) == 1 and type(args[0]) is str and (args[0] == 'touch' or args[0] == 'release')
+    is_touch_release = (
+        len(args) == 1
+        and type(args[0]) is str
+        and args[0] in ['touch', 'release']
+    )
 
     if not is_touch_release:
 
@@ -148,7 +156,7 @@ def adm_handler(address, *args):
             elif val > _max:
                 arguments_errors.append(f'argument {i} "{val}" out of range ! it should be less or equal than "{_max}"')
 
-        if len(arguments_errors) > 0:
+        if arguments_errors:
             errors = f'ERROR: arguments are malformed for "{address} :: {args}":\n'
             for error in arguments_errors:
                 errors += f'\t{error}\n'

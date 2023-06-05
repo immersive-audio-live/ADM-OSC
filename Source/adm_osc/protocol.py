@@ -206,9 +206,7 @@ class PackedParameters(Parameter):
 
     def osc_format(self) -> str:
         cmd = object_message(object_number='(k)', command=self.osc_command)
-        param_types = ''
-        for param in self.params:
-            param_types += f'{param.type.as_osc_string()}'
+        param_types = ''.join(f'{param.type.as_osc_string()}' for param in self.params)
         return f'{cmd} {param_types}'
 
     def osc_example(self, values: list[Union[int, float, str, None]] = None) -> str:
@@ -264,10 +262,14 @@ def get_in_progress_parameters() -> Generator[Any, Any, None]:
 
 
 def find_parameter(attribute: str) -> Union[Parameter, PackedParameters, None]:
-    for param in get_all_parameters():
-        if param.attribute == attribute:
-            return param
-    return None
+    return next(
+        (
+            param
+            for param in get_all_parameters()
+            if param.attribute == attribute
+        ),
+        None,
+    )
 
 
 #              _       _               _        _
@@ -277,8 +279,5 @@ def find_parameter(attribute: str) -> Union[Parameter, PackedParameters, None]:
 #  | .__/|_|  |_|_| |_|\__|  \___\__,_|\__\__,_|_|\___/ \__, |
 #  |_|                                                  |___/
 def dump_protocol() -> str:
-    text = ''
-    for param in get_all_parameters():
-        text += f'{param}\n\n'
-    return text
+    return ''.join(f'{param}\n\n' for param in get_all_parameters())
 

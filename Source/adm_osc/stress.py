@@ -71,7 +71,7 @@ class StressClient(TestClient):
         azimuth = 180
         elevation = 0.0
         elevation_fact = 0.5
-        distance = 1.0
+        distance = 0.5
         phase = 1.0
         interval = interval_in_milliseconds / 1000.0
 
@@ -79,8 +79,8 @@ class StressClient(TestClient):
             for obj in range(number_of_objects):
                 obj_num = (obj + 1)
                 a_ = azimuth
-                e_ = 0.0
-                d_ = 0.5
+                e_ = elevation
+                d_ = distance
                 self.send_object_polar_position(obj_num, [a_, e_, d_])
 
             azimuth -= 1.0
