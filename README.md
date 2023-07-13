@@ -54,7 +54,8 @@ See Issues.
 
 + [**Specifications**](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx)
 
-
++ [Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware with OSC protocol.
+  
 + Tester **Desktop application** (Jose Gaudin / Meyer Sound)
   + [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
   
