@@ -72,7 +72,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan=6>/adm/obj/<i>n</i></td>
+                        <td rowspan=6>/adm/obj/<span style="font-style:italic">n</i></td>
                         <td>/azim</td>
                         <td>float</td>
                         <td>degrees</td>
@@ -255,26 +255,28 @@
                         <td bgcolor="LightGreen">stable v0.4</td>
                     </tr>
                     <tr>
-                        <td>/absdistance</td>
+                        <td>/dMax</td>
                         <td>float</td>
                         <td>meters</td>
                         <td>0.</td>
                         <td></td>
                         <td></td>
-                        <td>Distance signified by a normalized value of 1</td>
-                        <td>/adm/config/obj/1/absdistance 21.3</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td>Distance signified by a normalized dRef value of 1</td>
+                        <td>/adm/config/obj/1/dMax 21.3</td>
+                        <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
+                            progress</a></td>
                     </tr>
                     <tr>
-                        <td>/refdistance</td>
+                        <td>/dRef</td>
                         <td>float</td>
                         <td>normalized</td>
                         <td>0.0</td>
                         <td>1.0</td>
                         <td>1.0</td>
                         <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
-                        <td>/adm/config/obj/1/refdistance 0.2</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td>/adm/config/obj/1/dRef 0.2</td>
+                        <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
+                            progress</a></td>
                     </tr>
                 </tbody>
             </table>
