@@ -1,8 +1,8 @@
 # ADM-OSC
 An industry initiative for standardization of Object Based Audio (OBA) positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
 
-## 0.4 specification
-## [0.5 draft specification](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html) 
+## [0.4 specification](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html) 
+## [0.5 draft specification](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) 
 
 ## Project Originators
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
