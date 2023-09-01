@@ -54,6 +54,7 @@
         <section id="main_content" class="inner">
 
             <h1>ADM-OSC v0.4</h1>
+            <h2>polar position messages</h2>
 
             <table>
                 <thead>
@@ -71,7 +72,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan=13>/adm/obj/<i>n</i></td>
+                        <td rowspan=6>/adm/obj/<i>n</i></td>
                         <td>/azim</td>
                         <td>float</td>
                         <td>degrees</td>
@@ -125,6 +126,37 @@
                                 progress</a></td>
                     </tr>
                     <tr>
+                        <td>/gain</td>
+                        <td>float</td>
+                        <td>linear</td>
+                        <td>0.</td>
+                        <td></td>
+                        <td>1.0</td>
+                        <td>Apply a gain to the audio in the object.</td>
+                        <td>/adm/obj/3/gain 0.707</td>
+                        <td bgcolor="LightGreen">stable v0.4</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Cartiesian position messages</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan=2>osc address</th>
+                        <th>type</th>
+                        <th>units</th>
+                        <th>min</th>
+                        <th>max</th>
+                        <th style="width:100px">default</th>
+                        <th style="width:500px">description</th>
+                        <th style="width:300px">example</th>
+                        <th style="width:300px">status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan=6>/adm/obj/<i>n</i></td>
                         <td>/x</td>
                         <td>float</td>
                         <td>normalized</td>
