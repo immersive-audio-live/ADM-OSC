@@ -8,7 +8,7 @@ An industry initiative for standardization of Object Based Audio (OBA) positioni
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 ## Project Contributors
-[BBC](https://www.bbc.com/), [d&b Audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+[Adamson Systems Engineering](http://www.adamsonsystems.com/), [BBC](https://www.bbc.com/), [d&b Audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
 ## Currently supported in
 - SPAT Revolution (FLUX::SE)
@@ -20,6 +20,7 @@ An industry initiative for standardization of Object Based Audio (OBA) positioni
 - Space Controller (Sound Particles)
 - Modulo Kinetic (Modulo Pi)
 - Iosono (Barco)
+- FletcherMachine (Adamson Systems Engineering)
 
 ## Context
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
