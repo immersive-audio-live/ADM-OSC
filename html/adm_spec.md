@@ -28,7 +28,7 @@
             <td>-</td>
             <td><b>azimuth</b> “theta - &#952;” of sound location. -90 is on the Right, 0 is in front.</td>
             <td>/adm/obj/4/azim -22.5</td>
-            <td bgcolor="LightGreen">stable v0.4</td>
+            <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
             <td>/elev</td>
@@ -39,7 +39,7 @@
             <td>-</td>
             <td><b>elevation</b> “phi - &#632;” of sound location</td>
             <td>/adm/obj/4/elev 12.7</td>
-            <td bgcolor="LightGreen">stable v0.4</td>
+            <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
             <td>/dist</td>
@@ -50,7 +50,7 @@
             <td>1.0</td>
             <td><b>distance</b> “r” from origin</td>
             <td>/adm/obj/4/dist 0.9</td>
-            <td bgcolor="LightGreen">stable v0.4</td>
+            <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
             <td>/aed</td>
@@ -58,7 +58,7 @@
             <td colspan=4>see above</td>
             <td>compact format enables synchronicity of position changes and also less network traffic</td>
             <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
-            <td bgcolor="LightGreen">stable v0.4</td>
+            <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
             <td>/widthDeg</td>
@@ -69,7 +69,7 @@
             <td>0.0</td>
             <td>horizontal extent in degrees. See also /w</td>
             <td>/adm/obj/3/widthDeg 45.2</td>
-            <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
+            <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
         </tr>
         <tr>
             <td>/gain</td>
@@ -80,7 +80,7 @@
             <td>1.0</td>
             <td>Apply a gain to the audio in the object.</td>
             <td>/adm/obj/3/gain 0.707</td>
-            <td bgcolor="LightGreen">stable v0.4</td>
+            <td class="stable"">stable v0.4</td>
         </tr>
     </tbody>
 </table>
@@ -112,7 +112,7 @@
             <td>0.0</td>
             <td>left/right dimension. -1 is left</td>
             <td>/adm/obj/4/x -0.9</td>
-            <td bgcolor="LightGreen">stable v0.4</td>
+            <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
                         <td>/y</td>
@@ -123,7 +123,7 @@
                         <td>0.0</td>
                         <td>front/back dimension</td>
                         <td>/adm/obj/4/y 0.15</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
+                        <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
                         <td>/z</td>
@@ -134,7 +134,7 @@
                         <td>0.0</td>
                         <td>top/bottom dimension</td>
                         <td>/adm/obj/4/z 0.7</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
+                        <td class="stable"">stable v0.4</td>
         </tr>
         <tr>
                         <td>/xyz</td>
@@ -142,7 +142,7 @@
                         <td colspan=4>see above</td>
                         <td>compact format enables synchronicity of position changes and also less network traffic</td>
                         <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
+                        <td class="stable">stable v0.4</td>
         </tr>
         <tr>
                         <td>/w</td>
@@ -153,7 +153,7 @@
                         <td>0.0</td>
                         <td>horizontal extent in normalized units</td>
                         <td>/adm/obj/3/w 0.2</td>
-                        <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
+                        <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
                                 progress</a></td>
         </tr>
         <tr>
@@ -175,7 +175,7 @@
 <table>
     <thead bgcolor="Green">
         <tr>
-            <th colspan=2osc address</th>
+            <th colspan=2>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -198,7 +198,7 @@
                         <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are
                             used.</td>
                         <td>/adm/config/obj/1/cartesian 0</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
+                        <td class="stable"">stable v0.4</td>
                     </tr>
                     <tr>
                         <td>/dMax</td>
@@ -209,7 +209,7 @@
                         <td></td>
                         <td>Distance signified by a normalized dRef value of 1</td>
                         <td>/adm/config/obj/1/dMax 21.3</td>
-                        <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
+                        <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a></td>
         </tr>
         <tr>
@@ -221,7 +221,7 @@
                         <td>1.0</td>
                         <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
                         <td>/adm/config/obj/1/dRef 0.2</td>
-                        <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
+                        <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a></td>
         </tr>
     </tbody>
