@@ -88,17 +88,17 @@
 ## Cartiesian position messages
 
 <table>
-    <thead bgcolor="Green" style="color:#FFFF00">
+    <thead>
         <tr>
-            <th colspan=2 style="color:#FFFFFF">osc address</th>                  
-            <th style="color:#FFFFFF">type</th>
-            <th style="color:#FFFFFF">units</th>
-            <th style="color:#FFFFFF">min</th>
-            <th style="color:#FFFFFF">max</th>
-            <th style="color:#FFFFFF">default</th>
-            <th style="color:#FFFFFF">description</th>
-            <th style="color:#FFFFFF">example</th>
-            <th style="color:#FFFFFF">status</th>
+            <th colspan=2>osc address</th>                  
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+            <th>example</th>
+            <th>status</th>
         </tr>
     </thead>
     <tbody>
@@ -165,7 +165,7 @@
                         <td>1.0</td>
                         <td>Apply a gain to the audio in the object.</td>
                         <td>/adm/obj/3/gain 0.707</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
+                        <td class="stable">stable v0.4</td>
         </tr>
     </tbody>
 </table>
@@ -175,15 +175,15 @@
 <table>
     <thead bgcolor="Green">
         <tr>
-            <th colspan=2><font color="white">osc address</font></th>
-            <th style="color:#FFFFFF">type</th>
-            <th style="color:#FFFFFF">units</th>
-            <th style="color:#FFFFFF">min</th>
-            <th style="color:#FFFFFF">max</th>
-            <th style="color:#FFFFFF">default</th>
-            <th style="color:#FFFFFF">description</th>
-            <th style="color:#FFFFFF">example</th>
-            <th style="color:#FFFFFF">status</th>
+            <th colspan=2osc address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+            <th>example</th>
+            <th>status</th>
         </tr>
     </thead>
     <tbody>
