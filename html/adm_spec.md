@@ -173,10 +173,10 @@
 ## configuration messages
 
 <table>
-    <thead bgcolor="Green" style="color:#FFFFFF">
+    <thead bgcolor="Green" style="color:White">
         <tr>
-                        <th colspan=2>osc address</th>
-                        <th>type</th>
+                       <th colspan=2>osc address</th>
+                        <th> <font color="Blue">type</font></th>
                         <th>units</th>
                         <th>min</th>
                         <th>max</th>
