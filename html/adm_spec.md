@@ -69,7 +69,7 @@
             <td>0.0</td>
             <td>horizontal extent in degrees. See also /w</td>
             <td>/adm/obj/3/widthDeg 45.2</td>
-            <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
+            <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
         </tr>
         <tr>
             <td>/gain</td>
@@ -153,7 +153,7 @@
                         <td>0.0</td>
                         <td>horizontal extent in normalized units</td>
                         <td>/adm/obj/3/w 0.2</td>
-                        <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
+                        <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
                                 progress</a></td>
         </tr>
         <tr>
@@ -209,7 +209,7 @@
                         <td></td>
                         <td>Distance signified by a normalized dRef value of 1</td>
                         <td>/adm/config/obj/1/dMax 21.3</td>
-                        <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
+                        <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a></td>
         </tr>
         <tr>
@@ -221,7 +221,7 @@
                         <td>1.0</td>
                         <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
                         <td>/adm/config/obj/1/dRef 0.2</td>
-                        <tdclass="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
+                        <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a></td>
         </tr>
     </tbody>
