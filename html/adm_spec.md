@@ -4,7 +4,7 @@
 ## polar position messages
 
 <table>
-    <thead>
+    <thead bgcolor="Green" style="color:#FFFFFF">
         <tr>
             <th colspan=2>osc address</th>
             <th>type</th>
@@ -22,8 +22,8 @@
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
-            <td>-180.</td>
-            <td>180.</td>
+            <td>-180.0</td>
+            <td>180.0</td>
             <td>-</td>
             <td><b>azimuth</b> “theta - &#952;” of sound location. -90 is on the Right, 0 is in front.</td>
             <td>/adm/obj/4/azim -22.5</td>
@@ -33,8 +33,8 @@
             <td>/elev</td>
             <td>float</td>
             <td>degrees</td>
-            <td>-90.</td>
-            <td>90.</td>
+            <td>-90.0</td>
+            <td>90.0</td>
             <td>-</td>
             <td><b>elevation</b> “phi - &#632;” of sound location</td>
             <td>/adm/obj/4/elev 12.7</td>
@@ -87,7 +87,7 @@
 ## Cartiesian position messages
 
 <table>
-    <thead>
+    <thead bgcolor="Green" style="color:#FFFFFF">
         <tr>
             <th colspan=2>osc address</th>                  
             <th>type</th>
@@ -100,9 +100,9 @@
             <th style="width:300px">status</th>
         </tr>
     </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan=6>/adm/obj/<i>n</i></td>
+    <tbody>
+        <tr>
+            <td rowspan=6>/adm/obj/<i>n</i></td>
                         <td>/x</td>
                         <td>float</td>
                         <td>normalized</td>
@@ -173,8 +173,8 @@
 ## configuration messages
 
 <table>
-                <thead>
-                    <tr>
+    <thead bgcolor="Green" style="color:#FFFFFF">
+        <tr>
                         <th colspan=2>osc address</th>
                         <th>type</th>
                         <th>units</th>
