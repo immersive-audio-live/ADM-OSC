@@ -3,10 +3,6 @@
 
 ## polar position messages
 
-<style>
-  .tr { background-color: lightblue; }
-</style>
-
 <table>
     <thead bgcolor="Green">
         <tr>
@@ -90,3 +86,33 @@
 </table>
 
 ## Cartiesian position messages
+
+<table>
+    <thead bgcolor="Green" style="color:#FFFF00">
+        <tr>
+            <th colspan=2 style="color:#FFFFFF">osc address</th>                  
+            <th style="color:#FFFFFF">type</th>
+            <th style="color:#FFFFFF">units</th>
+            <th style="color:#FFFFFF">min</th>
+            <th style="color:#FFFFFF">max</th>
+            <th style="color:#FFFFFF">default</th>
+            <th style="color:#FFFFFF">description</th>
+            <th style="color:#FFFFFF">example</th>
+            <th style="color:#FFFFFF">status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=6>/adm/obj/<i>n</i></td>
+            <td>/x</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>left/right dimension. -1 is left</td>
+            <td>/adm/obj/4/x -0.9</td>
+            <td bgcolor="LightGreen">stable v0.4</td>
+        </tr>
+    </tbody>
+</table>
