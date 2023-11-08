@@ -166,7 +166,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td><b>ADM:</b>ADM mapped to the wavefile chna data chunk. <b>S-ADM:</b> mapped to the listed
                             elements and attributes.</td>
                         <td>/adm/obj/4/azim -22.5</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/cartesian</td>
@@ -185,7 +185,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'Content_n'</td>
                         <td>audioContentName, where ‘n’ is the object index value</td>
                         <td></td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/lang</td>
@@ -194,7 +194,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td></td>
                         <td>Used for local language labeling</td>
                         <td>/adm/config/obj/3/lang FR</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/type</td>
@@ -203,7 +203,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'O'</td>
                         <td>dialog content kind</td>
                         <td>/adm/config/obj/3/type AO</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/gain</td>
@@ -213,7 +213,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>Depending upon the template being used, gain is mapped to either an individual audio channel
                             or a higher-level object (which could reference a number of audio channels)</td>
                         <td>/adm/config/obj/3/gain -6.0</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/absdistance</td>
@@ -222,7 +222,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td></td>
                         <td>Distance signified by a normalized value of 1</td>
                         <td>/adm/config/obj/1/absdistance 21.3</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/refdistance</td>
@@ -231,7 +231,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>1.0</td>
                         <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
                         <td>/adm/config/obj/1/refdistance 0.2</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                 </tbody>
 </table>
@@ -315,7 +315,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>Specifies whether the object should be virtualised using a headphone virtualiser or not
                             (1=render to stereo, 0=render with headphone virtualiser)</td>
                         <td></td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/drr</td>
@@ -326,7 +326,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>130.0</td>
                         <td>Direct to Reverberant Ratio in dB.</td>
                         <td></td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/hlock</td>
@@ -340,7 +340,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                             element is locked to the
                             head (1) or not (0)</td>
                         <td></td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                 </tbody>
 </table>
@@ -375,7 +375,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>1</td>
                         <td>Start channel of bed</td>
                         <td>/adm/config/bed/1/chan 1</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/name</td>
@@ -386,7 +386,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'Bed_n'</td>
                         <td>Where ‘n’ is the bed index value</td>
                         <td>/adm/prog/2/bed/1/name "name"</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
         </tr>
         <tr>
                     <td>/layout</td>
@@ -397,7 +397,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                     <td>3</td>
                     <td>Value corresponds to the lower 8 bits of a common definition audioPackFormat.</td>
                     <td>/adm/prog/2/bed/1/layout</td>
-                    <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                    <td class="proposed">proposed v0.5</td>
         </tr>
         <tr>
                 <td>/gain</td>
@@ -408,7 +408,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                     <td>0.0</td>
                     <td></td>
                     <td>/adm/config/bed/1/gain -3.2</td>
-                    <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                    <td class="proposed">proposed v0.5</td>
         </tr>
     </tbody>
 </table>
@@ -478,21 +478,21 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td rowspan="3">The template applies to all metadata compositions in the current preset path
                         </td>
                         <td>/adm/prog/2/template/name "English AD"</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/version</td>
                         <td>symbol</td>
                         <td>x.x.x</td>
                         <td>/adm/prog/2/template/version 3.2.1</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                     <td>/level</td>
                     <td>int</td>
                     <td></td>
                     <td>/adm/prog/2/template/format 23</td>
-                    <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                    <td class="proposed">proposed v0.5</td>
                     </tr>
                 </tbody>
 </table>
@@ -520,7 +520,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td></td>
                         <td>The specification version that the ADM-OSC is compliant with</td>
                         <td>/adm/config/version 0.5.0</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td colspan=2>/dprst</td>
@@ -529,7 +529,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>1</td>
                         <td>Shorthand mode specifies base preset</td>
                         <td>/adm/config/dprst 1</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td colspan=2>/dprog</td>
@@ -538,7 +538,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>1</td>
                         <td>Shorthand mode specifies base programme</td>
                         <td>/adm/config/dprog 1</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td rowspan=4>/adm/prog/<i>n</i>/config</td>
@@ -548,7 +548,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'Programme_n'</td>
                         <td>Where n is the programme index value</td>
                         <td>/adm/prog/3/config/name 'Programme_3</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td colspan=2>/lang</td>
@@ -557,7 +557,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'und'</td>
                         <td>audioProgrammeLanguage</td>
                         <td>/adm/prog/3/config/lang FR</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td rowspan="2">/label/<i>n</i></td>
@@ -567,7 +567,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'und'</td>
                         <td>Used for local language labeling</td>
                         <td>/adm/prog/3/config/label/2/name</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                     <tr>
                         <td>/lang</td>
@@ -576,7 +576,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'und'</td>
                         <td>audioProgrammeLabel</td>
                         <td>/adm/prog/3/config/label/3/lang FR</td>
-                        <td class="proposed"><b>proposed v0.5</b></td>
+                        <td class="proposed">proposed v0.5</td>
                     </tr>
                 </tbody>
 </table>
