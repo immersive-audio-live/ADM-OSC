@@ -4,17 +4,18 @@
 ## polar position messages
 
 <style>
-  .td { background-color: lightblue; }
+  .tr { background-color: lightblue; }
 </style>
 
 <table>
-    <thead bgcolor="Green" style="color:#FFFFFF">
+    <thead bgcolor="Green">
         <tr>
-            <th colspan=2>osc address</th>
-            <th>type</th>
-            <th>units</th>               <th>min</th>
-            <th>max</th>
-            <th style="width:100px">default</th>
+            <th colspan=2 style="color:#FFFFFF">osc address</th>
+            <th style="color:#FFFFFF">type</th>
+            <th style="color:#FFFFFF">units</th>               
+            <th style="color:#FFFFFF">min</th>
+            <th style="color:#FFFFFF">max</th>
+            <th style="color:#FFFFFF" width="10000">default</th>
             <th style="width:500px">description</th>
             <th style="width:300px">example</th>
             <th style="width:300px">status</th>
@@ -93,13 +94,13 @@
 <table>
     <thead bgcolor="Green" style="color:#FFFF00">
         <tr>
-            <th colspan=2>osc address</th>                  
+            <th colspan=2 style="color:#FFFFFF">osc address</th>                  
             <th style="color:#FFFFFF">type</th>
             <th style="color:#FFFFFF">units</th>
             <th style="color:#FFFFFF">min</th>
             <th style="color:#FFFFFF">max</th>
             <th style="color:#FFFFFF; width:100px">default</th>
-            <th style="width:500px">description</th>
+            <th style="width:1000px">description</th>
             <th style="width:300px">example</th>
             <th style="width:300px">status</th>
         </tr>
