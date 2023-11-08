@@ -1,9 +1,12 @@
 # ADM-OSC principals
 
 ### Sender (client)
+
 - Object Editor sending positioning data to one or more receivers.
 - Position data is always normalized
+- 
 ### Receiver (server)
+
 - Handles the (optional) local scaling of normalized data: x, y, z, distance
 - The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
 
@@ -22,7 +25,7 @@ For Cartesian coordinates, values are normalized between -1 and 1. X = 1 is righ
        |                |  
     (-1, -1) ---------(1, -1)  
 
-For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30&deg;. +90$deg; elevation is straight up.
+For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30&deg;. +90&deg; elevation is straight up.
 
 
 ### pol <--> car
