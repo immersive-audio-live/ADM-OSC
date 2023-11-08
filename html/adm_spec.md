@@ -180,10 +180,10 @@
             <th style="color:#FFFFFF">units</th>
             <th style="color:#FFFFFF">min</th>
             <th style="color:#FFFFFF">max</th>
-            <th style="width:100px; color:#FFFFFF">default</th>
-            <th style="width:500px">description</th>
-            <th style="width:300px">example</th>
-            <th style="width:300px">status</th>
+            <th style="color:#FFFFFF">default</th>
+            <th style="color:#FFFFFF">description</th>
+            <th style="color:#FFFFFF">example</th>
+            <th style="color:#FFFFFF">status</th>
         </tr>
     </thead>
     <tbody>
