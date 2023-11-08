@@ -1,2 +1,3 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
+logo_url: https://immersive-audio-live.github.io/ADM-OSC/images/logo.avif
 show_downloads: false
