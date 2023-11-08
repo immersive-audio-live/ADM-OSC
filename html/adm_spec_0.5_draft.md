@@ -1,14 +1,12 @@
 # ADM-OSC Draft v0.5
 
-All messages can be part of a preset. The preset can be enumerated by adding <code>/preset/n</code>
-                before any of the messages below.</p>
+All messages can be part of a preset. The preset can be enumerated by adding `/preset/n` before any of the messages below.
 
-            <hr>
-            <h2>Object messages</h2>
+## Object messages
 
-            <h3>dynamic</h3>
+### dynamic
 
-            <table>
+<table>
                 <thead>
                     <tr>
                         <th colspan=2>osc address</th>
@@ -143,10 +141,11 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                         <td bgcolor="LightGreen">stable v0.4</td>
                     </tr>
                 </tbody>
-            </table>
+</table>
 
-            <h3>static</h3>
-            <table>
+### static
+
+<table>
                 <thead>
                     <tr>
                         <th colspan=2>osc address</th>
@@ -236,10 +235,11 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                         <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
                     </tr>
                 </tbody>
-            </table>
+</table>
 
-            <h3>Object type to ADM dialogue content</h3>
-            <table>
+### Object type to ADM dialogue content
+
+<table>
                 <thead>
                     <tr>
                         <th>type</th>
@@ -288,9 +288,9 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                 </tbody>
             </table>
 
+### virtualization
 
-            <h3>virtualization</h3>
-            <table>
+<table>
                 <thead>
                     <tr>
                         <th colspan=2>osc address</th>
@@ -344,13 +344,13 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                         <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
                     </tr>
                 </tbody>
-            </table>
-            <br>
+</table>
+<br>
 
-            <hr>
-            <h2>Bed messages (static)</h2>
+<hr>
+## Bed messages (static)
 
-            <table>
+<table>
                 <thead>
                     <tr>
                         <th colspan=2>osc address</th>
@@ -409,10 +409,11 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                     <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
                     </tr>
                 </tbody>
-            </table>
+</table>
 
-            <h3>Bed layout values</h3>
-            <table>
+### Bed layout values
+
+<table>
                 <thead>
                     <tr>
                         <th>audioPackFormat</th>
@@ -449,12 +450,13 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                         <td>23</td>
                     </tr>
                 </tbody>
-            </table>
-            <br>
-            <hr>
-            <h2>Template messages (static)</h2>
+</table>
+<br>
+<hr>
 
-            <table>
+## Template messages (static)
+
+<table>
                 <thead>
                     <tr>
                         <th colspan=2>osc address</th>
@@ -491,10 +493,11 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                     </tr>
                     <tr>
                 </tbody>
-            </table>
+</table>
 
-            <h2>General and Programme <code>/config</code></h2>
-            <table>
+## General and Programme `/config`
+
+<table>
                 <thead>
                     <tr>
                         <th colspan=3>osc address</th>
@@ -575,9 +578,5 @@ All messages can be part of a preset. The preset can be enumerated by adding <co
                         <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
                     </tr>
                 </tbody>
-            </table>
-        </section>
-    </div>
-</body>
+</table>
 
-</html>
