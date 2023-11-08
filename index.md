@@ -40,9 +40,9 @@ Immersive audio is gaining ground in different industries, from music streaming 
 * Specification: [Open Sound Control website](http://opensoundcontrol.org/)
 * Available in a plethora of professional audio hardware and software devices
 
-## [General principles](https://github.com/immersive-audio-live/ADM-OSC/adm-osc_basics.md)
+## [General principles](https://immersive-audio-live.github.io/ADM-OSC/adm-osc_basics.html)
   
-## [Development & test tools](https://github.com/immersive-audio-live/ADM-OSC/dev_and_test.md)
+## [Development & test tools](https://immersive-audio-live.github.io/ADM-OSC/dev_and_test.html)
 
 ## Current status
 The current dictionary covers most Object properties from the Audio Definition model.
