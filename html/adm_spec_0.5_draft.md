@@ -576,7 +576,7 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>'und'</td>
                         <td>audioProgrammeLabel</td>
                         <td>/adm/prog/3/config/label/3/lang FR</td>
-                        <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
+                        <td class="proposed"><b>proposed v0.5</b></td>
                     </tr>
                 </tbody>
 </table>
