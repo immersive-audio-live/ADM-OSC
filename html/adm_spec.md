@@ -1,25 +1,24 @@
 
-# ADM-OSC v0.4</h1>
+# ADM-OSC v0.4
 
 ## polar position messages
 
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan=2>osc address</th>
-                        <th>type</th>
-                        <th>units</th>
-                        <th>min</th>
-                        <th>max</th>
-                        <th style="width:100px">default</th>
-                        <th style="width:500px">description</th>
-                        <th style="width:300px">example</th>
-                        <th style="width:300px">status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan=6>/adm/obj/<span style="font-style:italic">n</i></td>
+<table>
+    <thead>
+        <tr>
+            <th colspan=2>osc address</th>
+            <th>type</th>
+            <th>units</th>               <th>min</th>
+            <th>max</th>
+            <th style="width:100px">default</th>
+            <th style="width:500px">description</th>
+            <th style="width:300px">example</th>
+            <th style="width:300px">status</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td rowspan=6>/adm/obj/<span style="font-style:italic">n</i></td>
                         <td>/azim</td>
                         <td>float</td>
                         <td>degrees</td>
@@ -84,11 +83,12 @@
                         <td bgcolor="LightGreen">stable v0.4</td>
                     </tr>
                 </tbody>
-            </table>
+</table>
 
-            <h2>Cartiesian position messages</h2>
-            <table>
-                <thead>
+## Cartiesian position messages
+
+<table>
+    <thead>
                     <tr>
                         <th colspan=2>osc address</th>
                         <th>type</th>
@@ -171,9 +171,9 @@
                 </tbody>
             </table>
 
-            <H2>configuration messages</H2>
+## configuration messages
 
-            <table>
+<table>
                 <thead>
                     <tr>
                         <th colspan=2>osc address</th>
@@ -226,4 +226,4 @@
                             progress</a></td>
                     </tr>
                 </tbody>
-            </table>
+</table>
