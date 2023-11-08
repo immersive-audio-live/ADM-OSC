@@ -87,14 +87,14 @@
 ## Cartiesian position messages
 
 <table>
-    <thead bgcolor="Green" style="color:#FFFFFF">
+    <thead bgcolor="Green" style="color:#FFFF00">
         <tr>
             <th colspan=2>osc address</th>                  
-            <th>type</th>
-            <th>units</th>
-            <th>min</th>
-            <th>max</th>
-            <th style="width:100px">default</th>
+            <th style="color:#FFFFFF">type</th>
+            <th style="color:#FFFFFF">units</th>
+            <th style="color:#FFFFFF">min</th>
+            <th style="color:#FFFFFF">max</th>
+            <th style="color:#FFFFFF; width:100px">default</th>
             <th style="width:500px">description</th>
             <th style="width:300px">example</th>
             <th style="width:300px">status</th>
@@ -173,14 +173,14 @@
 ## configuration messages
 
 <table>
-    <thead bgcolor="Green" style="color:White">
+    <thead bgcolor="Green">
         <tr>
-                       <th colspan=2>osc address</th>
-                        <th> <font color="Blue">type</font></th>
-                        <th>units</th>
-                        <th>min</th>
-                        <th>max</th>
-                        <th style="width:100px">default</th>
+                       <th colspan=2><font color="white">osc address</font></th>
+                        <th><font color="white">type</font></th>
+                        <th><font color="white">units</font></th>
+                        <th><font color="white">min</th>
+                        <th><font color="white">max</th>
+                        <th style="width:100px color:#FFFFFF"">default</th>
                         <th style="width:500px">description</th>
                         <th style="width:300px">example</th>
                         <th style="width:300px">status</th>
