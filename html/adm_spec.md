@@ -15,10 +15,10 @@
             <th style="color:#FFFFFF">units</th>               
             <th style="color:#FFFFFF">min</th>
             <th style="color:#FFFFFF">max</th>
-            <th style="color:#FFFFFF" width="10000">default</th>
-            <th style="width:500px">description</th>
-            <th style="width:300px">example</th>
-            <th style="width:300px">status</th>
+            <th style="color:#FFFFFF">default</th>
+            <th style="color:#FFFFFF">description</th>
+            <th style="color:#FFFFFF">example</th>
+            <th style="color:#FFFFFF">status</th>
         </tr>
     </thead>
     <tbody>
@@ -99,26 +99,26 @@
             <th style="color:#FFFFFF">units</th>
             <th style="color:#FFFFFF">min</th>
             <th style="color:#FFFFFF">max</th>
-            <th style="color:#FFFFFF; width:100px">default</th>
-            <th style="width:1000px">description</th>
-            <th style="width:300px">example</th>
-            <th style="width:300px">status</th>
+            <th style="color:#FFFFFF">default</th>
+            <th style="color:#FFFFFF">description</th>
+            <th style="color:#FFFFFF">example</th>
+            <th style="color:#FFFFFF">status</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td rowspan=6>/adm/obj/<i>n</i></td>
-                        <td>/x</td>
-                        <td>float</td>
-                        <td>normalized</td>
-                        <td>-1.0</td>
-                        <td>1.0</td>
-                        <td>0.0</td>
-                        <td>left/right dimension. -1 is left</td>
-                        <td>/adm/obj/4/x -0.9</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
-                    </tr>
-                    <tr>
+            <td>/x</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>left/right dimension. -1 is left</td>
+            <td>/adm/obj/4/x -0.9</td>
+            <td bgcolor="LightGreen">stable v0.4</td>
+        </tr>
+        <tr>
                         <td>/y</td>
                         <td>float</td>
                         <td>normalized</td>
@@ -128,8 +128,8 @@
                         <td>front/back dimension</td>
                         <td>/adm/obj/4/y 0.15</td>
                         <td bgcolor="LightGreen">stable v0.4</td>
-                    </tr>
-                    <tr>
+        </tr>
+        <tr>
                         <td>/z</td>
                         <td>float</td>
                         <td>normalized</td>
@@ -139,17 +139,17 @@
                         <td>top/bottom dimension</td>
                         <td>/adm/obj/4/z 0.7</td>
                         <td bgcolor="LightGreen">stable v0.4</td>
-                    </tr>
-                    <tr>
+        </tr>
+        <tr>
                         <td>/xyz</td>
                         <td>list</td>
                         <td colspan=4>see above</td>
                         <td>compact format enables synchronicity of position changes and also less network traffic</td>
                         <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
                         <td bgcolor="LightGreen">stable v0.4</td>
-                    </tr>
-                    </tr>
-                    <tr>
+        </tr>
+        </tr>
+        <tr>
                         <td>/w</td>
                         <td>float</td>
                         <td>normalized</td>
