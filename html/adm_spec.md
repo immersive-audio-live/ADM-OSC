@@ -88,17 +88,18 @@
 
 <table>
     <thead>
-            <tr>
-                <th colspan=2>osc address</th>                    <th>type</th>
-                        <th>units</th>
-                        <th>min</th>
-                        <th>max</th>
-                        <th style="width:100px">default</th>
-                        <th style="width:500px">description</th>
-                        <th style="width:300px">example</th>
-                        <th style="width:300px">status</th>
-                    </tr>
-                </thead>
+        <tr>
+            <th colspan=2>osc address</th>                  
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th style="width:100px">default</th>
+            <th style="width:500px">description</th>
+            <th style="width:300px">example</th>
+            <th style="width:300px">status</th>
+        </tr>
+    </thead>
                 <tbody>
                     <tr>
                         <td rowspan=6>/adm/obj/<i>n</i></td>
@@ -154,8 +155,8 @@
                         <td>/adm/obj/3/w 0.2</td>
                         <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
                                 progress</a></td>
-                    </tr>
-                    <tr>
+        </tr>
+        <tr>
                         <td>/gain</td>
                         <td>float</td>
                         <td>linear</td>
@@ -165,9 +166,9 @@
                         <td>Apply a gain to the audio in the object.</td>
                         <td>/adm/obj/3/gain 0.707</td>
                         <td bgcolor="LightGreen">stable v0.4</td>
-                    </tr>
-                </tbody>
-            </table>
+        </tr>
+    </tbody>
+</table>
 
 ## configuration messages
 
@@ -222,6 +223,6 @@
                         <td>/adm/config/obj/1/dRef 0.2</td>
                         <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a></td>
-                    </tr>
-                </tbody>
+        </tr>
+    </tbody>
 </table>
