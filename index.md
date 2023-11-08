@@ -48,7 +48,7 @@ Immersive audio is gaining ground in different industries, from music streaming 
   * Handles the (optional) local scaling of normalized data: x, y, z, distance
   * The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
   
-## [Development & test tools](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/dev_and_test.md)
+## [Development & test tools](https://github.com/immersive-audio-live/ADM-OSC/dev_and_test.md)
 
 ## Current status
 The current dictionary covers most Object properties from the Audio Definition model.
