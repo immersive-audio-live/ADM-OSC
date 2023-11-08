@@ -1,5 +1,5 @@
 
-# ADM-OSC v0.4
+# v0.4
 
 ## polar position messages
 
@@ -85,7 +85,7 @@
     </tbody>
 </table>
 
-## Cartiesian position messages
+## Cartesian position messages
 
 <table>
     <thead>
