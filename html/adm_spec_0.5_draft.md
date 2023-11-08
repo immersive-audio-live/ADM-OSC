@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html>
+# ADM-OSC Draft v0.5
 
-<head>
-    <link rel="stylesheet" type="text/css" media="screen"
-        href="/ADM-OSC/assets/css/style.css?v=c41b2dfca1e7aa470a5239041be533ab09683310">
-    <style>
-        table,
-        td,
-        th {
-            border: 1px solid;
-            vertical-align: middle;
-        }
-
-        th {
-            background-color: #04AA6D;
-            color: white;
-        }
-
-        table {
-            border-collapse: collapse;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dafddc;
-        }
-    </style>
-</head>
-
-<body>
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-
-            <a id="forkme_banner" href="https://github.com/immersive-audio-live/ADM-OSC">View on GitHub</a>
-
-
-            <h1 id="project_title">ADM-OSC</h1>
-            <h2 id="project_tagline">An OSC dictionary that implements the Audio Definition Model (ADM)</h2>
-
-
-            <section id="downloads">
-                <a class="zip_download_link"
-                    href="https://github.com/immersive-audio-live/ADM-OSC/zipball/gh-pages">Download this project as a
-                    .zip file</a>
-                <a class="tar_download_link"
-                    href="https://github.com/immersive-audio-live/ADM-OSC/tarball/gh-pages">Download this project as a
-                    tar.gz file</a>
-            </section>
-        </header>
-    </div>
-    <div id="main_content_wrap" class="outer">
-
-        <section id="main_content" class="inner">
-
-            <h1>ADM-OSC Draft v0.5</h1>
-            <p>All messages can be part of a preset. The preset can be enumerated by adding <code>/preset/n</code>
+All messages can be part of a preset. The preset can be enumerated by adding <code>/preset/n</code>
                 before any of the messages below.</p>
 
             <hr>
