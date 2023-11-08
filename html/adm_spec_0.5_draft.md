@@ -347,24 +347,25 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
 <br>
 
 <hr>
+
 ## Bed messages (static)
 
-<table>
-                <thead>
-                    <tr>
-                        <th colspan=2>osc address</th>
-                        <th>type</th>
-                        <th>units</th>
-                        <th>min</th>
-                        <th>max</th>
-                        <th style="width:100px">default</th>
-                        <th style="width:500px">description</th>
-                        <th style="width:300px">example</th>
-                        <th style="width:300px">status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
+<table>            
+    <thead>
+        <tr>
+            <th colspan=2>osc address</th>
+                <th>type</th>
+                <th>units</th>
+                <th>min</th>
+                <th>max</th>
+                <th style="width:100px">default</th>
+                <th style="width:500px">description</th>
+                <th style="width:300px">example</th>
+                <th style="width:300px">status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
                         <td rowspan=4>/adm/config/bed/<i>n</i></td>
                         <td>/chan</td>
                         <td>int</td>
@@ -386,7 +387,8 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>Where ‘n’ is the bed index value</td>
                         <td>/adm/prog/2/bed/1/name "name"</td>
                         <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
-                    </tr>
+        </tr>
+        <tr>
                     <td>/layout</td>
                     <td>int</td>
                     <td></td>
@@ -396,18 +398,19 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                     <td>Value corresponds to the lower 8 bits of a common definition audioPackFormat.</td>
                     <td>/adm/prog/2/bed/1/layout</td>
                     <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
-                    </tr>
-                    <td>/gain</td>
-                    <td>float</td>
-                    <td>dB</td>
-                    <td></td>
+        </tr>
+        <tr>
+                <td>/gain</td>
+                <td>float</td>
+                <td>dB</td>
+                <td></td>
                     <td></td>
                     <td>0.0</td>
                     <td></td>
                     <td>/adm/config/bed/1/gain -3.2</td>
                     <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
-                    </tr>
-                </tbody>
+        </tr>
+    </tbody>
 </table>
 
 ### Bed layout values
@@ -484,13 +487,13 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>/adm/prog/2/template/version 3.2.1</td>
                         <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
                     </tr>
+                    <tr>
                     <td>/level</td>
                     <td>int</td>
                     <td></td>
                     <td>/adm/prog/2/template/format 23</td>
                     <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
                     </tr>
-                    <tr>
                 </tbody>
 </table>
 
@@ -555,7 +558,6 @@ All messages can be part of a preset. The preset can be enumerated by adding `/p
                         <td>audioProgrammeLanguage</td>
                         <td>/adm/prog/3/config/lang FR</td>
                         <td bgcolor="LightYellow"><b>proposed v0.5</b></td>
-                    </tr>
                     </tr>
                     <tr>
                         <td rowspan="2">/label/<i>n</i></td>
