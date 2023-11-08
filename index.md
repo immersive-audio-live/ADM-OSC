@@ -40,13 +40,7 @@ Immersive audio is gaining ground in different industries, from music streaming 
 * Specification: [Open Sound Control website](http://opensoundcontrol.org/)
 * Available in a plethora of professional audio hardware and software devices
 
-## General principles
-* Sender (client)
-  * Object Editor sending positioning data to one or more receivers.
-  * Position data is always normalized 
-* Receiver (server)
-  * Handles the (optional) local scaling of normalized data: x, y, z, distance
-  * The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
+## [General principles](https://github.com/immersive-audio-live/ADM-OSC/adm-osc_basics.md)
   
 ## [Development & test tools](https://github.com/immersive-audio-live/ADM-OSC/dev_and_test.md)
 
