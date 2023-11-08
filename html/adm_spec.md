@@ -18,7 +18,7 @@
     </thead>
     <tbody>
         <tr>
-            <td rowspan=6>/adm/obj/<span style="font-style:italic">n</i></td>
+            <td rowspan=6>/adm/obj/<span style="font-style:italic">n</span></td>
             <td>/azim</td>
             <td>float</td>
             <td>degrees</td>
@@ -52,24 +52,23 @@
             <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
         <tr>
-                        <td>/aed</td>
-                        <td>list</td>
-                        <td colspan=4>see above</td>
-                        <td>compact format enables synchronicity of position changes and also less network traffic</td>
-                        <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
-                        <td bgcolor="LightGreen">stable v0.4</td>
+            <td>/aed</td>
+            <td>list</td>
+            <td colspan=4>see above</td>
+            <td>compact format enables synchronicity of position changes and also less network traffic</td>
+            <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
+            <td bgcolor="LightGreen">stable v0.4</td>
         </tr>
         <tr>
-                        <td>/widthDeg</td>
-                        <td>float</td>
-                        <td>degrees</td>
-                        <td>0.0</td>
-                        <td>180.0</td>
-                        <td>0.0</td>
-                        <td>horizontal extent in degrees. See also /w</td>
-                        <td>/adm/obj/3/widthDeg 45.2</td>
-                        <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
-                                progress</a></td>
+            <td>/widthDeg</td>
+            <td>float</td>
+            <td>degrees</td>
+            <td>0.0</td>
+            <td>180.0</td>
+            <td>0.0</td>
+            <td>horizontal extent in degrees. See also /w</td>
+            <td>/adm/obj/3/widthDeg 45.2</td>
+            <td bgcolor="Pink"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a></td>
         </tr>
         <tr>
             <td>/gain</td>
@@ -89,9 +88,8 @@
 
 <table>
     <thead>
-                    <tr>
-                        <th colspan=2>osc address</th>
-                        <th>type</th>
+            <tr>
+                <th colspan=2>osc address</th>                    <th>type</th>
                         <th>units</th>
                         <th>min</th>
                         <th>max</th>
