@@ -3,7 +3,22 @@
 
 @import "{{ site.theme }}";
 
-thead, th {
+table,
+td,
+th {
+    border: 1px solid;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
     background-color: green;
     color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #dafddc;
 }
