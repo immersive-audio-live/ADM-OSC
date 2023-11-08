@@ -3,6 +3,10 @@
 
 ## polar position messages
 
+<style>
+  .td { background-color: lightblue; }
+</style>
+
 <table>
     <thead bgcolor="Green" style="color:#FFFFFF">
         <tr>
@@ -180,7 +184,7 @@
                         <th><font color="white">units</font></th>
                         <th><font color="white">min</th>
                         <th><font color="white">max</th>
-                        <th style="width:100px color:#FFFFFF"">default</th>
+                        <th style="width:100px; color:#FFFFFF"">default</th>
                         <th style="width:500px">description</th>
                         <th style="width:300px">example</th>
                         <th style="width:300px">status</th>
