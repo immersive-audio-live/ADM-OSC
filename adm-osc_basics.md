@@ -12,7 +12,7 @@
 
 ## Relationship to ADM
 
-ADM-OSC messages are designed to be translatable to (S-ADM) if needed. Messages that don't translate into one (or more) ADM tag should not be in the /adm namespace.
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) ADM tag should not be in the `/adm` namespace.
 
 ## Coordinates
 
