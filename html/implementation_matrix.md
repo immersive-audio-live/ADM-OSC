@@ -19,8 +19,8 @@
 
 |  message | rx | tx  | notes  |
 |---|---|---|---|
-| /adm/obj/(k)/azim | &check; | &check;  |   |
-| /adm/obj/(k)/elev | &check; | &check;  |   |
+| /adm/obj/(k)/azim | &check; | &#x2713;  |   |
+| /adm/obj/(k)/elev | <span>&check;</span> | <span>&#x2713;</span>  |   |
 | /adm/obj/(k)/dist | &check;  |   |   |
 | /adm/obj/(k)/aed | &check;  |   |   |
 | /adm/obj/(k)/gain |  | &check; | |
