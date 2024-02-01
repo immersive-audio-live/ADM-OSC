@@ -46,3 +46,7 @@
 | /adm/obj/(k)/z    | | |  |
 | /adm/obj/(k)/xyz  | | |  |
 | /adm/obj/(k)/config/cartesian | | | |
+
+| <span style="text-orientation:mixed;">test vertical</span> |
+|--|
+| |
