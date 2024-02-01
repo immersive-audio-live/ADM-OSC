@@ -1,5 +1,41 @@
 # ADM-OSC Implementations
 
+## Matrix?
+
+<table>
+    <tr>
+        <th style="writing-mode:vertical-lr;"></th>
+        <th style="writing-mode:vertical-lr;">Implementation 1</th>
+        <th style="writing-mode:vertical-lr;">Implementation 2</th>
+  </tr>
+  <tr>
+    <td>/adm/obj/(k)/azim </td>
+    <td>tx</td>
+    <td></td>
+  </tr>
+  <tr>
+   <td>Rx: /adm/obj/elev</td>
+    <td></td>
+    <td>rx</td>
+  </tr>
+  <tr>
+    <td>Tx: /adm/obj/param2</td>
+    <td>&#x2713;</td>
+    <td>&#x2713;</td>
+  </tr>
+  <tr>
+   <td>Rx: /adm/obj/param2</td>
+    <td>&#x2713;</td>
+    <td>&#x2713;</td>
+  </tr>
+</table>
+
+- Tx = transmit only
+- Rx = receive only
+- &#x2713; = transmit and receive
+
+## or...
+
 ## SPAT Revolution (FLUX::SE)
 
 |  message | rx | tx  | notes  |
@@ -47,20 +83,3 @@
 | /adm/obj/(k)/xyz  | | |  |
 | /adm/obj/(k)/config/cartesian | | | |
 
-<table>
-  <tr>
-    <th style="color:blue;text-orientation:mixed">Company</th>
-    <th style="transform:rotate(-90deg);">Contact</th>
-    <th style="writing-mode:vertical-lr;">Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
