@@ -5,27 +5,37 @@
 <table>
     <tr>
         <th style="writing-mode:vertical-lr;"></th>
-        <th style="writing-mode:vertical-lr;">Implementation 1</th>
-        <th style="writing-mode:vertical-lr;">Implementation 2</th>
+        <th style="writing-mode:vertical-lr;">SPAT Revolution (FLUX::SE)</th>
+        <th style="writing-mode:vertical-lr;">L-ISA Controller (L-Acoustics)</th>
+        <th style="writing-mode:vertical-lr;">Implementation 3</th>
+        <th style="writing-mode:vertical-lr;">Implementation 4</th>
   </tr>
   <tr>
     <td>/adm/obj/(k)/azim </td>
     <td>tx</td>
     <td></td>
+    <td></td>
+    <td>&#x2713;</td>
   </tr>
   <tr>
    <td>/adm/obj/(k)/elev</td>
     <td></td>
     <td>rx</td>
+    <td></td>
+    <td>&#x2713;</td>
   </tr>
   <tr>
     <td>/adm/obj/(k)/x</td>
     <td>&#x2713;</td>
     <td>&#x2713;</td>
+    <td></td>
+    <td>&#x2713;</td>
   </tr>
   <tr>
    <td>/adm/obj/(k)/y</td>
     <td>&#x2713;</td>
+    <td>&#x2713;</td>
+    <td></td>
     <td>&#x2713;</td>
   </tr>
 </table>
