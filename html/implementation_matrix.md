@@ -2,7 +2,6 @@
 
 <table>
     <tr>
-
         <th>&#x2713; = transmit and receive<br>
             tx = transmit only<br>
             rx = receive only</th>
@@ -13,9 +12,16 @@
         <th style="writing-mode:vertical-lr;">/adm/obj/(k)/gain</th>
         <th style="writing-mode:vertical-lr;">/adm/obj/(k)/x</th>
         <th style="writing-mode:vertical-lr;">/adm/obj/(k)/y</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/z</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/xyz</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/w</th>
     </tr>
     <tr>
         <td>SPAT Revolution (FLUX::SE)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -32,6 +38,9 @@
         <td>&#x2713;</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Ovation (Merging Technologies)</td>
@@ -39,6 +48,9 @@
         <td>rx</td>
         <td></td>
         <td>&#x2713;</td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -52,6 +64,10 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>SpaceMap Go (Meyer Sound)</td>
@@ -62,20 +78,73 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>QLAB 5 (Figure 53)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Space Controller (Sound Particles)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Modulo Kinetic (Modulo Pi)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Iosono (Barco)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>FletcherMachine (Adamson)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
 </table>
