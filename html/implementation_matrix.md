@@ -47,6 +47,20 @@
 | /adm/obj/(k)/xyz  | | |  |
 | /adm/obj/(k)/config/cartesian | | | |
 
-| <span style="text-orientation:mixed;">test vertical</span> |
-|--|
-| |
+<table>
+  <tr>
+    <th style="color:blue;text-orientation:mixed">Company</th>
+    <th style="transform:rotate(-90deg);">Contact</th>
+    <th style="writing-mode:vertical-lr;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
