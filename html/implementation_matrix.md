@@ -14,17 +14,17 @@
     <td></td>
   </tr>
   <tr>
-   <td>Rx: /adm/obj/elev</td>
+   <td>/adm/obj/(k)/elev</td>
     <td></td>
     <td>rx</td>
   </tr>
   <tr>
-    <td>Tx: /adm/obj/param2</td>
+    <td>/adm/obj/(k)/x</td>
     <td>&#x2713;</td>
     <td>&#x2713;</td>
   </tr>
   <tr>
-   <td>Rx: /adm/obj/param2</td>
+   <td>/adm/obj/(k)/y</td>
     <td>&#x2713;</td>
     <td>&#x2713;</td>
   </tr>
