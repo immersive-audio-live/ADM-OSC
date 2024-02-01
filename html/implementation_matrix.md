@@ -19,20 +19,20 @@
 
 |  message | rx | tx  | notes  |
 |---|---|---|---|
-| /adm/obj/(k)/azim | &check; | &#x2713;  |   |
-| /adm/obj/(k)/elev | <span>&check;</span> | <span>&#x2713;</span>  |   |
-| /adm/obj/(k)/dist | &check;  |   |   |
-| /adm/obj/(k)/aed | &check;  |   |   |
-| /adm/obj/(k)/gain |  | &check; | |
-| /adm/obj/(k)/w | &check;  |   |  _not in spec_ |
-| /adm/obj/(k)/s | &check; | &check; | _not in spec_ |
-| /adm/obj/(k)/x | &check; | &check; |  |
-| /adm/obj/(k)/y | &check; | &check; |  |
-| /adm/obj/(k)/z | &check; | &check; |  |
-| /adm/obj/(k)/xyz | &check; | &check; |  |
+| /adm/obj/(k)/azim | &#x2713; | &#x2713;  |   |
+| /adm/obj/(k)/elev | &#x2713; | &#x2713;  |   |
+| /adm/obj/(k)/dist | &#x2713; | &#x2713; |   |
+| /adm/obj/(k)/aed  | &#x2713;  |   |   |
+| /adm/obj/(k)/gain |  | &#x2713; | |
+| /adm/obj/(k)/w    | &#x2713;  |   |  _not in spec_ |
+| /adm/obj/(k)/s    | &#x2713; | &#x2713; | _not in spec_ |
+| /adm/obj/(k)/x    | &#x2713; | &#x2713; |  |
+| /adm/obj/(k)/y    | &#x2713; | &#x2713; |  |
+| /adm/obj/(k)/z    | &#x2713; | &#x2713; |  |
+| /adm/obj/(k)/xyz  | &#x2713; | &#x2713; |  |
 | /adm/obj/(k)/config/cartesian | | | |
 
-## Next Product
+## Next implementation
 
 |  message | rx | tx  | notes  |
 |---|---|---|---|
