@@ -1,4 +1,6 @@
-# ADM-OSC PlugFest #3
+# ADM-OSC PlugFest #2
+
+## 7 October 2024
 
 Spatial & immersive audio has become mainstream, both in concert halls and through music streaming services. A diverse ecosystem of hardware and software controllers and renderers in both live and studio settings could benefit from a standardized communication protocol. Since 2021 a growing group of industry stakeholders has been developing ADM-OSC to fill this need.
 
