@@ -24,6 +24,7 @@ An industry initiative for standardization of Object-Based Audio (OBA) positioni
 - Modulo Kinetic (Modulo Pi)
 - Iosono (Barco)
 - FletcherMachine (Adamson)
+- En-Bridge (d&b audiotechnik)
 
 ## [Implementation Matrix](https://immersive-audio-live.github.io/ADM-OSC/html/implementation_matrix.html)
 
