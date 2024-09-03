@@ -90,7 +90,7 @@
 <table>
     <thead>
         <tr>
-            <th colspan=2>osc address</th>                  
+            <th colspan=2>osc address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -119,20 +119,20 @@
             <td>float</td>
             <td>normalized</td>
             <td>-1.0</td>
-                        <td>1.0</td>
-                        <td>0.0</td>
-                        <td>front/back dimension</td>
-                        <td>/adm/obj/4/y 0.15</td>
-                        <td class="stable">stable v0.4</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>front/back dimension. 1 is front</td>
+            <td>/adm/obj/4/y 0.15</td>
+            <td class="stable">stable v0.4</td>
         </tr>
         <tr>
-                        <td>/z</td>
-                        <td>float</td>
-                        <td>normalized</td>
-                        <td>-1.0</td>
+            <td>/z</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>-1.0</td>
                         <td>1.0</td>
                         <td>0.0</td>
-                        <td>top/bottom dimension</td>
+                        <td>top/bottom dimension. 1 is top</td>
                         <td>/adm/obj/4/z 0.7</td>
                         <td class="stable">stable v0.4</td>
         </tr>
@@ -226,4 +226,3 @@
         </tr>
     </tbody>
 </table>
-
