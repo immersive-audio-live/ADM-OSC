@@ -2,7 +2,7 @@
 
 ## 7 October 2024
 
-## [Registration](https://www.helloasso.com/associations/aes-france/evenements/adm-osc-plugfest-2-nyu))
+## [Registration](https://www.helloasso.com/associations/aes-france/evenements/adm-osc-plugfest-2-nyu)
 
 ## [Location]()
 
