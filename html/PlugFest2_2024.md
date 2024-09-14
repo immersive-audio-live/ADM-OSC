@@ -4,7 +4,7 @@
 
 ## [Registration](https://www.helloasso.com/associations/aes-france/evenements/adm-osc-plugfest-2-nyu)
 
-## [Location]()
+## [Location](https://engineering.nyu.edu/classrooms-event-spaces/370j-324-idm)
 
 Spatial & immersive audio has become mainstream, both in concert halls and through music streaming services. A diverse ecosystem of hardware and software controllers and renderers in both live and studio settings could benefit from a standardized communication protocol. Since 2021 a growing group of industry stakeholders has been developing ADM-OSC to fill this need.
 
