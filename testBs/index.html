@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="7d622a51e1c9d5e2dd72e13750e8784bdaaceed6" name="document-revision">
+  <meta content="70a99123afe207d2900a8b34853a9d4be75bf0d7" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1865,6 +1865,59 @@ figcaption:not(.no-marker)::before {
 
 .dfn-paneled[role="button"] { cursor: pointer; }
 </style>
+<style>/* Boilerplate: style-dfn-panel */
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    width: 20em;
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled[role="button"] { cursor: pointer; }
+</style>
 <style>/* Boilerplate: style-issues */
 a[href].issue-return {
     float: right;
@@ -1978,7 +2031,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#v04"><span class="secno">2</span> <span class="content">v0.4</span></a>
      <ol class="toc">
-      <li><a href="#polar"><span class="secno">2.1</span> <span class="content">polar position messages {#polar}</span></a>
+      <li><a href="#polar-position-messages"><span class="secno">2.1</span> <span class="content">polar position messages</span></a>
       <li><a href="#cartesian-position-messages"><span class="secno">2.2</span> <span class="content">Cartesian position messages</span></a>
       <li><a href="#configuration-messages"><span class="secno">2.3</span> <span class="content">configuration messages</span></a>
      </ol>
@@ -1989,12 +2042,15 @@ dfn > a.self-link::before      { content: "#"; }
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
       <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+      <li><a href="#index-defined-elsewhere"><span class="secno"></span> <span class="content">Terms defined by reference</span></a>
      </ol>
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
+      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
       <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
+    <li><a href="#property-index"><span class="secno"></span> <span class="content">Property Index</span></a>
     <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
    </ol>
   </nav>
@@ -2005,11 +2061,41 @@ dfn > a.self-link::before      { content: "#"; }
 live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
    <p><a data-link-type="dfn" href="#oba" id="ref-for-oba">OBA</a></p>
    <h2 class="heading settled" data-level="2" id="v04"><span class="secno">2. </span><span class="content">v0.4</span><a class="self-link" href="#v04"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="polar"><span class="secno">2.1. </span><span class="content">polar position messages {#polar}</span><a class="self-link" href="#polar"></a></h3>
-   <table>
+   <table class="def propdef" data-link-for-hint="flex-basis">
+    <tbody>
+     <tr>
+      <th>Name:
+      <td><dfn class="css" data-dfn-type="property" data-export id="propdef-flex-basis">flex-basis<a class="self-link" href="#propdef-flex-basis"></a></dfn>
+     <tr class="value">
+      <th><a href="https://www.w3.org/TR/css-values/#value-defs">Value:</a>
+      <td class="prod">content <a data-link-type="grammar" href="https://drafts.csswg.org/css-values-4/#comb-one" id="ref-for-comb-one">|</a> <a class="production css" data-link-type="property" href="https://drafts.csswg.org/css-sizing-3/#propdef-width" id="ref-for-propdef-width">&lt;'width'></a>
+     <tr>
+      <th><a href="https://www.w3.org/TR/css-cascade/#initial-values">Initial:</a>
+      <td>auto
+     <tr>
+      <th><a href="https://www.w3.org/TR/css-cascade/#applies-to">Applies to:</a>
+      <td><a data-link-type="dfn" href="https://drafts.csswg.org/css-flexbox-1/#flex-item" id="ref-for-flex-item">flex items</a>
+     <tr>
+      <th><a href="https://www.w3.org/TR/css-cascade/#inherited-property">Inherited:</a>
+      <td>no
+     <tr>
+      <th><a href="https://www.w3.org/TR/css-values/#percentages">Percentages:</a>
+      <td>relative to the <a data-link-type="dfn" href="https://drafts.csswg.org/css-flexbox-1/#flex-container" id="ref-for-flex-container">flex container’s</a> inner <a data-link-type="dfn" href="https://drafts.csswg.org/css-flexbox-1/#main-size" id="ref-for-main-size">main size</a>
+     <tr>
+      <th><a href="https://www.w3.org/TR/css-cascade/#computed">Computed value:</a>
+      <td>as specified, with lengths made absolute
+     <tr>
+      <th><a href="https://www.w3.org/TR/cssom/#serializing-css-values">Canonical order:</a>
+      <td>per grammar
+     <tr>
+      <th><a href="https://www.w3.org/TR/web-animations/#animation-type">Animation type:</a>
+      <td>length
+   </table>
+   <h3 class="heading settled" data-level="2.1" id="polar-position-messages"><span class="secno">2.1. </span><span class="content">polar position messages</span><a class="self-link" href="#polar-position-messages"></a></h3>
+   <table style="border: 2px solid black;">
     <thead>
      <tr>
-      <th colspan="2">osc address
+      <th>address
       <th>type
       <th>units
       <th>min
@@ -2017,19 +2103,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <th>default
       <th>>description
       <th>example
-      <th>status
     <tbody>
-     <tr>
-      <td rowspan="6">/adm/obj/<span style="font-style:italic">n</span>
-      <td>/azim
-      <td>float
-      <td>degrees
-      <td>-180.0
-      <td>180.0
-      <td>-
-      <td><b>azimuth</b> “theta - θ” of sound location. -90 is on the Right, 0 is in front.
-      <td>/adm/obj/4/azim -22.5
-      <td class="stable">stable v0.4
      <tr>
       <td>/elev
       <td>float
@@ -2039,7 +2113,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>-
       <td><b>elevation</b> “phi - ɸ” of sound location
       <td>/adm/obj/4/elev 12.7
-      <td class="stable">stable v0.4
      <tr>
       <td>/dist
       <td>float
@@ -2049,24 +2122,12 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>1.0
       <td><b>distance</b> “r” from origin
       <td>/adm/obj/4/dist 0.9
-      <td class="stable">stable v0.4
      <tr>
       <td>/aed
       <td>list
       <td colspan="4">see above
       <td>compact format enables synchronicity of position changes and also less network traffic
       <td>/adm/obj/4/aed -22.5 12.7 0.9
-      <td class="stable">stable v0.4
-     <tr>
-      <td>/widthDeg
-      <td>float
-      <td>degrees
-      <td>0.0
-      <td>180.0
-      <td>0.0
-      <td>horizontal extent in degrees. See also /w
-      <td>/adm/obj/3/widthDeg 45.2
-      <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in progress</a>
      <tr>
       <td>/gain
       <td>float
@@ -2076,7 +2137,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>1.0
       <td>Apply a gain to the audio in the object.
       <td>/adm/obj/3/gain 0.707
-      <td class="stable">stable v0.4
    </table>
    <h3 class="heading settled" data-level="2.2" id="cartesian-position-messages"><span class="secno">2.2. </span><span class="content">Cartesian position messages</span><a class="self-link" href="#cartesian-position-messages"></a></h3>
    <table>
@@ -2225,10 +2285,40 @@ live music and broadcast domains has gathered to exchange needs and experiences 
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
+   <li><a href="#propdef-flex-basis">flex-basis</a><span>, in § 2</span>
    <li><a href="#oba">OBA</a><span>, in § 5</span>
    <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 5</span>
   </ul>
+  <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
+  <ul class="index">
+   <li>
+    <a data-link-type="biblio">[CSS-FLEXBOX-1]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="24285d87">flex container</span>
+     <li><span class="dfn-paneled" id="66c521a7">flex item</span>
+     <li><span class="dfn-paneled" id="73c10739">main size</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[CSS-SIZING-3]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="88643fe0">width</span>
+    </ul>
+   <li>
+    <a data-link-type="biblio">[CSS-VALUES-4]</a> defines the following terms:
+    <ul>
+     <li><span class="dfn-paneled" id="6ec67710">|</span>
+    </ul>
+  </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <dl>
+   <dt id="biblio-css-flexbox-1">[CSS-FLEXBOX-1]
+   <dd>Tab Atkins Jr.; et al. <a href="https://drafts.csswg.org/css-flexbox-1/"><cite>CSS Flexible Box Layout Module Level 1</cite></a>. URL: <a href="https://drafts.csswg.org/css-flexbox-1/">https://drafts.csswg.org/css-flexbox-1/</a>
+   <dt id="biblio-css-sizing-3">[CSS-SIZING-3]
+   <dd>Tab Atkins Jr.; Elika Etemad. <a href="https://drafts.csswg.org/css-sizing-3/"><cite>CSS Box Sizing Module Level 3</cite></a>. URL: <a href="https://drafts.csswg.org/css-sizing-3/">https://drafts.csswg.org/css-sizing-3/</a>
+   <dt id="biblio-css-values-4">[CSS-VALUES-4]
+   <dd>Tab Atkins Jr.; Elika Etemad. <a href="https://drafts.csswg.org/css-values-4/"><cite>CSS Values and Units Module Level 4</cite></a>. URL: <a href="https://drafts.csswg.org/css-values-4/">https://drafts.csswg.org/css-values-4/</a>
+  </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-ebu-tech-3396">[EBU-Tech-3396]
@@ -2236,6 +2326,33 @@ live music and broadcast domains has gathered to exchange needs and experiences 
    <dt id="biblio-tsingos-2017">[Tsingos-2017]
    <dd>N. Tsingos. <cite>Object-based audio</cite>. 2017. in Immersive Sound. 
   </dl>
+  <h2 class="no-num no-ref heading settled" id="property-index"><span class="content">Property Index</span><a class="self-link" href="#property-index"></a></h2>
+  <div class="big-element-wrapper">
+   <table class="index">
+    <thead>
+     <tr>
+      <th scope="col">Name
+      <th scope="col">Value
+      <th scope="col">Initial
+      <th scope="col">Applies to
+      <th scope="col">Inh.
+      <th scope="col">%ages
+      <th scope="col">Anim­ation type
+      <th scope="col">Canonical order
+      <th scope="col">Com­puted value
+    <tbody>
+     <tr>
+      <th scope="row"><a class="css" data-link-type="property" href="#propdef-flex-basis" id="ref-for-propdef-flex-basis">flex-basis</a>
+      <td>content | &lt;'width'>
+      <td>auto
+      <td>flex items
+      <td>no
+      <td>relative to the flex container’s inner main size
+      <td>length
+      <td>per grammar
+      <td>as specified, with lengths made absolute
+   </table>
+  </div>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue no-marker">
@@ -2408,8 +2525,166 @@ live music and broadcast domains has gathered to exchange needs and experiences 
     }
 }
 </script>
+<script>/* Boilerplate: script-dfn-panel */
+"use strict";
+{
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
+    }
+
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
+
+    function hideAllDfnPanels() {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
+    }
+
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn, dfnPanel) {
+        // Find dfn panel
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        });
+
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
+                pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        })
+    }
+}
+</script>
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
+window.dfnpanelData['24285d87'] = {"dfnID": "24285d87", "url": "https://drafts.csswg.org/css-flexbox-1/#flex-container", "dfnText": "flex container", "refSections": [{"refs": [{"id": "ref-for-flex-container"}], "title": "2. v0.4"}], "external": true};
+window.dfnpanelData['66c521a7'] = {"dfnID": "66c521a7", "url": "https://drafts.csswg.org/css-flexbox-1/#flex-item", "dfnText": "flex item", "refSections": [{"refs": [{"id": "ref-for-flex-item"}], "title": "2. v0.4"}], "external": true};
+window.dfnpanelData['73c10739'] = {"dfnID": "73c10739", "url": "https://drafts.csswg.org/css-flexbox-1/#main-size", "dfnText": "main size", "refSections": [{"refs": [{"id": "ref-for-main-size"}], "title": "2. v0.4"}], "external": true};
+window.dfnpanelData['88643fe0'] = {"dfnID": "88643fe0", "url": "https://drafts.csswg.org/css-sizing-3/#propdef-width", "dfnText": "width", "refSections": [{"refs": [{"id": "ref-for-propdef-width"}], "title": "2. v0.4"}], "external": true};
+window.dfnpanelData['6ec67710'] = {"dfnID": "6ec67710", "url": "https://drafts.csswg.org/css-values-4/#comb-one", "dfnText": "|", "refSections": [{"refs": [{"id": "ref-for-comb-one"}], "title": "2. v0.4"}], "external": true};
 window.dfnpanelData['oba'] = {"dfnID": "oba", "url": "#oba", "dfnText": "OBA", "refSections": [{"refs": [{"id": "ref-for-oba"}], "title": "1. Introduction"}], "external": false};
 window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5. Definitions"}], "external": false};
 </script>
