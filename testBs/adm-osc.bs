@@ -20,5 +20,9 @@ Introduction here.
 
 [LOGO]
 
-<a>OBA</a>
+[=OBA=]
+
+Definitions {#define}
+=====================
+
 <dfn dfn>Object-Based Audio</dnf>
