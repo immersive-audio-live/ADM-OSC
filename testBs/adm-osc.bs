@@ -1,7 +1,8 @@
 <pre class='metadata'>
 Title: ADM-OSC
 Shortname: ADM-OSC
-Level: 1
+Logo: https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png
+Level: none
 Status: LS
 Group: ADM-OSC
 URL: https://immersive-audio-live.github.io/ADM-OSC/
@@ -15,3 +16,5 @@ Introduction {#intro}
 =====================
 
 Introduction here.
+
+[Logo]
