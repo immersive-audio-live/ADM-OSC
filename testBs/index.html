@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="efc81894942ead1bde4d0b991a79971e3e7bc9e6" name="document-revision">
+  <meta content="3aa4961dbdefcb618e7ce1527543b07ad4bd557a" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1812,6 +1812,59 @@ figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
 }
 </style>
+<style>/* Boilerplate: style-dfn-panel */
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dfnpanel-bg: #222;
+        --dfnpanel-text: var(--text);
+    }
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    width: 20em;
+    width: 300px;
+    height: auto;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+    white-space: normal; /* in case it's moved into a pre */
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0 0 0 1em; list-style: none; }
+.dfn-panel li a {
+    white-space: pre;
+    display: inline-block;
+    max-width: calc(300px - 1.5em - 1em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled[role="button"] { cursor: pointer; }
+</style>
 <style>/* Boilerplate: style-issues */
 a[href].issue-return {
     float: right;
@@ -1904,7 +1957,9 @@ dfn > a.self-link::before      { content: "#"; }
      <dd><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests">https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests</a>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/">GitHub</a>
-     <dt class="editor">Editor:
+     <dd><a href="#issues-index">Inline In Spec</a>
+     <dt class="editor">Editors:
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:mathieu.delquignies@dbaudio.com">Mathieu Delquignies</a> (<a class="p-org org" href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>)
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:michael.zbyszynskki@l-acoustics.com">Michael Zbyszynski</a> (<a class="p-org org" href="http://example.com/your-company">L-Acoustics</a>)
     </dl>
    </div>
@@ -1913,7 +1968,7 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>An industry initiative for standardization of Object-Based Audio (OBA) positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).</p>
+   <p>An industry initiative for standardization of <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio">Object-Based Audio</a> positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1931,16 +1986,30 @@ dfn > a.self-link::before      { content: "#"; }
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
       <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
      </ol>
+    <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
    </ol>
   </nav>
   <main>
+   <p><img alt="ADM-OSC logo" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" style="float:right"></p>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-   <p>Introduction here.</p>
-   <p>https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png</p>
-   <p><a data-link-type="dfn">OBA</a></p>
+   <div class="issue no-marker" id="issue-d41d8cd9">
+    <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+    <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
+    <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
+<pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
+</code></pre>
+    </div>
+    <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
+   </div>
+   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
+live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
+   <p><a data-link-type="dfn" href="#oba" id="ref-for-oba">OBA</a></p>
    <h2 class="heading settled" data-level="2" id="define"><span class="secno">2. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
-   <p><dfn data-dfn-type="dfn" data-noexport id="object-based-audio">Object-Based Audio<a class="self-link" href="#object-based-audio"></a></dfn></p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="oba">OBA</dfn> see <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">Object-Based Audio</a></p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
+   <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -2091,6 +2160,7 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
+   <li><a href="#oba">OBA</a><span>, in § 2</span>
    <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 2</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
@@ -2099,3 +2169,377 @@ dfn > a.self-link::before      { content: "#"; }
    <dt id="biblio-rfc2119">[RFC2119]
    <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
   </dl>
+  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <dl>
+   <dt id="biblio-ebu-tech-3396">[EBU-Tech-3396]
+   <dd><a href="https://tech.ebu.ch/publications/tech3396"><cite>BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES</cite></a>. Spec. URL: <a href="https://tech.ebu.ch/publications/tech3396">https://tech.ebu.ch/publications/tech3396</a>
+   <dt id="biblio-tsingos-2017">[Tsingos-2017]
+   <dd>N. Tsingos. <cite>Object-based audio</cite>. 2017. in Immersive Sound. 
+  </dl>
+  <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
+  <div style="counter-reset:issue">
+   <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+    <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
+    <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
+<pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
+</code></pre>
+    </div>
+    <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
+     <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a>
+   </div>
+  </div>
+<script>/* Boilerplate: script-dfn-panel */
+"use strict";
+{
+    const dfnsJson = window.dfnsJson || {};
+
+    function genDfnPanel({dfnID, url, dfnText, refSections, external}) {
+        return mk.aside({
+            class: "dfn-panel",
+            id: `infopanel-for-${dfnID}`,
+            "data-for": dfnID,
+            "aria-labelled-by":`infopaneltitle-for-${dfnID}`,
+            },
+            mk.span({id:`infopaneltitle-for-${dfnID}`, style:"display:none"},
+                `Info about the '${dfnText}' ${external?"external":""} reference.`),
+            mk.a({href:url}, url),
+            mk.b({}, "Referenced in:"),
+            mk.ul({},
+                ...refSections.map(section=>
+                    mk.li({},
+                        ...section.refs.map((ref, refI)=>
+                            [
+                                mk.a({
+                                    href: `#${ref.id}`
+                                    },
+                                    (refI == 0) ? section.title : `(${refI + 1})`
+                                ),
+                                " ",
+                            ]
+                        ),
+                    ),
+                ),
+            ),
+        );
+    }
+
+    function genAllDfnPanels() {
+        for(const panelData of Object.values(window.dfnpanelData)) {
+            const dfnID = panelData.dfnID;
+            const dfn = document.getElementById(dfnID);
+            if(!dfn) {
+                console.log(`Can't find dfn#${dfnID}.`, panelData);
+            } else {
+                const panel = genDfnPanel(panelData);
+                append(document.body, panel);
+                insertDfnPopupAction(dfn, panel)
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        genAllDfnPanels();
+
+        // Add popup behavior to all dfns to show the corresponding dfn-panel.
+        var dfns = queryAll('.dfn-paneled');
+        for(let dfn of dfns) { ; }
+
+        document.body.addEventListener("click", (e) => {
+            // If not handled already, just hide all dfn panels.
+            hideAllDfnPanels();
+        });
+    })
+
+
+    function hideAllDfnPanels() {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(el=>hideDfnPanel(el));
+    }
+
+    function showDfnPanel(dfnPanel, dfn) {
+        hideAllDfnPanels(); // Only display one at this time.
+        dfn.setAttribute("aria-expanded", "true");
+        dfnPanel.classList.add("on");
+        dfnPanel.style.left = "5px";
+        dfnPanel.style.top = "0px";
+        const panelRect = dfnPanel.getBoundingClientRect();
+        const panelWidth = panelRect.right - panelRect.left;
+        if (panelRect.right > document.body.scrollWidth) {
+            // Panel's overflowing the screen.
+            // Just drop it below the dfn and flip it rightward instead.
+            // This still wont' fix things if the screen is *really* wide,
+            // but fixing that's a lot harder without 'anchor()'.
+            dfnPanel.style.top = "1.5em";
+            dfnPanel.style.left = "auto";
+            dfnPanel.style.right = "0px";
+        }
+    }
+
+    function pinDfnPanel(dfnPanel) {
+        // Switch it to "activated" state, which pins it.
+        dfnPanel.classList.add("activated");
+        dfnPanel.style.left = null;
+        dfnPanel.style.top = null;
+    }
+
+    function hideDfnPanel(dfnPanel, dfn) {
+        if(!dfn) {
+            dfn = document.getElementById(dfnPanel.getAttribute("data-for"));
+        }
+        dfn.setAttribute("aria-expanded", "false")
+        dfnPanel.classList.remove("on");
+        dfnPanel.classList.remove("activated");
+    }
+
+    function toggleDfnPanel(dfnPanel, dfn) {
+        if(dfnPanel.classList.contains("on")) {
+            hideDfnPanel(dfnPanel, dfn);
+        } else {
+            showDfnPanel(dfnPanel, dfn);
+        }
+    }
+
+    function insertDfnPopupAction(dfn, dfnPanel) {
+        // Find dfn panel
+        const panelWrapper = document.createElement('span');
+        panelWrapper.appendChild(dfnPanel);
+        panelWrapper.style.position = "relative";
+        panelWrapper.style.height = "0px";
+        dfn.insertAdjacentElement("afterend", panelWrapper);
+        dfn.setAttribute('role', 'button');
+        dfn.setAttribute('aria-expanded', 'false')
+        dfn.tabIndex = 0;
+        dfn.classList.add('has-dfn-panel');
+        dfn.addEventListener('click', (event) => {
+            showDfnPanel(dfnPanel, dfn);
+            event.stopPropagation();
+        });
+        dfn.addEventListener('keypress', (event) => {
+            const kc = event.keyCode;
+            // 32->Space, 13->Enter
+            if(kc == 32 || kc == 13) {
+                toggleDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        });
+
+        dfnPanel.addEventListener('click', (event) => {
+            if (event.target.nodeName == 'A') {
+                pinDfnPanel(dfnPanel);
+            }
+            event.stopPropagation();
+        });
+
+        dfnPanel.addEventListener('keydown', (event) => {
+            if(event.keyCode == 27) { // Escape key
+                hideDfnPanel(dfnPanel, dfn);
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        })
+    }
+}
+</script>
+<script>/* Boilerplate: script-dfn-panel-json */
+window.dfnpanelData = {};
+window.dfnpanelData['oba'] = {"dfnID": "oba", "url": "#oba", "dfnText": "OBA", "refSections": [{"refs": [{"id": "ref-for-oba"}], "title": "1. Introduction"}], "external": false};
+window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "2. Definitions"}], "external": false};
+</script>
+<script>/* Boilerplate: script-dom-helper */
+function query(sel) { return document.querySelector(sel); }
+
+function queryAll(sel) { return [...document.querySelectorAll(sel)]; }
+
+function iter(obj) {
+	if(!obj) return [];
+	var it = obj[Symbol.iterator];
+	if(it) return it;
+	return Object.entries(obj);
+}
+
+function mk(tagname, attrs, ...children) {
+	const el = document.createElement(tagname);
+	for(const [k,v] of iter(attrs)) {
+		if(k.slice(0,3) == "_on") {
+			const eventName = k.slice(3);
+			el.addEventListener(eventName, v);
+		} else if(k[0] == "_") {
+			// property, not attribute
+			el[k.slice(1)] = v;
+		} else {
+			if(v === false || v == null) {
+        continue;
+      } else if(v === true) {
+        el.setAttribute(k, "");
+        continue;
+      } else {
+  			el.setAttribute(k, v);
+      }
+		}
+	}
+	append(el, children);
+	return el;
+}
+
+/* Create shortcuts for every known HTML element */
+[
+  "a",
+  "abbr",
+  "acronym",
+  "address",
+  "applet",
+  "area",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "base",
+  "basefont",
+  "bdo",
+  "big",
+  "blockquote",
+  "body",
+  "br",
+  "button",
+  "canvas",
+  "caption",
+  "center",
+  "cite",
+  "code",
+  "col",
+  "colgroup",
+  "datalist",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "dialog",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "embed",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "font",
+  "footer",
+  "form",
+  "frame",
+  "frameset",
+  "head",
+  "header",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "hr",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "link",
+  "main",
+  "map",
+  "mark",
+  "meta",
+  "meter",
+  "nav",
+  "nobr",
+  "noscript",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "output",
+  "p",
+  "param",
+  "pre",
+  "progress",
+  "q",
+  "s",
+  "samp",
+  "script",
+  "section",
+  "select",
+  "small",
+  "source",
+  "span",
+  "strike",
+  "strong",
+  "style",
+  "sub",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "template",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "title",
+  "tr",
+  "u",
+  "ul",
+  "var",
+  "video",
+  "wbr",
+  "xmp",
+].forEach(tagname=>{
+	mk[tagname] = (...args) => mk(tagname, ...args);
+});
+
+function* nodesFromChildList(children) {
+	for(const child of children.flat(Infinity)) {
+		if(child instanceof Node) {
+			yield child;
+		} else {
+			yield new Text(child);
+		}
+	}
+}
+function append(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		if(el instanceof Node) el.appendChild(child);
+		else el.push(child);
+	}
+	return el;
+}
+
+function insertAfter(el, ...children) {
+	for(const child of nodesFromChildList(children)) {
+		el.parentNode.insertBefore(child, el.nextSibling);
+	}
+	return el;
+}
+
+function clearContents(el) {
+	el.innerHTML = "";
+	return el;
+}
+
+function parseHTML(markup) {
+	if(markup.toLowerCase().trim().indexOf('<!doctype') === 0) {
+		const doc = document.implementation.createHTMLDocument("");
+		doc.documentElement.innerHTML = markup;
+		return doc;
+	} else {
+		const el = mk.template({});
+		el.innerHTML = markup;
+		return el.content;
+	}
+}
+</script>
