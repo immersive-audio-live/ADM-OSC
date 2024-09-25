@@ -19,12 +19,20 @@ Abstract: An industry initiative for standardization of [=Object-Based Audio=] p
 Introduction {#intro}
 =====================
 
-Issue(immersive-audio-live/adm-osc#33):
-
 ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
 live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
 
 [=OBA=]
+
+Implementation Matrix {#implementation}
+=====================
+
+Issue(immersive-audio-live/adm-osc#24):
+
+Discussion {#discuss}
+=====================
+
+Issue(immersive-audio-live/adm-osc#33):
 
 Definitions {#define}
 =====================
