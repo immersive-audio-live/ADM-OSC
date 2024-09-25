@@ -14,7 +14,7 @@ Inline Github Issues: true
 Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
 </pre>
 
-<img src=[LOGO] style="float:right">
+<img src=[LOGO] alt="ADM-OSC logo" style="float:right">
 
 Introduction {#intro}
 =====================
@@ -48,6 +48,7 @@ Object-based representation encodes audio tracks along with positional and other
         "authors": [ "N. Tsingos" ],
         "title": “Object-based audio”,
         "status": "in Immersive Sound",
+        "pages": "244-275",
         "publisher": "Routledge",
         "date": "2017"
     }
