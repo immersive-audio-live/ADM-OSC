@@ -2,7 +2,7 @@
 Title: ADM-OSC
 Shortname: ADM-OSC
 Logo: https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png
-Boilerplate: logo yes, copyright no
+Boilerplate: logo yes, copyright no, footer no
 Level: none
 Status: LS
 URL: https://immersive-audio-live.github.io/ADM-OSC/
