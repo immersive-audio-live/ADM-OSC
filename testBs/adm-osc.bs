@@ -8,6 +8,7 @@ Status: LS
 Group: ADM-OSC
 URL: https://immersive-audio-live.github.io/ADM-OSC/
 Repository: immersive-audio-live/ADM-OSC
+Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
 Editor: Michael Zbyszynski, L-Acoustics http://example.com/your-company, michael.zbyszynskki@l-acoustics.com
 Abstract: An industry initiative for standardization of Object-Based Audio (OBA) positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
 Inline Github Issues: true
@@ -18,4 +19,4 @@ Introduction {#intro}
 
 Introduction here.
 
-[Logo]
+[LOGO]
