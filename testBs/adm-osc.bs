@@ -40,7 +40,7 @@ Canonical Order: per grammar
 
 ## polar position messages
 
-<table style="border: 2px solid black;">
+<table class="def" style="border: 2px solid black;">
     <thead>
         <tr>
             <th>address</th>
@@ -49,7 +49,7 @@ Canonical Order: per grammar
             <th>min</th>
             <th>max</th>
             <th>default</th>
-            <th>>description</th>
+            <th>description</th>
             <th>example</th>
         </tr>
     </thead>
