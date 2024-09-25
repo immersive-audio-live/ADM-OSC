@@ -26,7 +26,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 
 # v0.4
 
-## polar position messages
+## polar position messages {#polar}
 
 <table>
     <thead>
@@ -195,10 +195,10 @@ live music and broadcast domains has gathered to exchange needs and experiences 
     </tbody>
 </table>
 
-## configuration messages
+## configuration messages 
 
 <table>
-    <thead bgcolor="Green">
+    <thead>
         <tr>
             <th colspan=2>osc address</th>
             <th>type</th>
