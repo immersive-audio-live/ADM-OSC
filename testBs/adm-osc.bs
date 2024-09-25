@@ -5,7 +5,6 @@ Logo: https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png
 Boilerplate: logo yes, copyright no
 Level: none
 Status: LS
-Group: ADM-OSC
 URL: https://immersive-audio-live.github.io/ADM-OSC/
 Repository: immersive-audio-live/ADM-OSC
 Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
@@ -20,3 +19,6 @@ Introduction {#intro}
 Introduction here.
 
 [LOGO]
+
+<a>OBA</a>
+<dfn dfn>Object-Based Audio</dnf>
