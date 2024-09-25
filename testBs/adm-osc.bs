@@ -1,12 +1,12 @@
 <pre class='metadata'>
-Title: Your Spec Title
-Shortname: your-spec
+Title: ADM-OSC
+Shortname: ADM-OSC
 Level: 1
-Status: ED
-Group: WGNAMEORWHATEVER
+Status: LS
+Group: ADM-OSC
 URL: http://example.com/url-this-spec-will-live-at
-Editor: Your Name, Your Company http://example.com/your-company, your-email@example.com, http://example.com/your-personal-website
-Abstract: A short description of your spec, one or two sentences.
+Editor: Michael Zbyszynksi, L-Acoustics http://example.com/your-company, michael.zbyszynskki@l-acoustics.com
+Abstract: An industry initiative for standardization of Object-Based Audio (OBA) positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
 </pre>
 
 Introduction {#intro}
