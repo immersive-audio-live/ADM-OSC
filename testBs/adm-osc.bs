@@ -33,6 +33,8 @@ Definitions {#define}
 
 <dfn>Object-Based Audio</dfn>
 
+Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. [[Tsingos-2017]]
+
 <pre class='biblio'>
 {
 
@@ -41,6 +43,13 @@ Definitions {#define}
 		"status": "Spec",
 		"publisher": "EBU",
 		"href": "https://tech.ebu.ch/publications/tech3396"
-	}
+	},
+    "Tsingos-2017": {
+        "authors": [ "N. Tsingos" ],
+        "title": “Object-based audio”,
+        "status": "in Immersive Sound",
+        "publisher": "Routledge",
+        "date": "2017"
+    }
 }
 </pre>
