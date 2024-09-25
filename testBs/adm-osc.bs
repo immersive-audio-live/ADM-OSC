@@ -8,7 +8,7 @@ Status: LS
 URL: https://immersive-audio-live.github.io/ADM-OSC/
 Repository: immersive-audio-live/ADM-OSC
 Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
-Editor: Mathieu Delquignies, d&b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
+Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
 Editor: Michael Zbyszynski, L-Acoustics http://example.com/your-company, michael.zbyszynskki@l-acoustics.com
 Inline Github Issues: true
 Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
@@ -22,7 +22,7 @@ Introduction {#intro}
 Issue(immersive-audio-live/adm-osc#33):
 
 ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
-live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
+live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
 
 [=OBA=]
 
@@ -37,16 +37,15 @@ Object-based representation encodes audio tracks along with positional and other
 
 <pre class='biblio'>
 {
-
     "EBU-Tech-3396": {
-		"title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
-		"status": "Spec",
-		"publisher": "EBU",
-		"href": "https://tech.ebu.ch/publications/tech3396"
-	},
+	    "title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
+        "status": "Spec",
+        "publisher": "EBU",
+        "href": "https://tech.ebu.ch/publications/tech3396"
+    },
     "Tsingos-2017": {
         "authors": [ "N. Tsingos" ],
-        "title": “Object-based audio”,
+        "title": "Object-based audio",
         "status": "in Immersive Sound",
         "pages": "244-275",
         "publisher": "Routledge",
