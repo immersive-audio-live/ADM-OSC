@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="3aa4961dbdefcb618e7ce1527543b07ad4bd557a" name="document-revision">
+  <meta content="fbaf7babef51a39c6846da75eb561c39860a5565" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1975,7 +1975,9 @@ dfn > a.self-link::before      { content: "#"; }
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
-    <li><a href="#define"><span class="secno">2</span> <span class="content">Definitions</span></a>
+    <li><a href="#implementation"><span class="secno">2</span> <span class="content">Implementation Matrix</span></a>
+    <li><a href="#discuss"><span class="secno">3</span> <span class="content">Discussion</span></a>
+    <li><a href="#define"><span class="secno">4</span> <span class="content">Definitions</span></a>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1994,8 +1996,18 @@ dfn > a.self-link::before      { content: "#"; }
   <main>
    <p><img alt="ADM-OSC logo" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" style="float:right"></p>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
+   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
+live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
+   <p><a data-link-type="dfn" href="#oba" id="ref-for-oba">OBA</a></p>
+   <h2 class="heading settled" data-level="2" id="implementation"><span class="secno">2. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
    <div class="issue no-marker" id="issue-d41d8cd9">
-    <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+    <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
+    <p dir="auto">Table of implementations.</p>
+    <p dir="auto">What do they support?<br> What they would like to support?</p>
+   </div>
+   <h2 class="heading settled" data-level="3" id="discuss"><span class="secno">3. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <div class="issue no-marker" id="issue-d41d8cd9①">
+    <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
     <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
 <pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
@@ -2003,10 +2015,7 @@ dfn > a.self-link::before      { content: "#"; }
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
    </div>
-   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
-live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
-   <p><a data-link-type="dfn" href="#oba" id="ref-for-oba">OBA</a></p>
-   <h2 class="heading settled" data-level="2" id="define"><span class="secno">2. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
+   <h2 class="heading settled" data-level="4" id="define"><span class="secno">4. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="oba">OBA</dfn> see <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">Object-Based Audio</a></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
@@ -2160,8 +2169,8 @@ live music and broadcast domains has gathered to exchange needs and experiences 
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#oba">OBA</a><span>, in § 2</span>
-   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 2</span>
+   <li><a href="#oba">OBA</a><span>, in § 4</span>
+   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 4</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
@@ -2179,6 +2188,12 @@ live music and broadcast domains has gathered to exchange needs and experiences 
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
+    <p dir="auto">Table of implementations.</p>
+    <p dir="auto">What do they support?<br> What they would like to support?</p>
+     <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a>
+   </div>
+   <div class="issue no-marker">
     <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
     <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
@@ -2186,7 +2201,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 </code></pre>
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
-     <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a>
+     <a class="issue-return" href="#issue-d41d8cd9①" title="Jump to section">↵</a>
    </div>
   </div>
 <script>/* Boilerplate: script-dfn-panel */
@@ -2345,7 +2360,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
 window.dfnpanelData['oba'] = {"dfnID": "oba", "url": "#oba", "dfnText": "OBA", "refSections": [{"refs": [{"id": "ref-for-oba"}], "title": "1. Introduction"}], "external": false};
-window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "2. Definitions"}], "external": false};
+window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "4. Definitions"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
 function query(sel) { return document.querySelector(sel); }
