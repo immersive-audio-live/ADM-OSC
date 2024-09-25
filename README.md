@@ -7,7 +7,7 @@ https://immersive-audio-live.github.io/ADM-OSC/
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 ## Project Contributors
-d&b Audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg.
+Adamson, d&b Audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg
 
 ## Context
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
@@ -54,7 +54,9 @@ See Issues.
 
 + [**Specifications**](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx)
 
-
++ [Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) (Mathieu Delquignies / d&b audiotechnik)
+  + to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware with OSC protocol.
+  
 + Tester **Desktop application** (Jose Gaudin / Meyer Sound)
   + [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
   
@@ -141,7 +143,7 @@ See Issues.
   + [Source directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source)
 
 ## Currently supported in:
-SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco).
+SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson)
 
 
 
