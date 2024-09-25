@@ -19,7 +19,8 @@ Inline Github Issues: true
 Introduction {#intro}
 =====================
 
-Introduction here.
+ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
+live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
 
 [=OBA=]
 
@@ -29,3 +30,15 @@ Definitions {#define}
 <dfn dfn>OBA</dfn> see [=Object-Based Audio=]
 
 <dfn>Object-Based Audio</dfn>
+
+<pre class='biblio'>
+{
+
+    "EBU-Tech-3396": {
+		"title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
+		"status": "Spec",
+		"publisher": "EBU",
+		"href": "https://tech.ebu.ch/publications/tech3396"
+	}
+}
+</pre>
