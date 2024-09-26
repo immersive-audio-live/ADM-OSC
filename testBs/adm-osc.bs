@@ -26,18 +26,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 
 # v0.4
 
-<pre class='propdef'>
-Name: flex-basis
-Value: content | <<'width'>>
-Initial: auto
-Inherited: no
-Applies to: <a>flex items</a>
-Computed value: as specified, with lengths made absolute
-Percentages: relative to the <a>flex container's</a> inner <a>main size</a>
-Animation type: length
-Canonical Order: per grammar
-</pre>
-
 ## polar position messages
 
 <table class="def" style="border: 2px solid black;">
@@ -93,6 +81,12 @@ Canonical Order: per grammar
         </tr>
     </tbody>
 </table>
+
+<pre class=simpledef> 
+address: /adm/obj/n/x
+type: float
+units: degrees
+</pre>
 
 ## Cartesian position messages
 
