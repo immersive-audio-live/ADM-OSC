@@ -28,7 +28,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 
 ## polar position messages
 
-<table class="def" style="border: 2px solid black;">
+<table class="def">
     <thead>
         <tr>
             <th>address</th>
