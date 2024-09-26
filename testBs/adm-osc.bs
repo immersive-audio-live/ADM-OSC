@@ -238,8 +238,10 @@ Implementation Matrix {#implementation}
 
 Issue(immersive-audio-live/adm-osc#24):
 
-# ADM-OSC principals {#basics}
+ADM-OSC principals {#basics}
 =====================
+
+## Roles
 
 ### Sender (client)
 
@@ -257,16 +259,18 @@ ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages 
 
 ## Coordinates
 
-NOTE: For Cartesian coordinates, values are normalized between -1 and 1. $x = 1$ is right, $y = 1$ is forward, $z = 1$ is up.
+NOTE: For Cartesian coordinates, values are normalized between -1 and 1. _x = 1_ is right, _y = 1_ is forward, _z = 1_ is up.
 
+```
     (-1, 1) --------- (1, 1)  
        |                |  
        |                |  
        |                |  
        |                |  
     (-1, -1) ---------(1, -1)  
+```
 
-For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30&deg;. +90&deg; elevation is straight up.
+NOTE: For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30&deg;. +90&deg; elevation is straight up.
 
 ### pol <--> car
 
