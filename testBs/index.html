@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="ef7cd8f23962071f89eaeffb28bc707e5867f595" name="document-revision">
+  <meta content="70e38066a3474d1027ed00df7209d2b852931816" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2250,7 +2250,7 @@ dfn > a.self-link::before      { content: "#"; }
 </pre>
    <p class="note" role="note"><span class="marker">NOTE:</span> For polar coordinates, 0° azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30°. +90° elevation is straight up.</p>
    <h4 class="heading settled" data-level="5.3.1" id="pol----car"><span class="secno">5.3.1. </span><span class="content">pol &lt;--> car</span><a class="self-link" href="#pol----car"></a></h4>
-   <p>The ADM relationship between polar and Cartesian coordinates is specified in [section 10.1 of this document](https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2127-0-201906-I!!PDF-E.pdf).<a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a> This has [some limitations](https://github.com/immersive-audio-live/ADM-OSC/issues/25) and could be extended to include more AR, VR, and game engine use cases.</p>
+   <p>The ADM relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
