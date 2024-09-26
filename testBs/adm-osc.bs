@@ -14,15 +14,23 @@ Inline Github Issues: true
 Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
 </pre>
 
-<img src=[LOGO] alt="ADM-OSC logo" style="float:right">
+<img src=[LOGO] alt="ADM-OSC logo" width="150">
 
 Introduction {#intro}
 =====================
 
-ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
-live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
+ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
 
 [=OBA=]
+
+## Motivation &amp; goals
+
+- To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
+- To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
+- To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, OSC.
+- Keeping the grammar scope aligned with the ADM properties.
+- Share this proposal with the EBU so they can become a relay, publish and support this initiative.
+- Extend this small grammar to more ADM properties (beds, etc.) in the future.
 
 # v0.4
 
@@ -90,7 +98,7 @@ units: degrees
 
 ## Cartesian position messages
 
-<table>
+<table class="def>
     <thead>
         <tr>
             <th colspan=2>osc address</th>
@@ -133,7 +141,7 @@ units: degrees
             <td>float</td>
             <td>normalized</td>
             <td>-1.0</td>
-                        <td>1.0</td>
+            <td>1.0</td>
                         <td>0.0</td>
                         <td>top/bottom dimension. 1 is top</td>
                         <td>/adm/obj/4/z 0.7</td>
@@ -175,7 +183,7 @@ units: degrees
 
 ## configuration messages 
 
-<table>
+<table class="def">
     <thead>
         <tr>
             <th colspan=2>osc address</th>
@@ -235,6 +243,42 @@ Implementation Matrix {#implementation}
 
 Issue(immersive-audio-live/adm-osc#24):
 
+# ADM-OSC principals {#basics}
+=====================
+
+### Sender (client)
+
+- Object Editor sending positioning data to one or more receivers.
+- Position data is always normalized
+
+### Receiver (server)
+
+- Handles the (optional) local scaling of normalized data: x, y, z, distance
+- The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
+
+## Relationship to ADM
+
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) ADM tag should not be in the `/adm` namespace.
+
+## Coordinates
+
+NOTE: For Cartesian coordinates, values are normalized between -1 and 1. $x = 1$ is right, $y = 1$ is forward, $z = 1$ is up.
+
+    (-1, 1) --------- (1, 1)  
+       |                |  
+       |                |  
+       |                |  
+       |                |  
+    (-1, -1) ---------(1, -1)  
+
+For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30&deg;. +90&deg; elevation is straight up.
+
+### pol <--> car
+
+The ADM relationship between polar and Cartesian coordinates is specified in [section 10.1 of this document](https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2127-0-201906-I!!PDF-E.pdf).[[EBU-BS-2127]] This has [some limitations](https://github.com/immersive-audio-live/ADM-OSC/issues/25) and could be extended to include more AR, VR, and game engine use cases.
+
+Issue(immersive-audio-live/adm-osc#25):
+
 Discussion {#discuss}
 =====================
 
@@ -251,6 +295,12 @@ Object-based representation encodes audio tracks along with positional and other
 
 <pre class='biblio'>
 {
+    "EBU-BS-2127" : {
+        "title": "Audio Definition Model renderer for advanced sound systems" ,
+        "status": "Spec",
+        "publisher": "EBU",
+        "href" : "https://www.itu.int/rec/R-REC-BS.2127"
+    },
     "EBU-Tech-3396": {
 	    "title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
         "status": "Spec",
