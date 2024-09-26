@@ -274,7 +274,7 @@ NOTE: For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth 
 
 ### pol <--> car
 
-The ADM relationship between polar and Cartesian coordinates is specified in [section 10.1 of this document](https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2127-0-201906-I!!PDF-E.pdf).[[EBU-BS-2127]] This has [some limitations](https://github.com/immersive-audio-live/ADM-OSC/issues/25) and could be extended to include more AR, VR, and game engine use cases.
+The ADM relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
 
 Issue(immersive-audio-live/adm-osc#25):
 
