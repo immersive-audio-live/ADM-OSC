@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="3413153351d21b188165a5664c9494ad7d25a967" name="document-revision">
+  <meta content="ef7cd8f23962071f89eaeffb28bc707e5867f595" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1974,17 +1974,38 @@ dfn > a.self-link::before      { content: "#"; }
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
     <li>
-     <a href="#v04"><span class="secno">2</span> <span class="content">v0.4</span></a>
+     <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
-      <li><a href="#polar-position-messages"><span class="secno">2.1</span> <span class="content">polar position messages</span></a>
-      <li><a href="#cartesian-position-messages"><span class="secno">2.2</span> <span class="content">Cartesian position messages</span></a>
-      <li><a href="#configuration-messages"><span class="secno">2.3</span> <span class="content">configuration messages</span></a>
+      <li><a href="#motivation--goals"><span class="secno">1.1</span> <span class="content">Motivation &amp; goals</span></a>
      </ol>
-    <li><a href="#implementation"><span class="secno">3</span> <span class="content">Implementation Matrix</span></a>
-    <li><a href="#discuss"><span class="secno">4</span> <span class="content">Discussion</span></a>
-    <li><a href="#define"><span class="secno">5</span> <span class="content">Definitions</span></a>
+    <li><a href="#summary-of-version-10"><span class="secno">2</span> <span class="content">Summary of version 1.0</span></a>
+    <li>
+     <a href="#v04"><span class="secno">3</span> <span class="content">v0.4</span></a>
+     <ol class="toc">
+      <li><a href="#polar-position-messages"><span class="secno">3.1</span> <span class="content">polar position messages</span></a>
+      <li><a href="#cartesian-position-messages"><span class="secno">3.2</span> <span class="content">Cartesian position messages</span></a>
+      <li><a href="#configuration-messages"><span class="secno">3.3</span> <span class="content">configuration messages</span></a>
+     </ol>
+    <li><a href="#implementation"><span class="secno">4</span> <span class="content">Implementation Matrix</span></a>
+    <li>
+     <a href="#basics"><span class="secno">5</span> <span class="content">ADM-OSC principals</span></a>
+     <ol class="toc">
+      <li>
+       <a href="#roles"><span class="secno">5.1</span> <span class="content">Roles</span></a>
+       <ol class="toc">
+        <li><a href="#sender-client"><span class="secno">5.1.1</span> <span class="content">Sender (client)</span></a>
+        <li><a href="#receiver-server"><span class="secno">5.1.2</span> <span class="content">Receiver (server)</span></a>
+       </ol>
+      <li><a href="#relationship-to-adm"><span class="secno">5.2</span> <span class="content">Relationship to ADM</span></a>
+      <li>
+       <a href="#coordinates"><span class="secno">5.3</span> <span class="content">Coordinates</span></a>
+       <ol class="toc">
+        <li><a href="#pol----car"><span class="secno">5.3.1</span> <span class="content">pol &lt;--> car</span></a>
+       </ol>
+     </ol>
+    <li><a href="#discuss"><span class="secno">6</span> <span class="content">Discussion</span></a>
+    <li><a href="#define"><span class="secno">7</span> <span class="content">Definitions</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
@@ -1999,13 +2020,28 @@ dfn > a.self-link::before      { content: "#"; }
    </ol>
   </nav>
   <main>
-   <p><img alt="ADM-OSC logo" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" style="float:right"></p>
+   <p><img alt="ADM-OSC logo" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"></p>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from
-live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
+   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
    <p><a data-link-type="dfn" href="#oba" id="ref-for-oba">OBA</a></p>
-   <h2 class="heading settled" data-level="2" id="v04"><span class="secno">2. </span><span class="content">v0.4</span><a class="self-link" href="#v04"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="polar-position-messages"><span class="secno">2.1. </span><span class="content">polar position messages</span><a class="self-link" href="#polar-position-messages"></a></h3>
+   <h3 class="heading settled" data-level="1.1" id="motivation--goals"><span class="secno">1.1. </span><span class="content">Motivation &amp; goals</span><a class="self-link" href="#motivation--goals"></a></h3>
+   <ul>
+    <li data-md>
+     <p>To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.</p>
+    <li data-md>
+     <p>To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.</p>
+    <li data-md>
+     <p>To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, OSC.</p>
+    <li data-md>
+     <p>Keeping the grammar scope aligned with the ADM properties.</p>
+    <li data-md>
+     <p>Share this proposal with the EBU so they can become a relay, publish and support this initiative.</p>
+    <li data-md>
+     <p>Extend this small grammar to more ADM properties (beds, etc.) in the future.</p>
+   </ul>
+   <h2 class="heading settled" data-level="2" id="summary-of-version-10"><span class="secno">2. </span><span class="content">Summary of version 1.0</span><a class="self-link" href="#summary-of-version-10"></a></h2>
+   <h2 class="heading settled" data-level="3" id="v04"><span class="secno">3. </span><span class="content">v0.4</span><a class="self-link" href="#v04"></a></h2>
+   <h3 class="heading settled" data-level="3.1" id="polar-position-messages"><span class="secno">3.1. </span><span class="content">polar position messages</span><a class="self-link" href="#polar-position-messages"></a></h3>
    <table class="def">
     <thead>
      <tr>
@@ -2064,8 +2100,8 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <th>units
       <td>degrees
    </table>
-   <h3 class="heading settled" data-level="2.2" id="cartesian-position-messages"><span class="secno">2.2. </span><span class="content">Cartesian position messages</span><a class="self-link" href="#cartesian-position-messages"></a></h3>
-   <table>
+   <h3 class="heading settled" data-level="3.2" id="cartesian-position-messages"><span class="secno">3.2. </span><span class="content">Cartesian position messages</span><a class="self-link" href="#cartesian-position-messages"></a></h3>
+   <table class="def">
     <thead>
      <tr>
       <th colspan="2">osc address
@@ -2076,7 +2112,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <th>default
       <th>description
       <th>example
-      <th>status
     <tbody>
      <tr>
       <td rowspan="6">/adm/obj/<i>n</i>
@@ -2088,7 +2123,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>0.0
       <td>left/right dimension. -1 is left
       <td>/adm/obj/4/x -0.9
-      <td class="stable">stable v0.4
      <tr>
       <td>/y
       <td>float
@@ -2098,7 +2132,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>0.0
       <td>front/back dimension. 1 is front
       <td>/adm/obj/4/y 0.15
-      <td class="stable">stable v0.4
      <tr>
       <td>/z
       <td>float
@@ -2108,14 +2141,12 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>0.0
       <td>top/bottom dimension. 1 is top
       <td>/adm/obj/4/z 0.7
-      <td class="stable">stable v0.4
      <tr>
       <td>/xyz
       <td>list
       <td colspan="4">see above
       <td>compact format enables synchronicity of position changes and also less network traffic
       <td>/adm/obj/4/xyz -0.9 0.15 0.7
-      <td class="stable">stable v0.4
      <tr>
       <td>/w
       <td>float
@@ -2125,8 +2156,6 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>0.0
       <td>horizontal extent in normalized units
       <td>/adm/obj/3/w 0.2
-      <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/1">in
-                                progress</a>
      <tr>
       <td>/gain
       <td>float
@@ -2136,10 +2165,9 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td>1.0
       <td>Apply a gain to the audio in the object.
       <td>/adm/obj/3/gain 0.707
-      <td class="stable">stable v0.4
    </table>
-   <h3 class="heading settled" data-level="2.3" id="configuration-messages"><span class="secno">2.3. </span><span class="content">configuration messages</span><a class="self-link" href="#configuration-messages"></a></h3>
-   <table>
+   <h3 class="heading settled" data-level="3.3" id="configuration-messages"><span class="secno">3.3. </span><span class="content">configuration messages</span><a class="self-link" href="#configuration-messages"></a></h3>
+   <table class="def">
     <thead>
      <tr>
       <th colspan="2">osc address
@@ -2187,15 +2215,49 @@ live music and broadcast domains has gathered to exchange needs and experiences 
       <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a>
    </table>
-   <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
+   <h2 class="heading settled" data-level="4" id="implementation"><span class="secno">4. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
    <div class="issue no-marker" id="issue-d41d8cd9">
     <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
     <p dir="auto">Table of implementations.</p>
     <p dir="auto">What do they support?<br> What they would like to support?</p>
    </div>
-   <h2 class="heading settled" data-level="4" id="discuss"><span class="secno">4. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <h2 class="heading settled" data-level="5" id="basics"><span class="secno">5. </span><span class="content">ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
+   <h3 class="heading settled" data-level="5.1" id="roles"><span class="secno">5.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
+   <h4 class="heading settled" data-level="5.1.1" id="sender-client"><span class="secno">5.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
+   <ul>
+    <li data-md>
+     <p>Object Editor sending positioning data to one or more receivers.</p>
+    <li data-md>
+     <p>Position data is always normalized</p>
+   </ul>
+   <h4 class="heading settled" data-level="5.1.2" id="receiver-server"><span class="secno">5.1.2. </span><span class="content">Receiver (server)</span><a class="self-link" href="#receiver-server"></a></h4>
+   <ul>
+    <li data-md>
+     <p>Handles the (optional) local scaling of normalized data: x, y, z, distance</p>
+    <li data-md>
+     <p>The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC &lt;-> sADM)</p>
+   </ul>
+   <h3 class="heading settled" data-level="5.2" id="relationship-to-adm"><span class="secno">5.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
+   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) ADM tag should not be in the `/adm` namespace.</p>
+   <h3 class="heading settled" data-level="5.3" id="coordinates"><span class="secno">5.3. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
+   <p class="note" role="note"><span class="marker">NOTE:</span> For Cartesian coordinates, values are normalized between -1 and 1. _x = 1_ is right, _y = 1_ is forward, _z = 1_ is up.</p>
+<pre>(-1, 1) --------- (1, 1)  
+   |                |  
+   |                |  
+   |                |  
+   |                |  
+(-1, -1) ---------(1, -1)  
+</pre>
+   <p class="note" role="note"><span class="marker">NOTE:</span> For polar coordinates, 0° azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30°. +90° elevation is straight up.</p>
+   <h4 class="heading settled" data-level="5.3.1" id="pol----car"><span class="secno">5.3.1. </span><span class="content">pol &lt;--> car</span><a class="self-link" href="#pol----car"></a></h4>
+   <p>The ADM relationship between polar and Cartesian coordinates is specified in [section 10.1 of this document](https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.2127-0-201906-I!!PDF-E.pdf).<a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a> This has [some limitations](https://github.com/immersive-audio-live/ADM-OSC/issues/25) and could be extended to include more AR, VR, and game engine use cases.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
-    <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+    <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
+    <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
+   </div>
+   <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <div class="issue no-marker" id="issue-d41d8cd9②">
+    <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
     <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
 <pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
@@ -2203,7 +2265,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
    </div>
-   <h2 class="heading settled" data-level="5" id="define"><span class="secno">5. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
+   <h2 class="heading settled" data-level="7" id="define"><span class="secno">7. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="oba">OBA</dfn> see <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">Object-Based Audio</a></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
@@ -2211,12 +2273,14 @@ live music and broadcast domains has gathered to exchange needs and experiences 
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#oba">OBA</a><span>, in § 5</span>
-   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 5</span>
+   <li><a href="#oba">OBA</a><span>, in § 7</span>
+   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 7</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-ebu-bs-2127">[EBU-BS-2127]
+   <dd><a href="https://www.itu.int/rec/R-REC-BS.2127"><cite>Audio Definition Model renderer for advanced sound systems</cite></a>. Spec. URL: <a href="https://www.itu.int/rec/R-REC-BS.2127">https://www.itu.int/rec/R-REC-BS.2127</a>
    <dt id="biblio-ebu-tech-3396">[EBU-Tech-3396]
    <dd><a href="https://tech.ebu.ch/publications/tech3396"><cite>BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES</cite></a>. Spec. URL: <a href="https://tech.ebu.ch/publications/tech3396">https://tech.ebu.ch/publications/tech3396</a>
    <dt id="biblio-tsingos-2017">[Tsingos-2017]
@@ -2231,6 +2295,11 @@ live music and broadcast domains has gathered to exchange needs and experiences 
      <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a>
    </div>
    <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
+    <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
+     <a class="issue-return" href="#issue-d41d8cd9①" title="Jump to section">↵</a>
+   </div>
+   <div class="issue no-marker">
     <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
     <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
@@ -2238,7 +2307,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 </code></pre>
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
-     <a class="issue-return" href="#issue-d41d8cd9①" title="Jump to section">↵</a>
+     <a class="issue-return" href="#issue-d41d8cd9②" title="Jump to section">↵</a>
    </div>
   </div>
 <script>/* Boilerplate: script-dfn-panel */
@@ -2397,7 +2466,7 @@ live music and broadcast domains has gathered to exchange needs and experiences 
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
 window.dfnpanelData['oba'] = {"dfnID": "oba", "url": "#oba", "dfnText": "OBA", "refSections": [{"refs": [{"id": "ref-for-oba"}], "title": "1. Introduction"}], "external": false};
-window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5. Definitions"}], "external": false};
+window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "7. Definitions"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
 function query(sel) { return document.querySelector(sel); }
