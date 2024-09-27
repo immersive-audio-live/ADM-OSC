@@ -9,12 +9,10 @@ URL: https://immersive-audio-live.github.io/ADM-OSC/
 Repository: immersive-audio-live/ADM-OSC
 Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
 Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
-Editor: Michael Zbyszynski, L-Acoustics http://example.com/your-company, michael.zbyszynskki@l-acoustics.com
+Editor: Michael Zbyszynski, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynskki@l-acoustics.com
 Inline Github Issues: true
 Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=].
 </pre>
-
-<img src=[LOGO] alt="ADM-OSC logo" width="150">
 
 Introduction {#intro}
 =====================
