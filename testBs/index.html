@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="5c676ff6f09a23bbb5e7c84a4839f3bf71dac11e" name="document-revision">
+  <meta content="a6c42d549ee3321148afaeab76dd524afa0d6c02" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2133,11 +2133,16 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <a href="#tools"><span class="secno">5</span> <span class="content">Development &amp; Test tools</span></a>
      <ol class="toc">
-      <li><a href="#chataigne-module-mathieu-delquignies-db-audiotechnik"><span class="secno">5.1</span> <span class="content"><span>Chataigne module</span> (Mathieu Delquignies / d&amp;b audiotechnik)</span></a>
-      <li><a href="#tester-desktop-application-jose-gaudin-meyer-sound"><span class="secno">5.2</span> <span class="content">Tester Desktop application (Jose Gaudin / Meyer Sound)</span></a>
-      <li><a href="#validator-test-and-stress-test-python-module-gael-martinet-flux"><span class="secno">5.3</span> <span class="content">Validator, Test and Stress Test Python Module (Gael Martinet / FLUX::)</span></a>
+      <li><a href="#chataigne-module"><span class="secno">5.1</span> <span class="content"><span>Chataigne module</span></span></a>
+      <li><a href="#tester-desktop-application"><span class="secno">5.2</span> <span class="content">Tester Desktop application</span></a>
+      <li><a href="#validator-test-and-stress-test-python-module"><span class="secno">5.3</span> <span class="content">Validator, Test and Stress Test Python Module</span></a>
      </ol>
-    <li><a href="#discuss"><span class="secno">6</span> <span class="content">Discussion</span></a>
+    <li>
+     <a href="#discuss"><span class="secno">6</span> <span class="content">Discussion</span></a>
+     <ol class="toc">
+      <li><a href="#draft-05"><span class="secno">6.1</span> <span class="content">Draft 0.5</span></a>
+      <li><a href="#relationship-to-adm"><span class="secno">6.2</span> <span class="content">Relationship to ADM</span></a>
+     </ol>
     <li><a href="#define"><span class="secno">7</span> <span class="content">Definitions</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -2385,11 +2390,14 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
    </div>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="chataigne-module-mathieu-delquignies-db-audiotechnik"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a> (Mathieu Delquignies / d&amp;b audiotechnik)</span><a class="self-link" href="#chataigne-module-mathieu-delquignies-db-audiotechnik"></a></h3>
-   <p>to retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol.</p>
-   <h3 class="heading settled" data-level="5.2" id="tester-desktop-application-jose-gaudin-meyer-sound"><span class="secno">5.2. </span><span class="content">Tester Desktop application (Jose Gaudin / Meyer Sound)</span><a class="self-link" href="#tester-desktop-application-jose-gaudin-meyer-sound"></a></h3>
+   <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
+   <p>(Mathieu Delquignies / d&amp;b audiotechnik)
+to retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol.</p>
+   <h3 class="heading settled" data-level="5.2" id="tester-desktop-application"><span class="secno">5.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
+   <p>(Jose Gaudin / Meyer Sound)</p>
    <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a></p>
-   <h3 class="heading settled" data-level="5.3" id="validator-test-and-stress-test-python-module-gael-martinet-flux"><span class="secno">5.3. </span><span class="content">Validator, Test and Stress Test Python Module (Gael Martinet / FLUX::)</span><a class="self-link" href="#validator-test-and-stress-test-python-module-gael-martinet-flux"></a></h3>
+   <h3 class="heading settled" data-level="5.3" id="validator-test-and-stress-test-python-module"><span class="secno">5.3. </span><span class="content">Validator, Test and Stress Test Python Module</span><a class="self-link" href="#validator-test-and-stress-test-python-module"></a></h3>
+   <p>(Gael Martinet / FLUX::)</p>
    <p>adm_osc module is available to install through pip:</p>
 <pre class="language-shell highlight">pip install adm-osc
 </pre>
@@ -2459,13 +2467,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 <c- c1># do stress test in polar coordinates</c->
 <c- n>sender</c-><c- o>.</c-><c- n>stress_polar_position</c-><c- p>(</c-><c- n>number_of_objects</c-><c- o>=</c-><c- mi>64</c-><c- p>,</c-> <c- n>duration_in_second</c-><c- o>=</c-><c- mf>60.0</c-><c- p>,</c-> <c- n>interval_in_milliseconds</c-><c- o>=</c-><c- mf>10.0</c-><c- p>)</c->
 </pre>
-   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">full documentation</a> <a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a></p>
+   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">full documentation</a></p>
+   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a></p>
    <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
-   <p>Draft 0.5</p>
-   <hr>
+   <h3 class="heading settled" data-level="6.1" id="draft-05"><span class="secno">6.1. </span><span class="content">Draft 0.5</span><a class="self-link" href="#draft-05"></a></h3>
    <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
-   <p>Relationship to ADM</p>
-   <hr>
+   <h3 class="heading settled" data-level="6.2" id="relationship-to-adm"><span class="secno">6.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
    <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> tag should not be in the `/adm` namespace.</p>
    <div class="issue no-marker" id="issue-d41d8cd9②">
     <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
@@ -2695,9 +2702,9 @@ specification has been published in 2002 [8].</p>
 </script>
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
-window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}, {"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}], "title": "1.1. Motivation & goals"}, {"refs": [{"id": "ref-for-audio-definition-model\u2463"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.4.3. Conversions"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}, {"id": "ref-for-audio-definition-model\u2466"}], "title": "6. Discussion"}], "external": false};
-window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5.1. Chataigne module (Mathieu Delquignies / d&b audiotechnik)"}, {"refs": [{"id": "ref-for-object-based-audio\u2461"}], "title": "7. Definitions"}], "external": false};
-window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.1. Motivation & goals"}, {"refs": [{"id": "ref-for-open-sound-control\u2461"}], "title": "5.1. Chataigne module (Mathieu Delquignies / d&b audiotechnik)"}], "external": false};
+window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}, {"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}], "title": "1.1. Motivation & goals"}, {"refs": [{"id": "ref-for-audio-definition-model\u2463"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.4.3. Conversions"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "6.1. Draft 0.5"}, {"refs": [{"id": "ref-for-audio-definition-model\u2466"}], "title": "6.2. Relationship to ADM"}], "external": false};
+window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5.1. Chataigne module"}, {"refs": [{"id": "ref-for-object-based-audio\u2461"}], "title": "7. Definitions"}], "external": false};
+window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.1. Motivation & goals"}, {"refs": [{"id": "ref-for-open-sound-control\u2461"}], "title": "5.1. Chataigne module"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
 function query(sel) { return document.querySelector(sel); }
