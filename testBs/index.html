@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="9c8dbd3b94e88e48583e6bd7dd1c22f691bde4cb" name="document-revision">
+  <meta content="156e2efeff6b74e8f89ade7cb274dfc4c69888a3" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1946,7 +1946,7 @@ dfn > a.self-link::before      { content: "#"; }
 </style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"><a class="logo" href="https://www.aomedia.org/" style="width: 200px"> <img alt="AOM" height="60" src="https://aomedia.org/assets/images/aomedia-logo-rgb.svg" width="200"> </a></p>
+   <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 200px"> <img alt="ADM-OSC" height="244" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="300"> </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-09-27">27 September 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
@@ -1960,7 +1960,7 @@ dfn > a.self-link::before      { content: "#"; }
      <dd><a href="#issues-index">Inline In Spec</a>
      <dt class="editor">Editors:
      <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:mathieu.delquignies@dbaudio.com">Mathieu Delquignies</a> (<a class="p-org org" href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>)
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:michael.zbyszynskki@l-acoustics.com">Michael Zbyszynski</a> (<a class="p-org org" href="http://example.com/your-company">L-Acoustics</a>)
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:michael.zbyszynskki@l-acoustics.com">Michael Zbyszynski</a> (<a class="p-org org" href="https://l-isa.l-acoustics.com/">L-Acoustics</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -2020,7 +2020,6 @@ dfn > a.self-link::before      { content: "#"; }
    </ol>
   </nav>
   <main>
-   <p><img alt="ADM-OSC logo" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"></p>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
    <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
    <h3 class="heading settled" data-level="1.1" id="goals"><span class="secno">1.1. </span><span class="content">Motivation &amp; goals {#goals}</span><a class="self-link" href="#goals"></a></h3>
@@ -2030,7 +2029,7 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.</p>
     <li data-md>
-     <p>To define a direct translation of the most relevant <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> Object Properties onto a communication protocol widely used in the live industry, OSC.</p>
+     <p>To define a direct translation of the most relevant <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> Object Properties onto a communication protocol widely used in the live industry, <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control①">OSC</a>.</p>
     <li data-md>
      <p>Keeping the grammar scope aligned with the <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model②">ADM</a> properties.</p>
     <li data-md>
@@ -2291,7 +2290,7 @@ features <a data-link-type="biblio" href="#biblio-what-is-adm" title="What is th
 defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu-bs-2076" title="Audio Definition Model">[EBU-BS-2076]</a></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OBA" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
-   <p><dfn data-dfn-type="dfn" data-local-lt="OSC" data-noexport id="open-sound-control">Open Sound Control<a class="self-link" href="#open-sound-control"></a></dfn></p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OSC" data-noexport id="open-sound-control">Open Sound Control</dfn></p>
    <p>OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music &amp; Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.</p>
    <p>There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
 specification has been published in 2002 [8].</p>
@@ -2501,6 +2500,7 @@ specification has been published in 2002 [8].</p>
 window.dfnpanelData = {};
 window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}, {"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}], "title": "1.1. Motivation & goals {#goals}"}, {"refs": [{"id": "ref-for-audio-definition-model\u2463"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.2. Relationship to ADM"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "4.3.3. Conversions {#conversions}"}], "external": false};
 window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "6. Definitions"}], "external": false};
+window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.1. Motivation & goals {#goals}"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
 function query(sel) { return document.querySelector(sel); }
