@@ -9,6 +9,7 @@ Status: LS
 URL: https://immersive-audio-live.github.io/ADM-OSC/
 Repository: immersive-audio-live/ADM-OSC
 Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
+Previous verision: https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html
 Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
 Editor: Michael Zbyszynski, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynskki@l-acoustics.com
 Inline Github Issues: true
@@ -20,7 +21,8 @@ Introduction {#intro}
 
 ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
 
-## Motivation &amp; goals {#goals}
+Motivation &amp; goals {#goals}
+----------------------------------
 
 - To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
 - To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
@@ -29,9 +31,11 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 - Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 - Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
 
-# Summary of version 1.0 {#v1.0}
+Summary of version 1.0 {#v1.0}
+================================
 
-## position messages 
+Position messages
+-----------------
 
 <table class="def">
     <thead>
@@ -152,7 +156,8 @@ type: float
 units: degrees
 </pre>
 
-## configuration messages 
+Configuration messages
+----------------------
 
 <table class="def">
     <thead>
@@ -210,12 +215,12 @@ units: degrees
 </table>
 
 Implementation Matrix {#implementation}
-=====================
+=======================================
 
 Issue(immersive-audio-live/adm-osc#24):
 
 ADM-OSC principals {#basics}
-=====================
+============================
 
 ## Roles
 
