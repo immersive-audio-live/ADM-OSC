@@ -34,9 +34,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 
 # Summary of version 1.0
 
-# v0.4
-
-## polar position messages
+## position messages 
 
 <table class="def">
     <thead>
@@ -53,8 +51,8 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
     </thead>
     <tbody>
         <tr>
-            <td>/elev</td>
-            <td>float</td>
+            <td>/adm/obj/<i>n</i>/elev</td>
+            <td>f</td>
             <td>degrees</td>
             <td>-90.0</td>
             <td>90.0</td>
@@ -63,8 +61,8 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
             <td>/adm/obj/4/elev 12.7</td>
         </tr>
         <tr>
-            <td>/dist</td>
-            <td>float</td>
+            <td>/adm/obj/<i>n</i>/dist</td>
+            <td>f</td>
             <td>normalized</td>
             <td>0.0</td>
             <td>1.0</td>
@@ -73,15 +71,62 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
             <td>/adm/obj/4/dist 0.9</td>
         </tr>
         <tr>
-            <td>/aed</td>
-            <td>list</td>
+            <td>/adm/obj/<i>n</i>/aed</td>
+            <td>f f f</td>
             <td colspan=4>see above</td>
             <td>compact format enables synchronicity of position changes and also less network traffic</td>
             <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
         </tr>
         <tr>
-            <td>/gain</td>
-            <td>float</td>
+            <td>/adm/obj/<i>n</i>/x</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>left/right dimension. -1 is left</td>
+            <td>/adm/obj/4/x -0.9</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/y</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>front/back dimension. 1 is front</td>
+            <td>/adm/obj/4/y 0.15</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/z</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>top/bottom dimension. 1 is top</td>
+            <td>/adm/obj/4/z 0.7</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/xyz</td>
+            <td>f f f</td>
+            <td colspan=4>see above</td>
+            <td>compact format enables synchronicity and reduces network traffic</td>
+            <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/w</td>
+            <td>f</td>                        
+            <td>normalized</td>
+            <td>0.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>horizontal extent in normalized units</td>
+            <td>/adm/obj/3/w 0.2</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/gain</td>
+            <td>f</td>
             <td>linear</td>
             <td>0.</td>
             <td></td>
@@ -92,89 +137,13 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
     </tbody>
 </table>
 
+NOTE: Types: `f` = float, `i` = integer, `s` = string. `f f f` is a list of three floats.
+
 <pre class=simpledef> 
 address: /adm/obj/n/x
 type: float
 units: degrees
 </pre>
-
-## Cartesian position messages
-
-<table class="def">
-    <thead>
-        <tr>
-            <th colspan=2>osc address</th>
-            <th>type</th>
-            <th>units</th>
-            <th>min</th>
-            <th>max</th>
-            <th>default</th>
-            <th>description</th>
-            <th>example</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=6>/adm/obj/<i>n</i></td>
-            <td>/x</td>
-            <td>float</td>
-            <td>normalized</td>
-            <td>-1.0</td>
-            <td>1.0</td>
-            <td>0.0</td>
-            <td>left/right dimension. -1 is left</td>
-            <td>/adm/obj/4/x -0.9</td>
-        </tr>
-        <tr>
-            <td>/y</td>
-            <td>float</td>
-            <td>normalized</td>
-            <td>-1.0</td>
-            <td>1.0</td>
-            <td>0.0</td>
-            <td>front/back dimension. 1 is front</td>
-            <td>/adm/obj/4/y 0.15</td>
-        </tr>
-        <tr>
-            <td>/z</td>
-            <td>float</td>
-            <td>normalized</td>
-            <td>-1.0</td>
-            <td>1.0</td>
-            <td>0.0</td>
-            <td>top/bottom dimension. 1 is top</td>
-            <td>/adm/obj/4/z 0.7</td>
-
-        </tr>
-        <tr>
-                        <td>/xyz</td>
-                        <td>list</td>
-                        <td colspan=4>see above</td>
-                        <td>compact format enables synchronicity of position changes and also less network traffic</td>
-                        <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
-        </tr>
-        <tr>
-                        <td>/w</td>
-                        <td>float</td>
-                        <td>normalized</td>
-                        <td>0.0</td>
-                        <td>1.0</td>
-                        <td>0.0</td>
-                        <td>horizontal extent in normalized units</td>
-                        <td>/adm/obj/3/w 0.2</td>
-        </tr>
-        <tr>
-            <td>/gain</td>
-            <td>float</td>
-            <td>linear</td>
-            <td>0.</td>
-                    <td></td>
-                    <td>1.0</td>
-                    <td>Apply a gain to the audio in the object.</td>
-                    <td>/adm/obj/3/gain 0.707</td>
-        </tr>
-    </tbody>
-</table>
 
 ## configuration messages 
 
