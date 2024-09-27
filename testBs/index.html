@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="70e38066a3474d1027ed00df7209d2b852931816" name="document-revision">
+  <meta content="573e69fac6715a7090001e32b4c76201d8230f2a" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1948,7 +1948,7 @@ dfn > a.self-link::before      { content: "#"; }
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-09-26">26 September 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-09-27">27 September 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1979,33 +1979,31 @@ dfn > a.self-link::before      { content: "#"; }
      <ol class="toc">
       <li><a href="#motivation--goals"><span class="secno">1.1</span> <span class="content">Motivation &amp; goals</span></a>
      </ol>
-    <li><a href="#summary-of-version-10"><span class="secno">2</span> <span class="content">Summary of version 1.0</span></a>
     <li>
-     <a href="#v04"><span class="secno">3</span> <span class="content">v0.4</span></a>
+     <a href="#summary-of-version-10"><span class="secno">2</span> <span class="content">Summary of version 1.0</span></a>
      <ol class="toc">
-      <li><a href="#polar-position-messages"><span class="secno">3.1</span> <span class="content">polar position messages</span></a>
-      <li><a href="#cartesian-position-messages"><span class="secno">3.2</span> <span class="content">Cartesian position messages</span></a>
-      <li><a href="#configuration-messages"><span class="secno">3.3</span> <span class="content">configuration messages</span></a>
+      <li><a href="#position-messages"><span class="secno">2.1</span> <span class="content">position messages</span></a>
+      <li><a href="#configuration-messages"><span class="secno">2.2</span> <span class="content">configuration messages</span></a>
      </ol>
-    <li><a href="#implementation"><span class="secno">4</span> <span class="content">Implementation Matrix</span></a>
+    <li><a href="#implementation"><span class="secno">3</span> <span class="content">Implementation Matrix</span></a>
     <li>
-     <a href="#basics"><span class="secno">5</span> <span class="content">ADM-OSC principals</span></a>
+     <a href="#basics"><span class="secno">4</span> <span class="content">ADM-OSC principals</span></a>
      <ol class="toc">
       <li>
-       <a href="#roles"><span class="secno">5.1</span> <span class="content">Roles</span></a>
+       <a href="#roles"><span class="secno">4.1</span> <span class="content">Roles</span></a>
        <ol class="toc">
-        <li><a href="#sender-client"><span class="secno">5.1.1</span> <span class="content">Sender (client)</span></a>
-        <li><a href="#receiver-server"><span class="secno">5.1.2</span> <span class="content">Receiver (server)</span></a>
+        <li><a href="#sender-client"><span class="secno">4.1.1</span> <span class="content">Sender (client)</span></a>
+        <li><a href="#receiver-server"><span class="secno">4.1.2</span> <span class="content">Receiver (server)</span></a>
        </ol>
-      <li><a href="#relationship-to-adm"><span class="secno">5.2</span> <span class="content">Relationship to ADM</span></a>
+      <li><a href="#relationship-to-adm"><span class="secno">4.2</span> <span class="content">Relationship to ADM</span></a>
       <li>
-       <a href="#coordinates"><span class="secno">5.3</span> <span class="content">Coordinates</span></a>
+       <a href="#coordinates"><span class="secno">4.3</span> <span class="content">Coordinates</span></a>
        <ol class="toc">
-        <li><a href="#pol----car"><span class="secno">5.3.1</span> <span class="content">pol &lt;--> car</span></a>
+        <li><a href="#pol----car"><span class="secno">4.3.1</span> <span class="content">pol &lt;--> car</span></a>
        </ol>
      </ol>
-    <li><a href="#discuss"><span class="secno">6</span> <span class="content">Discussion</span></a>
-    <li><a href="#define"><span class="secno">7</span> <span class="content">Definitions</span></a>
+    <li><a href="#discuss"><span class="secno">5</span> <span class="content">Discussion</span></a>
+    <li><a href="#define"><span class="secno">6</span> <span class="content">Definitions</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
@@ -2040,8 +2038,7 @@ dfn > a.self-link::before      { content: "#"; }
      <p>Extend this small grammar to more ADM properties (beds, etc.) in the future.</p>
    </ul>
    <h2 class="heading settled" data-level="2" id="summary-of-version-10"><span class="secno">2. </span><span class="content">Summary of version 1.0</span><a class="self-link" href="#summary-of-version-10"></a></h2>
-   <h2 class="heading settled" data-level="3" id="v04"><span class="secno">3. </span><span class="content">v0.4</span><a class="self-link" href="#v04"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="polar-position-messages"><span class="secno">3.1. </span><span class="content">polar position messages</span><a class="self-link" href="#polar-position-messages"></a></h3>
+   <h3 class="heading settled" data-level="2.1" id="position-messages"><span class="secno">2.1. </span><span class="content">position messages</span><a class="self-link" href="#position-messages"></a></h3>
    <table class="def">
     <thead>
      <tr>
@@ -2055,8 +2052,8 @@ dfn > a.self-link::before      { content: "#"; }
       <th>example
     <tbody>
      <tr>
-      <td>/elev
-      <td>float
+      <td>/adm/obj/<i>n</i>/elev
+      <td>f
       <td>degrees
       <td>-90.0
       <td>90.0
@@ -2064,8 +2061,8 @@ dfn > a.self-link::before      { content: "#"; }
       <td><b>elevation</b> “phi - ɸ” of sound location
       <td>/adm/obj/4/elev 12.7
      <tr>
-      <td>/dist
-      <td>float
+      <td>/adm/obj/<i>n</i>/dist
+      <td>f
       <td>normalized
       <td>0.0
       <td>1.0
@@ -2073,14 +2070,56 @@ dfn > a.self-link::before      { content: "#"; }
       <td><b>distance</b> “r” from origin
       <td>/adm/obj/4/dist 0.9
      <tr>
-      <td>/aed
-      <td>list
+      <td>/adm/obj/<i>n</i>/aed
+      <td>f f f
       <td colspan="4">see above
       <td>compact format enables synchronicity of position changes and also less network traffic
       <td>/adm/obj/4/aed -22.5 12.7 0.9
      <tr>
-      <td>/gain
-      <td>float
+      <td>/adm/obj/<i>n</i>/x
+      <td>f
+      <td>normalized
+      <td>-1.0
+      <td>1.0
+      <td>0.0
+      <td>left/right dimension. -1 is left
+      <td>/adm/obj/4/x -0.9
+     <tr>
+      <td>/adm/obj/<i>n</i>/y
+      <td>f
+      <td>normalized
+      <td>-1.0
+      <td>1.0
+      <td>0.0
+      <td>front/back dimension. 1 is front
+      <td>/adm/obj/4/y 0.15
+     <tr>
+      <td>/adm/obj/<i>n</i>/z
+      <td>f
+      <td>normalized
+      <td>-1.0
+      <td>1.0
+      <td>0.0
+      <td>top/bottom dimension. 1 is top
+      <td>/adm/obj/4/z 0.7
+     <tr>
+      <td>/adm/obj/<i>n</i>/xyz
+      <td>f f f
+      <td colspan="4">see above
+      <td>compact format enables synchronicity and reduces network traffic
+      <td>/adm/obj/4/xyz -0.9 0.15 0.7
+     <tr>
+      <td>/adm/obj/<i>n</i>/w
+      <td>f
+      <td>normalized
+      <td>0.0
+      <td>1.0
+      <td>0.0
+      <td>horizontal extent in normalized units
+      <td>/adm/obj/3/w 0.2
+     <tr>
+      <td>/adm/obj/<i>n</i>/gain
+      <td>f
       <td>linear
       <td>0.
       <td>
@@ -2088,6 +2127,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td>Apply a gain to the audio in the object.
       <td>/adm/obj/3/gain 0.707
    </table>
+   <p class="note" role="note"><span class="marker">NOTE:</span> Types: `f` = float, `i` = integer, `s` = string. `f f f` is a list of three floats.</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2100,73 +2140,7 @@ dfn > a.self-link::before      { content: "#"; }
       <th>units
       <td>degrees
    </table>
-   <h3 class="heading settled" data-level="3.2" id="cartesian-position-messages"><span class="secno">3.2. </span><span class="content">Cartesian position messages</span><a class="self-link" href="#cartesian-position-messages"></a></h3>
-   <table class="def">
-    <thead>
-     <tr>
-      <th colspan="2">osc address
-      <th>type
-      <th>units
-      <th>min
-      <th>max
-      <th>default
-      <th>description
-      <th>example
-    <tbody>
-     <tr>
-      <td rowspan="6">/adm/obj/<i>n</i>
-      <td>/x
-      <td>float
-      <td>normalized
-      <td>-1.0
-      <td>1.0
-      <td>0.0
-      <td>left/right dimension. -1 is left
-      <td>/adm/obj/4/x -0.9
-     <tr>
-      <td>/y
-      <td>float
-      <td>normalized
-      <td>-1.0
-      <td>1.0
-      <td>0.0
-      <td>front/back dimension. 1 is front
-      <td>/adm/obj/4/y 0.15
-     <tr>
-      <td>/z
-      <td>float
-      <td>normalized
-      <td>-1.0
-      <td>1.0
-      <td>0.0
-      <td>top/bottom dimension. 1 is top
-      <td>/adm/obj/4/z 0.7
-     <tr>
-      <td>/xyz
-      <td>list
-      <td colspan="4">see above
-      <td>compact format enables synchronicity of position changes and also less network traffic
-      <td>/adm/obj/4/xyz -0.9 0.15 0.7
-     <tr>
-      <td>/w
-      <td>float
-      <td>normalized
-      <td>0.0
-      <td>1.0
-      <td>0.0
-      <td>horizontal extent in normalized units
-      <td>/adm/obj/3/w 0.2
-     <tr>
-      <td>/gain
-      <td>float
-      <td>linear
-      <td>0.
-      <td>
-      <td>1.0
-      <td>Apply a gain to the audio in the object.
-      <td>/adm/obj/3/gain 0.707
-   </table>
-   <h3 class="heading settled" data-level="3.3" id="configuration-messages"><span class="secno">3.3. </span><span class="content">configuration messages</span><a class="self-link" href="#configuration-messages"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="configuration-messages"><span class="secno">2.2. </span><span class="content">configuration messages</span><a class="self-link" href="#configuration-messages"></a></h3>
    <table class="def">
     <thead>
      <tr>
@@ -2215,31 +2189,31 @@ dfn > a.self-link::before      { content: "#"; }
       <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
                             progress</a>
    </table>
-   <h2 class="heading settled" data-level="4" id="implementation"><span class="secno">4. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
+   <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
    <div class="issue no-marker" id="issue-d41d8cd9">
     <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
     <p dir="auto">Table of implementations.</p>
     <p dir="auto">What do they support?<br> What they would like to support?</p>
    </div>
-   <h2 class="heading settled" data-level="5" id="basics"><span class="secno">5. </span><span class="content">ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="roles"><span class="secno">5.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
-   <h4 class="heading settled" data-level="5.1.1" id="sender-client"><span class="secno">5.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
+   <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
+   <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
    <ul>
     <li data-md>
      <p>Object Editor sending positioning data to one or more receivers.</p>
     <li data-md>
      <p>Position data is always normalized</p>
    </ul>
-   <h4 class="heading settled" data-level="5.1.2" id="receiver-server"><span class="secno">5.1.2. </span><span class="content">Receiver (server)</span><a class="self-link" href="#receiver-server"></a></h4>
+   <h4 class="heading settled" data-level="4.1.2" id="receiver-server"><span class="secno">4.1.2. </span><span class="content">Receiver (server)</span><a class="self-link" href="#receiver-server"></a></h4>
    <ul>
     <li data-md>
      <p>Handles the (optional) local scaling of normalized data: x, y, z, distance</p>
     <li data-md>
      <p>The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC &lt;-> sADM)</p>
    </ul>
-   <h3 class="heading settled" data-level="5.2" id="relationship-to-adm"><span class="secno">5.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
+   <h3 class="heading settled" data-level="4.2" id="relationship-to-adm"><span class="secno">4.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
    <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) ADM tag should not be in the `/adm` namespace.</p>
-   <h3 class="heading settled" data-level="5.3" id="coordinates"><span class="secno">5.3. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="coordinates"><span class="secno">4.3. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
    <p class="note" role="note"><span class="marker">NOTE:</span> For Cartesian coordinates, values are normalized between -1 and 1. _x = 1_ is right, _y = 1_ is forward, _z = 1_ is up.</p>
 <pre>(-1, 1) --------- (1, 1)  
    |                |  
@@ -2249,13 +2223,13 @@ dfn > a.self-link::before      { content: "#"; }
 (-1, -1) ---------(1, -1)  
 </pre>
    <p class="note" role="note"><span class="marker">NOTE:</span> For polar coordinates, 0° azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30°. +90° elevation is straight up.</p>
-   <h4 class="heading settled" data-level="5.3.1" id="pol----car"><span class="secno">5.3.1. </span><span class="content">pol &lt;--> car</span><a class="self-link" href="#pol----car"></a></h4>
+   <h4 class="heading settled" data-level="4.3.1" id="pol----car"><span class="secno">4.3.1. </span><span class="content">pol &lt;--> car</span><a class="self-link" href="#pol----car"></a></h4>
    <p>The ADM relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
    </div>
-   <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <h2 class="heading settled" data-level="5" id="discuss"><span class="secno">5. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
    <div class="issue no-marker" id="issue-d41d8cd9②">
     <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
@@ -2265,7 +2239,7 @@ dfn > a.self-link::before      { content: "#"; }
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
    </div>
-   <h2 class="heading settled" data-level="7" id="define"><span class="secno">7. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
+   <h2 class="heading settled" data-level="6" id="define"><span class="secno">6. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="oba">OBA</dfn> see <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">Object-Based Audio</a></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
@@ -2273,8 +2247,8 @@ dfn > a.self-link::before      { content: "#"; }
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#oba">OBA</a><span>, in § 7</span>
-   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 7</span>
+   <li><a href="#oba">OBA</a><span>, in § 6</span>
+   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 6</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
@@ -2466,7 +2440,7 @@ dfn > a.self-link::before      { content: "#"; }
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
 window.dfnpanelData['oba'] = {"dfnID": "oba", "url": "#oba", "dfnText": "OBA", "refSections": [{"refs": [{"id": "ref-for-oba"}], "title": "1. Introduction"}], "external": false};
-window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "7. Definitions"}], "external": false};
+window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "6. Definitions"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
 function query(sel) { return document.querySelector(sel); }
