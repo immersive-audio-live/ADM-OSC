@@ -526,6 +526,12 @@ Coordinates
 - <math><mi>y</mi> <mo>=</mo> <mi>1.0</mi></math> is forward
 - <math><mi>z</mi> <mo>=</mo> <mi>1.0</mi></math> is up
 
+### Conversions ### {#conversions}
+
+The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
+
+Issue(immersive-audio-live/adm-osc#25):
+
 ### Distance ### {#distance}
 
 The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates.
@@ -572,13 +578,6 @@ By definition: 0 ≤ dRef dM ax
 dRef = 0 : no reference volume within the physical
 dM ax
 world
-
-
-### Conversions ### {#conversions}
-
-The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
-
-Issue(immersive-audio-live/adm-osc#25):
 
 <!-- Big Text: Tools -->
 
