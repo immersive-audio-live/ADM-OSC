@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="f35c294c324af5897eaf9b2f1a160f8919ac383d" name="document-revision">
+  <meta content="c098778539ff331c5fa5c5c35537cbfa60a6b598" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2238,7 +2238,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <h3 class="heading settled" data-level="1.4" id="project-originators"><span class="secno">1.4. </span><span class="content">Project Originators</span><a class="self-link" href="#project-originators"></a></h3>
    <p><a href="https://www.l-acoustics.com/">L-Acoustics</a>, <a href="https://www.flux.audio/">FLUX::SE</a>, <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a></p>
    <h3 class="heading settled" data-level="1.5" id="project-contributors"><span class="secno">1.5. </span><span class="content">Project Contributors</span><a class="self-link" href="#project-contributors"></a></h3>
-   <p>[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b Audiotechnik</a>, [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)</p>
+   <p><a href="http://www.adamsonsystems.com/">Adamson</a>, <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b Audiotechnik</a>, <a href="https://digico.biz/">DiGiCo</a>, <a href="https://www.dolby.com">Dolby</a>, <a href="https://lawo.com/">Lawo</a>, <a href="https://www.magix.com/">Magix</a>, <a href="https://www.merging.com/">Merging Technologies</a>, <a href="https://meyersound.com/">Meyer Sound</a>, <a href="https://www.steinberg.net/">Steinberg</a></p>
    <h3 class="heading settled" data-level="1.6" id="currently-supported-in"><span class="secno">1.6. </span><span class="content">Currently supported in</span><a class="self-link" href="#currently-supported-in"></a></h3>
    <ul>
     <li data-md>
@@ -2660,43 +2660,64 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       is up 
    </ul>
    <h4 class="heading settled" data-level="4.4.3" id="distance"><span class="secno">4.4.3. </span><span class="content">Distance</span><a class="self-link" href="#distance"></a></h4>
-   <p>The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates:</p>
-   <ul>
-    <li data-md>
-     <p>
-      dimensionless ADM cube:
-** 
-      <math>
-       <mi>-1</mi>
-       <mo>&lt;=</mo>
-       <mi>x</mi>
-       <mo>&lt;=</mo>
-       <mi>1</mi>
-      </math>
-      ;
-** -1 ≤ y ≤ 1
-** -1 ≤ z ≤ 1
-     </p>
-    <li data-md>
-     <p>dimensionless ADM sphere</p>
-    <li data-md>
-     <p>0 ≤ d ≤ 1 (d=distance or radius)</p>
-   </ul>
+   <p>The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates.</p>
+   <figure>
+    <p>dimensionless ADM cube</p>
+    <math>
+     <mi>-1.0</mi>
+     <mo>≤</mo>
+     <mi>x</mi>
+     <mo>≤</mo>
+     <mi>1.0</mi>
+    </math>
+    <br> 
+    <math>
+     <mi>-1.0</mi>
+     <mo>≤</mo>
+     <mi>y</mi>
+     <mo>≤</mo>
+     <mi>1.0</mi>
+    </math>
+    <br> 
+    <math>
+     <mi>-1.0</mi>
+     <mo>≤</mo>
+     <mi>z</mi>
+     <mo>≤</mo>
+     <mi>1.0</mi>
+    </math>
+   </figure>
+   <figure>
+    <p>dimensionless ADM sphere</p>
+    <math>
+     <mi>-1.0</mi>
+     <mo>≤</mo>
+     <mi>d</mi>
+     <mo>≤</mo>
+     <mi>1.0</mi>
+    </math>
+    <br> 
+    <math>
+     <mi>d</mi>
+     <mo>=</mo>
+     <mi>distance or radius</mi>
+    </math>
+   </figure>
    <p>This paradigm is used by studio/broadcast mixing tools such as Dolby Atmos or MPEG-H.</p>
    <p>On the other hand, some audio renderers represent a physics-based world, and the notion of source distance relates to a physical unit, such as meters. Aside from direct sound gain, the source physics-based distance d<sub>m</sub> relates to advanced audio object parameters such as propagation delay, air at- tenuation, and energy levels of early/cluster reflections and late reverberation, or sound field behaviors (plane vs spherical waves).</p>
    <p>These audio renderers include L-Acoustics L-ISA, Flux:Spat, d&amp;B Soundscape, but also, more generally in the AR/VR domain, game audio engines such as Unreal, Unity, Wwise, or XR audio engines such as Magic Leap Soundfield Audio. A common challenge for all these renderers based on physical distance is that if the gain follows physical attenuation laws (such as “-6dB per doubling of distance”), there are some singularities when d<sub>m</sub> gets close to 0. Hence, most of these renderers include a “volume of reference” or “unit volume” where the rendering (and in particular the gain) do not follow physically-informed laws anymore. This is true for Unreal and Spat, for example.</p>
-   <p>Proposal: An object position in a physics-based world can be described as:</p>
+   <p>Proposal: An object position in a physics-based world can be described as:
+Cartesian:</p>
+   <p>** xM in ≤ xm ≤ xM ax (meters)
+    ** yMin≤ym≤yMax
+    ** zMin≤zm≤zMax</p>
    <ul>
     <li data-md>
-     <p>Cartesian:
-** xM in ≤ xm ≤ xM ax (meters)
-** yMin≤ym≤yMax
-** zMin≤zm≤zMax</p>
+     <p>spherical
+** 0 ≤ dm ≤ dM ax (meters)</p>
    </ul>
-   <p>• spherical:
-0 ≤ dm ≤ dM ax (meters)</p>
-   <p>In ADM-OSC, **/dMax* corresponds to the `absoluteDistance` parameter in an ADM audioPackFormat element.</p>
-   <p>**/dRef** is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.</p>
+   <p>In ADM-OSC, <strong>/dMax</strong> corresponds to the <code>absoluteDistance</code> parameter in an ADM audioPackFormat element.</p>
+   <p><strong>/dRef</strong> is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.</p>
    <p>Fig. 3. (from Jot et. al.) [16] The volume of reference is defined by
 dm &lt; dRef and shows an amplitude behavior (dB) independent from the distance.</p>
    <p>By definition: 0 ≤ dRef dM ax
@@ -2795,7 +2816,7 @@ world</p>
    <h3 class="heading settled" data-level="6.1" id="draft-05"><span class="secno">6.1. </span><span class="content">Draft 0.5</span><a class="self-link" href="#draft-05"></a></h3>
    <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
    <h3 class="heading settled" data-level="6.2" id="relationship-to-adm"><span class="secno">6.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
-   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑧">ADM</a> tag should not be in the `/adm` namespace.</p>
+   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑧">ADM</a> tag should not be in the <code>/adm</code> namespace.</p>
    <div class="issue no-marker" id="issue-d41d8cd9②">
     <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
