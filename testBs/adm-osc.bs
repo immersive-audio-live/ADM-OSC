@@ -263,7 +263,7 @@ Issue(immersive-audio-live/adm-osc#25):
 Development &amp; Test tools {#tools}
 =====================================
 
-<a href src="https://github.com/madees/ADM-OSC-Chataigne-Module>Chataigne module</a> (Mathieu Delquignies / d&amp;b audiotechnik)
+<a href src="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a> (Mathieu Delquignies / d&amp;b audiotechnik)
 ---------------------------------
 
 to retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
@@ -271,10 +271,10 @@ to retreive parameters or control ADM-OSC [=object-based audio=] software or har
 Tester Desktop application (Jose Gaudin / Meyer Sound)
 -----------------------------------
 
-<a href src="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources>download from resources directory</a>
+<a href src="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a>
 
-Validator, Test and Stress Test **Python Module** (Gael Martinet / FLUX::)
---------------------------------
+Validator, Test and Stress Test Python Module (Gael Martinet / FLUX::)
+-----------------------------------------------
 
 adm_osc module is available to install through pip:
 
