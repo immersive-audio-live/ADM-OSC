@@ -2,7 +2,8 @@
 Title: ADM-OSC
 Shortname: ADM-OSC
 Logo: https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png
-Boilerplate: logo yes, copyright no, footer no
+Boilerplate: copyright no, footer no
+Local Boilerplate: logo yes
 Level: none
 Status: LS
 URL: https://immersive-audio-live.github.io/ADM-OSC/
@@ -23,7 +24,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 
 - To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
 - To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
-- To define a direct translation of the most relevant [=ADM=] Object Properties onto a communication protocol widely used in the live industry, OSC.
+- To define a direct translation of the most relevant [=ADM=] Object Properties onto a communication protocol widely used in the live industry, [=OSC=].
 - Keeping the grammar scope aligned with the [=ADM=] properties.
 - Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 - Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
