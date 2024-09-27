@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="51890004f3935366f86a7a30d590feba19514294" name="document-revision">
+  <meta content="b80a26f12d72e722dab860550fec8bd1df9b55e3" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2177,6 +2177,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </ul>
    <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Current spec (v1.0)</span><a class="self-link" href="#v1.0"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="pos"><span class="secno">2.1. </span><span class="content">Position messages</span><a class="self-link" href="#pos"></a></h3>
+    azimuth elevation distance 
    <table class="def">
     <thead>
      <tr>
@@ -2190,13 +2191,13 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <th>example
     <tbody>
      <tr>
-      <td>/adm/obj/<i>n</i>/azimuth
+      <td>/adm/obj/<i>n</i>/azim
       <td>f
       <td>degrees
       <td>-180.0
       <td>180.0
       <td>-
-      <td><b>azimuth</b> “theta - θ” of sound location.<a href="#polar">§ 4.4.1 Polar</a>
+      <td><b>azimuth</b> “theta - θ” of sound location<br><a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/azim -22.5
      <tr>
       <td>/adm/obj/<i>n</i>/elev
@@ -2205,7 +2206,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>-90.0
       <td>90.0
       <td>-
-      <td><b>elevation</b> “phi - ɸ” of sound location<a href="#polar">§ 4.4.1 Polar</a>
+      <td><b>elevation</b> “phi - ɸ” of sound location<br><a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/elev 12.7
      <tr>
       <td>/adm/obj/<i>n</i>/dist
@@ -2214,13 +2215,13 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>0.0
       <td>1.0
       <td>1.0
-      <td><b>distance</b> “r” from origin
+      <td><b>distance</b> “r” from origin<br><a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/dist 0.9
      <tr>
       <td>/adm/obj/<i>n</i>/aed
       <td>f f f
       <td colspan="4">see above
-      <td>enablfor synchronicity of position changes and reduced network traffic
+      <td>for synchronicity of position changes and reduced network traffic
       <td>/adm/obj/4/aed -22.5 12.7 0.9
      <tr>
       <td>/adm/obj/<i>n</i>/x
@@ -2229,7 +2230,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>-1.0
       <td>1.0
       <td>0.0
-      <td>left/right dimension. -1 is left
+      <td>left/right dimension<br><a href="#cartesian">§ 4.4.2 Cartesian</a>
       <td>/adm/obj/4/x -0.9
      <tr>
       <td>/adm/obj/<i>n</i>/y
@@ -2527,8 +2528,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </div>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
-   <p>(Mathieu Delquignies / d&amp;b audiotechnik)
-to retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol.</p>
+   <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
+   <p>To retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol.</p>
    <h3 class="heading settled" data-level="5.2" id="tester-desktop-application"><span class="secno">5.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
    <p>(Jose Gaudin / Meyer Sound)</p>
    <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a></p>
