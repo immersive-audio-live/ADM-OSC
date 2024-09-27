@@ -52,13 +52,13 @@ Position messages {#pos}
     </thead>
     <tbody>
         <tr>
-            <td>/adm/obj/<i>n</i>/azimuth</td>
+            <td>/adm/obj/<i>n</i>/azim</td>
             <td>f</td>
             <td>degrees</td>
             <td>-180.0</td>
             <td>180.0</td>
             <td>-</td>
-            <td><b>azimuth</b> “theta - &#952;” of sound location.[[#polar]]</td>
+            <td><b>azimuth</b> “theta - &#952;” of sound location<br>[[#polar]]</td>
             <td>/adm/obj/4/azim -22.5</td>
         </tr>
         <tr>
@@ -68,7 +68,7 @@ Position messages {#pos}
             <td>-90.0</td>
             <td>90.0</td>
             <td>-</td>
-            <td><b>elevation</b> “phi - &#632;” of sound location[[#polar]]</td>
+            <td><b>elevation</b> “phi - &#632;” of sound location<br>[[#polar]]</td>
             <td>/adm/obj/4/elev 12.7</td>
         </tr>
         <tr>
@@ -78,14 +78,14 @@ Position messages {#pos}
             <td>0.0</td>
             <td>1.0</td>
             <td>1.0</td>
-            <td><b>distance</b> “r” from origin</td>
+            <td><b>distance</b> “r” from origin<br>[[#polar]]</td>
             <td>/adm/obj/4/dist 0.9</td>
         </tr>
         <tr>
             <td>/adm/obj/<i>n</i>/aed</td>
-            <td>f f f</td>
+            <td>f f f</td>azimuth elevation distance
             <td colspan=4>see above</td>
-            <td>enablfor synchronicity of position changes and reduced network traffic</td>
+            <td>for synchronicity of position changes and reduced network traffic</td>
             <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
         </tr>
         <tr>
@@ -95,7 +95,7 @@ Position messages {#pos}
             <td>-1.0</td>
             <td>1.0</td>
             <td>0.0</td>
-            <td>left/right dimension. -1 is left</td>
+            <td>left/right dimension<br>[[#cartesian]]</td>
             <td>/adm/obj/4/x -0.9</td>
         </tr>
         <tr>
@@ -387,7 +387,7 @@ Coordinates
 - +90&deg; elevation is straight up
 
 
-### Cartesian
+### Cartesian ### {#cartesian}
 
 ```
     (-1, 1) --------- (1, 1)  
@@ -418,7 +418,8 @@ Development &amp; Test tools {#tools}
 ---------------------------------
 
 (Mathieu Delquignies / d&amp;b audiotechnik)
-to retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
+
+To retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
 
 Tester Desktop application 
 -----------------------------------
