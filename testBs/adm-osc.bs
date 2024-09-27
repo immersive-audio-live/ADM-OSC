@@ -263,7 +263,7 @@ Issue(immersive-audio-live/adm-osc#25):
 Development &amp; Test tools {#tools}
 =====================================
 
-<a href src="https://github.com/madees/ADM-OSC-Chataigne-Module>Chataigne module</a> (Mathieu Delquignies / d&b audiotechnik)
+<a href src="https://github.com/madees/ADM-OSC-Chataigne-Module>Chataigne module</a> (Mathieu Delquignies / d&amp;b audiotechnik)
 ---------------------------------
 
 to retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
