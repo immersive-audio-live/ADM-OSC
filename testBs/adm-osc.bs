@@ -11,7 +11,7 @@ Repository: immersive-audio-live/ADM-OSC
 Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
 Previous Version: https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html
 Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
-Editor: Michael Zbyszynski, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynskki@l-acoustics.com
+Editor: Michael Zbyszyński, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynski@l-acoustics.com
 Inline Github Issues: true
 Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=].
 </pre>
@@ -72,7 +72,7 @@ Project Originators
 Project Contributors
 --------------------
 
-[Adamson](http://www.adamsonsystems.com/), [BBC](https://www.bbc.com/), [d&b Audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b Audiotechnik</a>, [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
 Currently supported in
 -----------------------
@@ -87,7 +87,7 @@ Currently supported in
 - Modulo Kinetic (Modulo Pi)
 - Iosono (Barco)
 - FletcherMachine (Adamson)
-- En-Bridge (d&b audiotechnik)
+- En-Bridge (d&amp;b audiotechnik)
 
 Current spec (v1.0) {#v1.0}
 ================================
