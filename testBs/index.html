@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="c098778539ff331c5fa5c5c35537cbfa60a6b598" name="document-revision">
+  <meta content="32aca1eda18499a7cd4da35af8454d9d72c8dd12" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2133,8 +2133,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
        <ol class="toc">
         <li><a href="#polar"><span class="secno">4.4.1</span> <span class="content">Polar</span></a>
         <li><a href="#cartesian"><span class="secno">4.4.2</span> <span class="content">Cartesian</span></a>
-        <li><a href="#distance"><span class="secno">4.4.3</span> <span class="content">Distance</span></a>
-        <li><a href="#conversions"><span class="secno">4.4.4</span> <span class="content">Conversions</span></a>
+        <li><a href="#conversions"><span class="secno">4.4.3</span> <span class="content">Conversions</span></a>
+        <li><a href="#distance"><span class="secno">4.4.4</span> <span class="content">Distance</span></a>
        </ol>
      </ol>
     <li>
@@ -2370,7 +2370,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>0.0
       <td>1.0
       <td>1.0
-      <td>Distance where dimensionless rendering is replaced with with physics-based rendering.<br><a href="#distance">§ 4.4.3 Distance</a>
+      <td>Distance where dimensionless rendering is replaced with with physics-based rendering.<br><a href="#distance">§ 4.4.4 Distance</a>
       <td>/adm/obj/1/dRef 0.2
      <tr>
       <td>/adm/obj/<var>n</var>/dMax
@@ -2379,7 +2379,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>0.
       <td>
       <td>
-      <td>Distance signified by a normalized dRef value of 1<br><a href="#distance">§ 4.4.3 Distance</a>
+      <td>Distance signified by a normalized dRef value of 1<br><a href="#distance">§ 4.4.4 Distance</a>
       <td>/adm/obj/1/dMax 21.3
      <tr>
       <td>/adm/obj/<var>n</var>/mute 
@@ -2659,7 +2659,13 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </math>
       is up 
    </ul>
-   <h4 class="heading settled" data-level="4.4.3" id="distance"><span class="secno">4.4.3. </span><span class="content">Distance</span><a class="self-link" href="#distance"></a></h4>
+   <h4 class="heading settled" data-level="4.4.3" id="conversions"><span class="secno">4.4.3. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
+   <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
+   <div class="issue no-marker" id="issue-d41d8cd9①">
+    <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
+    <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
+   </div>
+   <h4 class="heading settled" data-level="4.4.4" id="distance"><span class="secno">4.4.4. </span><span class="content">Distance</span><a class="self-link" href="#distance"></a></h4>
    <p>The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates.</p>
    <figure>
     <p>dimensionless ADM cube</p>
@@ -2726,12 +2732,6 @@ dm &lt; dRef and shows an amplitude behavior (dB) independent from the distance.
 dRef = 0 : no reference volume within the physical
 dM ax
 world</p>
-   <h4 class="heading settled" data-level="4.4.4" id="conversions"><span class="secno">4.4.4. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
-   <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
-   <div class="issue no-marker" id="issue-d41d8cd9①">
-    <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
-    <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
-   </div>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
@@ -3051,7 +3051,7 @@ specification has been published in 2002 [8].</p>
 </script>
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
-window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}], "title": "1.1. Why ADM?"}, {"refs": [{"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}, {"id": "ref-for-audio-definition-model\u2463"}], "title": "1.3. Motivation & goals"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "4.4.4. Conversions"}, {"refs": [{"id": "ref-for-audio-definition-model\u2466"}], "title": "6.1. Draft 0.5"}, {"refs": [{"id": "ref-for-audio-definition-model\u2467"}], "title": "6.2. Relationship to ADM"}], "external": false};
+window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}], "title": "1.1. Why ADM?"}, {"refs": [{"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}, {"id": "ref-for-audio-definition-model\u2463"}], "title": "1.3. Motivation & goals"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "4.4.3. Conversions"}, {"refs": [{"id": "ref-for-audio-definition-model\u2466"}], "title": "6.1. Draft 0.5"}, {"refs": [{"id": "ref-for-audio-definition-model\u2467"}], "title": "6.2. Relationship to ADM"}], "external": false};
 window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5.1. Chataigne module"}, {"refs": [{"id": "ref-for-object-based-audio\u2461"}], "title": "7. Definitions"}], "external": false};
 window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.3. Motivation & goals"}, {"refs": [{"id": "ref-for-open-sound-control\u2461"}], "title": "5.1. Chataigne module"}], "external": false};
 window.dfnpanelData['six-degrees-of-freedom'] = {"dfnID": "six-degrees-of-freedom", "url": "#six-degrees-of-freedom", "dfnText": "Six Degrees of Freedom", "refSections": [{"refs": [{"id": "ref-for-six-degrees-of-freedom"}], "title": "2.3. Listener messages"}], "external": false};
