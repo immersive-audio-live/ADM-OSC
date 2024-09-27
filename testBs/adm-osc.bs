@@ -11,7 +11,7 @@ Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
 Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
 Editor: Michael Zbyszynski, L-Acoustics http://example.com/your-company, michael.zbyszynskki@l-acoustics.com
 Inline Github Issues: true
-Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
+Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=].
 </pre>
 
 <img src=[LOGO] alt="ADM-OSC logo" width="150">
@@ -21,18 +21,18 @@ Introduction {#intro}
 
 ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
 
-[=OBA=]
 
-## Motivation &amp; goals
+
+## Motivation &amp; goals {#goals}
 
 - To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
 - To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
-- To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, OSC.
-- Keeping the grammar scope aligned with the ADM properties.
+- To define a direct translation of the most relevant [=ADM=] Object Properties onto a communication protocol widely used in the live industry, OSC.
+- Keeping the grammar scope aligned with the [=ADM=] properties.
 - Share this proposal with the EBU so they can become a relay, publish and support this initiative.
-- Extend this small grammar to more ADM properties (beds, etc.) in the future.
+- Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
 
-# Summary of version 1.0
+# Summary of version 1.0 {#v1.0}
 
 ## position messages 
 
@@ -51,8 +51,8 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
     </thead>
     <tbody>
         <tr>
-            <td>/adm/obj/<i>n</span>/i</td>
-            <td>flofat</td>
+            <td>/adm/obj/<i>n</i>/d</td>
+            <td>f</td>
             <td>degrees</td>
             <td>-180.0</td>
             <td>180.0</td>
@@ -147,7 +147,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
     </tbody>
 </table>
 
-NOTE: Types: `f` = float, `i` = integer, `s` = string. `f f f` is a list of three floats.
+NOTE: Types: `highlight=html` `f` = float, `i` = integer, `s` = string. `f f f` is a list of three floats.
 
 <pre class=simpledef> 
 address: /adm/obj/n/x
@@ -230,15 +230,15 @@ ADM-OSC principals {#basics}
 ### Receiver (server)
 
 - Handles the (optional) local scaling of normalized data: x, y, z, distance
-- The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
+- The receiver can be a DAW, an [=ADM=] renderer, an object editor, a bridge (ADM-OSC <-> sADM)
 
 ## Relationship to ADM
 
-ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) ADM tag should not be in the `/adm` namespace.
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) [=ADM=] tag should not be in the `/adm` namespace.
 
 ## Coordinates
 
-NOTE: For Cartesian coordinates, values are normalized between -1 and 1. _x = 1_ is right, _y = 1_ is forward, _z = 1_ is up.
+### Cartesian
 
 ```
     (-1, 1) --------- (1, 1)  
@@ -249,11 +249,21 @@ NOTE: For Cartesian coordinates, values are normalized between -1 and 1. _x = 1_
     (-1, -1) ---------(1, -1)  
 ```
 
-NOTE: For polar coordinates, 0&deg; azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30&deg;. +90&deg; elevation is straight up.
+- Values are normalized between -1.0 and 1.0 
+- <math><mi>x</mi> <mo>=</mo> <mi>1</mi></math> is right
+- <math><mi>y</mi> <mo>=</mo> <mi>1</mi></math> is forward
+- <math><mi>z</mi> <mo>=</mo> <mi>1</mi></math> is up
 
-### pol <--> car
 
-The ADM relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
+### Polar
+
+- 0&deg; azimuth is straight ahead
+- Positive azimuth is on the left, so a front-left speaker is +30&deg;
+- +90&deg; elevation is straight up
+
+### Conversions {#conversions}
+
+The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
 
 Issue(immersive-audio-live/adm-osc#25):
 
@@ -265,14 +275,33 @@ Issue(immersive-audio-live/adm-osc#33):
 Definitions {#define}
 =====================
 
-<dfn dfn>OBA</dfn> see [=Object-Based Audio=]
+<dfn local-lt="ADM">Audio Definition Model</dfn>
 
-<dfn>Object-Based Audio</dfn>
+The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
+2015 as a standard representation of audio metadata [1]. The goal of ADM is to support a broad range of
+use cases that include spatial and immersive audio, as well as interactive personalization and accessibility
+features [[What-is-ADM]]. ADM can be used to represent channel-based, scene-based, and [=object-based audio=]. It is
+defined by the EBU in ITU-R BS.2076 [[EBU-BS-2076]]
+
+<dfn local-lt="OBA">Object-Based Audio</dfn>
 
 Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. [[Tsingos-2017]]
 
+<dfn local-lt="OSC">Open Sound Control</dfn>
+
+OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music & Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.
+
+There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
+specification has been published in 2002 [8].
+
 <pre class='biblio'>
 {
+    "EBU-BS-2076": {
+        "title" : "Audio Definition Model",
+        "status": "Spec",
+        "publisher": "EBU",
+        "href" : "https://www.itu.int/rec/R-REC-BS.2076"
+    },
     "EBU-BS-2127" : {
         "title": "Audio Definition Model renderer for advanced sound systems" ,
         "status": "Spec",
@@ -292,6 +321,10 @@ Object-based representation encodes audio tracks along with positional and other
         "pages": "244-275",
         "publisher": "Routledge",
         "date": "2017"
+    },
+    "What-is-ADM": {
+        "title" : "What is the ADM?",
+        "href" : "https://adm.ebu.io/background/what_is_the_adm.html"
     }
 }
 </pre>
