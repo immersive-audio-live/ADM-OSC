@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="38c4f147194d09fea0e1988e27266f4d241c19a5" name="document-revision">
+  <meta content="a45c4223d7531a066effb51e92aa1bf885c135e3" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1968,7 +1968,7 @@ dfn > a.self-link::before      { content: "#"; }
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>An industry initiative for standardization of <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio">Object-Based Audio</a> positioning data in live production ecosystems by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).</p>
+   <p>An industry initiative for standardization of <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio">Object-Based Audio</a> positioning data in live production ecosystems by implementing the <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model">Audio Definition Model</a> over <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control">Open Sound Control</a>.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1977,10 +1977,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
-      <li><a href="#motivation--goals"><span class="secno">1.1</span> <span class="content">Motivation &amp; goals</span></a>
+      <li><a href="#goals"><span class="secno">1.1</span> <span class="content">Motivation &amp; goals {#goals}</span></a>
      </ol>
     <li>
-     <a href="#summary-of-version-10"><span class="secno">2</span> <span class="content">Summary of version 1.0</span></a>
+     <a href="#v1.0"><span class="secno">2</span> <span class="content">Summary of version 1.0 {#v1.0}</span></a>
      <ol class="toc">
       <li><a href="#position-messages"><span class="secno">2.1</span> <span class="content">position messages</span></a>
       <li><a href="#configuration-messages"><span class="secno">2.2</span> <span class="content">configuration messages</span></a>
@@ -1999,7 +1999,9 @@ dfn > a.self-link::before      { content: "#"; }
       <li>
        <a href="#coordinates"><span class="secno">4.3</span> <span class="content">Coordinates</span></a>
        <ol class="toc">
-        <li><a href="#pol----car"><span class="secno">4.3.1</span> <span class="content">pol &lt;--> car</span></a>
+        <li><a href="#cartesian"><span class="secno">4.3.1</span> <span class="content">Cartesian</span></a>
+        <li><a href="#polar"><span class="secno">4.3.2</span> <span class="content">Polar</span></a>
+        <li><a href="#conversions"><span class="secno">4.3.3</span> <span class="content">Conversions {#conversions}</span></a>
        </ol>
      </ol>
     <li><a href="#discuss"><span class="secno">5</span> <span class="content">Discussion</span></a>
@@ -2021,23 +2023,22 @@ dfn > a.self-link::before      { content: "#"; }
    <p><img alt="ADM-OSC logo" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"></p>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
    <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
-   <p><a data-link-type="dfn" href="#oba" id="ref-for-oba">OBA</a></p>
-   <h3 class="heading settled" data-level="1.1" id="motivation--goals"><span class="secno">1.1. </span><span class="content">Motivation &amp; goals</span><a class="self-link" href="#motivation--goals"></a></h3>
+   <h3 class="heading settled" data-level="1.1" id="goals"><span class="secno">1.1. </span><span class="content">Motivation &amp; goals {#goals}</span><a class="self-link" href="#goals"></a></h3>
    <ul>
     <li data-md>
      <p>To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.</p>
     <li data-md>
      <p>To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.</p>
     <li data-md>
-     <p>To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, OSC.</p>
+     <p>To define a direct translation of the most relevant <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> Object Properties onto a communication protocol widely used in the live industry, OSC.</p>
     <li data-md>
-     <p>Keeping the grammar scope aligned with the ADM properties.</p>
+     <p>Keeping the grammar scope aligned with the <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model②">ADM</a> properties.</p>
     <li data-md>
      <p>Share this proposal with the EBU so they can become a relay, publish and support this initiative.</p>
     <li data-md>
-     <p>Extend this small grammar to more ADM properties (beds, etc.) in the future.</p>
+     <p>Extend this small grammar to more <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model③">ADM</a> properties (beds, etc.) in the future.</p>
    </ul>
-   <h2 class="heading settled" data-level="2" id="summary-of-version-10"><span class="secno">2. </span><span class="content">Summary of version 1.0</span><a class="self-link" href="#summary-of-version-10"></a></h2>
+   <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Summary of version 1.0 {#v1.0}</span><a class="self-link" href="#v1.0"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="position-messages"><span class="secno">2.1. </span><span class="content">position messages</span><a class="self-link" href="#position-messages"></a></h3>
    <table class="def">
     <thead>
@@ -2052,8 +2053,8 @@ dfn > a.self-link::before      { content: "#"; }
       <th>example
     <tbody>
      <tr>
-      <td>/adm/obj/<i>n/i</i>
-      <td>flofat
+      <td>/adm/obj/<i>n</i>/d
+      <td>f
       <td>degrees
       <td>-180.0
       <td>180.0
@@ -2136,7 +2137,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td>Apply a gain to the audio in the object.
       <td>/adm/obj/3/gain 0.707
    </table>
-   <p class="note" role="note"><span class="marker">NOTE:</span> Types: `f` = float, `i` = integer, `s` = string. `f f f` is a list of three floats.</p>
+   <p class="note" role="note"><span class="marker">NOTE:</span> Types: `highlight=html` `f` = float, `i` = integer, `s` = string. `f f f` is a list of three floats.</p>
    <table class="def">
     <tbody>
      <tr>
@@ -2218,12 +2219,12 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>Handles the (optional) local scaling of normalized data: x, y, z, distance</p>
     <li data-md>
-     <p>The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC &lt;-> sADM)</p>
+     <p>The receiver can be a DAW, an <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model④">ADM</a> renderer, an object editor, a bridge (ADM-OSC &lt;-> sADM)</p>
    </ul>
    <h3 class="heading settled" data-level="4.2" id="relationship-to-adm"><span class="secno">4.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
-   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) ADM tag should not be in the `/adm` namespace.</p>
+   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑤">ADM</a> tag should not be in the `/adm` namespace.</p>
    <h3 class="heading settled" data-level="4.3" id="coordinates"><span class="secno">4.3. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
-   <p class="note" role="note"><span class="marker">NOTE:</span> For Cartesian coordinates, values are normalized between -1 and 1. _x = 1_ is right, _y = 1_ is forward, _z = 1_ is up.</p>
+   <h4 class="heading settled" data-level="4.3.1" id="cartesian"><span class="secno">4.3.1. </span><span class="content">Cartesian</span><a class="self-link" href="#cartesian"></a></h4>
 <pre>(-1, 1) --------- (1, 1)  
    |                |  
    |                |  
@@ -2231,9 +2232,42 @@ dfn > a.self-link::before      { content: "#"; }
    |                |  
 (-1, -1) ---------(1, -1)  
 </pre>
-   <p class="note" role="note"><span class="marker">NOTE:</span> For polar coordinates, 0° azimuth is straight ahead. Positive azimuth is on the left, so a front-left speaker is +30°. +90° elevation is straight up.</p>
-   <h4 class="heading settled" data-level="4.3.1" id="pol----car"><span class="secno">4.3.1. </span><span class="content">pol &lt;--> car</span><a class="self-link" href="#pol----car"></a></h4>
-   <p>The ADM relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
+   <ul>
+    <li data-md>
+     <p>Values are normalized between -1.0 and 1.0</p>
+    <li data-md>
+     <math>
+      <mi>x</mi>
+      <mo>=</mo>
+      <mi>1</mi>
+     </math>
+      is right 
+    <li data-md>
+     <math>
+      <mi>y</mi>
+      <mo>=</mo>
+      <mi>1</mi>
+     </math>
+      is forward 
+    <li data-md>
+     <math>
+      <mi>z</mi>
+      <mo>=</mo>
+      <mi>1</mi>
+     </math>
+      is up 
+   </ul>
+   <h4 class="heading settled" data-level="4.3.2" id="polar"><span class="secno">4.3.2. </span><span class="content">Polar</span><a class="self-link" href="#polar"></a></h4>
+   <ul>
+    <li data-md>
+     <p>0° azimuth is straight ahead</p>
+    <li data-md>
+     <p>Positive azimuth is on the left, so a front-left speaker is +30°</p>
+    <li data-md>
+     <p>+90° elevation is straight up</p>
+   </ul>
+   <h4 class="heading settled" data-level="4.3.3" id="conversions"><span class="secno">4.3.3. </span><span class="content">Conversions {#conversions}</span><a class="self-link" href="#conversions"></a></h4>
+   <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
@@ -2249,25 +2283,42 @@ dfn > a.self-link::before      { content: "#"; }
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
    </div>
    <h2 class="heading settled" data-level="6" id="define"><span class="secno">6. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="oba">OBA</dfn> see <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">Object-Based Audio</a></p>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="ADM" data-noexport id="audio-definition-model">Audio Definition Model</dfn></p>
+   <p>The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
+2015 as a standard representation of audio metadata [1]. The goal of ADM is to support a broad range of
+use cases that include spatial and immersive audio, as well as interactive personalization and accessibility
+features <a data-link-type="biblio" href="#biblio-what-is-adm" title="What is the ADM?">[What-is-ADM]</a>. ADM can be used to represent channel-based, scene-based, and <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a>. It is
+defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu-bs-2076" title="Audio Definition Model">[EBU-BS-2076]</a></p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OBA" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
+   <p><dfn data-dfn-type="dfn" data-local-lt="OSC" data-noexport id="open-sound-control">Open Sound Control<a class="self-link" href="#open-sound-control"></a></dfn></p>
+   <p>OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music &amp; Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.</p>
+   <p>There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
+specification has been published in 2002 [8].</p>
   </main>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#oba">OBA</a><span>, in § 6</span>
+   <li><a href="#audio-definition-model">ADM</a><span>, in § 6</span>
+   <li><a href="#audio-definition-model">Audio Definition Model</a><span>, in § 6</span>
+   <li><a href="#object-based-audio">OBA</a><span>, in § 6</span>
    <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 6</span>
+   <li><a href="#open-sound-control">Open Sound Control</a><span>, in § 6</span>
+   <li><a href="#open-sound-control">OSC</a><span>, in § 6</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-ebu-bs-2076">[EBU-BS-2076]
+   <dd><a href="https://www.itu.int/rec/R-REC-BS.2076"><cite>Audio Definition Model</cite></a>. Spec. URL: <a href="https://www.itu.int/rec/R-REC-BS.2076">https://www.itu.int/rec/R-REC-BS.2076</a>
    <dt id="biblio-ebu-bs-2127">[EBU-BS-2127]
    <dd><a href="https://www.itu.int/rec/R-REC-BS.2127"><cite>Audio Definition Model renderer for advanced sound systems</cite></a>. Spec. URL: <a href="https://www.itu.int/rec/R-REC-BS.2127">https://www.itu.int/rec/R-REC-BS.2127</a>
    <dt id="biblio-ebu-tech-3396">[EBU-Tech-3396]
    <dd><a href="https://tech.ebu.ch/publications/tech3396"><cite>BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES</cite></a>. Spec. URL: <a href="https://tech.ebu.ch/publications/tech3396">https://tech.ebu.ch/publications/tech3396</a>
    <dt id="biblio-tsingos-2017">[Tsingos-2017]
    <dd>N. Tsingos. <cite>Object-based audio</cite>. 2017. in Immersive Sound. 
+   <dt id="biblio-what-is-adm">[What-is-ADM]
+   <dd><a href="https://adm.ebu.io/background/what_is_the_adm.html"><cite>What is the ADM?</cite></a>. URL: <a href="https://adm.ebu.io/background/what_is_the_adm.html">https://adm.ebu.io/background/what_is_the_adm.html</a>
   </dl>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
@@ -2448,7 +2499,7 @@ dfn > a.self-link::before      { content: "#"; }
 </script>
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
-window.dfnpanelData['oba'] = {"dfnID": "oba", "url": "#oba", "dfnText": "OBA", "refSections": [{"refs": [{"id": "ref-for-oba"}], "title": "1. Introduction"}], "external": false};
+window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}, {"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}], "title": "1.1. Motivation & goals {#goals}"}, {"refs": [{"id": "ref-for-audio-definition-model\u2463"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.2. Relationship to ADM"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "4.3.3. Conversions {#conversions}"}], "external": false};
 window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "6. Definitions"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
