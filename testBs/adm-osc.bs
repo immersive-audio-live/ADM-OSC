@@ -52,13 +52,13 @@ Position messages {#pos}
     </thead>
     <tbody>
         <tr>
-            <td>/adm/obj/<i>n</i>/d</td>
+            <td>/adm/obj/<i>n</i>/azimuth</td>
             <td>f</td>
             <td>degrees</td>
             <td>-180.0</td>
             <td>180.0</td>
             <td>-</td>
-            <td><b>azimuth</b> “theta - &#952;” of sound location. -90 is on the Right, 0 is in front.</td>
+            <td><b>azimuth</b> “theta - &#952;” of sound location.[[#polar]]</td>
             <td>/adm/obj/4/azim -22.5</td>
         </tr>
         <tr>
@@ -68,7 +68,7 @@ Position messages {#pos}
             <td>-90.0</td>
             <td>90.0</td>
             <td>-</td>
-            <td><b>elevation</b> “phi - &#632;” of sound location</td>
+            <td><b>elevation</b> “phi - &#632;” of sound location[[#polar]]</td>
             <td>/adm/obj/4/elev 12.7</td>
         </tr>
         <tr>
@@ -85,7 +85,7 @@ Position messages {#pos}
             <td>/adm/obj/<i>n</i>/aed</td>
             <td>f f f</td>
             <td colspan=4>see above</td>
-            <td>compact format enables synchronicity of position changes and also less network traffic</td>
+            <td>enablfor synchronicity of position changes and reduced network traffic</td>
             <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
         </tr>
         <tr>
@@ -228,7 +228,15 @@ Ports {#ports}
 Data rate {#rate}
 -----------------
 
-## Coordinates
+Coordinates
+-----------
+
+### Polar ### {#polar}
+
+- 0&deg; azimuth is straight ahead
+- Positive azimuth is on the left, so a front-left speaker is +30&deg;
+- +90&deg; elevation is straight up
+
 
 ### Cartesian
 
@@ -245,12 +253,6 @@ Data rate {#rate}
 - <math><mi>x</mi> <mo>=</mo> <mi>1</mi></math> is right
 - <math><mi>y</mi> <mo>=</mo> <mi>1</mi></math> is forward
 - <math><mi>z</mi> <mo>=</mo> <mi>1</mi></math> is up
-
-### Polar
-
-- 0&deg; azimuth is straight ahead
-- Positive azimuth is on the left, so a front-left speaker is +30&deg;
-- +90&deg; elevation is straight up
 
 ### Conversions ### {#conversions}
 
