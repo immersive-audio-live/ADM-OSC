@@ -39,16 +39,30 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * Radio-France
 * Steinberg
 
+Why ADM?
+--------
+
+Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [=ADM=] is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
+
+Why OSC?
+--------
+
+* Lightweight network protocol
+* Easy to implement
+* Human readable
+* Supports wildcards and bundles
+* Specification: [[OpenSoundControl.org]]
+* Available in a plethora of professional audio hardware and software devices
 
 Motivation &amp; goals {#goals}
 ----------------------------------
 
-- To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
-- To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
-- To define a direct translation of the most relevant [=ADM=] Object Properties onto a communication protocol widely used in the live industry, [=OSC=].
-- Keeping the grammar scope aligned with the [=ADM=] properties.
-- Share this proposal with the EBU so they can become a relay, publish and support this initiative.
-- Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
+* To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
+* To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
+* To define a direct translation of the most relevant [=ADM=] Object Properties onto a communication protocol widely used in the live industry, [=OSC=].
+* Keeping the grammar scope aligned with the [=ADM=] properties.
+* Share this proposal with the EBU so they can become a relay, publish and support this initiative.
+* Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
 
 Project Originators
 ----------------------
@@ -78,10 +92,10 @@ Currently supported in
 Current spec (v1.0) {#v1.0}
 ================================
 
-Note: <var>n</var> signifies object number
-
 Object position messages {#obj}
 -----------------
+
+Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> signifies object number
 
 <table class="def">
     <thead>
@@ -691,6 +705,10 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
         "status": "Spec",
         "publisher": "EBU",
         "href": "https://tech.ebu.ch/publications/tech3396"
+    },
+    "OpenSoundControl.org": {
+        "title": "OpenSoundControl website",
+        "href": "https://ccrma.stanford.edu/groups/osc/index.html"
     },
     "Tsingos-2017": {
         "authors": [ "N. Tsingos" ],
