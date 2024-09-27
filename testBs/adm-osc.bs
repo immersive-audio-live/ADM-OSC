@@ -51,6 +51,16 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
     </thead>
     <tbody>
         <tr>
+            <td>/adm/obj/<i>n</span>/i</td>
+            <td>flofat</td>
+            <td>degrees</td>
+            <td>-180.0</td>
+            <td>180.0</td>
+            <td>-</td>
+            <td><b>azimuth</b> “theta - &#952;” of sound location. -90 is on the Right, 0 is in front.</td>
+            <td>/adm/obj/4/azim -22.5</td>
+        </tr>
+        <tr>
             <td>/adm/obj/<i>n</i>/elev</td>
             <td>f</td>
             <td>degrees</td>
