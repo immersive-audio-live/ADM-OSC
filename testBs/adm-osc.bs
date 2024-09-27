@@ -263,18 +263,23 @@ Issue(immersive-audio-live/adm-osc#25):
 Development &amp; Test tools {#tools}
 =====================================
 
-<a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a> (Mathieu Delquignies / d&amp;b audiotechnik)
+<a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a> 
 ---------------------------------
 
+(Mathieu Delquignies / d&amp;b audiotechnik)
 to retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
 
-Tester Desktop application (Jose Gaudin / Meyer Sound)
+Tester Desktop application 
 -----------------------------------
+
+(Jose Gaudin / Meyer Sound)
 
 <a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a>
 
-Validator, Test and Stress Test Python Module (Gael Martinet / FLUX::)
+Validator, Test and Stress Test Python Module
 -----------------------------------------------
+
+(Gael Martinet / FLUX::)
 
 adm_osc module is available to install through pip:
 
@@ -355,18 +360,19 @@ sender.stress_cartesian_position(number_of_objects=64, duration_in_second=60.0, 
 sender.stress_polar_position(number_of_objects=64, duration_in_second=60.0, interval_in_milliseconds=10.0)
 ```
 <a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">full documentation</a>
+
 <a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a>
 
 Discussion {#discuss}
 =====================
 
 Draft 0.5
-_______________________
+----------
 
 A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate 
 
 Relationship to ADM
-_______________________
+--------------------
 
 ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) [=ADM=] tag should not be in the `/adm` namespace.
 
