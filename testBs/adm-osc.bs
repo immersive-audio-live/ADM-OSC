@@ -530,7 +530,7 @@ Coordinates
 The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates:
 
 * dimensionless ADM cube:
-    ** <math><m> -1</mi><mo><=</mo><mi>x</mi><mo><=</mo><mi>1</mi></math>;
+    ** <math><mi>-1</mi><mo><=</mo><mi>x</mi><mo><=</mo><mi>1</mi></math>;
     ** -1 ≤ y ≤ 1
     ** -1 ≤ z ≤ 1
 
