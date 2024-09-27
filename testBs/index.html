@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="156e2efeff6b74e8f89ade7cb274dfc4c69888a3" name="document-revision">
+  <meta content="5c676ff6f09a23bbb5e7c84a4839f3bf71dac11e" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -1944,15 +1944,140 @@ a.self-link::before            { content: "¶"; }
 .heading > a.self-link::before { content: "§"; }
 dfn > a.self-link::before      { content: "#"; }
 </style>
+<style>/* Boilerplate: style-syntax-highlighting */
+
+code.highlight { padding: .1em; border-radius: .3em; }
+pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
+
+.highlight:not(.idl) { background: rgba(0, 0, 0, .03); }
+c-[a] { color: #990055 } /* Keyword.Declaration */
+c-[b] { color: #990055 } /* Keyword.Type */
+c-[c] { color: #708090 } /* Comment */
+c-[d] { color: #708090 } /* Comment.Multiline */
+c-[e] { color: #0077aa } /* Name.Attribute */
+c-[f] { color: #669900 } /* Name.Tag */
+c-[g] { color: #222222 } /* Name.Variable */
+c-[k] { color: #990055 } /* Keyword */
+c-[l] { color: #000000 } /* Literal */
+c-[m] { color: #000000 } /* Literal.Number */
+c-[n] { color: #0077aa } /* Name */
+c-[o] { color: #999999 } /* Operator */
+c-[p] { color: #999999 } /* Punctuation */
+c-[s] { color: #a67f59 } /* Literal.String */
+c-[t] { color: #a67f59 } /* Literal.String.Single */
+c-[u] { color: #a67f59 } /* Literal.String.Double */
+c-[cp] { color: #708090 } /* Comment.Preproc */
+c-[c1] { color: #708090 } /* Comment.Single */
+c-[cs] { color: #708090 } /* Comment.Special */
+c-[kc] { color: #990055 } /* Keyword.Constant */
+c-[kn] { color: #990055 } /* Keyword.Namespace */
+c-[kp] { color: #990055 } /* Keyword.Pseudo */
+c-[kr] { color: #990055 } /* Keyword.Reserved */
+c-[ld] { color: #000000 } /* Literal.Date */
+c-[nc] { color: #0077aa } /* Name.Class */
+c-[no] { color: #0077aa } /* Name.Constant */
+c-[nd] { color: #0077aa } /* Name.Decorator */
+c-[ni] { color: #0077aa } /* Name.Entity */
+c-[ne] { color: #0077aa } /* Name.Exception */
+c-[nf] { color: #0077aa } /* Name.Function */
+c-[nl] { color: #0077aa } /* Name.Label */
+c-[nn] { color: #0077aa } /* Name.Namespace */
+c-[py] { color: #0077aa } /* Name.Property */
+c-[ow] { color: #999999 } /* Operator.Word */
+c-[mb] { color: #000000 } /* Literal.Number.Bin */
+c-[mf] { color: #000000 } /* Literal.Number.Float */
+c-[mh] { color: #000000 } /* Literal.Number.Hex */
+c-[mi] { color: #000000 } /* Literal.Number.Integer */
+c-[mo] { color: #000000 } /* Literal.Number.Oct */
+c-[sb] { color: #a67f59 } /* Literal.String.Backtick */
+c-[sc] { color: #a67f59 } /* Literal.String.Char */
+c-[sd] { color: #a67f59 } /* Literal.String.Doc */
+c-[se] { color: #a67f59 } /* Literal.String.Escape */
+c-[sh] { color: #a67f59 } /* Literal.String.Heredoc */
+c-[si] { color: #a67f59 } /* Literal.String.Interpol */
+c-[sx] { color: #a67f59 } /* Literal.String.Other */
+c-[sr] { color: #a67f59 } /* Literal.String.Regex */
+c-[ss] { color: #a67f59 } /* Literal.String.Symbol */
+c-[vc] { color: #0077aa } /* Name.Variable.Class */
+c-[vg] { color: #0077aa } /* Name.Variable.Global */
+c-[vi] { color: #0077aa } /* Name.Variable.Instance */
+c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
+
+
+@media (prefers-color-scheme: dark) {
+    .highlight:not(.idl) { background: rgba(255, 255, 255, .05); }
+
+    c-[a] { color: #d33682 } /* Keyword.Declaration */
+    c-[b] { color: #d33682 } /* Keyword.Type */
+    c-[c] { color: #2aa198 } /* Comment */
+    c-[d] { color: #2aa198 } /* Comment.Multiline */
+    c-[e] { color: #268bd2 } /* Name.Attribute */
+    c-[f] { color: #b58900 } /* Name.Tag */
+    c-[g] { color: #cb4b16 } /* Name.Variable */
+    c-[k] { color: #d33682 } /* Keyword */
+    c-[l] { color: #657b83 } /* Literal */
+    c-[m] { color: #657b83 } /* Literal.Number */
+    c-[n] { color: #268bd2 } /* Name */
+    c-[o] { color: #657b83 } /* Operator */
+    c-[p] { color: #657b83 } /* Punctuation */
+    c-[s] { color: #6c71c4 } /* Literal.String */
+    c-[t] { color: #6c71c4 } /* Literal.String.Single */
+    c-[u] { color: #6c71c4 } /* Literal.String.Double */
+    c-[ch] { color: #2aa198 } /* Comment.Hashbang */
+    c-[cp] { color: #2aa198 } /* Comment.Preproc */
+    c-[cpf] { color: #2aa198 } /* Comment.PreprocFile */
+    c-[c1] { color: #2aa198 } /* Comment.Single */
+    c-[cs] { color: #2aa198 } /* Comment.Special */
+    c-[kc] { color: #d33682 } /* Keyword.Constant */
+    c-[kn] { color: #d33682 } /* Keyword.Namespace */
+    c-[kp] { color: #d33682 } /* Keyword.Pseudo */
+    c-[kr] { color: #d33682 } /* Keyword.Reserved */
+    c-[ld] { color: #657b83 } /* Literal.Date */
+    c-[nc] { color: #268bd2 } /* Name.Class */
+    c-[no] { color: #268bd2 } /* Name.Constant */
+    c-[nd] { color: #268bd2 } /* Name.Decorator */
+    c-[ni] { color: #268bd2 } /* Name.Entity */
+    c-[ne] { color: #268bd2 } /* Name.Exception */
+    c-[nf] { color: #268bd2 } /* Name.Function */
+    c-[nl] { color: #268bd2 } /* Name.Label */
+    c-[nn] { color: #268bd2 } /* Name.Namespace */
+    c-[py] { color: #268bd2 } /* Name.Property */
+    c-[ow] { color: #657b83 } /* Operator.Word */
+    c-[mb] { color: #657b83 } /* Literal.Number.Bin */
+    c-[mf] { color: #657b83 } /* Literal.Number.Float */
+    c-[mh] { color: #657b83 } /* Literal.Number.Hex */
+    c-[mi] { color: #657b83 } /* Literal.Number.Integer */
+    c-[mo] { color: #657b83 } /* Literal.Number.Oct */
+    c-[sa] { color: #6c71c4 } /* Literal.String.Affix */
+    c-[sb] { color: #6c71c4 } /* Literal.String.Backtick */
+    c-[sc] { color: #6c71c4 } /* Literal.String.Char */
+    c-[dl] { color: #6c71c4 } /* Literal.String.Delimiter */
+    c-[sd] { color: #6c71c4 } /* Literal.String.Doc */
+    c-[se] { color: #6c71c4 } /* Literal.String.Escape */
+    c-[sh] { color: #6c71c4 } /* Literal.String.Heredoc */
+    c-[si] { color: #6c71c4 } /* Literal.String.Interpol */
+    c-[sx] { color: #6c71c4 } /* Literal.String.Other */
+    c-[sr] { color: #6c71c4 } /* Literal.String.Regex */
+    c-[ss] { color: #6c71c4 } /* Literal.String.Symbol */
+    c-[fm] { color: #268bd2 } /* Name.Function.Magic */
+    c-[vc] { color: #cb4b16 } /* Name.Variable.Class */
+    c-[vg] { color: #cb4b16 } /* Name.Variable.Global */
+    c-[vi] { color: #cb4b16 } /* Name.Variable.Instance */
+    c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
+    c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
+}
+</style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 200px"> <img alt="ADM-OSC" height="244" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="300"> </a></p>
+   <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 150px"> <img alt="ADM-OSC" height="122" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"> </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-09-27">27 September 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
      <dd><a class="u-url" href="https://immersive-audio-live.github.io/ADM-OSC/">https://immersive-audio-live.github.io/ADM-OSC/</a>
+     <dt>Previous Versions:
+     <dd><a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html" rel="prev">https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html</a>
      <dt>Test Suite:
      <dd><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests">https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests</a>
      <dt>Issue Tracking:
@@ -1977,17 +2102,17 @@ dfn > a.self-link::before      { content: "#"; }
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
-      <li><a href="#goals"><span class="secno">1.1</span> <span class="content">Motivation &amp; goals {#goals}</span></a>
+      <li><a href="#goals"><span class="secno">1.1</span> <span class="content">Motivation &amp; goals</span></a>
      </ol>
     <li>
-     <a href="#v1.0"><span class="secno">2</span> <span class="content">Summary of version 1.0 {#v1.0}</span></a>
+     <a href="#v1.0"><span class="secno">2</span> <span class="content">Current spec (v1.0)</span></a>
      <ol class="toc">
-      <li><a href="#position-messages"><span class="secno">2.1</span> <span class="content">position messages</span></a>
-      <li><a href="#configuration-messages"><span class="secno">2.2</span> <span class="content">configuration messages</span></a>
+      <li><a href="#pos"><span class="secno">2.1</span> <span class="content">Position messages</span></a>
+      <li><a href="#config"><span class="secno">2.2</span> <span class="content">Configuration messages</span></a>
      </ol>
     <li><a href="#implementation"><span class="secno">3</span> <span class="content">Implementation Matrix</span></a>
     <li>
-     <a href="#basics"><span class="secno">4</span> <span class="content">ADM-OSC principals</span></a>
+     <a href="#basics"><span class="secno">4</span> <span class="content">Basic ADM-OSC principals</span></a>
      <ol class="toc">
       <li>
        <a href="#roles"><span class="secno">4.1</span> <span class="content">Roles</span></a>
@@ -1995,17 +2120,25 @@ dfn > a.self-link::before      { content: "#"; }
         <li><a href="#sender-client"><span class="secno">4.1.1</span> <span class="content">Sender (client)</span></a>
         <li><a href="#receiver-server"><span class="secno">4.1.2</span> <span class="content">Receiver (server)</span></a>
        </ol>
-      <li><a href="#relationship-to-adm"><span class="secno">4.2</span> <span class="content">Relationship to ADM</span></a>
+      <li><a href="#ports"><span class="secno">4.2</span> <span class="content">Ports</span></a>
+      <li><a href="#rate"><span class="secno">4.3</span> <span class="content">Data rate</span></a>
       <li>
-       <a href="#coordinates"><span class="secno">4.3</span> <span class="content">Coordinates</span></a>
+       <a href="#coordinates"><span class="secno">4.4</span> <span class="content">Coordinates</span></a>
        <ol class="toc">
-        <li><a href="#cartesian"><span class="secno">4.3.1</span> <span class="content">Cartesian</span></a>
-        <li><a href="#polar"><span class="secno">4.3.2</span> <span class="content">Polar</span></a>
-        <li><a href="#conversions"><span class="secno">4.3.3</span> <span class="content">Conversions {#conversions}</span></a>
+        <li><a href="#cartesian"><span class="secno">4.4.1</span> <span class="content">Cartesian</span></a>
+        <li><a href="#polar"><span class="secno">4.4.2</span> <span class="content">Polar</span></a>
+        <li><a href="#conversions"><span class="secno">4.4.3</span> <span class="content">Conversions</span></a>
        </ol>
      </ol>
-    <li><a href="#discuss"><span class="secno">5</span> <span class="content">Discussion</span></a>
-    <li><a href="#define"><span class="secno">6</span> <span class="content">Definitions</span></a>
+    <li>
+     <a href="#tools"><span class="secno">5</span> <span class="content">Development &amp; Test tools</span></a>
+     <ol class="toc">
+      <li><a href="#chataigne-module-mathieu-delquignies-db-audiotechnik"><span class="secno">5.1</span> <span class="content"><span>Chataigne module</span> (Mathieu Delquignies / d&amp;b audiotechnik)</span></a>
+      <li><a href="#tester-desktop-application-jose-gaudin-meyer-sound"><span class="secno">5.2</span> <span class="content">Tester Desktop application (Jose Gaudin / Meyer Sound)</span></a>
+      <li><a href="#validator-test-and-stress-test-python-module-gael-martinet-flux"><span class="secno">5.3</span> <span class="content">Validator, Test and Stress Test Python Module (Gael Martinet / FLUX::)</span></a>
+     </ol>
+    <li><a href="#discuss"><span class="secno">6</span> <span class="content">Discussion</span></a>
+    <li><a href="#define"><span class="secno">7</span> <span class="content">Definitions</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
@@ -2022,7 +2155,7 @@ dfn > a.self-link::before      { content: "#"; }
   <main>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
    <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a></p>
-   <h3 class="heading settled" data-level="1.1" id="goals"><span class="secno">1.1. </span><span class="content">Motivation &amp; goals {#goals}</span><a class="self-link" href="#goals"></a></h3>
+   <h3 class="heading settled" data-level="1.1" id="goals"><span class="secno">1.1. </span><span class="content">Motivation &amp; goals</span><a class="self-link" href="#goals"></a></h3>
    <ul>
     <li data-md>
      <p>To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.</p>
@@ -2037,8 +2170,8 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>Extend this small grammar to more <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model③">ADM</a> properties (beds, etc.) in the future.</p>
    </ul>
-   <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Summary of version 1.0 {#v1.0}</span><a class="self-link" href="#v1.0"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="position-messages"><span class="secno">2.1. </span><span class="content">position messages</span><a class="self-link" href="#position-messages"></a></h3>
+   <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Current spec (v1.0)</span><a class="self-link" href="#v1.0"></a></h2>
+   <h3 class="heading settled" data-level="2.1" id="pos"><span class="secno">2.1. </span><span class="content">Position messages</span><a class="self-link" href="#pos"></a></h3>
    <table class="def">
     <thead>
      <tr>
@@ -2127,7 +2260,7 @@ dfn > a.self-link::before      { content: "#"; }
       <td>horizontal extent in normalized units
       <td>/adm/obj/3/w 0.2
      <tr>
-      <td>/adm/obj/<i>n</i>/gain
+      <td>/adm/obj/<var>n</var>/gain
       <td>f
       <td>linear
       <td>0.
@@ -2137,23 +2270,11 @@ dfn > a.self-link::before      { content: "#"; }
       <td>/adm/obj/3/gain 0.707
    </table>
    <p class="note" role="note"><span class="marker">NOTE:</span> Types: f = float, i = integer, s = string. f f f is a list of three floats.</p>
-   <table class="def">
-    <tbody>
-     <tr>
-      <th>address
-      <td>/adm/obj/n/x
-     <tr>
-      <th>type
-      <td>float
-     <tr>
-      <th>units
-      <td>degrees
-   </table>
-   <h3 class="heading settled" data-level="2.2" id="configuration-messages"><span class="secno">2.2. </span><span class="content">configuration messages</span><a class="self-link" href="#configuration-messages"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="config"><span class="secno">2.2. </span><span class="content">Configuration messages</span><a class="self-link" href="#config"></a></h3>
    <table class="def">
     <thead>
      <tr>
-      <th colspan="2">osc address
+      <th>address
       <th>type
       <th>units
       <th>min
@@ -2161,22 +2282,18 @@ dfn > a.self-link::before      { content: "#"; }
       <th>default
       <th>description
       <th>example
-      <th>status
     <tbody>
      <tr>
-      <td rowspan="3">/adm/obj/<i>n</i>/config
+      <td>/adm/obj/<var>n</var>/config
       <td>/cartesian
       <td>int
       <td>0/1
       <td>0
       <td>1
       <td>0
-      <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are
-                            used.
-      <td>/adm/config/obj/1/cartesian 0
-      <td class="stable">stable v0.4
+      <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.
      <tr>
-      <td>/dMax
+      <td>/adm/obj/<var>n</var>/dMax
       <td>float
       <td>meters
       <td>0.
@@ -2184,10 +2301,8 @@ dfn > a.self-link::before      { content: "#"; }
       <td>
       <td>Distance signified by a normalized dRef value of 1
       <td>/adm/config/obj/1/dMax 21.3
-      <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
-                            progress</a>
      <tr>
-      <td>/dRef
+      <td>/adm/obj/<var>n</var>/dRef
       <td>float
       <td>normalized
       <td>0.0
@@ -2195,8 +2310,6 @@ dfn > a.self-link::before      { content: "#"; }
       <td>1.0
       <td>Distance where dimensionless rendering is replaced with with physics-based rendering.
       <td>/adm/config/obj/1/dRef 0.2
-      <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
-                            progress</a>
    </table>
    <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
    <div class="issue no-marker" id="issue-d41d8cd9">
@@ -2204,14 +2317,14 @@ dfn > a.self-link::before      { content: "#"; }
     <p dir="auto">Table of implementations.</p>
     <p dir="auto">What do they support?<br> What they would like to support?</p>
    </div>
-   <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
+   <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">Basic ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
    <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
    <ul>
     <li data-md>
      <p>Object Editor sending positioning data to one or more receivers.</p>
     <li data-md>
-     <p>Position data is always normalized</p>
+     <p>Cartesian position data is always normalized</p>
    </ul>
    <h4 class="heading settled" data-level="4.1.2" id="receiver-server"><span class="secno">4.1.2. </span><span class="content">Receiver (server)</span><a class="self-link" href="#receiver-server"></a></h4>
    <ul>
@@ -2220,10 +2333,10 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>The receiver can be a DAW, an <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model④">ADM</a> renderer, an object editor, a bridge (ADM-OSC &lt;-> sADM)</p>
    </ul>
-   <h3 class="heading settled" data-level="4.2" id="relationship-to-adm"><span class="secno">4.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
-   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑤">ADM</a> tag should not be in the `/adm` namespace.</p>
-   <h3 class="heading settled" data-level="4.3" id="coordinates"><span class="secno">4.3. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
-   <h4 class="heading settled" data-level="4.3.1" id="cartesian"><span class="secno">4.3.1. </span><span class="content">Cartesian</span><a class="self-link" href="#cartesian"></a></h4>
+   <h3 class="heading settled" data-level="4.2" id="ports"><span class="secno">4.2. </span><span class="content">Ports</span><a class="self-link" href="#ports"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="rate"><span class="secno">4.3. </span><span class="content">Data rate</span><a class="self-link" href="#rate"></a></h3>
+   <h3 class="heading settled" data-level="4.4" id="coordinates"><span class="secno">4.4. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
+   <h4 class="heading settled" data-level="4.4.1" id="cartesian"><span class="secno">4.4.1. </span><span class="content">Cartesian</span><a class="self-link" href="#cartesian"></a></h4>
 <pre>(-1, 1) --------- (1, 1)  
    |                |  
    |                |  
@@ -2256,7 +2369,7 @@ dfn > a.self-link::before      { content: "#"; }
      </math>
       is up 
    </ul>
-   <h4 class="heading settled" data-level="4.3.2" id="polar"><span class="secno">4.3.2. </span><span class="content">Polar</span><a class="self-link" href="#polar"></a></h4>
+   <h4 class="heading settled" data-level="4.4.2" id="polar"><span class="secno">4.4.2. </span><span class="content">Polar</span><a class="self-link" href="#polar"></a></h4>
    <ul>
     <li data-md>
      <p>0° azimuth is straight ahead</p>
@@ -2265,13 +2378,95 @@ dfn > a.self-link::before      { content: "#"; }
     <li data-md>
      <p>+90° elevation is straight up</p>
    </ul>
-   <h4 class="heading settled" data-level="4.3.3" id="conversions"><span class="secno">4.3.3. </span><span class="content">Conversions {#conversions}</span><a class="self-link" href="#conversions"></a></h4>
-   <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
+   <h4 class="heading settled" data-level="4.4.3" id="conversions"><span class="secno">4.4.3. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
+   <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑤">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
    </div>
-   <h2 class="heading settled" data-level="5" id="discuss"><span class="secno">5. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
+   <h3 class="heading settled" data-level="5.1" id="chataigne-module-mathieu-delquignies-db-audiotechnik"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a> (Mathieu Delquignies / d&amp;b audiotechnik)</span><a class="self-link" href="#chataigne-module-mathieu-delquignies-db-audiotechnik"></a></h3>
+   <p>to retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol.</p>
+   <h3 class="heading settled" data-level="5.2" id="tester-desktop-application-jose-gaudin-meyer-sound"><span class="secno">5.2. </span><span class="content">Tester Desktop application (Jose Gaudin / Meyer Sound)</span><a class="self-link" href="#tester-desktop-application-jose-gaudin-meyer-sound"></a></h3>
+   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a></p>
+   <h3 class="heading settled" data-level="5.3" id="validator-test-and-stress-test-python-module-gael-martinet-flux"><span class="secno">5.3. </span><span class="content">Validator, Test and Stress Test Python Module (Gael Martinet / FLUX::)</span><a class="self-link" href="#validator-test-and-stress-test-python-module-gael-martinet-flux"></a></h3>
+   <p>adm_osc module is available to install through pip:</p>
+<pre class="language-shell highlight">pip install adm-osc
+</pre>
+   <p>quick examples:</p>
+<pre class="language-python highlight"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>OscClientServer</c->
+
+<c- c1># create a basic client/server that implement basic ADM-OSC communication with stable parameters </c->
+<c- c1># + command monitoring and analyze</c->
+<c- n>cs</c-> <c- o>=</c-> <c- n>OscClientServer</c-><c- p>(</c-><c- n>address</c-><c- o>=</c-><c- t>'127.0.0.1'</c-><c- p>,</c-> <c- n>out_port</c-><c- o>=</c-><c- mi>9000</c-><c- p>,</c-> <c- n>in_port</c-><c- o>=</c-><c- mi>9001</c-><c- p>)</c->
+
+<c- c1># send some individual parameters  </c->
+<c- n>cs</c-><c- o>.</c-><c- n>send_object_position_azimuth</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>,</c-> <c- n>v</c-><c- o>=-</c-><c- mf>30.0</c-><c- p>)</c->
+<c- n>cs</c-><c- o>.</c-><c- n>send_object_position_elevation</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>,</c-> <c- n>v</c-><c- o>=</c-><c- mf>0.0</c-><c- p>)</c->
+<c- n>cs</c-><c- o>.</c-><c- n>send_object_position_distance</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>,</c-> <c- n>v</c-><c- o>=</c-><c- mf>2.0</c-><c- p>)</c->
+
+<c- c1># or pack them</c->
+<c- n>cs</c-><c- o>.</c-><c- n>send_object_polar_position</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>,</c-> <c- n>pos</c-><c- o>=</c-><c- p>[</c-><c- o>-</c-><c- mf>30.0</c-><c- p>,</c-> <c- mf>0.0</c-><c- p>,</c-> <c- mf>2.0</c-><c- p>])</c->
+
+<c- c1># in cartesian coordinates</c->
+<c- n>cs</c-><c- o>.</c-><c- n>send_object_cartesian_position</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>,</c-> <c- n>pos</c-><c- o>=</c-><c- p>[</c-><c- o>-</c-><c- mf>5.0</c-><c- p>,</c-> <c- mf>8.0</c-><c- p>,</c-> <c- mf>0.0</c-><c- p>])</c->
+
+<c- c1># see documentation for full list of available functions</c->
+
+<c- c1># when receiving an adm osc command its analyze will be printed on the command output window</c->
+<c- c1>#</c->
+<c- c1># e.g.</c->
+<c- c1>#</c->
+<c- c1># >> received valid adm message for obj :: 1 :: gain (0.7943282127380371)</c->
+<c- c1># >> received valid adm message for obj :: 1 :: position aed (20.33701515197754, 0.0, 0.8807612657546997)</c->
+<c- c1># >> received valid adm message for obj :: 1 :: position xyz (-0.2606865465641022, 0.8273822069168091, 0.0)</c->
+<c- c1># >></c->
+<c- c1># >> ERROR: unrecognized ADM address : "/adm/obj/1/bril" ! unknown command "/bril/"</c->
+<c- c1># >> ERROR: arguments are malformed for "/adm/obj/1/gain :: (1.4791083335876465,)":</c->
+<c- c1># >>     argument 0 "1.4791083335876465" out of range ! it should be less or equal than "1.0"</c->
+</pre>
+<pre class="language-python highlight"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>TestClient</c->
+<c- c1># create a test client, assume default address (local: '127.0.0.1')</c->
+<c- c1># test client can be used to test how receiver will handle all kind of parameters and parameters value range</c->
+<c- n>sender</c-> <c- o>=</c-> <c- n>TestClient</c-><c- p>(</c-><c- n>out_port</c-><c- o>=</c-><c- mi>9000</c-><c- p>)</c->
+
+<c- c1># all stable parameters for a specific object</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_object_stable_parameters_to_minimum</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>)</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_object_stable_parameters_to_maximum</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>)</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_object_stable_parameters_to_default</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>)</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_object_stable_parameters_to_random</c-><c- p>(</c-><c- n>object_number</c-><c- o>=</c-><c- mi>1</c-><c- p>)</c->
+
+<c- c1># all stable parameters for a range of objects</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_objects_stable_parameters_minimum</c-><c- p>(</c-><c- n>objects_range</c-><c- o>=</c->range<c- p>(</c-><c- mi>1</c-><c- p>,</c-> <c- mi>64</c-><c- p>))</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_objects_stable_parameters_maximum</c-><c- p>(</c-><c- n>objects_range</c-><c- o>=</c->range<c- p>(</c-><c- mi>1</c-><c- p>,</c-> <c- mi>64</c-><c- p>))</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_objects_stable_parameters_default</c-><c- p>(</c-><c- n>objects_range</c-><c- o>=</c->range<c- p>(</c-><c- mi>1</c-><c- p>,</c-> <c- mi>64</c-><c- p>))</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_objects_stable_parameters_random</c-><c- p>(</c-><c- n>objects_range</c-><c- o>=</c->range<c- p>(</c-><c- mi>1</c-><c- p>,</c-> <c- mi>64</c-><c- p>))</c->
+
+<c- c1># all stable parameters for all objects</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_all_objects_stable_parameters_minimum</c-><c- p>()</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_all_objects_stable_parameters_maximum</c-><c- p>()</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_all_objects_stable_parameters_default</c-><c- p>()</c->
+<c- n>sender</c-><c- o>.</c-><c- n>set_all_objects_stable_parameters_random</c-><c- p>()</c->
+
+<c- c1># see documentation for full list of available functions</c->
+</pre>
+<pre class="language-python highlight"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>StressClient</c->
+<c- c1># create a stress client, assume default address (local: '127.0.0.1')</c->
+<c- c1># stress client will send huge amount of data to stress test the receivers</c->
+<c- n>sender</c-> <c- o>=</c-> <c- n>StressClient</c-><c- p>(</c-><c- n>out_port</c-><c- o>=</c-><c- mi>9000</c-><c- p>)</c->
+<c- c1># do stress test in cartesian coordinates</c->
+<c- n>sender</c-><c- o>.</c-><c- n>stress_cartesian_position</c-><c- p>(</c-><c- n>number_of_objects</c-><c- o>=</c-><c- mi>64</c-><c- p>,</c-> <c- n>duration_in_second</c-><c- o>=</c-><c- mf>60.0</c-><c- p>,</c-> <c- n>interval_in_milliseconds</c-><c- o>=</c-><c- mf>10.0</c-><c- p>)</c->
+<c- c1># do stress test in polar coordinates</c->
+<c- n>sender</c-><c- o>.</c-><c- n>stress_polar_position</c-><c- p>(</c-><c- n>number_of_objects</c-><c- o>=</c-><c- mi>64</c-><c- p>,</c-> <c- n>duration_in_second</c-><c- o>=</c-><c- mf>60.0</c-><c- p>,</c-> <c- n>interval_in_milliseconds</c-><c- o>=</c-><c- mf>10.0</c-><c- p>)</c->
+</pre>
+   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">full documentation</a> <a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a></p>
+   <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <p>Draft 0.5</p>
+   <hr>
+   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
+   <p>Relationship to ADM</p>
+   <hr>
+   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> tag should not be in the `/adm` namespace.</p>
    <div class="issue no-marker" id="issue-d41d8cd9②">
     <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
@@ -2281,12 +2476,12 @@ dfn > a.self-link::before      { content: "#"; }
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
    </div>
-   <h2 class="heading settled" data-level="6" id="define"><span class="secno">6. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
+   <h2 class="heading settled" data-level="7" id="define"><span class="secno">7. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="ADM" data-noexport id="audio-definition-model">Audio Definition Model</dfn></p>
    <p>The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
 2015 as a standard representation of audio metadata [1]. The goal of ADM is to support a broad range of
 use cases that include spatial and immersive audio, as well as interactive personalization and accessibility
-features <a data-link-type="biblio" href="#biblio-what-is-adm" title="What is the ADM?">[What-is-ADM]</a>. ADM can be used to represent channel-based, scene-based, and <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a>. It is
+features <a data-link-type="biblio" href="#biblio-what-is-adm" title="What is the ADM?">[What-is-ADM]</a>. ADM can be used to represent channel-based, scene-based, and <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio②">object-based audio</a>. It is
 defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu-bs-2076" title="Audio Definition Model">[EBU-BS-2076]</a></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OBA" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
@@ -2294,16 +2489,18 @@ defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu
    <p>OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music &amp; Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.</p>
    <p>There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
 specification has been published in 2002 [8].</p>
+   <p><dfn data-dfn-type="dfn" data-noexport id="renderer">Renderer<a class="self-link" href="#renderer"></a></dfn></p>
   </main>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#audio-definition-model">ADM</a><span>, in § 6</span>
-   <li><a href="#audio-definition-model">Audio Definition Model</a><span>, in § 6</span>
-   <li><a href="#object-based-audio">OBA</a><span>, in § 6</span>
-   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 6</span>
-   <li><a href="#open-sound-control">Open Sound Control</a><span>, in § 6</span>
-   <li><a href="#open-sound-control">OSC</a><span>, in § 6</span>
+   <li><a href="#audio-definition-model">ADM</a><span>, in § 7</span>
+   <li><a href="#audio-definition-model">Audio Definition Model</a><span>, in § 7</span>
+   <li><a href="#object-based-audio">OBA</a><span>, in § 7</span>
+   <li><a href="#object-based-audio">Object-Based Audio</a><span>, in § 7</span>
+   <li><a href="#open-sound-control">Open Sound Control</a><span>, in § 7</span>
+   <li><a href="#open-sound-control">OSC</a><span>, in § 7</span>
+   <li><a href="#renderer">Renderer</a><span>, in § 7</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
@@ -2498,9 +2695,9 @@ specification has been published in 2002 [8].</p>
 </script>
 <script>/* Boilerplate: script-dfn-panel-json */
 window.dfnpanelData = {};
-window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}, {"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}], "title": "1.1. Motivation & goals {#goals}"}, {"refs": [{"id": "ref-for-audio-definition-model\u2463"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.2. Relationship to ADM"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "4.3.3. Conversions {#conversions}"}], "external": false};
-window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "6. Definitions"}], "external": false};
-window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.1. Motivation & goals {#goals}"}], "external": false};
+window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}, {"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}], "title": "1.1. Motivation & goals"}, {"refs": [{"id": "ref-for-audio-definition-model\u2463"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.4.3. Conversions"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}, {"id": "ref-for-audio-definition-model\u2466"}], "title": "6. Discussion"}], "external": false};
+window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5.1. Chataigne module (Mathieu Delquignies / d&b audiotechnik)"}, {"refs": [{"id": "ref-for-object-based-audio\u2461"}], "title": "7. Definitions"}], "external": false};
+window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.1. Motivation & goals"}, {"refs": [{"id": "ref-for-open-sound-control\u2461"}], "title": "5.1. Chataigne module (Mathieu Delquignies / d&b audiotechnik)"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
 function query(sel) { return document.querySelector(sel); }
