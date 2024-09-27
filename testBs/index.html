@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="a6c42d549ee3321148afaeab76dd524afa0d6c02" name="document-revision">
+  <meta content="4dbd7c41e8c7c4a25f43ca01fb5adfbd8ffceb85" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2125,8 +2125,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li>
        <a href="#coordinates"><span class="secno">4.4</span> <span class="content">Coordinates</span></a>
        <ol class="toc">
-        <li><a href="#cartesian"><span class="secno">4.4.1</span> <span class="content">Cartesian</span></a>
-        <li><a href="#polar"><span class="secno">4.4.2</span> <span class="content">Polar</span></a>
+        <li><a href="#polar"><span class="secno">4.4.1</span> <span class="content">Polar</span></a>
+        <li><a href="#cartesian"><span class="secno">4.4.2</span> <span class="content">Cartesian</span></a>
         <li><a href="#conversions"><span class="secno">4.4.3</span> <span class="content">Conversions</span></a>
        </ol>
      </ol>
@@ -2190,13 +2190,13 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <th>example
     <tbody>
      <tr>
-      <td>/adm/obj/<i>n</i>/d
+      <td>/adm/obj/<i>n</i>/azimuth
       <td>f
       <td>degrees
       <td>-180.0
       <td>180.0
       <td>-
-      <td><b>azimuth</b> “theta - θ” of sound location. -90 is on the Right, 0 is in front.
+      <td><b>azimuth</b> “theta - θ” of sound location.<a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/azim -22.5
      <tr>
       <td>/adm/obj/<i>n</i>/elev
@@ -2205,7 +2205,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>-90.0
       <td>90.0
       <td>-
-      <td><b>elevation</b> “phi - ɸ” of sound location
+      <td><b>elevation</b> “phi - ɸ” of sound location<a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/elev 12.7
      <tr>
       <td>/adm/obj/<i>n</i>/dist
@@ -2220,7 +2220,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>/adm/obj/<i>n</i>/aed
       <td>f f f
       <td colspan="4">see above
-      <td>compact format enables synchronicity of position changes and also less network traffic
+      <td>enablfor synchronicity of position changes and reduced network traffic
       <td>/adm/obj/4/aed -22.5 12.7 0.9
      <tr>
       <td>/adm/obj/<i>n</i>/x
@@ -2341,7 +2341,16 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <h3 class="heading settled" data-level="4.2" id="ports"><span class="secno">4.2. </span><span class="content">Ports</span><a class="self-link" href="#ports"></a></h3>
    <h3 class="heading settled" data-level="4.3" id="rate"><span class="secno">4.3. </span><span class="content">Data rate</span><a class="self-link" href="#rate"></a></h3>
    <h3 class="heading settled" data-level="4.4" id="coordinates"><span class="secno">4.4. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
-   <h4 class="heading settled" data-level="4.4.1" id="cartesian"><span class="secno">4.4.1. </span><span class="content">Cartesian</span><a class="self-link" href="#cartesian"></a></h4>
+   <h4 class="heading settled" data-level="4.4.1" id="polar"><span class="secno">4.4.1. </span><span class="content">Polar</span><a class="self-link" href="#polar"></a></h4>
+   <ul>
+    <li data-md>
+     <p>0° azimuth is straight ahead</p>
+    <li data-md>
+     <p>Positive azimuth is on the left, so a front-left speaker is +30°</p>
+    <li data-md>
+     <p>+90° elevation is straight up</p>
+   </ul>
+   <h4 class="heading settled" data-level="4.4.2" id="cartesian"><span class="secno">4.4.2. </span><span class="content">Cartesian</span><a class="self-link" href="#cartesian"></a></h4>
 <pre>(-1, 1) --------- (1, 1)  
    |                |  
    |                |  
@@ -2373,15 +2382,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <mi>1</mi>
      </math>
       is up 
-   </ul>
-   <h4 class="heading settled" data-level="4.4.2" id="polar"><span class="secno">4.4.2. </span><span class="content">Polar</span><a class="self-link" href="#polar"></a></h4>
-   <ul>
-    <li data-md>
-     <p>0° azimuth is straight ahead</p>
-    <li data-md>
-     <p>Positive azimuth is on the left, so a front-left speaker is +30°</p>
-    <li data-md>
-     <p>+90° elevation is straight up</p>
    </ul>
    <h4 class="heading settled" data-level="4.4.3" id="conversions"><span class="secno">4.4.3. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
    <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑤">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
