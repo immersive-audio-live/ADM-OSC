@@ -295,7 +295,7 @@ These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head t
             <th>units</th>
             <th>min</th>
             <th>max</th>
-            <th>de[fault</th>
+            <th>default</th>
             <th>description</th>
             <th>example</th>
 
@@ -389,7 +389,6 @@ Implementation Matrix {#implementation}
         <td>tx</td>
         <td></td>
         <td>&#x2713;</td>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>
