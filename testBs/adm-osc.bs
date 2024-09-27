@@ -19,7 +19,26 @@ Abstract: An industry initiative for standardization of [=Object-Based Audio=] p
 Introduction {#intro}
 =====================
 
-ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC: Atlas, Adamson, Amadeus Acoustics GmbH, BBC, d&amp;b audiotechnik, DiGiCo, Dolby, FLUX::SE, FollowMe, Grapes3D, Holophonix, L-Acoustics, Lawo, Merging Technologies, Meyer Sound, Naostage, Radio-France, Steinberg etc. [[EBU-Tech-3396]]
+ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC:
+
+* Atlas
+* Adamson,
+* Amadeus Acoustics GmbH
+* BBC
+* d&amp;b audiotechnik
+* DiGiCo
+* Dolby
+* FLUX::SE
+* FollowMe
+* Grapes3D,
+* Holophonix
+* L-Acoustics
+* Lawo, Merging Technologies
+* Meyer Sound
+* Naostage
+* Radio-France
+* Steinberg
+
 
 Motivation &amp; goals {#goals}
 ----------------------------------
@@ -31,10 +50,37 @@ Motivation &amp; goals {#goals}
 - Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 - Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
 
+Project Originators
+----------------------
+
+<a href="https://www.l-acoustics.com/">L-Acoustics</a>, <a href="https://www.flux.audio/">FLUX::SE</a>, <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a>
+
+Project Contributors
+--------------------
+
+[Adamson](http://www.adamsonsystems.com/), [BBC](https://www.bbc.com/), [d&b Audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+
+Currently supported in
+-----------------------
+
+- SPAT Revolution (FLUX::SE)
+- L-ISA Controller (L-Acoustics)
+- Ovation (Merging Technologies)
+- Nuendo (Steinberg)
+- SpaceMap Go (Meyer Sound)
+- QLAB 5 (Figure 53)
+- Space Controller (Sound Particles)
+- Modulo Kinetic (Modulo Pi)
+- Iosono (Barco)
+- FletcherMachine (Adamson)
+- En-Bridge (d&b audiotechnik)
+
 Current spec (v1.0) {#v1.0}
 ================================
 
-Position messages {#pos}
+Note: <var>n</var> signifies object number
+
+Object position messages {#obj}
 -----------------
 
 <table class="def">
@@ -83,9 +129,9 @@ Position messages {#pos}
         </tr>
         <tr>
             <td>/adm/obj/<i>n</i>/aed</td>
-            <td>f f f</td>azimuth elevation distance
-            <td colspan=4>see above</td>
-            <td>for synchronicity of position changes and reduced network traffic</td>
+            <td>f f f</td>
+            <td colspan=4>azimuth elevation distance</td>
+            <td>for synchronicity and reduced network traffic</td>
             <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
         </tr>
         <tr>
@@ -95,7 +141,7 @@ Position messages {#pos}
             <td>-1.0</td>
             <td>1.0</td>
             <td>0.0</td>
-            <td>left/right dimension<br>[[#cartesian]]</td>
+            <td>left/right<br>[[#cartesian]]</td>
             <td>/adm/obj/4/x -0.9</td>
         </tr>
         <tr>
@@ -105,7 +151,7 @@ Position messages {#pos}
             <td>-1.0</td>
             <td>1.0</td>
             <td>0.0</td>
-            <td>front/back dimension. 1 is front</td>
+            <td>front/back<br>[[#cartesian]]</td>
             <td>/adm/obj/4/y 0.15</td>
         </tr>
         <tr>
@@ -115,19 +161,19 @@ Position messages {#pos}
             <td>-1.0</td>
             <td>1.0</td>
             <td>0.0</td>
-            <td>top/bottom dimension. 1 is top</td>
+            <td>top/bottom<br>[[#cartesian]]</td>
             <td>/adm/obj/4/z 0.7</td>
         </tr>
         <tr>
             <td>/adm/obj/<i>n</i>/xyz</td>
             <td>f f f</td>
             <td colspan=4>see above</td>
-            <td>compact format enables synchronicity and reduces network traffic</td>
+            <td>for synchronicity and reduced network traffic</td>
             <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
         </tr>
         <tr>
             <td>/adm/obj/<i>n</i>/w</td>
-            <td>f</td>                        
+            <td>f</td>
             <td>normalized</td>
             <td>0.0</td>
             <td>1.0</td>
@@ -145,13 +191,54 @@ Position messages {#pos}
             <td>Apply a gain to the audio in the object.</td>
             <td>/adm/obj/3/gain 0.707</td>
         </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/dRef</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>0.0</td>
+            <td>1.0</td>
+            <td>1.0</td>
+            <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
+            <td>/adm/obj/1/dRef 0.2</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/dMax</td>
+            <td>f</td>
+            <td>meters</td>
+            <td>0.</td>
+            <td></td>
+            <td></td>
+            <td>Distance signified by a normalized dRef value of 1</td>
+            <td>/adm/obj/1/dMax 21.3</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/mute </td>
+            <td>i</td>
+            <td>integer</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1 means “true”, so muted</td>
+            <td>//adm/obj/2/mute 0</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/name</td>
+            <td>s</td>
+            <td>string</td>
+            <td>0</td>
+            <td>128 char</td>
+            <td>object nice name</td>
+            <td>/adm/obj/1/name kickdrum</td>
+        </tr>
     </tbody>
 </table>
 
-NOTE: Types: f = float, i = integer, s = string. f f f is a list of three floats.
+Note: Type tags are defined as OSC 1.0 specification: i=int32, f=float32, s=OSC-string
 
-Configuration messages {#config}
+Environment messages {#env}
 --------------------------------
+
+These could be expanded to include program changes and other global data. They are not specific to any individual object.
 
 <table class="def">
     <thead>
@@ -169,34 +256,57 @@ Configuration messages {#config}
     </thead>
     <tbody>
         <tr>
-            <td>/adm/obj/<var>n</var>/config</td>
-            <td>/cartesian</td>
-            <td>int</td>
-            <td>0/1</td>
+            <td>/adm/env/change</td>
+            <td>s</td>
+            <td>string</td>
             <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
+            <td>128 char</td>
+            <td>128 char</td>
+            <td>program changes</td>
+            <td>/adm/env/change day</td>
         </tr>
+    </tbody>
+</table>
+
+Listener messages {#lis}
+------------------------
+
+These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head tracking data and listener position in a [=6DOF=]setting.
+
+<table class="def">
+    <thead>
         <tr>
-            <td>/adm/obj/<var>n</var>/dMax</td>
-            <td>float</td>
-            <td>meters</td>
-            <td>0.</td>
-            <td></td>
-            <td></td>
-            <td>Distance signified by a normalized dRef value of 1</td>
-            <td>/adm/config/obj/1/dMax 21.3</td>
+            <th>address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>de[fault</th>
+            <th>description</th>
+            <th>example</th>
+
         </tr>
+    </thead>
+    <tbody>
         <tr>
-            <td>/adm/obj/<var>n</var>/dRef</td>
-            <td>float</td>
-            <td>normalized</td>
+            <td>/adm/lis/ypr</td>
+            <td>f f f</td>
+            <td>degrees</td>
+            <td>-180.0</td>
+            <td>180.0</td>
             <td>0.0</td>
-            <td>1.0</td>
-            <td>1.0</td>
-            <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
-            <td>/adm/config/obj/1/dRef 0.2</td>
+            <td>orientation: yaw, pitch, roll</td>
+            <td>/adm/lis/ypr -45.0 30.0 5.0</td>
+        </tr>
+        <tr>
+            <td>/adm/lis/xyz</td>
+            <td>f f f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>11.0</td>
+            <td>0.0</td>
+            <td>listener position</td>
+            <td>/adm/lis/xyz 0.0 0.5 -0.2</td>
         </tr>
     </tbody>
 </table>
@@ -386,6 +496,8 @@ Coordinates
 - Positive azimuth is on the left, so a front-left speaker is +30&deg;
 - +90&deg; elevation is straight up
 
+### Distance ### {#distance}
+
 
 ### Cartesian ### {#cartesian}
 
@@ -399,9 +511,9 @@ Coordinates
 ```
 
 - Values are normalized between -1.0 and 1.0 
-- <math><mi>x</mi> <mo>=</mo> <mi>1</mi></math> is right
-- <math><mi>y</mi> <mo>=</mo> <mi>1</mi></math> is forward
-- <math><mi>z</mi> <mo>=</mo> <mi>1</mi></math> is up
+- <math><mi>x</mi> <mo>=</mo> <mi>1.0</mi></math> is right
+- <math><mi>y</mi> <mo>=</mo> <mi>1.0</mi></math> is forward
+- <math><mi>z</mi> <mo>=</mo> <mi>1.0</mi></math> is up
 
 ### Conversions ### {#conversions}
 
@@ -543,7 +655,7 @@ defined by the EBU in ITU-R BS.2076 [[EBU-BS-2076]]
 
 <dfn local-lt="OBA">Object-Based Audio</dfn>
 
-Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. [[Tsingos-2017]]
+Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer [[EBU-Tech-3396]] then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. [[Tsingos-2017]]
 
 <dfn local-lt="OSC">Open Sound Control</dfn>
 
@@ -553,6 +665,10 @@ There are several open-source implementations that simplify developers’ adopti
 specification has been published in 2002 [8].
 
 <dfn>Renderer</dnf>
+
+<dfn local-lt="6DOF">Six Degrees of Freedom</dfn>
+
+Forward/backward, up/down, left/right translation, combined orientation (yaw, pitch, and roll).
 
 <!-- Big Text: Refs -->
 
