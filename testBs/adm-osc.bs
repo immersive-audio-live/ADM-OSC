@@ -9,7 +9,7 @@ Status: LS
 URL: https://immersive-audio-live.github.io/ADM-OSC/
 Repository: immersive-audio-live/ADM-OSC
 Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
-Previous verision: https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html
+Previous Version: https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec.html
 Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
 Editor: Michael Zbyszynski, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynskki@l-acoustics.com
 Inline Github Issues: true
@@ -31,10 +31,10 @@ Motivation &amp; goals {#goals}
 - Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 - Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
 
-Summary of version 1.0 {#v1.0}
+Current spec (v1.0) {#v1.0}
 ================================
 
-Position messages
+Position messages {#pos}
 -----------------
 
 <table class="def">
@@ -42,7 +42,7 @@ Position messages
         <tr>
             <th>address</th>
             <th>type</th>
-            <th>units</th>               
+            <th>units</th>
             <th>min</th>
             <th>max</th>
             <th>default</th>
@@ -136,7 +136,7 @@ Position messages
             <td>/adm/obj/3/w 0.2</td>
         </tr>
         <tr>
-            <td>/adm/obj/<i>n</i>/gain</td>
+            <td>/adm/obj/<var>n</var>/gain</td>
             <td>f</td>
             <td>linear</td>
             <td>0.</td>
@@ -150,19 +150,13 @@ Position messages
 
 NOTE: Types: f = float, i = integer, s = string. f f f is a list of three floats.
 
-<pre class=simpledef> 
-address: /adm/obj/n/x
-type: float
-units: degrees
-</pre>
-
-Configuration messages
-----------------------
+Configuration messages {#config}
+--------------------------------
 
 <table class="def">
     <thead>
         <tr>
-            <th colspan=2>osc address</th>
+            <th>address</th>
             <th>type</th>
             <th>units</th>
             <th>min</th>
@@ -170,46 +164,39 @@ Configuration messages
             <th>default</th>
             <th>description</th>
             <th>example</th>
-            <th>status</th>
+
         </tr>
     </thead>
     <tbody>
-                    <tr>
-                        <td rowspan=3>/adm/obj/<i>n</i>/config</td>
-                        <td>/cartesian</td>
-                        <td>int</td>
-                        <td>0/1</td>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are
-                            used.</td>
-                        <td>/adm/config/obj/1/cartesian 0</td>
-                        <td class="stable">stable v0.4</td>
-                    </tr>
-                    <tr>
-                        <td>/dMax</td>
-                        <td>float</td>
-                        <td>meters</td>
-                        <td>0.</td>
-                        <td></td>
-                        <td></td>
-                        <td>Distance signified by a normalized dRef value of 1</td>
-                        <td>/adm/config/obj/1/dMax 21.3</td>
-                        <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
-                            progress</a></td>
+        <tr>
+            <td>/adm/obj/<var>n</var>/config</td>
+            <td>/cartesian</td>
+            <td>int</td>
+            <td>0/1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>If the flag is set to 1, Cartesian coordinates are used. Otherwise spherical coordinates are used.</td>
         </tr>
         <tr>
-                        <td>/dRef</td>
-                        <td>float</td>
-                        <td>normalized</td>
-                        <td>0.0</td>
-                        <td>1.0</td>
-                        <td>1.0</td>
-                        <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
-                        <td>/adm/config/obj/1/dRef 0.2</td>
-                        <td class="inProgress"><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/12">in
-                            progress</a></td>
+            <td>/adm/obj/<var>n</var>/dMax</td>
+            <td>float</td>
+            <td>meters</td>
+            <td>0.</td>
+            <td></td>
+            <td></td>
+            <td>Distance signified by a normalized dRef value of 1</td>
+            <td>/adm/config/obj/1/dMax 21.3</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/dRef</td>
+            <td>float</td>
+            <td>normalized</td>
+            <td>0.0</td>
+            <td>1.0</td>
+            <td>1.0</td>
+            <td>Distance where dimensionless rendering is replaced with with physics-based rendering.</td>
+            <td>/adm/config/obj/1/dRef 0.2</td>
         </tr>
     </tbody>
 </table>
@@ -219,24 +206,27 @@ Implementation Matrix {#implementation}
 
 Issue(immersive-audio-live/adm-osc#24):
 
-ADM-OSC principals {#basics}
+Basic ADM-OSC principals {#basics}
 ============================
 
-## Roles
+Roles
+------------
 
 ### Sender (client)
 
 - Object Editor sending positioning data to one or more receivers.
-- Position data is always normalized
+- Cartesian position data is always normalized
 
 ### Receiver (server)
 
 - Handles the (optional) local scaling of normalized data: x, y, z, distance
 - The receiver can be a DAW, an [=ADM=] renderer, an object editor, a bridge (ADM-OSC <-> sADM)
 
-## Relationship to ADM
+Ports {#ports}
+-----------------
 
-ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) [=ADM=] tag should not be in the `/adm` namespace.
+Data rate {#rate}
+-----------------
 
 ## Coordinates
 
@@ -256,14 +246,13 @@ ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages 
 - <math><mi>y</mi> <mo>=</mo> <mi>1</mi></math> is forward
 - <math><mi>z</mi> <mo>=</mo> <mi>1</mi></math> is up
 
-
 ### Polar
 
 - 0&deg; azimuth is straight ahead
 - Positive azimuth is on the left, so a front-left speaker is +30&deg;
 - +90&deg; elevation is straight up
 
-### Conversions {#conversions}
+### Conversions ### {#conversions}
 
 The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
 
@@ -271,6 +260,16 @@ Issue(immersive-audio-live/adm-osc#25):
 
 Discussion {#discuss}
 =====================
+
+Draft 0.5
+_______________________
+
+A <a href src="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate 
+
+Relationship to ADM
+_______________________
+
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) [=ADM=] tag should not be in the `/adm` namespace.
 
 Issue(immersive-audio-live/adm-osc#33):
 
@@ -295,6 +294,8 @@ OpenSoundControl (OSC) is a data transport specification (an encoding) for realt
 
 There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
 specification has been published in 2002 [8].
+
+<dfn>Renderer</dnf>
 
 <!-- Big Text: Refs -->
 
