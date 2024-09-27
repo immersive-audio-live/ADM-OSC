@@ -291,6 +291,8 @@ OpenSoundControl (OSC) is a data transport specification (an encoding) for realt
 There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
 specification has been published in 2002 [8].
 
+<!-- Big Text: Refs -->
+
 <pre class='biblio'>
 {
     "EBU-BS-2076": {
