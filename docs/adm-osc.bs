@@ -29,14 +29,14 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [d&amp;b audiotechnik](https://www.dbaudio.com/)
 * [DiGiCo](https://digico.biz/)
 * [Dolby](https://www.dolby.com)
-* FLUX::SE
+* [FLUX::SE](https://www.flux.audio/)
 * FollowMe
-* Grapes3D,
-* Holophonix
+* Grapes3D
+* [Holophonix](https://holophonix.xyz/)
 * [L-Acoustics](https://www.l-acoustics.com/)
 * [Lawo](https://lawo.com/)
-* Merging Technologies
-* Meyer Sound
+* [Merging Technologies](https://www.merging.com/)
+* [Meyer Sound](https://meyersound.com/)
 * Naostage
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
@@ -74,7 +74,7 @@ Project Originators
 Project Contributors
 --------------------
 
-[Adamson](http://www.adamsonsystems.com/), <a href"https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
 Currently supported in
 -----------------------
