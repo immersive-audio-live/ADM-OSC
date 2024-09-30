@@ -25,7 +25,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * Atlas
 * [Adamson](http://www.adamsonsystems.com/)
 * Amadeus Acoustics GmbH
-* [BBC](https://www.bbc.com/)
+* <a href"https://www.bbc.com/">BBC</a>
 * [d&amp;b audiotechnik](https://www.dbaudio.com/)
 * [DiGiCo](https://digico.biz/)
 * [Dolby](https://www.dolby.com)
@@ -74,7 +74,7 @@ Project Originators
 Project Contributors
 --------------------
 
-[Adamson](http://www.adamsonsystems.com/), [BBC](https://www.bbc.com/), [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+[Adamson](http://www.adamsonsystems.com/), <a href"https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
 Currently supported in
 -----------------------
@@ -499,8 +499,16 @@ Roles
 Ports {#ports}
 -----------------
 
-Data rate {#rate}
------------------
+ADM-OSC typically uses UDP protocol. It is recommended to use port **4001** [[ADMix]] for one-way communication (so, default for senders and receivers) and **4002** for return messages (if used).
+
+Those ports should be user editable if needed.
+
+Message rate {#rate}
+--------------------
+
+Position data is typically sent at a high data rate, although care must be taken not to overload the capibilities of the receiver. S-ADM is usually half of the video frame rate, or approximatly one message every 20 ms, or 50 Hz. Similarly, the Dolby Atmos ADM Profile [[Atmos-Profile]] recommends that the sampling period be "less than 20 ms," although sampling is optional if the parameter does not change.
+
+Interpolation messages have not been implemented in ADM-OSC 1.0.
 
 Coordinates
 -----------
@@ -538,16 +546,16 @@ Issue(immersive-audio-live/adm-osc#25):
 The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates.
 
 <figure>
-    <p>dimensionless ADM cube</p>
-    <math><mi>-1.0</mi><mo>&le;</mo><mi>x</mi><mo>&le;</mo><mi>1.0</mi></math><br>
-    <math><mi>-1.0</mi><mo>&le;</mo><mi>y</mi><mo>&le;</mo><mi>1.0</mi></math><br>
-    <math><mi>-1.0</mi><mo>&le;</mo><mi>z</mi><mo>&le;</mo><mi>1.0</mi></math>
+    <math><mn>-1.0</mn><mo>&le;</mo><mi>x</mi><mo>&le;</mo><mn>1.0</mn></math><br>
+    <math><mn>-1.0</mn><mo>&le;</mo><mn>y</mn><mo>&le;</mo><mn>1.0</mn></math><br>
+    <math><mn>-1.0</mn><mo>&le;</mo><mi>z</mi><mo>&le;</mo><mn>1.0</mn></math>
+    <figcaption>dimensionless ADM cube</figcaption>
 </figure>
 
 <figure>
-    <p>dimensionless ADM sphere</p>
-    <math><mi>-1.0</mi><mo>&le;</mo><mi>d</mi><mo>&le;</mo><mi>1.0</mi></math><br>
+    <math><mn>0.0</mn><mo>&le;</mo><mi>d</mi><mo>&le;</mo><mn>1.0</mn></math><br>
     <math><mi>d</mi><mo>=</mo><mi>distance or radius</mi></math>
+    <figcaption>dimensionless ADM sphere</figcaption>
 </figure>
 
 This paradigm is used by studio/broadcast mixing tools such as Dolby Atmos or MPEG-H. 
@@ -556,29 +564,43 @@ On the other hand, some audio renderers represent a physics-based world, and the
 
 These audio renderers include L-Acoustics L-ISA, Flux:Spat, d&amp;B Soundscape, but also, more generally in the AR/VR domain, game audio engines such as Unreal, Unity, Wwise, or XR audio engines such as Magic Leap Soundfield Audio. A common challenge for all these renderers based on physical distance is that if the gain follows physical attenuation laws (such as “-6dB per doubling of distance”), there are some singularities when d<sub>m</sub> gets close to 0. Hence, most of these renderers include a “volume of reference” or “unit volume” where the rendering (and in particular the gain) do not follow physically-informed laws anymore. This is true for Unreal and Spat, for example.
 
-Proposal: An object position in a physics-based world can be described as:
-Cartesian:
+An object position in a physics-based world can be described as:
 
-    ** xM in ≤ xm ≤ xM ax (meters)
-    ** yMin≤ym≤yMax
-    ** zMin≤zm≤zMax
+<figure>
+    <math><msub><mi>x</mi><mi>min</mi></msub><mo>&le;</mo><mi>x</mi><mo>&le;</mo><msub><mi>x</mi><mi>max</mi></msub><mtext>(meters)</mtext></math><br>
+    <math><msub><mi>y</mi><mi>min</mi></msub><mo>&le;</mo><mi>y</mi><mo>&le;</mo><mi>xMax</mi><mtext>(meters)</mtext></math><br>
+    <math><msub><mi>z</mi><mi>min</mi></msub><mo>&le;</mo><mi>z</mi><mo>&le;</mo><mi>xMax</mi><mtext>(meters)</mtext></math>
+    <figcaption>physics-based Cartesian</figcaption>
+</figure>
 
-* spherical
-    ** 0 ≤ dm ≤ dM ax (meters)
+<figure>
+    <math><mn>0.0</mn><mo>&le;</mo><msub><mi>d</mi><mi>mimn</mi></msub><mo>&le;</mo><msub><mi>d</mi><mi>max</mi></msub></math><mtext>(meters)</mtext><br>
+    <figcaption>physics-based spherical</figcaption>
+</figure>
 
 In ADM-OSC, **/dMax** corresponds to the `absoluteDistance` parameter in an ADM audioPackFormat element.
 
 **/dRef** is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.
 
+<!----
 Fig. 3. (from Jot et. al.) [16] The volume of reference is defined by
 dm < dRef and shows an amplitude behavior (dB) independent from the distance.
+---->
 
-By definition: 0 ≤ dRef dM ax
-≤ 1 and the following cases arise:
-• dRef = 1 : the world is a dimensionless reference dM ax volume, matching the ADM standard
-dRef = 0 : no reference volume within the physical
-dM ax
-world
+By definition: 
+<math>
+    <mn>0</mn><mo>&le;</mo>
+    <mfrac>
+        <msub><mi>d</mi><mi>ref</mi></msub>
+        <msub><mi>d</mi><mi>max</mi></msub>
+    </mfrac>
+    <mo>&le;</mo><mn>1</mn>
+</math>
+
+and the following cases arise:
+
+<math><msub><mi>d</mi><mi>ref</mi></msub><mo>=</mo><mn>1</mn></math> : the world is a dimensionless reference <math><msub><mi>d</mi><mi>max</mi></msub></math> volume, matching the ADM standard<br>
+<math><msub><mi>d</mi><mi>ref</mi></msub><mo>=</mo><mn>0</mn></math> : no reference volume within the physical <math><msub><mi>d</mi><mi>max</mi></msub></math> world
 
 <!-- Big Text: Tools -->
 
@@ -733,6 +755,17 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
 
 <pre class='biblio'>
 {
+    "ADMix" : {
+        "title" : "Admix Player",
+        "publisher" : "IRCAM",
+        "date" : "2019",
+        "href" : "https://forum.ircam.fr/projects/detail/admix/"
+    },
+    "Atmos-Profile" : {
+        "title" : "Dolby Atmos ADM Profile specification",
+        "date" : "2022",
+        "href" : "https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"
+    },
     "EBU-BS-2076": {
         "title" : "Audio Definition Model",
         "status": "Spec",
