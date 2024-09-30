@@ -1,28 +1,36 @@
 # ADM-OSC
+
 An industry initiative to standardization of Object Based Audio (OBA) positioning data in live production ecosystems, by implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).
+
+[https://immersive-audio-live.github.io/ADM-OSC/](https://immersive-audio-live.github.io/ADM-OSC/)
 
 ## Project Originators
 
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 ## Project Contributors
-d&b Audiotechnik, DiGiCo, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg.
+
+Adamson, d&b Audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg
 
 ## Context
+
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [ADM](https://adm.ebu.io/) or Audio Definition Model, is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
 
 ## Motivation and goals
+
 * To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
 * To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
-* To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, [OSC](http://opensoundcontrol.org/introduction-osc).
+* To define a direct translation of the most relevant ADM Object Properties onto a communication protocol widely used in the live industry, [OSC](https://opensoundcontrol.stanford.edu/index.html).
 * Keeping the grammar scope aligned with the ADM properties.
 * Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 * Extend this small grammar to more ADM properties (beds, etc.) in the future.
 
 ## Approach
+
 Bijective mapping of the Object subset of ADM with a standard OSC grammar.
 
 ## Why OSC ?
+
 * Lightweight network protocol
 * Easy to implement
 * Human readable
@@ -31,41 +39,48 @@ Bijective mapping of the Object subset of ADM with a standard OSC grammar.
 * Available in a plethora of professional audio hardware and software devices
 
 ## General principles
+
 * Sender (client)
   * Object Editor sending positioning data to one or more receivers.
-  * Position data is always normalized 
+  * Position data is always normalized
 * Receiver (server)
   * Handles the (optional) local scaling of normalized data: x, y, z, distance
   * The receiver can be a DAW, an ADM renderer, an object editor, a bridge (ADM-OSC <-> sADM)
   
 ## Current status
+
 The current dictionary covers most Object properties from the Audio Definition model.
 A more complete dictionary is being discussed to cover the remaining parts of the Audio Definition model.
 OSC Live test tool (talker and listener OSC Live test tool) is now available.
 
 ## Current Specification
+
 See Repository.
 
 ## Current Discussions
+
 See Issues.
 
 ## Current development & tests tools
 
-+ [**Specifications**](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx)
+* [**Specifications**](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx)
 
-
-+ Tester **Desktop application** (Jose Gaudin / Meyer Sound)
-  + [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
+* [Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) (Mathieu Delquignies / d&b audiotechnik)
+  * to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware with OSC protocol.
   
+* Tester **Desktop application** (Jose Gaudin / Meyer Sound)
+  * [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
 
-+ Validator, Test and Stress Test **Python Module** (Gael Martinet / FLUX:: SE)
-  + adm_osc module is available to install through pip : 
-  ```shell 
+* Validator, Test and Stress Test **Python Module** (Gael Martinet / FLUX:: SE)
+  * adm_osc module is available to install through pip :
+  
+  ```shell
     pip install adm-osc
     ```
+
   quick examples:
 
-  ```python 
+  ```python
      from adm_osc import OscClientServer
   
      # create a basic client/server that implement basic ADM-OSC communication with stable parameters 
@@ -99,7 +114,7 @@ See Issues.
   
      ```
   
-  ```python 
+  ```python
      from adm_osc import TestClient
      from adm_osc.protocol import ValueType as vt
      # create a test client, assume default address (local: '127.0.0.1')
@@ -126,8 +141,8 @@ See Issues.
   
      # see documentation for full list of available functions
      ```
-    
-  ```python 
+
+  ```python
     from adm_osc import StressClient
     # create a stress client, assume default address (local: '127.0.0.1')
     # stress client will send huge amount of data to stress test the receivers
@@ -137,11 +152,10 @@ See Issues.
     # do stress test in polar coordinates
     sender.stress_polar_position(number_of_objects=64, duration_in_second=60.0, interval_in_milliseconds=10.0)
     ```
-  + [full documentation](Source/adm_osc/doc/documentation.md).
-  + [Source directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source)
 
-## Currently supported in:
-SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles).
+  * [full documentation](Source/adm_osc/doc/documentation.md).
+  * [Source directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source)
 
+## Currently supported in
 
-
+SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson)

@@ -1,0 +1,841 @@
+<pre class='metadata'>
+Title: ADM-OSC
+Shortname: ADM-OSC
+Logo: https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png
+Boilerplate: copyright no, footer no
+Local Boilerplate: logo yes
+Level: none
+Status: LS
+URL: https://immersive-audio-live.github.io/ADM-OSC/
+Repository: immersive-audio-live/ADM-OSC
+Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
+Previous Version: https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0_4.html
+Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
+Editor: Michael Zbyszyński, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynski@l-acoustics.com
+Inline Github Issues: true
+Markup Shorthands: markdown yes
+Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=].
+</pre>
+
+Introduction {#intro}
+=====================
+
+ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real-life production cases. These companies have already expressed interest or have implemented ADM-OSC:
+
+* Atlas
+* [Adamson](http://www.adamsonsystems.com/)
+* Amadeus Acoustics GmbH
+* <a href="https://www.bbc.com/">BBC</a>
+* [d&amp;b audiotechnik](https://www.dbaudio.com/)
+* [DiGiCo](https://digico.biz/)
+* [Dolby](https://www.dolby.com)
+* [FLUX::SE](https://www.flux.audio/)
+* FollowMe
+* Grapes3D
+* [Holophonix](https://holophonix.xyz/)
+* [L-Acoustics](https://www.l-acoustics.com/)
+* [Lawo](https://lawo.com/)
+* [Merging Technologies](https://www.merging.com/)
+* [Meyer Sound](https://meyersound.com/)
+* Naostage
+* [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
+* [Steinberg](https://www.steinberg.net/)
+
+Why ADM?
+--------
+
+Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [=ADM=] is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
+
+Why OSC?
+--------
+
+* Lightweight network protocol
+* Easy to implement
+* Human readable
+* Supports wildcards and bundles
+* Specification: [[OpenSoundControl.org]]
+* Available in a plethora of professional audio hardware and software devices
+
+Motivation &amp; goals {#goals}
+----------------------------------
+
+* To facilitate the sharing of audio objects metadata between a live ecosystem and a broadcast or studio ecosystem.
+* To define a basic layer of interoperability between Object Editors and Object renderers while not aiming at replacing more complete manufacturer specific protocols or grammars.
+* To define a direct translation of the most relevant [=ADM=] Object Properties onto a communication protocol widely used in the live industry, [=OSC=].
+* Keeping the grammar scope aligned with the [=ADM=] properties.
+* Share this proposal with the EBU so they can become a relay, publish and support this initiative.
+* Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
+
+Project Originators
+----------------------
+
+[L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
+
+Project Contributors
+--------------------
+
+[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+
+Currently supported in
+-----------------------
+
+- SPAT Revolution (FLUX::SE)
+- L-ISA Controller (L-Acoustics)
+- Ovation (Merging Technologies)
+- Nuendo (Steinberg)
+- SpaceMap Go (Meyer Sound)
+- QLAB 5 (Figure 53)
+- Space Controller (Sound Particles)
+- Modulo Kinetic (Modulo Pi)
+- Iosono (Barco)
+- FletcherMachine (Adamson)
+- En-Bridge (d&amp;b audiotechnik)
+
+Current spec (v1.0) {#v1.0}
+================================
+
+Object position messages {#obj}
+-----------------
+
+Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> signifies object number
+
+<table class="def">
+    <thead>
+        <tr>
+            <th>address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+            <th>example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/adm/obj/<i>n</i>/azim</td>
+            <td>f</td>
+            <td>degrees</td>
+            <td>-180.0</td>
+            <td>180.0</td>
+            <td>-</td>
+            <td><b>azimuth</b> “theta - &#952;” of sound location<br>[[#polar]]</td>
+            <td>/adm/obj/4/azim -22.5</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/elev</td>
+            <td>f</td>
+            <td>degrees</td>
+            <td>-90.0</td>
+            <td>90.0</td>
+            <td>-</td>
+            <td><b>elevation</b> “phi - &#632;” of sound location<br>[[#polar]]</td>
+            <td>/adm/obj/4/elev 12.7</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/dist</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>0.0</td>
+            <td>1.0</td>
+            <td>1.0</td>
+            <td><b>distance</b> “r” from origin<br>[[#polar]]</td>
+            <td>/adm/obj/4/dist 0.9</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/aed</td>
+            <td>f f f</td>
+            <td colspan=4>azimuth elevation distance</td>
+            <td>for synchronicity and reduced network traffic</td>
+            <td>/adm/obj/4/aed -22.5 12.7 0.9</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/x</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>left/right<br>[[#cartesian]]</td>
+            <td>/adm/obj/4/x -0.9</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/y</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>front/back<br>[[#cartesian]]</td>
+            <td>/adm/obj/4/y 0.15</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/z</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>top/bottom<br>[[#cartesian]]</td>
+            <td>/adm/obj/4/z 0.7</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/xyz</td>
+            <td>f f f</td>
+            <td colspan=4>see above</td>
+            <td>for synchronicity and reduced network traffic</td>
+            <td>/adm/obj/4/xyz -0.9 0.15 0.7</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<i>n</i>/w</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>0.0</td>
+            <td>1.0</td>
+            <td>0.0</td>
+            <td>horizontal extent in normalized units</td>
+            <td>/adm/obj/3/w 0.2</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/gain</td>
+            <td>f</td>
+            <td>linear</td>
+            <td>0.</td>
+            <td></td>
+            <td>1.0</td>
+            <td>Apply a gain to the audio in the object.</td>
+            <td>/adm/obj/3/gain 0.707</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/dRef</td>
+            <td>f</td>
+            <td>normalized</td>
+            <td>0.0</td>
+            <td>1.0</td>
+            <td>1.0</td>
+            <td>Distance where dimensionless rendering is replaced with with physics-based rendering.<br>[[#distance]]</td>
+            <td>/adm/obj/1/dRef 0.2</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/dMax</td>
+            <td>f</td>
+            <td>meters</td>
+            <td>0.</td>
+            <td></td>
+            <td></td>
+            <td>Distance signified by a normalized dRef value of 1<br>[[#distance]]</td>
+            <td>/adm/obj/1/dMax 21.3</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/mute </td>
+            <td>i</td>
+            <td>integer</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1 means “true”, so muted</td>
+            <td>//adm/obj/2/mute 0</td>
+        </tr>
+        <tr>
+            <td>/adm/obj/<var>n</var>/name</td>
+            <td>s</td>
+            <td>string</td>
+            <td>0</td>
+            <td>128 char</td>
+            <td>object nice name</td>
+            <td>/adm/obj/1/name kickdrum</td>
+        </tr>
+    </tbody>
+</table>
+
+Note: Type tags are defined as OSC 1.0 specification: i=int32, f=float32, s=OSC-string
+
+Environment messages {#env}
+--------------------------------
+
+These could be expanded to include program changes and other global data. They are not specific to any individual object.
+
+<table class="def">
+    <thead>
+        <tr>
+            <th>address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+            <th>example</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/adm/env/change</td>
+            <td>s</td>
+            <td>string</td>
+            <td>0</td>
+            <td>128 char</td>
+            <td>128 char</td>
+            <td>program changes</td>
+            <td>/adm/env/change day</td>
+        </tr>
+    </tbody>
+</table>
+
+Listener messages {#lis}
+------------------------
+
+These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head tracking data and listener position in a [=6DOF=]setting.
+
+<table class="def">
+    <thead>
+        <tr>
+            <th>address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+            <th>example</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/adm/lis/ypr</td>
+            <td>f f f</td>
+            <td>degrees</td>
+            <td>-180.0</td>
+            <td>180.0</td>
+            <td>0.0</td>
+            <td>orientation: yaw, pitch, roll</td>
+            <td>/adm/lis/ypr -45.0 30.0 5.0</td>
+        </tr>
+        <tr>
+            <td>/adm/lis/xyz</td>
+            <td>f f f</td>
+            <td>normalized</td>
+            <td>-1.0</td>
+            <td>11.0</td>
+            <td>0.0</td>
+            <td>listener position</td>
+            <td>/adm/lis/xyz 0.0 0.5 -0.2</td>
+        </tr>
+    </tbody>
+</table>
+
+Implementation Matrix {#implementation}
+=======================================
+
+<table>
+    <tr>
+        <th>&#x2713; = transmit and receive<br>
+            tx = transmit only<br>
+            rx = receive only</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/<var>k</var>/azim </th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/elev</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dist</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/aed</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/x</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/y</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/z</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/xyz</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/w</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/gain</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dref</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dmax</th>
+    </tr>
+    <tr>
+        <td>SPAT Revolution (FLUX::SE)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>[L-ISA Controller](https://l-isa.l-acoustics.com/)</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ovation (Merging Technologies)</td>
+        <td>&#x2713;</td>
+        <td>rx</td>
+        <td></td>
+        <td>&#x2713;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Nuendo (Steinberg)</td>
+        <td>&#x2713;</td>
+        <td>tx</td>
+        <td></td>
+        <td>&#x2713;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>SpaceMap Go (Meyer Sound)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>QLAB 5 (Figure 53)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Space Controller (Sound Particles)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Lawo</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Modulo Kinetic (Modulo Pi)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Iosono (Barco)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>FletcherMachine (Adamson)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+Issue(immersive-audio-live/adm-osc#24):
+
+Basic ADM-OSC principals {#basics}
+============================
+
+Roles
+------------
+
+### Sender (client)
+
+- Object Editor sending positioning data to one or more receivers.
+- Cartesian position data is always normalized
+
+### Receiver (server)
+
+- Handles the (optional) local scaling of normalized data: x, y, z, distance
+- The receiver can be a DAW, an [=ADM=] renderer, an object editor, a bridge (ADM-OSC <-> sADM)
+
+Ports {#ports}
+-----------------
+
+ADM-OSC typically uses UDP protocol. It is recommended to use port **4001** [[ADMix]] for one-way communication (so, default for senders and receivers) and **4002** for return messages (if used).
+
+Those ports should be user editable if needed.
+
+Message rate {#rate}
+--------------------
+
+Position data is typically sent at a high data rate, although care must be taken not to overload the capibilities of the receiver. S-ADM is usually half of the video frame rate, or approximatly one message every 20 ms, or 50 Hz. Similarly, the Dolby Atmos ADM Profile [[Atmos-Profile]] recommends that the sampling period be "less than 20 ms," although sampling is optional if the parameter does not change.
+
+Interpolation messages have not been implemented in ADM-OSC 1.0.
+
+Coordinates
+-----------
+
+### Polar ### {#polar}
+
+- 0&deg; azimuth is straight ahead
+- Positive azimuth is on the left, so a front-left speaker is +30&deg;
+- +90&deg; elevation is straight up
+
+### Cartesian ### {#cartesian}
+
+```
+    (-1, 1) --------- (1, 1)  
+       |                |  
+       |                |  
+       |                |  
+       |                |  
+    (-1, -1) ---------(1, -1)  
+```
+
+- Values are normalized between -1.0 and 1.0 
+- <math><mi>x</mi> <mo>=</mo> <mi>1.0</mi></math> is right
+- <math><mi>y</mi> <mo>=</mo> <mi>1.0</mi></math> is forward
+- <math><mi>z</mi> <mo>=</mo> <mi>1.0</mi></math> is up
+
+### Conversions ### {#conversions}
+
+The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
+
+Issue(immersive-audio-live/adm-osc#25):
+
+### Distance ### {#distance}
+
+The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates.
+
+<figure>
+    <math><mn>-1.0</mn><mo>&le;</mo><mi>x</mi><mo>&le;</mo><mn>1.0</mn></math><br>
+    <math><mn>-1.0</mn><mo>&le;</mo><mn>y</mn><mo>&le;</mo><mn>1.0</mn></math><br>
+    <math><mn>-1.0</mn><mo>&le;</mo><mi>z</mi><mo>&le;</mo><mn>1.0</mn></math>
+    <figcaption>dimensionless ADM cube</figcaption>
+</figure>
+
+<figure>
+    <math><mn>0.0</mn><mo>&le;</mo><mi>d</mi><mo>&le;</mo><mn>1.0</mn></math><br>
+    <math><mi>d</mi><mo>=</mo><mi>distance or radius</mi></math>
+    <figcaption>dimensionless ADM sphere</figcaption>
+</figure>
+
+This paradigm is used by studio/broadcast mixing tools such as Dolby Atmos or MPEG-H. 
+
+On the other hand, some audio renderers represent a physics-based world, and the notion of source distance relates to a physical unit, such as meters. Aside from direct sound gain, the source physics-based distance d<sub>m</sub> relates to advanced audio object parameters such as propagation delay, air at- tenuation, and energy levels of early/cluster reflections and late reverberation, or sound field behaviors (plane vs spherical waves).
+
+These audio renderers include L-Acoustics L-ISA, Flux:Spat, d&amp;B Soundscape, but also, more generally in the AR/VR domain, game audio engines such as Unreal, Unity, Wwise, or XR audio engines such as Magic Leap Soundfield Audio. A common challenge for all these renderers based on physical distance is that if the gain follows physical attenuation laws (such as “-6dB per doubling of distance”), there are some singularities when d<sub>m</sub> gets close to 0. Hence, most of these renderers include a “volume of reference” or “unit volume” where the rendering (and in particular the gain) do not follow physically-informed laws anymore. This is true for Unreal and Spat, for example.
+
+An object position in a physics-based world can be described as:
+
+<figure>
+    <math><msub><mi>x</mi><mi>min</mi></msub><mo>&le;</mo><mi>x</mi><mo>&le;</mo><msub><mi>x</mi><mi>max</mi></msub><mtext>(meters)</mtext></math><br>
+    <math><msub><mi>y</mi><mi>min</mi></msub><mo>&le;</mo><mi>y</mi><mo>&le;</mo><mi>xMax</mi><mtext>(meters)</mtext></math><br>
+    <math><msub><mi>z</mi><mi>min</mi></msub><mo>&le;</mo><mi>z</mi><mo>&le;</mo><mi>xMax</mi><mtext>(meters)</mtext></math>
+    <figcaption>physics-based Cartesian</figcaption>
+</figure>
+
+<figure>
+    <math><mn>0.0</mn><mo>&le;</mo><msub><mi>d</mi><mi>mimn</mi></msub><mo>&le;</mo><msub><mi>d</mi><mi>max</mi></msub><mtext>(meters)</mtext></math><br>
+    <figcaption>physics-based spherical</figcaption>
+</figure>
+
+In ADM-OSC, **/dMax** corresponds to the `absoluteDistance` parameter in an ADM audioPackFormat element.
+
+**/dRef** is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.
+
+<!----
+Fig. 3. (from Jot et. al.) [16] The volume of reference is defined by
+dm < dRef and shows an amplitude behavior (dB) independent from the distance.
+---->
+
+By definition: 
+<math>
+    <mn>0</mn><mo>&le;</mo>
+    <mfrac>
+        <msub><mi>d</mi><mi>ref</mi></msub>
+        <msub><mi>d</mi><mi>max</mi></msub>
+    </mfrac>
+    <mo>&le;</mo><mn>1</mn>
+</math>
+
+and the following cases arise:
+
+<math><msub><mi>d</mi><mi>ref</mi></msub><mo>=</mo><mn>1</mn></math> : the world is a dimensionless reference <math><msub><mi>d</mi><mi>max</mi></msub></math> volume, matching the ADM standard<br>
+<math><msub><mi>d</mi><mi>ref</mi></msub><mo>=</mo><mn>0</mn></math> : no reference volume within the physical <math><msub><mi>d</mi><mi>max</mi></msub></math> world
+
+<!-- Big Text: Tools -->
+
+Development &amp; Test tools {#tools}
+=====================================
+
+[Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module)
+---------------------------------
+
+(Mathieu Delquignies / d&amp;b audiotechnik)
+
+To retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
+
+Tester Desktop application 
+-----------------------------------
+
+(Jose Gaudin / Meyer Sound)
+
+[download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
+
+Validator, Test and Stress Test Python Module
+-----------------------------------------------
+
+(Gael Martinet / FLUX::)
+
+adm_osc module is available to install through pip:
+
+```shell 
+pip install adm-osc
+```
+quick examples:
+
+```python 
+from adm_osc import OscClientServer
+
+# create a basic client/server that implement basic ADM-OSC communication with stable parameters 
+# + command monitoring and analyze
+cs = OscClientServer(address='127.0.0.1', out_port=9000, in_port=9001)
+
+# send some individual parameters  
+cs.send_object_position_azimuth(object_number=1, v=-30.0)
+cs.send_object_position_elevation(object_number=1, v=0.0)
+cs.send_object_position_distance(object_number=1, v=2.0)
+
+# or pack them
+cs.send_object_polar_position(object_number=1, pos=[-30.0, 0.0, 2.0])
+
+# in cartesian coordinates
+cs.send_object_cartesian_position(object_number=1, pos=[-5.0, 8.0, 0.0])
+
+# see documentation for full list of available functions
+
+# when receiving an adm osc command its analyze will be printed on the command output window
+#
+# e.g.
+#
+# >> received valid adm message for obj :: 1 :: gain (0.7943282127380371)
+# >> received valid adm message for obj :: 1 :: position aed (20.33701515197754, 0.0, 0.8807612657546997)
+# >> received valid adm message for obj :: 1 :: position xyz (-0.2606865465641022, 0.8273822069168091, 0.0)
+# >>
+# >> ERROR: unrecognized ADM address : "/adm/obj/1/bril" ! unknown command "/bril/"
+# >> ERROR: arguments are malformed for "/adm/obj/1/gain :: (1.4791083335876465,)":
+# >>     argument 0 "1.4791083335876465" out of range ! it should be less or equal than "1.0"
+
+```
+
+```python 
+from adm_osc import TestClient
+# create a test client, assume default address (local: '127.0.0.1')
+# test client can be used to test how receiver will handle all kind of parameters and parameters value range
+sender = TestClient(out_port=9000)
+
+# all stable parameters for a specific object
+sender.set_object_stable_parameters_to_minimum(object_number=1)
+sender.set_object_stable_parameters_to_maximum(object_number=1)
+sender.set_object_stable_parameters_to_default(object_number=1)
+sender.set_object_stable_parameters_to_random(object_number=1)
+
+# all stable parameters for a range of objects
+sender.set_objects_stable_parameters_minimum(objects_range=range(1, 64))
+sender.set_objects_stable_parameters_maximum(objects_range=range(1, 64))
+sender.set_objects_stable_parameters_default(objects_range=range(1, 64))
+sender.set_objects_stable_parameters_random(objects_range=range(1, 64))
+
+# all stable parameters for all objects
+sender.set_all_objects_stable_parameters_minimum()
+sender.set_all_objects_stable_parameters_maximum()
+sender.set_all_objects_stable_parameters_default()
+sender.set_all_objects_stable_parameters_random()
+
+# see documentation for full list of available functions
+```
+
+```python 
+from adm_osc import StressClient
+# create a stress client, assume default address (local: '127.0.0.1')
+# stress client will send huge amount of data to stress test the receivers
+sender = StressClient(out_port=9000)
+# do stress test in cartesian coordinates
+sender.stress_cartesian_position(number_of_objects=64, duration_in_second=60.0, interval_in_milliseconds=10.0)
+# do stress test in polar coordinates
+sender.stress_polar_position(number_of_objects=64, duration_in_second=60.0, interval_in_milliseconds=10.0)
+```
+
+* [Full documentation](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md)
+* [Source directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source)
+
+Discussion {#discuss}
+=====================
+
+Draft 0.5
+----------
+
+A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate 
+
+Relationship to ADM
+--------------------
+
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) [=ADM=] tag should not be in the `/adm` namespace.
+
+Issue(immersive-audio-live/adm-osc#33):
+
+Definitions {#define}
+=====================
+
+<dfn local-lt="ADM">Audio Definition Model</dfn>
+
+The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
+2015 as a standard representation of audio metadata [1]. The goal of ADM is to support a broad range of
+use cases that include spatial and immersive audio, as well as interactive personalization and accessibility
+features [[What-is-ADM]]. ADM can be used to represent channel-based, scene-based, and [=object-based audio=]. It is
+defined by the EBU in ITU-R BS.2076 [[EBU-BS-2076]]
+
+<dfn local-lt="OBA">Object-Based Audio</dfn>
+
+Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer [[EBU-Tech-3396]] then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. [[Tsingos-2017]]
+
+<dfn local-lt="OSC">Open Sound Control</dfn>
+
+OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music & Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.
+
+There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
+specification has been published in 2002 [8].
+
+<dfn>Renderer</dnf>
+
+<dfn local-lt="6DOF">Six Degrees of Freedom</dfn>
+
+Forward/backward, up/down, left/right translation, combined orientation (yaw, pitch, and roll).
+
+<!-- Big Text: Refs -->
+
+<pre class='biblio'>
+{
+    "ADMix" : {
+        "title" : "Admix Player",
+        "publisher" : "IRCAM",
+        "date" : "2019",
+        "href" : "https://forum.ircam.fr/projects/detail/admix/"
+    },
+    "Atmos-Profile" : {
+        "title" : "Dolby Atmos ADM Profile specification",
+        "date" : "2022",
+        "href" : "https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"
+    },
+    "EBU-BS-2076": {
+        "title" : "Audio Definition Model",
+        "status": "Spec",
+        "publisher": "EBU",
+        "href" : "https://www.itu.int/rec/R-REC-BS.2076"
+    },
+    "EBU-BS-2127" : {
+        "title": "Audio Definition Model renderer for advanced sound systems" ,
+        "status": "Spec",
+        "publisher": "EBU",
+        "href" : "https://www.itu.int/rec/R-REC-BS.2127"
+    },
+    "EBU-Tech-3396": {
+	    "title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
+        "status": "Spec",
+        "publisher": "EBU",
+        "href": "https://tech.ebu.ch/publications/tech3396"
+    },
+    "OpenSoundControl.org": {
+        "title": "OpenSoundControl website",
+        "href": "https://ccrma.stanford.edu/groups/osc/index.html"
+    },
+    "Tsingos-2017": {
+        "authors": [ "N. Tsingos" ],
+        "title": "Object-based audio",
+        "status": "in Immersive Sound",
+        "pages": "244-275",
+        "publisher": "Routledge",
+        "date": "2017"
+    },
+    "What-is-ADM": {
+        "title" : "What is the ADM?",
+        "href" : "https://adm.ebu.io/background/what_is_the_adm.html"
+    }
+}
+</pre>
