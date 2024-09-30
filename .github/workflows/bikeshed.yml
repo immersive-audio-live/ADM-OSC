@@ -3,7 +3,7 @@ on:
   workflow_dispatch: {}
   pull_request: {}
   push:
-    branches: [main, gh-pages]
+    branches: [main]
 jobs:
   main:
     name: Build, Validate and Deploy
@@ -21,9 +21,9 @@ jobs:
 
           # if your doc isn't in the root folder,
           # or Bikeshed otherwise can't find it:
-          SOURCE: testBs/adm-osc.bs
+          SOURCE: docs/adm-osc.bs
 
           # output filename defaults to your input
           # with .html extension instead,
           # but if you want to customize it:
-          DESTINATION: testBs/index.html
+          DESTINATION: index.html
