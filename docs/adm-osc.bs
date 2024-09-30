@@ -25,7 +25,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * Atlas
 * [Adamson](http://www.adamsonsystems.com/)
 * Amadeus Acoustics GmbH
-* <a href"https://www.bbc.com/">BBC</a>
+* <a href="https://www.bbc.com/">BBC</a>
 * [d&amp;b audiotechnik](https://www.dbaudio.com/)
 * [DiGiCo](https://digico.biz/)
 * [Dolby](https://www.dolby.com)
