@@ -12,7 +12,7 @@ Test Suite: https://github.com/immersive-audio-live/ADM-OSC/tree/main/tests
 Previous Version: https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0_4.html
 Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, mathieu.delquignies@dbaudio.com
 Editor: Michael Zbyszyński, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynski@l-acoustics.com
-Inline Github Issues: false
+Inline Github Issues: true
 Markup Shorthands: markdown yes
 Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=].
 </pre>
@@ -574,7 +574,7 @@ An object position in a physics-based world can be described as:
 </figure>
 
 <figure>
-    <math><mn>0.0</mn><mo>&le;</mo><msub><mi>d</mi><mi>mimn</mi></msub><mo>&le;</mo><msub><mi>d</mi><mi>max</mi></msub></math><mtext>(meters)</mtext><br>
+    <math><mn>0.0</mn><mo>&le;</mo><msub><mi>d</mi><mi>mimn</mi></msub><mo>&le;</mo><msub><mi>d</mi><mi>max</mi></msub></math><mtext>(meters)</mtext></math><br>
     <figcaption>physics-based spherical</figcaption>
 </figure>
 
