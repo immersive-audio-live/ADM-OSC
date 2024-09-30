@@ -23,13 +23,13 @@ quick examples:
      # send some individual parameters  
      cs.send_object_position_azimuth(object_number=1, v=-30.0)
      cs.send_object_position_elevation(object_number=1, v=0.0)
-     cs.send_object_position_distance(object_number=1, v=2.0)
+     cs.send_object_position_distance(object_number=1, v=0.8)
 
      # or pack them
-     cs.send_object_polar_position(object_number=1, pos=[-30.0, 0.0, 2.0])
+     cs.send_object_polar_position(object_number=1, pos=[-30.0, 0.0, 0.8])
   
      # in cartesian coordinates
-     cs.send_object_cartesian_position(object_number=1, pos=[-5.0, 8.0, 0.0])
+     cs.send_object_cartesian_position(object_number=1, pos=[-0.5, 0.8, 0.0])
   
      # see below for full list of available functions
   
