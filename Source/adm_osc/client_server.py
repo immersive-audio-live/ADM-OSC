@@ -257,7 +257,7 @@ class OscClientServer(SimpleUDPClient):
         """Send Listener XYZ position as a list of double"""
         assert pos is not None
         assert len(pos) == 3
-        self.send_listener_value(object_number, stable_params.lis_xyz, pos)
+        self.send_listener_value(stable_params.lis_xyz, pos)
 
     def send_listener_orientation(self, rot: Union[float, tuple, list]) -> None:
         """Send Listener Yaw Pitch Roll orientation as a list of double."""
@@ -363,7 +363,7 @@ class OscClientServer(SimpleUDPClient):
         self.query_listener_value(stable_params.l_roll)
 
     def query_listener_cartesian_position(self) -> None:
-        self.query_listener_value(object_number, stable_params.lis_xyz)
+        self.query_listener_value(stable_params.lis_xyz)
 
     def query_listener_orientation(self) -> None:
         self.query_listener_value(stable_params.lis_ypr)
