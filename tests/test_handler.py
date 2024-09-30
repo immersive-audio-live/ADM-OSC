@@ -38,7 +38,7 @@ class TestADMHandler(unittest.TestCase):
         try:
             address = '/adm/obj/[12-42]/xyz'
             values = (1.0, 0.0, -1.0)
-            target, objects, parameter, args = adm_handler(address, values)
+            target, objects, parameter, args = adm_handler(address, *values)
             self.assertEqual(target, 'obj')
             self.assertEqual(objects, {'from': 12, 'to': 42})
             self.assertEqual(parameter.attribute, 'xyz')
@@ -52,47 +52,48 @@ class TestADMHandler(unittest.TestCase):
     def test_error_messages(self):
 
         self.assertEqual(message_root, 'adm')
-        self.assertEqual(object_name, 'obj')
-        self.assertEqual(query_cmd, 'get')
+        self.assertEqual(obj.msg_name, 'obj')
+        self.assertEqual(lis.msg_name, 'lis')
+        self.assertEqual(env.msg_name, 'env')
+
+        if query_cmd != '':
+            self.assertEqual(query_cmd, 'get')
 
         try:
             adm_handler('/xxx/obj/42/x', 0.0)
         except ValueError as e_:
-            self.assertEqual(str(e_), str(ValueError('ERROR: unrecognized ADM address : "/xxx/obj/42/x" it should start with "/adm/"')))
-            pass
-
+            self.assertEqual(str(e_), str(ValueError(
+                'ERROR: unrecognized ADM address : "/xxx/obj/42/x" it should start with "/adm/"')))
         try:
             adm_handler('/adm/xxx/42/x', 0.0)
         except ValueError as e_:
-            self.assertEqual(str(e_), str(ValueError('ERROR: unrecognized ADM address : "/adm/xxx/42/x" ! unknown target "/xxx/"')))
-            pass
-
+            self.assertEqual(str(e_), str(ValueError(
+                'ERROR: unrecognized ADM address : "/adm/xxx/42/x" ! unknown target "/xxx/"')))
         try:
             adm_handler('/adm/obj/42/xxx', 0.0)
         except ValueError as e_:
-            self.assertEqual(str(e_), str(ValueError('ERROR: unrecognized ADM address : "/adm/obj/42/xxx" ! unknown command "/xxx/"')))
-            pass
-
+            self.assertEqual(str(e_), str(ValueError(
+                'ERROR: unrecognized ADM address : "/adm/obj/42/xxx" ! unknown command "/xxx/"')))
         try:
             adm_handler('/adm/obj/42/xyz', 0.0)
         except ValueError as e_:
-            self.assertEqual(str(e_), str(ValueError('ERROR: arguments are malformed for "/adm/obj/42/xyz :: (0.0,) ! bad number of arguments ! provided: 1 - Expected: 3')))
-            pass
-
+            self.assertEqual(str(e_), str(ValueError(
+                'ERROR: arguments are malformed for "/adm/obj/42/xyz :: (0.0,) ! bad number of arguments ! provided: 1 - Expected: 3')))
         try:
             adm_handler('/adm/obj/42/x', 1)
         except ValueError as e_:
             arg_error = str(e_).split('\n')[1]
             self.assertEqual(arg_error, '\targument 0 "1" type mismatch ! float is expected but "int" is provided')
-            pass
-
-        Parameter(sub_element=SubElement.Position, attribute='test_float', osc_command='test_float', description='test_float desc', units=Units.Normalized, type_=Type.Float,
+        Parameter(object_type=obj, sub_element=SubElement.Position, attribute='test_float', osc_command='test_float',
+                  description='test_float desc', units=Units.Normalized, type_=Type.Float,
                   min_=-1.0, max_=1.0, def_=0.0, status=Status.Stable, comment='for testing purposes')
 
-        Parameter(sub_element=SubElement.Position, attribute='test_int', osc_command='test_int', description='test_int desc', units=Units.Normalized, type_=Type.Int,
+        Parameter(object_type=obj, sub_element=SubElement.Position, attribute='test_int', osc_command='test_int',
+                  description='test_int desc', units=Units.Normalized, type_=Type.Int,
                   min_=-1, max_=1, def_=0, status=Status.Stable, comment='for testing purposes')
 
-        Parameter(sub_element=SubElement.Position, attribute='test_str', osc_command='test_str', description='test_str desc', units=Units.Normalized, type_=Type.String,
+        Parameter(object_type=obj, sub_element=SubElement.Position, attribute='test_str', osc_command='test_str',
+                  description='test_str desc', units=Units.Normalized, type_=Type.String,
                   status=Status.Stable, comment='for testing purposes')
 
         try:
@@ -100,35 +101,26 @@ class TestADMHandler(unittest.TestCase):
         except ValueError as e_:
             arg_error = str(e_).split('\n')[1][1:]
             self.assertEqual(arg_error, 'argument 0 "1" type mismatch ! float is expected but "int" is provided')
-            pass
-
         try:
             adm_handler('/adm/obj/42/test_int', 1.0)
         except ValueError as e_:
             arg_error = str(e_).split('\n')[1][1:]
             self.assertEqual(arg_error, 'argument 0 "1.0" type mismatch ! integer is expected but "float" is provided')
-            pass
-
         try:
             adm_handler('/adm/obj/42/test_str', 1.0)
         except ValueError as e_:
             arg_error = str(e_).split('\n')[1][1:]
             self.assertEqual(arg_error, 'argument 0 "1.0" type mismatch ! string is expected but "float" is provided')
-            pass
-
         try:
             adm_handler('/adm/obj/42/test_float', (-10))
         except ValueError as e_:
             arg_error = str(e_).split('\n')[1][1:]
             self.assertEqual(arg_error, 'argument 0 "-10" type mismatch ! float is expected but "int" is provided')
-            pass
-
         try:
             adm_handler('/adm/obj/42/test_float', 10)
         except ValueError as e_:
             arg_error = str(e_).split('\n')[1][1:]
             self.assertEqual(arg_error, 'argument 0 "10" type mismatch ! float is expected but "int" is provided')
-            pass
 
 
 if __name__ == '__main__':

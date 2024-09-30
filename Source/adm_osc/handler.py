@@ -95,7 +95,7 @@ def adm_handler(address, *args):
         + [n-m] means range from "n" to "m"
         + [n, m, o] means specific object defined by n, m and o index ...
     4 - extract and validate command name; It should be in the provided protocol
-    5 - extract and validate all arguments
+    5 - extract and validate all arguments. If no arguments are provided, command should be considered as a query value command (GET)
     """
     #
     it = address.split('/')
@@ -106,7 +106,7 @@ def adm_handler(address, *args):
 
     # 2
     target = it[2]
-    if target not in ['obj', 'setup']:
+    if target not in [ot.msg_name for ot in protocol.object_type_list]:
         raise ValueError(f'ERROR: unrecognized ADM address : "{address}" ! unknown target "/{target}/"')
 
     # 3
@@ -127,11 +127,14 @@ def adm_handler(address, *args):
     )
 
     if not is_touch_release:
+        number_of_arguments = len(args)
+        if number_of_arguments == 0:
+            return target, objects, parameter, None
 
-        if len(args) != parameter.get_number_of_values():
+        if number_of_arguments != parameter.get_number_of_values():
             raise ValueError(
                     f'ERROR: arguments are malformed for "{address} :: {args} ! '
-                    f'bad number of arguments ! provided: {len(args)} - Expected: {parameter.get_number_of_values()}')
+                    f'bad number of arguments ! provided: {number_of_arguments} - Expected: {parameter.get_number_of_values()}')
 
         def _type_to_string(val_) -> str:
             return f'{type(val_)}'.replace("<class '", "").replace("'>", "")
@@ -151,9 +154,9 @@ def adm_handler(address, *args):
                 arguments_errors.append(f'argument {i} "{val}" type mismatch ! integer is expected but "{_type_to_string(val)}" is provided')
             elif _typ == protocol.Type.String and type(val) is not str:
                 arguments_errors.append(f'argument {i} "{val}" type mismatch ! string is expected but "{_type_to_string(val)}" is provided')
-            elif val < _min:
+            elif _min is not None and val < _min:
                 arguments_errors.append(f'argument {i} "{val}" out of range ! it should be greater or equal than "{_min}"')
-            elif val > _max:
+            elif _max is not None and val > _max:
                 arguments_errors.append(f'argument {i} "{val}" out of range ! it should be less or equal than "{_max}"')
 
         if arguments_errors:

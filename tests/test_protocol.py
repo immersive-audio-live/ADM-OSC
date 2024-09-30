@@ -13,7 +13,11 @@ class TestProtocol(unittest.TestCase):
         self.assertEqual(object_message(object_test_number, 'xyz'), '/adm/obj/42/xyz')
 
     def test_object_query_message(self):
-        self.assertEqual(object_query_message(object_test_number, 'xyz'), '/adm/obj/42/xyz/get')
+
+        if query_cmd != '':
+            self.assertEqual(object_query_message(object_test_number, 'xyz'), '/adm/obj/42/xyz/get')
+        else:
+            self.assertEqual(object_query_message(object_test_number, 'xyz'), '/adm/obj/42/xyz')
 
     def test_Type_OSC_string(self):
         self.assertEqual(Type.Int.as_osc_string(), 'i')
@@ -27,7 +31,7 @@ class TestProtocol(unittest.TestCase):
 class TestParameter(unittest.TestCase):
 
     def test_Parameter(self):
-        p = Parameter(sub_element=SubElement.Position, attribute='test', osc_command='test',
+        p = Parameter(object_type=obj, sub_element=SubElement.Position, attribute='test', osc_command='test',
                       description='test desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
                       def_=0.0, status=Status.Stable, comment='')
 
@@ -45,7 +49,11 @@ class TestParameter(unittest.TestCase):
         self.assertEqual(p.comment, '')
 
         self.assertEqual(p.get_osc_command(42), '/adm/obj/42/test')
-        self.assertEqual(p.get_osc_query_command(42), '/adm/obj/42/test/get')
+
+        if query_cmd != '':
+            self.assertEqual(p.get_osc_query_command(42), '/adm/obj/42/test/get')
+        else:
+            self.assertEqual(p.get_osc_query_command(42), '/adm/obj/42/test')
 
         self.assertEqual(p.osc_format(), '/adm/obj/(k)/test f')
         self.assertEqual(p.osc_example(0.42), '/adm/obj/42/test 0.42')
@@ -59,13 +67,10 @@ class TestParameter(unittest.TestCase):
         self.assertEqual(p.validate_value(2.0), 1.0)
 
     def test_PackedParameters(self):
-        p = Parameter(sub_element=SubElement.Position, attribute='p', osc_command='p', description='p desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
-                      def_=0.0, status=Status.Stable)
-        t = Parameter(sub_element=SubElement.Position, attribute='t', osc_command='t', description='t desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
-                      def_=0.0, status=Status.Stable)
-        v = Parameter(sub_element=SubElement.Position, attribute='v', osc_command='v', description='v desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0,
-                      def_=0.0, status=Status.Stable)
-        ptv = PackedParameters(sub_element=SubElement.Position, attribute='ptv', osc_command='ptv', description='ptv desc', params=[p, t, v], status=Status.Stable, comment='')
+        p = Parameter(object_type=obj, sub_element=SubElement.Position, attribute='p', osc_command='p', description='p desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0, def_=0.0, status=Status.Stable)
+        t = Parameter(object_type=obj, sub_element=SubElement.Position, attribute='t', osc_command='t', description='t desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0, def_=0.0, status=Status.Stable)
+        v = Parameter(object_type=obj, sub_element=SubElement.Position, attribute='v', osc_command='v', description='v desc', units=Units.Normalized, type_=Type.Float, min_=-1.0, max_=1.0, def_=0.0, status=Status.Stable)
+        ptv = PackedParameters(object_type=obj, sub_element=SubElement.Position, attribute='ptv', osc_command='ptv', description='ptv desc', params=[p, t, v], status=Status.Stable, comment='')
 
         self.assertEqual(ptv.sub_element, SubElement.Position)
         self.assertEqual(ptv.attribute, 'ptv')
@@ -76,7 +81,10 @@ class TestParameter(unittest.TestCase):
         self.assertEqual(ptv.comment, '')
 
         self.assertEqual(ptv.get_osc_command(42), '/adm/obj/42/ptv')
-        self.assertEqual(ptv.get_osc_query_command(42), '/adm/obj/42/ptv/get')
+        if query_cmd != '':
+            self.assertEqual(ptv.get_osc_query_command(42), '/adm/obj/42/ptv/get')
+        else:
+            self.assertEqual(ptv.get_osc_query_command(42), '/adm/obj/42/ptv')
 
         self.assertEqual(ptv.osc_format(), '/adm/obj/(k)/ptv fff')
         self.assertEqual(ptv.osc_example([0.42, 0.42, 0.42]), '/adm/obj/42/ptv 0.42 0.42 0.42')
