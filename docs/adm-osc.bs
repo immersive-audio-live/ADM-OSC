@@ -574,7 +574,7 @@ An object position in a physics-based world can be described as:
 </figure>
 
 <figure>
-    <math><mn>0.0</mn><mo>&le;</mo><msub><mi>d</mi><mi>mimn</mi></msub><mo>&le;</mo><msub><mi>d</mi><mi>max</mi></msub></math><mtext>(meters)</mtext></math><br>
+    <math><mn>0.0</mn><mo>&le;</mo><msub><mi>d</mi><mi>mimn</mi></msub><mo>&le;</mo><msub><mi>d</mi><mi>max</mi></msub><mtext>(meters)</mtext></math><br>
     <figcaption>physics-based spherical</figcaption>
 </figure>
 
