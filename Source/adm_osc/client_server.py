@@ -261,7 +261,7 @@ class OscClientServer(SimpleUDPClient):
 
     def send_listener_orientation(self, rot: Union[float, tuple, list]) -> None:
         """Send Listener Yaw Pitch Roll orientation as a list of double."""
-        assert pos is not None
+        assert rot is not None
         assert len(rot) == 3
         self.send_listener_value(stable_params.lis_ypr, rot)
 
