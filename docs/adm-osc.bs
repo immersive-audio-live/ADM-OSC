@@ -20,27 +20,26 @@ Abstract: An industry initiative for standardization of [=Object-Based Audio=] p
 Introduction {#intro}
 =====================
 
-ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC:
+ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real-life production cases. These companies have already expressed interest or have implemented ADM-OSC:
 
 * Atlas
-* Adamson
+* [Adamson](http://www.adamsonsystems.com/)
 * Amadeus Acoustics GmbH
-* BBC
-* d&amp;b audiotechnik
-* DiGiCo
-* Dolby
+* [BBC](https://www.bbc.com/)
+* [d&amp;b audiotechnik](https://www.dbaudio.com/)
+* [DiGiCo](https://digico.biz/)
+* [Dolby](https://www.dolby.com)
 * FLUX::SE
 * FollowMe
 * Grapes3D,
 * Holophonix
-* L-Acoustics
-* Lawo, Merging Technologies
+* [L-Acoustics](https://www.l-acoustics.com/)
+* [Lawo](https://lawo.com/)
+* Merging Technologies
 * Meyer Sound
 * Naostage
-* <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a>
-* <a href="https://www.steinberg.net/">Steinberg</a>
-
-* [testlink](https://www.steinberg.net/)
+* [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
+* [Steinberg](https://www.steinberg.net/)
 
 Why ADM?
 --------
@@ -70,12 +69,12 @@ Motivation &amp; goals {#goals}
 Project Originators
 ----------------------
 
-<a href="https://www.l-acoustics.com/">L-Acoustics</a>, <a href="https://www.flux.audio/">FLUX::SE</a>, <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a>
+[L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 Project Contributors
 --------------------
 
-[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b Audiotechnik</a>, [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+[Adamson](http://www.adamsonsystems.com/), [BBC](https://www.bbc.com/), [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
 Currently supported in
 -----------------------
@@ -361,7 +360,7 @@ Implementation Matrix {#implementation}
         <td></td>
     </tr>
     <tr>
-        <td><a href="https://l-isa.l-acoustics.com/">L-ISA Controller</a></td>
+        <td>[L-ISA Controller](https://l-isa.l-acoustics.com/)</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -586,7 +585,7 @@ world
 Development &amp; Test tools {#tools}
 =====================================
 
-<a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a> 
+[Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module)
 ---------------------------------
 
 (Mathieu Delquignies / d&amp;b audiotechnik)
@@ -598,7 +597,7 @@ Tester Desktop application
 
 (Jose Gaudin / Meyer Sound)
 
-<a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a>
+[download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
 
 Validator, Test and Stress Test Python Module
 -----------------------------------------------
@@ -683,9 +682,9 @@ sender.stress_cartesian_position(number_of_objects=64, duration_in_second=60.0, 
 # do stress test in polar coordinates
 sender.stress_polar_position(number_of_objects=64, duration_in_second=60.0, interval_in_milliseconds=10.0)
 ```
-<a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">full documentation</a>
 
-<a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a>
+* [Full documentation](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md)
+* [Source directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source)
 
 Discussion {#discuss}
 =====================
@@ -693,7 +692,7 @@ Discussion {#discuss}
 Draft 0.5
 ----------
 
-A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate 
+A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate 
 
 Relationship to ADM
 --------------------
