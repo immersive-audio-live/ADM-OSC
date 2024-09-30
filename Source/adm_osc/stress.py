@@ -67,6 +67,29 @@ class StressClient(TestClient):
             duration_in_second -= interval
             sleep(interval)
 
+    def stress_polar_azimuth(self, number_of_objects: int = 1, duration_in_second: float = 10.0, interval_in_milliseconds: float = 10.0):
+        azimuth = 180
+        elevation = 0.0
+        elevation_fact = 0.5
+        distance = 0.5
+        phase = 1.0
+        interval = interval_in_milliseconds / 1000.0
+
+        while duration_in_second > 0:
+            for obj in range(number_of_objects):
+                obj_num = (obj + 1)
+                a_ = azimuth
+                e_ = elevation
+                d_ = distance
+                self.send_object_polar_position(obj_num, [a_, e_, d_])
+
+            azimuth -= 1.0
+            if azimuth < -180.0:
+                azimuth = 180.0
+
+            duration_in_second -= interval
+            sleep(interval)
+
     def stress_cartesian_position(self, number_of_objects: int = 1, duration_in_second: float = 10.0, interval_in_milliseconds: float = 10.0):
 
         target_range = 1.0

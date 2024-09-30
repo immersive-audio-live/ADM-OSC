@@ -6,7 +6,7 @@ An industry initiative to standardization of Object Based Audio (OBA) positionin
 
 ## Project Originators
 
-[L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
+[L-Acoustics](https://www.l-acoustics.com/), [FLUX::](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
 ## Project Contributors
 
@@ -116,27 +116,28 @@ See Issues.
   
   ```python
      from adm_osc import TestClient
+     from adm_osc.protocol import ValueType as vt
      # create a test client, assume default address (local: '127.0.0.1')
      # test client can be used to test how receiver will handle all kind of parameters and parameters value range
      sender = TestClient(out_port=9000)
   
      # all stable parameters for a specific object
-     sender.set_object_stable_parameters_to_minimum(object_number=1)
-     sender.set_object_stable_parameters_to_maximum(object_number=1)
-     sender.set_object_stable_parameters_to_default(object_number=1)
-     sender.set_object_stable_parameters_to_random(object_number=1)
+     sender.set_object_stable_parameters_predefined_value(object_number=1, vt.Min)
+     sender.set_object_stable_parameters_predefined_value(object_number=1, vt.Max)
+     sender.set_object_stable_parameters_predefined_value(object_number=1, vt.Default)
+     sender.set_object_stable_parameters_predefined_value(object_number=1, vt.Random)
   
      # all stable parameters for a range of objects
-     sender.set_objects_stable_parameters_minimum(objects_range=range(1, 64))
-     sender.set_objects_stable_parameters_maximum(objects_range=range(1, 64))
-     sender.set_objects_stable_parameters_default(objects_range=range(1, 64))
-     sender.set_objects_stable_parameters_random(objects_range=range(1, 64))
+     sender.set_objects_stable_parameters_predefined_value(objects_range=range(1, 64), vt.Min)
+     sender.set_objects_stable_parameters_predefined_value(objects_range=range(1, 64), vt.Max)
+     sender.set_objects_stable_parameters_predefined_value(objects_range=range(1, 64), vt.Default)
+     sender.set_objects_stable_parameters_predefined_value(objects_range=range(1, 64), vt.Random)
   
      # all stable parameters for all objects
-     sender.set_all_objects_stable_parameters_minimum()
-     sender.set_all_objects_stable_parameters_maximum()
-     sender.set_all_objects_stable_parameters_default()
-     sender.set_all_objects_stable_parameters_random()
+     sender.set_all_objects_stable_parameters_predefined_value(vt.Min)
+     sender.set_all_objects_stable_parameters_predefined_value(vt.Max)
+     sender.set_all_objects_stable_parameters_predefined_value(vt.Default)
+     sender.set_all_objects_stable_parameters_predefined_value(vt.Random)
   
      # see documentation for full list of available functions
      ```
@@ -157,4 +158,4 @@ See Issues.
 
 ## Currently supported in
 
-SPAT Revolution (FLUX::SE), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson)
+SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson)
