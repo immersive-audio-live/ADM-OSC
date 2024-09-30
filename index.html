@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="f4a1829cf841711cd93c956a0a498ca64a2fd441" name="document-revision">
+  <meta content="6e649438ca98896fd370fbc6ce6c2ef6e71c662f" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2127,7 +2127,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
         <li><a href="#receiver-server"><span class="secno">4.1.2</span> <span class="content">Receiver (server)</span></a>
        </ol>
       <li><a href="#ports"><span class="secno">4.2</span> <span class="content">Ports</span></a>
-      <li><a href="#rate"><span class="secno">4.3</span> <span class="content">Data rate</span></a>
+      <li><a href="#rate"><span class="secno">4.3</span> <span class="content">Message rate</span></a>
       <li>
        <a href="#coordinates"><span class="secno">4.4</span> <span class="content">Coordinates</span></a>
        <ol class="toc">
@@ -2166,44 +2166,44 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   </nav>
   <main>
    <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
-   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real life production cases. Those companies have already expressed interest or have implemented ADM-OSC:</p>
+   <p>ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real-life production cases. These companies have already expressed interest or have implemented ADM-OSC:</p>
    <ul>
     <li data-md>
      <p>Atlas</p>
     <li data-md>
-     <p>Adamson</p>
+     <p><a href="http://www.adamsonsystems.com/">Adamson</a></p>
     <li data-md>
      <p>Amadeus Acoustics GmbH</p>
     <li data-md>
-     <p>BBC</p>
+     <p><a href="https://www.bbc.com/">BBC</a></p>
     <li data-md>
-     <p>d&amp;b audiotechnik</p>
+     <p><a href="https://www.dbaudio.com/">d&amp;b audiotechnik</a></p>
     <li data-md>
-     <p>DiGiCo</p>
+     <p><a href="https://digico.biz/">DiGiCo</a></p>
     <li data-md>
-     <p>Dolby</p>
+     <p><a href="https://www.dolby.com">Dolby</a></p>
     <li data-md>
-     <p>FLUX::SE</p>
+     <p><a href="https://www.flux.audio/">FLUX::SE</a></p>
     <li data-md>
      <p>FollowMe</p>
     <li data-md>
-     <p>Grapes3D,</p>
+     <p>Grapes3D</p>
     <li data-md>
-     <p>Holophonix</p>
+     <p><a href="https://holophonix.xyz/">Holophonix</a></p>
     <li data-md>
-     <p>L-Acoustics</p>
+     <p><a href="https://www.l-acoustics.com/">L-Acoustics</a></p>
     <li data-md>
-     <p>Lawo, Merging Technologies</p>
+     <p><a href="https://lawo.com/">Lawo</a></p>
     <li data-md>
-     <p>Meyer Sound</p>
+     <p><a href="https://www.merging.com/">Merging Technologies</a></p>
+    <li data-md>
+     <p><a href="https://meyersound.com/">Meyer Sound</a></p>
     <li data-md>
      <p>Naostage</p>
     <li data-md>
      <p><a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a></p>
     <li data-md>
      <p><a href="https://www.steinberg.net/">Steinberg</a></p>
-    <li data-md>
-     <p><a href="https://www.steinberg.net/">testlink</a></p>
    </ul>
    <h3 class="heading settled" data-level="1.1" id="why-adm"><span class="secno">1.1. </span><span class="content">Why ADM?</span><a class="self-link" href="#why-adm"></a></h3>
    <p>Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.</p>
@@ -2240,7 +2240,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <h3 class="heading settled" data-level="1.4" id="project-originators"><span class="secno">1.4. </span><span class="content">Project Originators</span><a class="self-link" href="#project-originators"></a></h3>
    <p><a href="https://www.l-acoustics.com/">L-Acoustics</a>, <a href="https://www.flux.audio/">FLUX::SE</a>, <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a></p>
    <h3 class="heading settled" data-level="1.5" id="project-contributors"><span class="secno">1.5. </span><span class="content">Project Contributors</span><a class="self-link" href="#project-contributors"></a></h3>
-   <p><a href="http://www.adamsonsystems.com/">Adamson</a>, <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b Audiotechnik</a>, <a href="https://digico.biz/">DiGiCo</a>, <a href="https://www.dolby.com">Dolby</a>, <a href="https://lawo.com/">Lawo</a>, <a href="https://www.magix.com/">Magix</a>, <a href="https://www.merging.com/">Merging Technologies</a>, <a href="https://meyersound.com/">Meyer Sound</a>, <a href="https://www.steinberg.net/">Steinberg</a></p>
+   <p><a href="http://www.adamsonsystems.com/">Adamson</a>, <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>, <a href="https://digico.biz/">DiGiCo</a>, <a href="https://www.dolby.com">Dolby</a>, <a href="https://lawo.com/">Lawo</a>, <a href="https://www.magix.com/">Magix</a>, <a href="https://www.merging.com/">Merging Technologies</a>, <a href="https://meyersound.com/">Meyer Sound</a>, <a href="https://www.steinberg.net/">Steinberg</a></p>
    <h3 class="heading settled" data-level="1.6" id="currently-supported-in"><span class="secno">1.6. </span><span class="content">Currently supported in</span><a class="self-link" href="#currently-supported-in"></a></h3>
    <ul>
     <li data-md>
@@ -2595,7 +2595,11 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
    </table>
-   <p class="issue" id="issue-d41d8cd9"><a class="self-link" href="#issue-d41d8cd9"></a> <a href="https://github.com/immersive-audio-live/adm-osc/issues/24">[Issue #immersive-audio-live/adm-osc#24]</a></p>
+   <div class="issue no-marker" id="issue-d41d8cd9">
+    <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
+    <p dir="auto">Table of implementations.</p>
+    <p dir="auto">What do they support?<br> What they would like to support?</p>
+   </div>
    <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">Basic ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
    <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
@@ -2613,7 +2617,11 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <p>The receiver can be a DAW, an <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑤">ADM</a> renderer, an object editor, a bridge (ADM-OSC &lt;-> sADM)</p>
    </ul>
    <h3 class="heading settled" data-level="4.2" id="ports"><span class="secno">4.2. </span><span class="content">Ports</span><a class="self-link" href="#ports"></a></h3>
-   <h3 class="heading settled" data-level="4.3" id="rate"><span class="secno">4.3. </span><span class="content">Data rate</span><a class="self-link" href="#rate"></a></h3>
+   <p>ADM-OSC typically uses UDP protocol. It is recommended to use port <strong>4001</strong> <a data-link-type="biblio" href="#biblio-admix" title="Admix Player">[ADMix]</a> for one-way communication (so, default for senders and receivers) and <strong>4002</strong> for return messages (if used).</p>
+   <p>Those ports should be user editable if needed.</p>
+   <h3 class="heading settled" data-level="4.3" id="rate"><span class="secno">4.3. </span><span class="content">Message rate</span><a class="self-link" href="#rate"></a></h3>
+   <p>Position data is typically sent at a high data rate, although care must be taken not to overload the capibilities of the receiver. S-ADM is usually half of the video frame rate, or approximatly one message every 20 ms, or 50 Hz. Similarly, the Dolby Atmos ADM Profile <a data-link-type="biblio" href="#biblio-atmos-profile" title="Dolby Atmos ADM Profile specification">[Atmos-Profile]</a> recommends that the sampling period be "less than 20 ms," although sampling is optional if the parameter does not change.</p>
+   <p>Interpolation messages have not been implemented in ADM-OSC 1.0.</p>
    <h3 class="heading settled" data-level="4.4" id="coordinates"><span class="secno">4.4. </span><span class="content">Coordinates</span><a class="self-link" href="#coordinates"></a></h3>
    <h4 class="heading settled" data-level="4.4.1" id="polar"><span class="secno">4.4.1. </span><span class="content">Polar</span><a class="self-link" href="#polar"></a></h4>
    <ul>
@@ -2659,43 +2667,45 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </ul>
    <h4 class="heading settled" data-level="4.4.3" id="conversions"><span class="secno">4.4.3. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
    <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
-   <p class="issue" id="issue-d41d8cd9①"><a class="self-link" href="#issue-d41d8cd9①"></a> <a href="https://github.com/immersive-audio-live/adm-osc/issues/25">[Issue #immersive-audio-live/adm-osc#25]</a></p>
+   <div class="issue no-marker" id="issue-d41d8cd9①">
+    <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
+    <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
+   </div>
    <h4 class="heading settled" data-level="4.4.4" id="distance"><span class="secno">4.4.4. </span><span class="content">Distance</span><a class="self-link" href="#distance"></a></h4>
    <p>The 3D paradigm chosen by the ADM standard is a normalised (dimensionless) reference volume, defined in Cartesian or spherical coordinates.</p>
    <figure>
-    <p>dimensionless ADM cube</p>
     <math>
-     <mi>-1.0</mi>
+     <mn>-1.0</mn>
      <mo>≤</mo>
      <mi>x</mi>
      <mo>≤</mo>
-     <mi>1.0</mi>
+     <mn>1.0</mn>
     </math>
     <br> 
     <math>
-     <mi>-1.0</mi>
+     <mn>-1.0</mn>
      <mo>≤</mo>
-     <mi>y</mi>
+     <mn>y</mn>
      <mo>≤</mo>
-     <mi>1.0</mi>
+     <mn>1.0</mn>
     </math>
     <br> 
     <math>
-     <mi>-1.0</mi>
+     <mn>-1.0</mn>
      <mo>≤</mo>
      <mi>z</mi>
      <mo>≤</mo>
-     <mi>1.0</mi>
+     <mn>1.0</mn>
     </math>
+    <figcaption>dimensionless ADM cube</figcaption>
    </figure>
    <figure>
-    <p>dimensionless ADM sphere</p>
     <math>
-     <mi>-1.0</mi>
+     <mn>0.0</mn>
      <mo>≤</mo>
      <mi>d</mi>
      <mo>≤</mo>
-     <mi>1.0</mi>
+     <mn>1.0</mn>
     </math>
     <br> 
     <math>
@@ -2703,30 +2713,123 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <mo>=</mo>
      <mi>distance or radius</mi>
     </math>
+    <figcaption>dimensionless ADM sphere</figcaption>
    </figure>
    <p>This paradigm is used by studio/broadcast mixing tools such as Dolby Atmos or MPEG-H.</p>
    <p>On the other hand, some audio renderers represent a physics-based world, and the notion of source distance relates to a physical unit, such as meters. Aside from direct sound gain, the source physics-based distance d<sub>m</sub> relates to advanced audio object parameters such as propagation delay, air at- tenuation, and energy levels of early/cluster reflections and late reverberation, or sound field behaviors (plane vs spherical waves).</p>
    <p>These audio renderers include L-Acoustics L-ISA, Flux:Spat, d&amp;B Soundscape, but also, more generally in the AR/VR domain, game audio engines such as Unreal, Unity, Wwise, or XR audio engines such as Magic Leap Soundfield Audio. A common challenge for all these renderers based on physical distance is that if the gain follows physical attenuation laws (such as “-6dB per doubling of distance”), there are some singularities when d<sub>m</sub> gets close to 0. Hence, most of these renderers include a “volume of reference” or “unit volume” where the rendering (and in particular the gain) do not follow physically-informed laws anymore. This is true for Unreal and Spat, for example.</p>
-   <p>Proposal: An object position in a physics-based world can be described as:
-Cartesian:</p>
-   <p>** xM in ≤ xm ≤ xM ax (meters)
-    ** yMin≤ym≤yMax
-    ** zMin≤zm≤zMax</p>
-   <ul>
-    <li data-md>
-     <p>spherical
-** 0 ≤ dm ≤ dM ax (meters)</p>
-   </ul>
+   <p>An object position in a physics-based world can be described as:</p>
+   <figure>
+    <math>
+     <msub>
+      <mi>x</mi>
+      <mi>min</mi>
+     </msub>
+     <mo>≤</mo>
+     <mi>x</mi>
+     <mo>≤</mo>
+     <msub>
+      <mi>x</mi>
+      <mi>max</mi>
+     </msub>
+     <mtext>(meters)</mtext>
+    </math>
+    <br> 
+    <math>
+     <msub>
+      <mi>y</mi>
+      <mi>min</mi>
+     </msub>
+     <mo>≤</mo>
+     <mi>y</mi>
+     <mo>≤</mo>
+     <mi>xMax</mi>
+     <mtext>(meters)</mtext>
+    </math>
+    <br> 
+    <math>
+     <msub>
+      <mi>z</mi>
+      <mi>min</mi>
+     </msub>
+     <mo>≤</mo>
+     <mi>z</mi>
+     <mo>≤</mo>
+     <mi>xMax</mi>
+     <mtext>(meters)</mtext>
+    </math>
+    <figcaption>physics-based Cartesian</figcaption>
+   </figure>
+   <figure>
+    <math>
+     <mn>0.0</mn>
+     <mo>≤</mo>
+     <msub>
+      <mi>d</mi>
+      <mi>mimn</mi>
+     </msub>
+     <mo>≤</mo>
+     <msub>
+      <mi>d</mi>
+      <mi>max</mi>
+     </msub>
+     <mtext>(meters)</mtext>
+    </math>
+    <br> 
+    <figcaption>physics-based spherical</figcaption>
+   </figure>
    <p>In ADM-OSC, <strong>/dMax</strong> corresponds to the <code>absoluteDistance</code> parameter in an ADM audioPackFormat element.</p>
    <p><strong>/dRef</strong> is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.</p>
-   <p>Fig. 3. (from Jot et. al.) [16] The volume of reference is defined by
-dm &lt; dRef and shows an amplitude behavior (dB) independent from the distance.</p>
-   <p>By definition: 0 ≤ dRef dM ax
-≤ 1 and the following cases arise:
-• dRef = 1 : the world is a dimensionless reference dM ax volume, matching the ADM standard
-dRef = 0 : no reference volume within the physical
-dM ax
-world</p>
+   <p>By definition:</p>
+   <math>
+    <mn>0</mn>
+    <mo>≤</mo>
+    <mfrac>
+     <msub>
+      <mi>d</mi>
+      <mi>ref</mi>
+     </msub>
+     <msub>
+      <mi>d</mi>
+      <mi>max</mi>
+     </msub>
+    </mfrac>
+    <mo>≤</mo>
+    <mn>1</mn>
+   </math>
+   <p>and the following cases arise:</p>
+   <math>
+    <msub>
+     <mi>d</mi>
+     <mi>ref</mi>
+    </msub>
+    <mo>=</mo>
+    <mn>1</mn>
+   </math>
+    : the world is a dimensionless reference 
+   <math>
+    <msub>
+     <mi>d</mi>
+     <mi>max</mi>
+    </msub>
+   </math>
+    volume, matching the ADM standard<br> 
+   <math>
+    <msub>
+     <mi>d</mi>
+     <mi>ref</mi>
+    </msub>
+    <mo>=</mo>
+    <mn>0</mn>
+   </math>
+    : no reference volume within the physical 
+   <math>
+    <msub>
+     <mi>d</mi>
+     <mi>max</mi>
+    </msub>
+   </math>
+    world 
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
@@ -2805,14 +2908,26 @@ world</p>
 <c- c1># do stress test in polar coordinates</c->
 <c- n>sender</c-><c- o>.</c-><c- n>stress_polar_position</c-><c- p>(</c-><c- n>number_of_objects</c-><c- o>=</c-><c- mi>64</c-><c- p>,</c-> <c- n>duration_in_second</c-><c- o>=</c-><c- mf>60.0</c-><c- p>,</c-> <c- n>interval_in_milliseconds</c-><c- o>=</c-><c- mf>10.0</c-><c- p>)</c->
 </pre>
-   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">full documentation</a></p>
-   <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a></p>
+   <ul>
+    <li data-md>
+     <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md">Full documentation</a></p>
+    <li data-md>
+     <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a></p>
+   </ul>
    <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
    <h3 class="heading settled" data-level="6.1" id="draft-05"><span class="secno">6.1. </span><span class="content">Draft 0.5</span><a class="self-link" href="#draft-05"></a></h3>
-   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases.  It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
+   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
    <h3 class="heading settled" data-level="6.2" id="relationship-to-adm"><span class="secno">6.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
    <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑧">ADM</a> tag should not be in the <code>/adm</code> namespace.</p>
-   <p class="issue" id="issue-d41d8cd9②"><a class="self-link" href="#issue-d41d8cd9②"></a> <a href="https://github.com/immersive-audio-live/adm-osc/issues/33">[Issue #immersive-audio-live/adm-osc#33]</a></p>
+   <div class="issue no-marker" id="issue-d41d8cd9②">
+    <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+    <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
+    <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
+<pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
+</code></pre>
+    </div>
+    <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
+   </div>
    <h2 class="heading settled" data-level="7" id="define"><span class="secno">7. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="ADM" data-noexport id="audio-definition-model">Audio Definition Model</dfn></p>
    <p>The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
@@ -2846,6 +2961,10 @@ specification has been published in 2002 [8].</p>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-admix">[ADMix]
+   <dd><a href="https://forum.ircam.fr/projects/detail/admix/"><cite>Admix Player</cite></a>. 2019. URL: <a href="https://forum.ircam.fr/projects/detail/admix/">https://forum.ircam.fr/projects/detail/admix/</a>
+   <dt id="biblio-atmos-profile">[Atmos-Profile]
+   <dd><a href="https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"><cite>Dolby Atmos ADM Profile specification</cite></a>. 2022. URL: <a href="https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification">https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification</a>
    <dt id="biblio-ebu-bs-2076">[EBU-BS-2076]
    <dd><a href="https://www.itu.int/rec/R-REC-BS.2076"><cite>Audio Definition Model</cite></a>. Spec. URL: <a href="https://www.itu.int/rec/R-REC-BS.2076">https://www.itu.int/rec/R-REC-BS.2076</a>
    <dt id="biblio-ebu-bs-2127">[EBU-BS-2127]
@@ -2861,9 +2980,27 @@ specification has been published in 2002 [8].</p>
   </dl>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
-   <div class="issue"> <a href="https://github.com/immersive-audio-live/adm-osc/issues/24">[Issue #immersive-audio-live/adm-osc#24]</a> <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a></div>
-   <div class="issue"> <a href="https://github.com/immersive-audio-live/adm-osc/issues/25">[Issue #immersive-audio-live/adm-osc#25]</a> <a class="issue-return" href="#issue-d41d8cd9①" title="Jump to section">↵</a></div>
-   <div class="issue"> <a href="https://github.com/immersive-audio-live/adm-osc/issues/33">[Issue #immersive-audio-live/adm-osc#33]</a> <a class="issue-return" href="#issue-d41d8cd9②" title="Jump to section">↵</a></div>
+   <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
+    <p dir="auto">Table of implementations.</p>
+    <p dir="auto">What do they support?<br> What they would like to support?</p>
+     <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a>
+   </div>
+   <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
+    <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
+     <a class="issue-return" href="#issue-d41d8cd9①" title="Jump to section">↵</a>
+   </div>
+   <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+    <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
+    <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
+<pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
+</code></pre>
+    </div>
+    <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
+     <a class="issue-return" href="#issue-d41d8cd9②" title="Jump to section">↵</a>
+   </div>
   </div>
 <script>/* Boilerplate: script-dfn-panel */
 "use strict";
