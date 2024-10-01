@@ -610,30 +610,33 @@ Coordinates
 To convert the coordinate system, Euler trigonometry can be used to represent the polar sphere in cartesian coordinates. The equations are provided in ITU-R BS.2127 section 6.8 [[EBU-BS-2127]]
 
 <math>
-<mi>x</mi><mo>=</mo><mi>-</mi><mi>d</mi>
-                <mo></mo>
-                <mi>sin</mi><mo>(</mo>
-            <mfrac>
-               <mi>π</mi>
-               <mn>2</mn>
-            </mfrac><
-            <mo>-</mo>
-            <mi>e</mi>
-            <mfrac>
-               <mi>2π</mi>
-               <mn>360</mn>
-            </mfrac>
-            <mo>) </mo>
-            <mo>&sdot;</mo>
-            <mo>sin</mo><mo>(</mo>
-            <mi>a</mi>
-            <mfrac>
-               <mi>2π</mi>
-               <mn>360</mn>
-            </mfrac>
-            <mo>)</mo>
+    <mi>x</mi>
+    <mo>=</mo>
+        <mi>-</mi><mi>d</mi>
+        <mo></mo>
+        <mi>sin</mi><mo>(</mo>
+        <mfrac>
+            <mi>π</mi>
+           <mn>2</mn>
+        </mfrac><
+        <mo>-</mo>
+        <mi>e</mi>
+        <mfrac>
+            <mi>2π</mi>
+            <mn>360</mn>
+        </mfrac>
+        <mo>)</mo>
+        <mo>&sdot;</mo>
+        <mo>sin</mo><mo>(</mo>
+        <mi>a</mi>
+        <mfrac>
+            <mi>2π</mi>
+            <mn>360</mn>
+        </mfrac>
+        <mo>)</mo>
 </math><br>
 
+<!--
 <math>
 <mi>y</mi><mo>=</mo><mi>d</mi>
                 <mo></mo>
@@ -658,6 +661,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             </mfrac>
             <mo>)</mo>
 </math><br>
+-->
 
 <!---
 <math>
