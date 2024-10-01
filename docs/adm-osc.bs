@@ -615,8 +615,8 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 <mi>x</mi>
     <mo>=</mo>
     <mo>-</mo><mi>d</mi>
-     <mo></mo>
-        <mi>sin</mi><mo>(</mo>
+    <mo></mo>
+    <mi>sin</mi><mo>(</mo>
         <mfrac>
             <mi>&#960;</mi>
             <mi>2</mi>
@@ -625,76 +625,68 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
         <mi>e</mi>
         <mo></mo>
         <mfrac>
-            <mrow><mi>2</mi><mi>pi</mi></mrow>
+            <mrow><mi>2</mi><mi>&#960;/mi></mrow>
             <mn>360</mn>
         </mfrac>
-        <mo>)</mo>
+    <mo>)</mo>
     <mo>&sdot;</mo>
     <mo>sin</mo><mo>(</mo>
-    <mi>a</mi>
-    <mo></mo>
-    <mfrac>
-        <mrow><mi>2</mi><mi>&#960;</mi></mrow>
-        <mn>360</mn>
-    </mfrac>
+        <mi>a</mi><mo></mo>
+        <mfrac>
+            <mrow><mi>2</mi><mi>&#960</mi></mrow>
+            <mn>360</mn>
+        </mfrac>
     <mo>)</mo>
 </math><br>
 
-<!---
 <math>
-    <mi>x</mi>
+<mi>y</mi>
     <mo>=</mo>
-        <mo>-</mo><mi>d</mi>
-        <mo></mo>
-        <mi>sin</mi><mo>(</mo>
+    <mi>d</mi>
+    <mo></mo>
+    <mi>sin</mi><mo>(</mo>
         <mfrac>
             <mi>&#960;</mi>
-           <mn>2</mn>
-        </mfrac><
+            <mi>2</mi>
+        </mfrac>
         <mo>-</mo>
         <mi>e</mi>
+        <mo></mo>
         <mfrac>
-            <mrow><mi>2</mi><mi>pi</mi></mrow>
+            <mrow><mi>2</mi><mi>&#960;</mi></mrow>
             <mn>360</mn>
         </mfrac>
-        <mo>)</mo>
-        <mo>&sdot;</mo>
-        <mo>sin</mo><mo>(</mo>
-        <mi>a</mi>
+    <mo>)</mo>
+    <mo>&sdot;</mo>
+    <mo>cos</mo><mo>(</mo>
+        <mi>a</mi><mo></mo>
         <mfrac>
-            <mrow><mi>2</mi><mi>pi</mi></mrow>
+            <mrow><mi>2</mi><mi>&#960</mi></mrow>
             <mn>360</mn>
         </mfrac>
-        <mo>)</mo>
+    <mo>)</mo>
 </math><br>
---->
 
-<!--
 <math>
-<mi>y</mi><mo>=</mo><mi>d</mi>
-                <mo></mo>
-                <mi>sin</mi><mo>(</mo>
-            <mfrac>
-               <mi>π</mi>
-               <mn>2</mn>
-            </mfrac><
-            <mo>-</mo>
-            <mi>e</mi>
-            <mfrac>
-               <mi>2π</mi>
-               <mn>360</mn>
-            </mfrac>
-            <mo>) </mo>
-            <mo>&sdot;</mo>
-            <mo>cos</mo><mo>(</mo>
-            <mi>a</mi>
-            <mfrac>
-               <mi>2π</mi>
-               <mn>360</mn>
-            </mfrac>
-            <mo>)</mo>
+<mi>z</mi>
+    <mo>=</mo>
+    <mi>d</mi>
+    <mo></mo>
+    <mi>cos</mi><mo>(</mo>
+        <mfrac>
+            <mi>&#960;</mi>
+            <mi>2</mi>
+        </mfrac>
+        <mo>-</mo>
+        <mi>e</mi>
+        <mo></mo>
+        <mfrac>
+            <mrow><mi>2</mi><mi>&#960;</mi></mrow>
+            <mn>360</mn>
+        </mfrac>
+    <mo>)</mo>
 </math><br>
--->
+
 
 <!---
 <math>
