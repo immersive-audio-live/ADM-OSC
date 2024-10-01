@@ -615,6 +615,20 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 <mi>x</mi>
     <mo>=</mo>
     <mo>-</mo><mi>d</mi>
+     <mo></mo>
+        <mi>sin</mi><mo>(</mo>
+        <mfrac>
+            <mi>&#960;</mi>
+            <mi>2</mi>
+        </mfrac>
+        <mo>-</mo>
+        <mi>e</mi>
+        <mo></mo>
+        <mfrac>
+            <mrow><mi>2</mi><mi>pi</mi></mrow>
+            <mn>360</mn>
+        </mfrac>
+        <mo>)</mo>
     <mo>&sdot;</mo>
     <mo>sin</mo><mo>(</mo>
     <mi>a</mi>
