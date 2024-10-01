@@ -614,10 +614,12 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 <math>
 <mi>x</mi>
     <mo>=</mo>
+    <mo>sin</mo><mo>(</mo>
     <mfrac>
-        <mrow><mi>2</mi><mi>pi</mi></mrow>
+        <mrow><mi>2</mi><mi>&#960;</mi></mrow>
         <mn>360</mn>
     </mfrac>
+    <mo>)</mo>
 </math><br>
 
 <!---
