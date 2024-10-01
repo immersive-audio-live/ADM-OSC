@@ -243,6 +243,7 @@ Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</va
             <td>string</td>
             <td>0</td>
             <td>128 char</td>
+            <td></td>
             <td>object nice name</td>
             <td>/adm/obj/1/name kickdrum</td>
         </tr>
@@ -614,6 +615,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
     <mo>=</mo>
         <mi>-</mi><mi>d</mi>
         <mo></mo>
+        <!--
         <mi>sin</mi><mo>(</mo>
         <mfrac>
             <mi>π</mi>
@@ -634,6 +636,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mn>360</mn>
         </mfrac>
         <mo>)</mo>
+        -->
 </math><br>
 
 <!--
