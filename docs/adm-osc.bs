@@ -616,7 +616,6 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
         <mi>-</mi><mi>d</mi>
         <mo></mo>
         <mi>sin</mi><mo>(</mo>
-        <!--
         <mfrac>
             <mi>π</mi>
            <mn>2</mn>
@@ -624,7 +623,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
         <mo>-</mo>
         <mi>e</mi>
         <mfrac>
-            <mi>2π</mi>
+            <mi>2</mi<mi>π</mi>
             <mn>360</mn>
         </mfrac>
         <mo>)</mo>
@@ -636,7 +635,6 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mn>360</mn>
         </mfrac>
         <mo>)</mo>
-        -->
 </math><br>
 
 <!--
