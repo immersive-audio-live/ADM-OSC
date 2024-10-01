@@ -368,12 +368,12 @@ def get_in_progress_parameters() -> Generator[Any, Any, None]:
     return (val for key, val in value_catalog.items() if val.is_in_progress())
 
 
-def find_parameter(attribute: str) -> Union[Parameter, PackedParameters, None]:
+def find_parameter(address: str) -> Union[Parameter, PackedParameters, None]:
     return next(
         (
             param
             for param in get_all_parameters()
-            if param.attribute == attribute
+            if param.osc_command == address
         ),
         None,
     )
