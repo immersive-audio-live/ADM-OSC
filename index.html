@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="865ba724e3d60cfda16b4db2fb9bf34e78e506ef" name="document-revision">
+  <meta content="e897c94c0d469807f6d85977bfbfcb7546c0ebe8" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2115,6 +2115,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#obj"><span class="secno">2.1</span> <span class="content">Object position messages</span></a>
       <li><a href="#env"><span class="secno">2.2</span> <span class="content">Environment messages</span></a>
       <li><a href="#lis"><span class="secno">2.3</span> <span class="content">Listener messages</span></a>
+      <li><a href="#queries-and-bi-directional-communication"><span class="secno">2.4</span> <span class="content">Queries and bi-directional communication</span></a>
      </ol>
     <li><a href="#implementation"><span class="secno">3</span> <span class="content">Implementation Matrix</span></a>
     <li>
@@ -2459,6 +2460,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>listener position
       <td>/adm/lis/xyz 0.0 0.5 -0.2
    </table>
+   <h3 class="heading settled" data-level="2.4" id="queries-and-bi-directional-communication"><span class="secno">2.4. </span><span class="content">Queries and bi-directional communication</span><a class="self-link" href="#queries-and-bi-directional-communication"></a></h3>
+   <p>The <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol is unidirectional, so the commands should be considered as <strong>SET</strong> from a sender to a receiver. A particular device might also be interested to <strong>GET</strong> the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.</p>
+   <div class="example" id="example-06ad4b23"><a class="self-link" href="#example-06ad4b23"></a> sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <code>/adm/obj/4/xyz -0.9 0.15 0.0</code> </div>
    <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
    <table>
     <tbody>
@@ -2476,8 +2480,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <th style="writing-mode:vertical-lr;">/adm/obj/(k)/gain
       <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dref
       <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dmax
+      <th style="writing-mode:vertical-lr;">/adm/obj/(k)/mute
+      <th style="writing-mode:vertical-lr;">/adm/obj/(k)/name
      <tr>
       <td>SPAT Revolution (FLUX::SE)
+      <td>
+      <td>
       <td>
       <td>
       <td>
@@ -2504,12 +2512,16 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
+      <td>
+      <td>
      <tr>
       <td>Ovation (Merging Technologies)
       <td>✓
       <td>rx
       <td>
       <td>✓
+      <td>
+      <td>
       <td>
       <td>
       <td>
@@ -2532,8 +2544,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
+      <td>
+      <td>
      <tr>
       <td>SpaceMap Go (Meyer Sound)
+      <td>
+      <td>
       <td>
       <td>
       <td>
@@ -2560,8 +2576,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
+      <td>
+      <td>
      <tr>
       <td>Space Controller (Sound Particles)
+      <td>
+      <td>
       <td>
       <td>
       <td>
@@ -2588,8 +2608,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>
       <td>
+      <td>
+      <td>
      <tr>
       <td>Modulo Kinetic (Modulo Pi)
+      <td>
+      <td>
       <td>
       <td>
       <td>
@@ -2616,8 +2640,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
+      <td>
+      <td>
      <tr>
       <td>FletcherMachine (Adamson)
+      <td>
+      <td>
       <td>
       <td>
       <td>
@@ -2869,7 +2897,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
-   <p>To retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol.</p>
+   <p>To retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control③">OSC</a> protocol.</p>
    <h3 class="heading settled" data-level="5.2" id="tester-desktop-application"><span class="secno">5.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
    <p>(Jose Gaudin / Meyer Sound)</p>
    <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a></p>
@@ -3195,7 +3223,7 @@ specification has been published in 2002 [8].</p>
 window.dfnpanelData = {};
 window.dfnpanelData['audio-definition-model'] = {"dfnID": "audio-definition-model", "url": "#audio-definition-model", "dfnText": "Audio Definition Model", "refSections": [{"refs": [{"id": "ref-for-audio-definition-model\u2460"}], "title": "1.1. Why ADM?"}, {"refs": [{"id": "ref-for-audio-definition-model\u2461"}, {"id": "ref-for-audio-definition-model\u2462"}, {"id": "ref-for-audio-definition-model\u2463"}], "title": "1.3. Motivation & goals"}, {"refs": [{"id": "ref-for-audio-definition-model\u2464"}], "title": "4.1.2. Receiver (server)"}, {"refs": [{"id": "ref-for-audio-definition-model\u2465"}], "title": "4.4.3. Conversions"}, {"refs": [{"id": "ref-for-audio-definition-model\u2466"}], "title": "6.1. Draft 0.5"}, {"refs": [{"id": "ref-for-audio-definition-model\u2467"}], "title": "6.2. Relationship to ADM"}], "external": false};
 window.dfnpanelData['object-based-audio'] = {"dfnID": "object-based-audio", "url": "#object-based-audio", "dfnText": "Object-Based Audio", "refSections": [{"refs": [{"id": "ref-for-object-based-audio\u2460"}], "title": "5.1. Chataigne module"}, {"refs": [{"id": "ref-for-object-based-audio\u2461"}], "title": "7. Definitions"}], "external": false};
-window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.3. Motivation & goals"}, {"refs": [{"id": "ref-for-open-sound-control\u2461"}], "title": "5.1. Chataigne module"}], "external": false};
+window.dfnpanelData['open-sound-control'] = {"dfnID": "open-sound-control", "url": "#open-sound-control", "dfnText": "Open Sound Control", "refSections": [{"refs": [{"id": "ref-for-open-sound-control\u2460"}], "title": "1.3. Motivation & goals"}, {"refs": [{"id": "ref-for-open-sound-control\u2461"}], "title": "2.4. Queries and bi-directional communication"}, {"refs": [{"id": "ref-for-open-sound-control\u2462"}], "title": "5.1. Chataigne module"}], "external": false};
 window.dfnpanelData['six-degrees-of-freedom'] = {"dfnID": "six-degrees-of-freedom", "url": "#six-degrees-of-freedom", "dfnText": "Six Degrees of Freedom", "refSections": [{"refs": [{"id": "ref-for-six-degrees-of-freedom"}], "title": "2.3. Listener messages"}], "external": false};
 </script>
 <script>/* Boilerplate: script-dom-helper */
