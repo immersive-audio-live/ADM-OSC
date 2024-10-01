@@ -631,7 +631,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
         <mo>sin</mo><mo>(</mo>
         <mi>a</mi>
         <mfrac>
-            <mi>2π</mi>
+            <mrow><mi>2</mi><mi>pi</mi></mrow>
             <mn>360</mn>
         </mfrac>
         <mo>)</mo>
