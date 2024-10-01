@@ -149,8 +149,6 @@ def adm_handler(address, *args):
             _typ = param.type
             val = args[i]
 
-            print(f"Max: {_max}, min: {_min}, value: {val}")
-
             # else check all values
             if _typ == protocol.Type.Float and type(val) is not float:
                 arguments_errors.append(f'argument {i} "{val}" type mismatch ! float is expected but "{_type_to_string(val)}" is provided')
