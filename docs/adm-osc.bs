@@ -659,6 +659,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mo>)</mo>
 </math><br>
 
+<!---
 <math>
 <mi>z</mi><mo>=</mo><mi>d</mi>
                 <mo></mo>
@@ -686,7 +687,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 ∙ asin (𝑧
 𝑑) (5)
 𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
-
+--->
 
 The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
 
