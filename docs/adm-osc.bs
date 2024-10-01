@@ -623,7 +623,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
         <mo>-</mo>
         <mi>e</mi>
         <mfrac>
-            <mi>2</mi<mi>π</mi>
+            <mi>2</mi><mi>π</mi>
             <mn>360</mn>
         </mfrac>
         <mo>)</mo>
