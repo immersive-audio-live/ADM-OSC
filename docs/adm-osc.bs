@@ -327,6 +327,15 @@ These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head t
     </tbody>
 </table>
 
+Queries and bi-directional communication
+----------------------------------------
+
+The [=OSC=] protocol is unidirectional, so the commands should be considered as **SET** from a sender to a receiver. A particular device might also be interested to **GET** the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.
+
+<div class="example">
+sending `/adm/obj/4/xyz` to a device should trigger a reply like `/adm/obj/4/xyz -0.9 0.15 0.0`
+</div>
+
 Implementation Matrix {#implementation}
 =======================================
 
@@ -347,9 +356,13 @@ Implementation Matrix {#implementation}
         <th style="writing-mode:vertical-lr;">/adm/obj/(k)/gain</th>
         <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dref</th>
         <th style="writing-mode:vertical-lr;">/adm/obj/(k)/dmax</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/mute</th>
+        <th style="writing-mode:vertical-lr;">/adm/obj/(k)/name</th>
     </tr>
     <tr>
         <td>SPAT Revolution (FLUX::SE)</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -377,6 +390,8 @@ Implementation Matrix {#implementation}
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Ovation (Merging Technologies)</td>
@@ -384,6 +399,8 @@ Implementation Matrix {#implementation}
         <td>rx</td>
         <td></td>
         <td>&#x2713;</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -407,9 +424,13 @@ Implementation Matrix {#implementation}
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>SpaceMap Go (Meyer Sound)</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -437,9 +458,13 @@ Implementation Matrix {#implementation}
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Space Controller (Sound Particles)</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -467,9 +492,13 @@ Implementation Matrix {#implementation}
         <td>&#x2713;</td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>Modulo Kinetic (Modulo Pi)</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -497,9 +526,13 @@ Implementation Matrix {#implementation}
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
         <td>FletcherMachine (Adamson)</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
