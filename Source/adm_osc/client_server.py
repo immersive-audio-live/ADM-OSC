@@ -306,7 +306,7 @@ class OscClientServer(SimpleUDPClient):
     #    \_/\_/ |_|\__,_|\__|_| |_|  \__, |\__,_|\___|_|   \__, |
     #                                   |_|                |___/
     def query_object_width(self, object_number: Union[int, float, str]):
-        self.query_object_value(object_number, stable_params.width)
+        self.query_object_value(object_number, stable_params.w)
 
     #               _
     #    __ _  __ _(_)_ __     __ _ _   _  ___ _ __ _   _

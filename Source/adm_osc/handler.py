@@ -110,10 +110,12 @@ def adm_handler(address, *args):
         raise ValueError(f'ERROR: unrecognized ADM address : "{address}" ! unknown target "/{target}/"')
 
     # 3
-    objects = extract_indexes(it[3])
-
+    objects = None
+    if target == 'obj':
+        objects = extract_indexes(it[3])
+        it.pop(3)
     # 4
-    command = it[4]
+    command = it[3]
     parameter = protocol.find_parameter(command)
     if parameter is None:
         raise ValueError(f'ERROR: unrecognized ADM address : "{address}" ! unknown command "/{command}/"')
