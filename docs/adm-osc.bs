@@ -637,7 +637,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mn>360</mn>
         </mfrac>
     <mo>)</mo>
-</math><br><br>
+</math><br>
 
 <math>
 <mi>y</mi>
@@ -665,7 +665,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mn>360</mn>
         </mfrac>
     <mo>)</mo>
-</math><br><br>
+</math><br>
 
 <math>
 <mi>z</mi>
@@ -701,19 +701,33 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 </math><br>
 
 <math>
-</math>
+<mi>e</mi><mo>=</mo>
+    <mfrac>
+        <mrow><mn>360</mn></mrow>
+        <mrow><mi>2</mi><mi>&#960;</mi></mrow>
+    </mfrac>
+    <mo>&sdot;</mo>
+    <mo>asin</mo><mo>(</mo>
+    <mfrac>
+        <mi>z</mi><mi>d</mi>
+    </mfrac><mo>)</mo>
+</math><br>
+
+<math>
+<mi>d</mi><mo>=</mo>
+    <msqrt>
+        <msup><mi>x</mi><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mi>y</mi><mn>2</mn></msup>
+        <mo>+</mo>
+        <msup><mi>z</mi><mn>2</mn></msup>
+    </msqrt>
+</math><br>
 <figcaption>polar to Cartesian converision</figcaption>
 </figure>
 
-𝑎 = −
-360
-2𝜋
-∙ atan2(𝑥, 𝑦) (4)
-𝑒 =
-360
-2𝜋
-∙ asin (𝑧
-𝑑) (5)
+
+
 𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
 --->
 
