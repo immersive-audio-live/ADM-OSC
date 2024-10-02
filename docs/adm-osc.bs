@@ -38,6 +38,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Merging Technologies](https://www.merging.com/)
 * [Meyer Sound](https://meyersound.com/)
 * [Naostage](https://www.naostage.com/)
+* [QLab](https://qlab.app/)
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
 
