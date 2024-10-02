@@ -22,22 +22,22 @@ Introduction {#intro}
 
 ADM-OSC has been designed to solve real problems for live and broadcast sound producers. Since 2019, a growing workgroup of industry stakeholders from live music and broadcast domains has gathered to exchange needs and experiences from real-life production cases. These companies have already expressed interest or have implemented ADM-OSC:
 
-* Atlas
+* [Atlas](https://www.atlas-control.app/)
 * [Adamson](http://www.adamsonsystems.com/)
-* Amadeus Acoustics GmbH
+* [Amadeus Acoustics GmbH](https://amadeus-acoustics.com/)
 * <a href="https://www.bbc.com/">BBC</a>
 * [d&amp;b audiotechnik](https://www.dbaudio.com/)
 * [DiGiCo](https://digico.biz/)
 * [Dolby](https://www.dolby.com)
 * [FLUX::SE](https://www.flux.audio/)
-* FollowMe
-* Grapes3D
+* [FollowMe](https://follow-me.nu/)
+* [Grapes3D](https://www.grapes3d.com/)
 * [Holophonix](https://holophonix.xyz/)
 * [L-Acoustics](https://www.l-acoustics.com/)
 * [Lawo](https://lawo.com/)
 * [Merging Technologies](https://www.merging.com/)
 * [Meyer Sound](https://meyersound.com/)
-* Naostage
+* [Naostage](https://www.naostage.com/)
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
 
