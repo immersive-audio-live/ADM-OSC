@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="38d6316b09582a8852c73ae50a9c06cabe381430" name="document-revision">
+  <meta content="74d3e0f342b33c6b8712e85858e1b326b3a761f2" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2902,7 +2902,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <figcaption>polar to Cartesian converision</figcaption>
    </figure>
    <p>To help conversions seamlessly, here are code examples on GitHub in SWIFT <a data-link-type="biblio" href="#biblio-convert-swift" title="SWIFT polar<>cartesian code examples">[convert-swift]</a>, in
-CPP [14] or JavaScript [15].</p>
+CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cartesian code example">[convert-cpp]</a> or JavaScript [convert-js].</p>
    <p>For full <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> compatibility, there is another recommended conversion approach in section 10.1 of: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
@@ -3067,6 +3067,11 @@ CPP [14] or JavaScript [15].</p>
     </msub>
    </math>
     world 
+   <div class="issue no-marker" id="issue-d41d8cd9②">
+    <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/12">Issue #12 on GitHub: “Distance”</a>
+    <p dir="auto">Different rendering systems handle distance differently. ADM uses a "dimensionless" reference volume, the interior of a cube or sphere. There are also physics-based renderers (eg Game engines) that try to acoustically represent distance based on a simulation of distance in meters, for example.</p>
+    <p dir="auto">The proposal is to define both reference distance (dRef) and a maximum distance (dMax) messages in ADM-OSC so to communicate the intended rendering approach.  The default (and current behaviour of the ADM standard) would be dRef = dMax = 1m.  If dRef &lt; dMax, then distance based tranforms (such as gain changes) could be applied when an object's distance is > dRef.  Inside of dRef, no transforms would be applied.</p>
+   </div>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
@@ -3156,8 +3161,8 @@ CPP [14] or JavaScript [15].</p>
    <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
    <h3 class="heading settled" data-level="6.2" id="relationship-to-adm"><span class="secno">6.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
    <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑧">ADM</a> tag should not be in the <code>/adm</code> namespace.</p>
-   <div class="issue no-marker" id="issue-d41d8cd9②">
-    <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
+   <div class="issue no-marker" id="issue-d41d8cd9③">
+    <a class="self-link" href="#issue-d41d8cd9③"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
     <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
 <pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
@@ -3202,6 +3207,8 @@ specification has been published in 2002 [8].</p>
    <dd><a href="https://forum.ircam.fr/projects/detail/admix/"><cite>Admix Player</cite></a>. 2019. URL: <a href="https://forum.ircam.fr/projects/detail/admix/">https://forum.ircam.fr/projects/detail/admix/</a>
    <dt id="biblio-atmos-profile">[Atmos-Profile]
    <dd><a href="https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"><cite>Dolby Atmos ADM Profile specification</cite></a>. 2022. URL: <a href="https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification">https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification</a>
+   <dt id="biblio-convert-cpp">[CONVERT-CPP]
+   <dd><a href="https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp"><cite>CPP polar&lt;>cartesian code example</cite></a>. URL: <a href="https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp">https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp</a>
    <dt id="biblio-convert-swift">[CONVERT-SWIFT]
    <dd><a href="https://github.com/Daniel-Higgott/ADMCoordinateConversion"><cite>SWIFT polar&lt;>cartesian code examples</cite></a>. URL: <a href="https://github.com/Daniel-Higgott/ADMCoordinateConversion">https://github.com/Daniel-Higgott/ADMCoordinateConversion</a>
    <dt id="biblio-ebu-bs-2076">[EBU-BS-2076]
@@ -3231,6 +3238,12 @@ specification has been published in 2002 [8].</p>
      <a class="issue-return" href="#issue-d41d8cd9①" title="Jump to section">↵</a>
    </div>
    <div class="issue no-marker">
+    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/12">Issue #12 on GitHub: “Distance”</a>
+    <p dir="auto">Different rendering systems handle distance differently. ADM uses a "dimensionless" reference volume, the interior of a cube or sphere. There are also physics-based renderers (eg Game engines) that try to acoustically represent distance based on a simulation of distance in meters, for example.</p>
+    <p dir="auto">The proposal is to define both reference distance (dRef) and a maximum distance (dMax) messages in ADM-OSC so to communicate the intended rendering approach.  The default (and current behaviour of the ADM standard) would be dRef = dMax = 1m.  If dRef &lt; dMax, then distance based tranforms (such as gain changes) could be applied when an object's distance is > dRef.  Inside of dRef, no transforms would be applied.</p>
+     <a class="issue-return" href="#issue-d41d8cd9②" title="Jump to section">↵</a>
+   </div>
+   <div class="issue no-marker">
     <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
     <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
     <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
@@ -3238,7 +3251,7 @@ specification has been published in 2002 [8].</p>
 </code></pre>
     </div>
     <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
-     <a class="issue-return" href="#issue-d41d8cd9②" title="Jump to section">↵</a>
+     <a class="issue-return" href="#issue-d41d8cd9③" title="Jump to section">↵</a>
    </div>
   </div>
 <script>/* Boilerplate: script-dfn-panel */
