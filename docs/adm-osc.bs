@@ -91,6 +91,7 @@ Currently supported in
 - Iosono (Barco)
 - FletcherMachine (Adamson)
 - En-Bridge (d&amp;b audiotechnik)
+- mc2 consoles (Lawo)
 
 Current spec (v1.0) {#v1.0}
 ================================
