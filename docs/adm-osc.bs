@@ -727,7 +727,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 </figure>
 
 To help conversions seamlessly, here are code examples on GitHub in SWIFT [[convert-swift]], in
-CPP [14] or JavaScript [15].
+CPP [[convert-cpp]] or JavaScript [convert-js].
 
 For full [=ADM=] compatibility, there is another recommended conversion approach in section 10.1 of: [[EBU-BS-2127]].
 
@@ -793,6 +793,8 @@ and the following cases arise:
 
 <math><msub><mi>d</mi><mi>ref</mi></msub><mo>=</mo><mn>1</mn></math> : the world is a dimensionless reference <math><msub><mi>d</mi><mi>max</mi></msub></math> volume, matching the ADM standard<br>
 <math><msub><mi>d</mi><mi>ref</mi></msub><mo>=</mo><mn>0</mn></math> : no reference volume within the physical <math><msub><mi>d</mi><mi>max</mi></msub></math> world
+
+Issue(immersive-audio-live/adm-osc#12):
 
 <!-- Big Text: Tools -->
 
@@ -958,9 +960,17 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
         "date" : "2022",
         "href" : "https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"
     },
+    "convert-cpp" : {
+        "title": "CPP polar<>cartesian code example",
+        "href" : "https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp"
+    },
     "convert-swift" : {
         "title" : "SWIFT polar<>cartesian code examples",
         "href" : "https://github.com/Daniel-Higgott/ADMCoordinateConversion"
+    },
+    "convert-js" : {
+        "title" : "Javascript polar<>cartesian code example",
+        "href" : "https://github.com/madees/ADM-OSC-Chataigne-Module"
     },
     "EBU-BS-2076": {
         "title" : "Audio Definition Model",
