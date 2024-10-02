@@ -610,7 +610,7 @@ Coordinates
 
 To convert the coordinate system, Euler trigonometry can be used to represent the polar sphere in cartesian coordinates. The equations are provided in ITU-R BS.2127 section 6.8 [[EBU-BS-2127]]
 
-
+<figure>
 <math>
 <mi>x</mi>
     <mo>=</mo>
@@ -637,7 +637,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mn>360</mn>
         </mfrac>
     <mo>)</mo>
-</math><br>
+</math><br><br>
 
 <math>
 <mi>y</mi>
@@ -665,7 +665,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
             <mn>360</mn>
         </mfrac>
     <mo>)</mo>
-</math><br>
+</math><br><br>
 
 <math>
 <mi>z</mi>
@@ -686,25 +686,24 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
         </mfrac>
     <mo>)</mo>
 </math><br>
+<figcaption>Cartesian to polar conversion</figcaption>
+</figure>
 
-
-<!---
+<figure>
 <math>
-<mi>z</mi><mo>=</mo><mi>d</mi>
-                <mo></mo>
-                <mi>cos</mi><mo>(</mo>
-            <mfrac>
-               <mi>π</mi>
-               <mn>2</mn>
-            </mfrac><
-            <mo>-</mo>
-            <mi>e</mi>
-            <mfrac>
-               <mi>2π</mi>
-               <mn>360</mn>
-            </mfrac>
-            <mo>)</mo>
+    <mi>a</mi><mo>=</mo>
+    <mfrac>
+        <mrow><mn>360</mn></mrow>
+        <mrow><mi>2</mi><mi>&#960;</mi></mrow>
+    </mfrac>
+    <mo>&sdot;</mo>
+    <mo>atan2</mo><mo>(</mo><mi>x</mi><ms>,</ms><mi>y</mi><mo>)</mo>
+</math><br>
+
+<math>
 </math>
+<figcaption>polar to Cartesian converision</figcaption>
+</figure>
 
 𝑎 = −
 360
@@ -718,7 +717,7 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
 --->
 
-The [=ADM=] relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: [[EBU-BS-2127]]. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.
+For full [=ADM=] compatibility, there is another recommended conversion approach in section 10.1 of: [[EBU-BS-2127]].
 
 Issue(immersive-audio-live/adm-osc#25):
 
