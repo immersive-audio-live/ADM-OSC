@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="e0f6ea7b72325fa4ed2efa29d6229eac016d5c0f" name="document-revision">
+  <meta content="334e33ae391341ff34190c5d77576bd68b316d4c" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2071,7 +2071,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-10-01">1 October 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-10-02">2 October 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2732,106 +2732,145 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </ul>
    <h4 class="heading settled" data-level="4.4.3" id="conversions"><span class="secno">4.4.3. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
    <p>To convert the coordinate system, Euler trigonometry can be used to represent the polar sphere in cartesian coordinates. The equations are provided in ITU-R BS.2127 section 6.8 <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a></p>
-   <math>
-    <mi>x</mi>
-    <mo>=</mo>
-    <mo>-</mo>
-    <mi>d</mi>
-    <mo></mo>
-    <mi>sin</mi>
-    <mo>(</mo>
-    <mfrac>
-     <mi>π</mi>
-     <mi>2</mi>
-    </mfrac>
-    <mo>-</mo>
-    <mi>e</mi>
-    <mo></mo>
-    <mfrac>
-     <mrow>
-      <mi>2</mi>
+   <figure>
+    <math>
+     <mi>x</mi>
+     <mo>=</mo>
+     <mo>-</mo>
+     <mi>d</mi>
+     <mo></mo>
+     <mi>sin</mi>
+     <mo>(</mo>
+     <mfrac>
       <mi>π</mi>
-     </mrow>
-     <mn>360</mn>
-    </mfrac>
-    <mo>)</mo>
-    <mo>⋅</mo>
-    <mo>sin</mo>
-    <mo>(</mo>
-    <mi>a</mi>
-    <mo></mo>
-    <mfrac>
-     <mrow>
       <mi>2</mi>
+     </mfrac>
+     <mo>-</mo>
+     <mi>e</mi>
+     <mo></mo>
+     <mfrac>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+      <mn>360</mn>
+     </mfrac>
+     <mo>)</mo>
+     <mo>⋅</mo>
+     <mo>sin</mo>
+     <mo>(</mo>
+     <mi>a</mi>
+     <mo></mo>
+     <mfrac>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+      <mn>360</mn>
+     </mfrac>
+     <mo>)</mo>
+    </math>
+    <br><br> 
+    <math>
+     <mi>y</mi>
+     <mo>=</mo>
+     <mi>d</mi>
+     <mo></mo>
+     <mi>sin</mi>
+     <mo>(</mo>
+     <mfrac>
       <mi>π</mi>
-     </mrow>
-     <mn>360</mn>
-    </mfrac>
-    <mo>)</mo>
-   </math>
-   <br> 
-   <math>
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>d</mi>
-    <mo></mo>
-    <mi>sin</mi>
-    <mo>(</mo>
-    <mfrac>
-     <mi>π</mi>
-     <mi>2</mi>
-    </mfrac>
-    <mo>-</mo>
-    <mi>e</mi>
-    <mo></mo>
-    <mfrac>
-     <mrow>
       <mi>2</mi>
+     </mfrac>
+     <mo>-</mo>
+     <mi>e</mi>
+     <mo></mo>
+     <mfrac>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+      <mn>360</mn>
+     </mfrac>
+     <mo>)</mo>
+     <mo>⋅</mo>
+     <mo>cos</mo>
+     <mo>(</mo>
+     <mi>a</mi>
+     <mo></mo>
+     <mfrac>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+      <mn>360</mn>
+     </mfrac>
+     <mo>)</mo>
+    </math>
+    <br><br> 
+    <math>
+     <mi>z</mi>
+     <mo>=</mo>
+     <mi>d</mi>
+     <mo></mo>
+     <mi>cos</mi>
+     <mo>(</mo>
+     <mfrac>
       <mi>π</mi>
-     </mrow>
-     <mn>360</mn>
-    </mfrac>
-    <mo>)</mo>
-    <mo>⋅</mo>
-    <mo>cos</mo>
-    <mo>(</mo>
-    <mi>a</mi>
-    <mo></mo>
-    <mfrac>
-     <mrow>
       <mi>2</mi>
-      <mi>π</mi>
-     </mrow>
-     <mn>360</mn>
-    </mfrac>
-    <mo>)</mo>
-   </math>
-   <br> 
-   <math>
-    <mi>z</mi>
-    <mo>=</mo>
-    <mi>d</mi>
-    <mo></mo>
-    <mi>cos</mi>
-    <mo>(</mo>
-    <mfrac>
-     <mi>π</mi>
-     <mi>2</mi>
-    </mfrac>
-    <mo>-</mo>
-    <mi>e</mi>
-    <mo></mo>
-    <mfrac>
-     <mrow>
-      <mi>2</mi>
-      <mi>π</mi>
-     </mrow>
-     <mn>360</mn>
-    </mfrac>
-    <mo>)</mo>
-   </math>
-   <br> 
-   <p>The <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> relationship between polar and Cartesian coordinates is specified in section 10.1 of this document: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. This has some limitations (see issue 25 below) and could be extended to include more AR, VR, and game engine use cases.</p>
+     </mfrac>
+     <mo>-</mo>
+     <mi>e</mi>
+     <mo></mo>
+     <mfrac>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+      <mn>360</mn>
+     </mfrac>
+     <mo>)</mo>
+    </math>
+    <br> 
+    <figcaption>Cartesian to polar conversion</figcaption>
+   </figure>
+   <figure>
+    <math>
+     <mi>a</mi>
+     <mo>=</mo>
+     <mfrac>
+      <mrow>
+       <mn>360</mn>
+      </mrow>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+     </mfrac>
+     <mo>⋅</mo>
+     <mo>atan2</mo>
+     <mo>(</mo>
+     <mi>x</mi>
+     <ms>,</ms>
+     <mi>y</mi>
+     <mo>)</mo>
+    </math>
+    <br> 
+    <math></math>
+    <figcaption>polar to Cartesian converision</figcaption>
+   </figure>
+   <p>𝑎 = −
+360
+2𝜋
+∙ atan2(𝑥, 𝑦) (4)
+𝑒 =
+360
+2𝜋
+∙ asin (𝑧
+𝑑) (5)
+𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
+---></p>
+   <p>For full <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> compatibility, there is another recommended conversion approach in section 10.1 of: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
