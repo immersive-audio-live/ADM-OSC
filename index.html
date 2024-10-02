@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="334e33ae391341ff34190c5d77576bd68b316d4c" name="document-revision">
+  <meta content="2c8dc0631fba1e1e7f66da3292017d44eb09df22" name="document-revision">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2770,7 +2770,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </mfrac>
      <mo>)</mo>
     </math>
-    <br><br> 
+    <br> 
     <math>
      <mi>y</mi>
      <mo>=</mo>
@@ -2807,7 +2807,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </mfrac>
      <mo>)</mo>
     </math>
-    <br><br> 
+    <br> 
     <math>
      <mi>z</mi>
      <mo>=</mo>
@@ -2856,19 +2856,52 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <mo>)</mo>
     </math>
     <br> 
-    <math></math>
+    <math>
+     <mi>e</mi>
+     <mo>=</mo>
+     <mfrac>
+      <mrow>
+       <mn>360</mn>
+      </mrow>
+      <mrow>
+       <mi>2</mi>
+       <mi>π</mi>
+      </mrow>
+     </mfrac>
+     <mo>⋅</mo>
+     <mo>asin</mo>
+     <mo>(</mo>
+     <mfrac>
+      <mi>z</mi>
+      <mi>d</mi>
+     </mfrac>
+     <mo>)</mo>
+    </math>
+    <br> 
+    <math>
+     <mi>d</mi>
+     <mo>=</mo>
+     <msqrt>
+      <msup>
+       <mi>x</mi>
+       <mn>2</mn>
+      </msup>
+      <mo>+</mo>
+      <msup>
+       <mi>y</mi>
+       <mn>2</mn>
+      </msup>
+      <mo>+</mo>
+      <msup>
+       <mi>z</mi>
+       <mn>2</mn>
+      </msup>
+     </msqrt>
+    </math>
+    <br> 
     <figcaption>polar to Cartesian converision</figcaption>
    </figure>
-   <p>𝑎 = −
-360
-2𝜋
-∙ atan2(𝑥, 𝑦) (4)
-𝑒 =
-360
-2𝜋
-∙ asin (𝑧
-𝑑) (5)
-𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
+   <p>𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
 ---></p>
    <p>For full <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> compatibility, there is another recommended conversion approach in section 10.1 of: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
