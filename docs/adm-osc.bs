@@ -726,10 +726,8 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 <figcaption>polar to Cartesian converision</figcaption>
 </figure>
 
-
-
-𝑑 = √𝑥2 + 𝑦2 + 𝑧² (6)
---->
+To help conversions seamlessly, here are code examples on GitHub in SWIFT [[convert-swift]], in
+CPP [14] or JavaScript [15].
 
 For full [=ADM=] compatibility, there is another recommended conversion approach in section 10.1 of: [[EBU-BS-2127]].
 
@@ -959,6 +957,10 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
         "title" : "Dolby Atmos ADM Profile specification",
         "date" : "2022",
         "href" : "https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"
+    },
+    "convert-swift" : {
+        "title" : "SWIFT polar<>cartesian code examples",
+        "href" : "https://github.com/Daniel-Higgott/ADMCoordinateConversion"
     },
     "EBU-BS-2076": {
         "title" : "Audio Definition Model",
