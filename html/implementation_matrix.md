@@ -46,8 +46,8 @@
         <td>/adm/obj/(k)/elev </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- spat -->
-        <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
@@ -66,16 +66,16 @@
         <td>/adm/obj/(k)/aed </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- spat -->
-        <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/x </td>
-        <td>&#x2713;</td> <!-- spa
-        <td>-</td> <!-- zactrack -->t -->
+        <td>-</td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
         <td>rx</td> <!-- meyer -->
@@ -137,6 +137,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td>
         <td>-</td>
+        <td>-</td>
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
@@ -144,6 +145,8 @@
     <tr>
         <td>/adm/obj/(k)/dmax</td>
         <td>-</td> <!-- zactrack -->
+        <td>-</td>
+        <td>-</td>
         <td>-</td>
         <td>-</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
@@ -164,8 +167,6 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td> <!-- spat -->
-        <td>-</td>
         <td>-</td>
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
@@ -175,6 +176,7 @@
         <td>/adm/obj/(k)/name</td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td>
+        <td>-</td>
         <td>-</td>
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
