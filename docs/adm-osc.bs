@@ -36,7 +36,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [L-Acoustics](https://www.l-acoustics.com/)
 * [Lawo](https://lawo.com/)
 * [Merging Technologies](https://www.merging.com/)
-* [Meyer Sound](https://meyersound.com/)
+* [Meyer Sound Laboratories](https://meyersound.com/)
 * [Naostage](https://www.naostage.com/)
 * [QLab](https://qlab.app/)
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
@@ -75,7 +75,7 @@ Project Originators
 Project Contributors
 --------------------
 
-[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
+[Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound Laboratories](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
 Currently supported in
 -----------------------
@@ -84,7 +84,7 @@ Currently supported in
 - L-ISA Controller (L-Acoustics)
 - Ovation (Merging Technologies)
 - Nuendo (Steinberg)
-- SpaceMap Go (Meyer Sound)
+- [SpaceMap Go](https://meyersound.com/product/spacemap-go/), (Meyer Sound Laboratories)
 - QLAB 5 (Figure 53)
 - Space Controller (Sound Particles)
 - Modulo Kinetic (Modulo Pi)
@@ -433,21 +433,21 @@ Implementation Matrix {#implementation}
         <td></td>
     </tr>
     <tr>
-        <td>SpaceMap Go (Meyer Sound)</td>
+        <td>[SpaceMap Go](https://meyersound.com/product/spacemap-go/), (Meyer Sound Labs)</td>
+        <td>rx</td>
+        <td></td>
+        <td>rx</td>
+        <td>rx</td>
+        <td>rx</td>
+        <td>rx</td>
+        <td>rx</td>
+        <td>rx</td>
+        <td>rx</td>
+        <td>rx</td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>rx</td>
+        <td>rx</td>
     </tr>
     <tr>
         <td>QLAB 5 (Figure 53)</td>
@@ -815,7 +815,7 @@ To retreive parameters or control ADM-OSC [=object-based audio=] software or har
 Tester Desktop application 
 -----------------------------------
 
-(Jose Gaudin / Meyer Sound)
+(Jose Gaudin / Meyer Sound Laboratories)
 
 [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
 
