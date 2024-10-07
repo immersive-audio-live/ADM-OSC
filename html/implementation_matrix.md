@@ -17,7 +17,9 @@
             Pyramix (Merging Technologies)
         </th>
         <th style="writing-mode:vertical-lr;">
-            Qlab (Figure 53)
+            <a href="https://qlab.app/">
+            QLab (Figure 53)
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
             Spat Revolution (Flux::)
@@ -29,8 +31,14 @@
             <a href="https://l-isa.l-acoustics.com/">mc<sup>2</sup> (Lawo)</a>
         </th>
         <th style="writing-mode:vertical-lr;">
+            En-Bridge (d&ampb Soundscape)
+        </th>
+        <th style="writing-mode:vertical-lr;">
             <a href="https://meyersound.com/product/spacemap-go/">
             SpaceMap Go (Meyer Sound Laboratories)</a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            Nuendo (Steinberg)
         </th>
         <th style="writing-mode:vertical-lr;">
             FletcherMachine (Adamson)
@@ -50,7 +58,9 @@
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -63,7 +73,9 @@
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -74,9 +86,11 @@
         <td>-</td> <!-- pyramix -->
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td><!-- l-isa -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>rx</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -89,7 +103,9 @@
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -100,9 +116,11 @@
         <td>-</td> <!-- pyramix -->
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td><!-- l-isa -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -113,9 +131,11 @@
         <td>-</td> <!-- pyramix -->
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td><!-- l-isa -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -126,9 +146,11 @@
         <td>-</td> <!-- pyramix -->
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -139,9 +161,11 @@
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
         <td>-</td> <!-- spat -->
+        <td>-</td> <!-- l-isa -->
         <td>-</td>
-        <td>-</td>
+        <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -152,9 +176,11 @@
         <td>tx</td> <!-- pyramix -->
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -165,9 +191,11 @@
         <td>tx</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -177,10 +205,12 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- l-isa -->
         <td>-</td>
         <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>-</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -190,10 +220,12 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- l-isa -->
         <td>-</td>
         <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>-</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -204,9 +236,11 @@
         <td>-</td> <!-- pyramix -->
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>-</td>
+        <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -217,9 +251,11 @@
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -229,10 +265,12 @@
         <td>-</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>-</td>
         <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -242,10 +280,12 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- l-isa -->
         <td>-</td>
         <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>&#x2713;</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -255,10 +295,12 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- l-isa -->
         <td>-</td>
         <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -268,10 +310,12 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- l-isa -->
         <td>-</td>
         <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
