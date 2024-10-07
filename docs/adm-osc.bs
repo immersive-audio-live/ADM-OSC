@@ -91,7 +91,7 @@ Currently supported in
 - Iosono (Barco)
 - FletcherMachine (Adamson)
 - En-Bridge (d&amp;b audiotechnik)
-- mc2 consoles (Lawo)
+- mc<sup>2</sup> consoles (Lawo)
 
 Current spec (v1.0) {#v1.0}
 ================================
@@ -342,6 +342,8 @@ sending `/adm/obj/4/xyz` to a device should trigger a reply like `/adm/obj/4/xyz
 Implementation Matrix {#implementation}
 =======================================
 
+[1.0 version in progress here](https://immersive-audio-live.github.io/ADM-OSC/html/implementation_matrix.html)
+
 <table>
     <tr>
         <th>&#x2713; = transmit and receive<br>
@@ -364,11 +366,11 @@ Implementation Matrix {#implementation}
     </tr>
     <tr>
         <td>SPAT Revolution (FLUX::SE)</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
         <td></td>
         <td></td>
         <td></td>
@@ -482,7 +484,7 @@ Implementation Matrix {#implementation}
         <td></td>
     </tr>
     <tr>
-        <td>Lawo</td>
+        <td>mc<sup>2</sup> (Lawo)</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
