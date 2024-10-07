@@ -13,6 +13,9 @@
          <th style="writing-mode:vertical-lr;">
             Ovation (Merging Technologies)
         </th>
+         <th style="writing-mode:vertical-lr;">
+            Pyramix (Merging Technologies)
+        </th>
         <th style="writing-mode:vertical-lr;">
             Spat Revolution (Flux::)
         </th>
@@ -39,6 +42,7 @@
         <td>/adm/obj/(k)/azim </td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
@@ -50,6 +54,7 @@
         <td>/adm/obj/(k)/elev </td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
@@ -61,6 +66,7 @@
         <td>/adm/obj/(k)/dist </td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -72,6 +78,7 @@
         <td>/adm/obj/(k)/aed </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
@@ -83,6 +90,7 @@
         <td>/adm/obj/(k)/x </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -94,6 +102,7 @@
         <td>/adm/obj/(k)/y </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -105,6 +114,7 @@
         <td>/adm/obj/(k)/z </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -116,6 +126,7 @@
         <td>/adm/obj/(k)/xy </td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- spat -->
         <td>-</td>
         <td>-</td>
@@ -127,6 +138,7 @@
         <td>/adm/obj/(k)/xyz </td>
         <td>tx</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>tx</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -138,6 +150,7 @@
         <td>/adm/obj/(k)/w </td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>tx</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -149,6 +162,7 @@
         <td>/adm/obj/(k)/dref</td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -160,6 +174,7 @@
         <td>/adm/obj/(k)/dmax</td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -171,6 +186,7 @@
         <td>/adm/obj/(k)/gain</td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>-</td>
@@ -182,6 +198,7 @@
         <td>/adm/obj/(k)/mute</td>
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>-</td>
@@ -193,6 +210,7 @@
         <td>/adm/obj/(k)/name</td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>tx</td> <!-- pyramix -->
         <td>&#x2713;</td>
         <td>-</td>
         <td>-</td>
@@ -204,6 +222,7 @@
         <td>/adm/env/change</td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>&#x2713;</td>
         <td>-</td>
         <td>-</td>
@@ -215,6 +234,7 @@
         <td>/adm/lis/xyz</td>
         <td>tx</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -223,9 +243,10 @@
         <td>-</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/lis/xyz/ypr</td>
+        <td>/adm/lis/ypr</td>
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
+        <td>-</td> <!-- pyramix -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
