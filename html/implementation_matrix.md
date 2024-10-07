@@ -10,11 +10,14 @@
         <th style="writing-mode:vertical-lr;">
             Zactrack
         </th>
-         <th style="writing-mode:vertical-lr;">
+        <th style="writing-mode:vertical-lr;">
             Ovation (Merging Technologies)
         </th>
-         <th style="writing-mode:vertical-lr;">
+        <th style="writing-mode:vertical-lr;">
             Pyramix (Merging Technologies)
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            Qlab (Figure 53)
         </th>
         <th style="writing-mode:vertical-lr;">
             Spat Revolution (Flux::)
@@ -43,6 +46,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
@@ -55,6 +59,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
@@ -67,6 +72,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -79,6 +85,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
         <td>&#x2713;</td> <!-- lawo -->
@@ -91,6 +98,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -103,6 +111,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -115,6 +124,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -127,10 +137,11 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>-</td> <!-- spat -->
         <td>-</td>
         <td>-</td>
-        <td>-</td> <!-- meyer -->
+        <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -139,6 +150,7 @@
         <td>tx</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -151,6 +163,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>&#x2713;</td>
@@ -163,10 +176,11 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>rx</td> <!-- meyer -->
+        <td>-</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -175,6 +189,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -187,6 +202,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>-</td>
@@ -199,6 +215,7 @@
         <td>-</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td>
         <td>-</td>
@@ -211,6 +228,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>&#x2713;</td>
         <td>-</td>
         <td>-</td>
@@ -223,10 +241,11 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>&#x2713;</td>
         <td>-</td>
         <td>-</td>
-        <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- adamson -->
         <td>-</td> <!-- new audio-->
     </tr>
@@ -235,6 +254,7 @@
         <td>tx</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
@@ -247,6 +267,7 @@
         <td>-</td> <!-- zactrack -->
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
+        <td>-</td> <!-- qlab -->
         <td>-</td>
         <td>-</td>
         <td>-</td>
