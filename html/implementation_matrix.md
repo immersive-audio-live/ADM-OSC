@@ -1,6 +1,6 @@
 # Implementation Matrix
 
-## v1.0
+## v1.0 - 8 October 2024
 
 <table>
     <tr>
@@ -101,7 +101,7 @@
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td><!-- l-isa -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- lawo -->
         <td>rx</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -131,7 +131,7 @@
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td><!-- l-isa -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
@@ -146,7 +146,7 @@
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td><!-- l-isa -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
@@ -161,7 +161,7 @@
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
@@ -176,7 +176,7 @@
         <td>-</td> <!-- qlab -->
         <td>-</td> <!-- spat -->
         <td>-</td> <!-- l-isa -->
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -191,7 +191,7 @@
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
@@ -206,7 +206,7 @@
         <td>-</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
-        <td>&#x2713;</td>
+        <td>&#x2713;</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
@@ -219,9 +219,9 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- spat -->
         <td>-</td> <!-- l-isa -->
-        <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>-</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -234,9 +234,9 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- spat -->
         <td>-</td> <!-- l-isa -->
-        <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>-</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -251,7 +251,7 @@
         <td>tx</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -266,7 +266,7 @@
         <td>-</td> <!-- qlab -->
         <td>&#x2713;</td> <!-- spat -->
         <td>&#x2713;</td> <!-- l-isa -->
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -279,9 +279,9 @@
         <td>-</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
-        <td>&#x2713;</td> <!-- l-isa -->
-        <td>-</td>
-        <td>-</td>
+        <td>&#x2713;</td> <!-- spat -->
+        <td>-</td> <!-- l-isa -->
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -294,9 +294,9 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
-        <td>&#x2713;</td> <!-- l-isa -->
-        <td>-</td>
-        <td>-</td>
+        <td>&#x2713;</td> <!-- spat -->
+        <td>-</td> <!-- l-isa -->
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>&#x2713;</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -309,9 +309,9 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- spat -->
         <td>-</td> <!-- l-isa -->
-        <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
@@ -324,9 +324,9 @@
         <td>-</td> <!-- ovation -->
         <td>-</td> <!-- pyramix -->
         <td>-</td> <!-- qlab -->
+        <td>-</td> <!-- spat -->
         <td>-</td> <!-- l-isa -->
-        <td>-</td>
-        <td>-</td>
+        <td>-</td> <!-- lawo -->
         <td>-</td> <!-- d&b -->
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
