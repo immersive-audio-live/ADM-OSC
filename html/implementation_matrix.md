@@ -8,13 +8,19 @@
             tx = transmit only<br>
             rx = receive only</th>
         <th style="writing-mode:vertical-lr;">
+            <a href="https://www.zactrack.com/">
             Zactrack
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
+            <a href="https://www.merging.com/products/ovation/">
             Ovation (Merging Technologies)
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
+            <a href="https://www.merging.com/products/pyramix">
             Pyramix (Merging Technologies)
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://qlab.app/">
@@ -22,7 +28,9 @@
             </a>
         </th>
         <th style="writing-mode:vertical-lr;">
+            <a href="https://www.flux.audio/project/spat-revolution/">
             Spat Revolution (Flux::)
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://l-isa.l-acoustics.com/">L-ISA Controller (L-Acoustics)</a>
@@ -31,17 +39,23 @@
             <a href="https://l-isa.l-acoustics.com/">mc<sup>2</sup> (Lawo)</a>
         </th>
         <th style="writing-mode:vertical-lr;">
-            En-Bridge (d&ampb Soundscape)
+            <a href="https://www.dbsoundscape.com/">
+            En-Bridge (d&amp;b Soundscape)
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://meyersound.com/product/spacemap-go/">
             SpaceMap Go (Meyer Sound Laboratories)</a>
         </th>
         <th style="writing-mode:vertical-lr;">
+            <a href="https://www.steinberg.net/nuendo/">
             Nuendo (Steinberg)
+            </as>
         </th>
         <th style="writing-mode:vertical-lr;">
+            <a href="https://adamson-fletcher-machine.com/">
             FletcherMachine (Adamson)
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://www.newaudiotechnology.com/">
