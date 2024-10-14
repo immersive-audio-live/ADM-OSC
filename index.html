@@ -1490,11 +1490,11 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="1ee2410800fdc3c0110f33f7dcde905a2206cf56" name="document-revision">
+  <meta content="2043b4202a9d7f1d9934429872c7a693742a32af" name="document-revision">
 <style>
-  .impl { border-collapse: collapse; }
-  .impl th, .impl td { padding: 5px; border: solid 1px #777; }
-  .impl th { background-color: lightblue; }
+  .impl {  border-collapse: collapse; }
+  .impl th, .impl td { border: solid 1px #777; }
+  .impl th { background-color: lightblue; writing-mode:vertical-lr; }
   .impl td { text-align: center; }
   .impl td:first-child { text-align: left; }
 </style>
@@ -2414,7 +2414,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>/adm/env/change day
    </table>
    <h3 class="heading settled" data-level="2.3" id="lis"><span class="secno">2.3. </span><span class="content">Listener messages</span><a class="self-link" href="#lis"></a></h3>
-   <p>These messages could be used by a binaural renderer <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a> for head tracking data and listener position in a <a data-link-type="dfn" href="#six-degrees-of-freedom" id="ref-for-six-degrees-of-freedom">6DOF</a>setting.</p>
+   <p>These messages could be used by a binaural renderer <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a> for head tracking data and listener position in a <a data-link-type="dfn" href="#six-degrees-of-freedom" id="ref-for-six-degrees-of-freedom">6DOF</a> setting.</p>
    <table class="def">
     <thead>
      <tr>
@@ -2450,30 +2450,29 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>The <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol is unidirectional, so the commands should be considered as <strong>SET</strong> from a sender to a receiver. A particular device might also be interested to <strong>GET</strong> the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.</p>
    <div class="example" id="example-06ad4b23"><a class="self-link" href="#example-06ad4b23"></a> sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <code>/adm/obj/4/xyz -0.9 0.15 0.0</code> </div>
    <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
-   <p><a href="https://immersive-audio-live.github.io/ADM-OSC/html/implementation_matrix.html">1.0 version in progress here</a></p>
    <div class="issue no-marker" id="issue-d41d8cd9">
     <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
     <p dir="auto">Table of implementations.</p>
     <p dir="auto">What do they support?<br> What they would like to support?</p>
    </div>
-   <table class="impl">
+   <table class="def impl">
     <tbody>
      <tr>
-      <th>✓ = transmit and receive<br> tx = transmit only<br> rx = receive only
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.zactrack.com/"> Zactrack </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.merging.com/products/ovation/"> (Merging Technologies)<br> Ovation </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.merging.com/products/pyramix"> (Merging Technologies)<br> Pyramix </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://qlab.app/"> QLab (Figure 53) </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.flux.audio/project/spat-revolution/"> Spat Revolution (Flux::) </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://l-isa.l-acoustics.com/"> (L-Acoustics)<br> L-ISA Controller </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://lawo.com//"> (Lawo)<br> mc<sup>2</sup> consoles</a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.dbsoundscape.com/"> En-Bridge (d&amp;b Soundscape) </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://meyersound.com/product/spacemap-go/"> (Meyer Sound Laboratories)<br> SpaceMap Go </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.steinberg.net/nuendo/"> Nuendo (Steinberg) </a>
-      <th style="writing-mode:vertical-lr;"> <a href="https://adamson-fletcher-machine.com/"> FletcherMachine (Adamson) </a> 
-      <th style="writing-mode:vertical-lr;"> <a href="https://www.newaudiotechnology.com/"> (New Audio Technology)<br> Spatial Audio Designer </a> 
+      <th style="writing-mode:horizontal-tb;">✓ = transmit and receive<br> tx = transmit only<br> rx = receive only
+      <th> <a href="https://www.zactrack.com/"> Zactrack </a> 
+      <th> <a href="https://www.merging.com/products/ovation/"> (Merging Technologies)<br> Ovation </a> 
+      <th> <a href="https://www.merging.com/products/pyramix"> (Merging Technologies)<br> Pyramix </a> 
+      <th> <a href="https://qlab.app/"> (Figure 53)<br> QLab </a> 
+      <th> <a href="https://www.flux.audio/project/spat-revolution/"> (Flux::)<br> Spat Revolution </a> 
+      <th> <a href="https://l-isa.l-acoustics.com/"> (L-Acoustics)<br> L-ISA Controller </a> 
+      <th> <a href="https://lawo.com//"> (Lawo)<br> mc<sup>2</sup> consoles</a> 
+      <th> <a href="https://www.dbsoundscape.com/"> (d&amp;b Soundscape)<br> En-Bridge </a> 
+      <th> <a href="https://meyersound.com/product/spacemap-go/"> (Meyer Sound Laboratories)<br> SpaceMap Go </a> 
+      <th> <a href="https://www.steinberg.net/nuendo/"> (Steinberg)<br> Nuendo </a>
+      <th> <a href="https://adamson-fletcher-machine.com/"> (Adamson)<br> FletcherMachine </a> 
+      <th> <a href="https://www.newaudiotechnology.com/"> (New Audio Technology)<br> Spatial Audio Designer </a> 
      <tr>
-      <td>/adm/obj/(k)/azim 
+      <td>/adm/obj/<var>n</var>/azim 
       <td>
       <td>
       <td>
@@ -2487,7 +2486,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/elev 
+      <td>/adm/obj/<var>n</var>/elev 
       <td>
       <td>
       <td>
@@ -2501,7 +2500,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/dist 
+      <td>/adm/obj/<var>n</var>/dist 
       <td>
       <td>
       <td>
@@ -2515,7 +2514,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/aed 
+      <td>/adm/obj/<var>n</var>/aed 
       <td>
       <td>✓
       <td>
@@ -2529,7 +2528,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/x 
+      <td>/adm/obj/<var>n</var>/x 
       <td>
       <td>✓
       <td>
@@ -2543,7 +2542,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/y 
+      <td>/adm/obj/<var>n</var>/y 
       <td>
       <td>✓
       <td>
@@ -2557,7 +2556,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/z 
+      <td>/adm/obj/<var>n</var>/z 
       <td>
       <td>✓
       <td>
@@ -2571,7 +2570,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/xy 
+      <td>/adm/obj/<var>n</var>/xy 
       <td>
       <td>
       <td>
@@ -2585,7 +2584,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/xyz 
+      <td>/adm/obj/<var>n</var>/xyz 
       <td>tx
       <td>✓
       <td>tx
@@ -2599,7 +2598,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/w 
+      <td>/adm/obj/<var>n</var>/w 
       <td>
       <td>✓
       <td>tx
@@ -2613,7 +2612,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/dref
+      <td>/adm/obj/<var>n</var>/dref
       <td>
       <td>
       <td>
@@ -2627,7 +2626,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>
      <tr>
-      <td>/adm/obj/(k)/dmax
+      <td>/adm/obj/<var>n</var>/dmax
       <td>
       <td>
       <td>
@@ -2638,10 +2637,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
-      <td>✓
+      <td>✓ *
       <td>
      <tr>
-      <td>/adm/obj/(k)/gain
+      <td>/adm/obj/<var>n</var>/gain
       <td>
       <td>✓
       <td>
@@ -2655,7 +2654,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/mute
+      <td>/adm/obj/<var>n</var>/mute
       <td>
       <td>✓
       <td>
@@ -2669,7 +2668,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
      <tr>
-      <td>/adm/obj/(k)/name
+      <td>/adm/obj/<var>n</var>/name
       <td>
       <td>
       <td>tx
@@ -2725,6 +2724,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>✓
    </table>
+   <p class="note" role="note"><span class="marker">Note:</span> * FletcherMachine supports <i>dmax</i> as a global message only: <i>/adm/obj/*/dmax</i></p>
    <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">Basic ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
    <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
