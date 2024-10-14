@@ -1,6 +1,6 @@
 # Implementation Matrix
 
-## v1.0 - 8 October 2024
+## v1.0 - 14 October 2024
 
 <table>
     <tr>
@@ -45,7 +45,9 @@
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://meyersound.com/product/spacemap-go/">
-            SpaceMap Go (Meyer Sound Laboratories)</a>
+            (Meyer Sound Laboratories)<br>
+            SpaceMap Go
+            </a>
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://www.steinberg.net/nuendo/">
@@ -59,7 +61,8 @@
         </th>
         <th style="writing-mode:vertical-lr;">
             <a href="https://www.newaudiotechnology.com/">
-            Spatial Audio Designer (New Audio Technology)
+            (New Audio Technology)<br>
+            Spatial Audio Designer
             </a>
         </th>
     </tr>
@@ -76,7 +79,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/elev </td>
@@ -91,7 +94,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/dist </td>
@@ -106,7 +109,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/aed </td>
@@ -121,7 +124,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/x </td>
@@ -136,7 +139,7 @@
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/y </td>
@@ -151,7 +154,7 @@
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/z </td>
@@ -166,7 +169,7 @@
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/xy </td>
@@ -181,7 +184,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/xyz </td>
@@ -196,7 +199,7 @@
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/w </td>
@@ -211,7 +214,7 @@
         <td>rx</td> <!-- meyer -->
         <td>&#x2713;</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/dref</td>
@@ -256,7 +259,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/mute</td>
@@ -271,7 +274,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/obj/(k)/name</td>
@@ -286,7 +289,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/env/change</td>
@@ -316,7 +319,7 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
         <td>/adm/lis/ypr</td>
@@ -331,6 +334,6 @@
         <td>rx</td> <!-- meyer -->
         <td>-</td> <!-- nuendo -->
         <td>&#x2713;</td> <!-- adamson -->
-        <td>-</td> <!-- new audio-->
+        <td>&#x2713;</td> <!-- new audio-->
     </tr>
 </table>
