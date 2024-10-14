@@ -1490,7 +1490,14 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="7df83187d83fc4e8c00474c0375a62de82f1e6fd" name="document-revision">
+  <meta content="1ee2410800fdc3c0110f33f7dcde905a2206cf56" name="document-revision">
+<style>
+  .impl { border-collapse: collapse; }
+  .impl th, .impl td { padding: 5px; border: solid 1px #777; }
+  .impl th { background-color: lightblue; }
+  .impl td { text-align: center; }
+  .impl td:first-child { text-align: left; }
+</style>
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
     color: var(--a-normal-text);
@@ -2071,7 +2078,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 150px"> <img alt="ADM-OSC" height="122" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"> </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-10-07">7 October 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-10-14">14 October 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2107,7 +2114,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#goals"><span class="secno">1.3</span> <span class="content">Motivation &amp; goals</span></a>
       <li><a href="#project-originators"><span class="secno">1.4</span> <span class="content">Project Originators</span></a>
       <li><a href="#project-contributors"><span class="secno">1.5</span> <span class="content">Project Contributors</span></a>
-      <li><a href="#currently-supported-in"><span class="secno">1.6</span> <span class="content">Currently supported in</span></a>
      </ol>
     <li>
      <a href="#v1.0"><span class="secno">2</span> <span class="content">Current spec (v1.0)</span></a>
@@ -2202,6 +2208,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li data-md>
      <p><a href="https://www.naostage.com/">Naostage</a></p>
     <li data-md>
+     <p><a href="https://www.newaudiotechnology.com/">New Audio Technology</a></p>
+    <li data-md>
      <p><a href="https://qlab.app/">QLab</a></p>
     <li data-md>
      <p><a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a></p>
@@ -2244,33 +2252,6 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p><a href="https://www.l-acoustics.com/">L-Acoustics</a>, <a href="https://www.flux.audio/">FLUX::SE</a>, <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a></p>
    <h3 class="heading settled" data-level="1.5" id="project-contributors"><span class="secno">1.5. </span><span class="content">Project Contributors</span><a class="self-link" href="#project-contributors"></a></h3>
    <p><a href="http://www.adamsonsystems.com/">Adamson</a>, <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>, <a href="https://digico.biz/">DiGiCo</a>, <a href="https://www.dolby.com">Dolby</a>, <a href="https://lawo.com/">Lawo</a>, <a href="https://www.magix.com/">Magix</a>, <a href="https://www.merging.com/">Merging Technologies</a>, <a href="https://meyersound.com/">Meyer Sound Laboratories</a>, <a href="https://www.steinberg.net/">Steinberg</a></p>
-   <h3 class="heading settled" data-level="1.6" id="currently-supported-in"><span class="secno">1.6. </span><span class="content">Currently supported in</span><a class="self-link" href="#currently-supported-in"></a></h3>
-   <ul>
-    <li data-md>
-     <p>SPAT Revolution (FLUX::SE)</p>
-    <li data-md>
-     <p>L-ISA Controller (L-Acoustics)</p>
-    <li data-md>
-     <p>Ovation (Merging Technologies)</p>
-    <li data-md>
-     <p>Nuendo (Steinberg)</p>
-    <li data-md>
-     <p><a href="https://meyersound.com/product/spacemap-go/">SpaceMap Go</a>, (Meyer Sound Laboratories)</p>
-    <li data-md>
-     <p>QLAB 5 (Figure 53)</p>
-    <li data-md>
-     <p>Space Controller (Sound Particles)</p>
-    <li data-md>
-     <p>Modulo Kinetic (Modulo Pi)</p>
-    <li data-md>
-     <p>Iosono (Barco)</p>
-    <li data-md>
-     <p>FletcherMachine (Adamson)</p>
-    <li data-md>
-     <p>En-Bridge (d&amp;b audiotechnik)</p>
-    <li data-md>
-     <p>mc<sup>2</sup> consoles (Lawo)</p>
-   </ul>
    <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Current spec (v1.0)</span><a class="self-link" href="#v1.0"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="obj"><span class="secno">2.1. </span><span class="content">Object position messages</span><a class="self-link" href="#obj"></a></h3>
    <p class="note" role="note"><span class="marker">Note:</span> These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> signifies object number</p>
@@ -2292,7 +2273,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>degrees
       <td>-180.0
       <td>180.0
-      <td>-
+      <td>
       <td><b>azimuth</b> “theta - θ” of sound location<br><a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/azim -22.5
      <tr>
@@ -2301,7 +2282,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>degrees
       <td>-90.0
       <td>90.0
-      <td>-
+      <td>
       <td><b>elevation</b> “phi - ɸ” of sound location<br><a href="#polar">§ 4.4.1 Polar</a>
       <td>/adm/obj/4/elev 12.7
      <tr>
@@ -2475,6 +2456,275 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <p dir="auto">Table of implementations.</p>
     <p dir="auto">What do they support?<br> What they would like to support?</p>
    </div>
+   <table class="impl">
+    <tbody>
+     <tr>
+      <th>✓ = transmit and receive<br> tx = transmit only<br> rx = receive only
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.zactrack.com/"> Zactrack </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.merging.com/products/ovation/"> (Merging Technologies)<br> Ovation </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.merging.com/products/pyramix"> (Merging Technologies)<br> Pyramix </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://qlab.app/"> QLab (Figure 53) </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.flux.audio/project/spat-revolution/"> Spat Revolution (Flux::) </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://l-isa.l-acoustics.com/"> (L-Acoustics)<br> L-ISA Controller </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://lawo.com//"> (Lawo)<br> mc<sup>2</sup> consoles</a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.dbsoundscape.com/"> En-Bridge (d&amp;b Soundscape) </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://meyersound.com/product/spacemap-go/"> (Meyer Sound Laboratories)<br> SpaceMap Go </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.steinberg.net/nuendo/"> Nuendo (Steinberg) </a>
+      <th style="writing-mode:vertical-lr;"> <a href="https://adamson-fletcher-machine.com/"> FletcherMachine (Adamson) </a> 
+      <th style="writing-mode:vertical-lr;"> <a href="https://www.newaudiotechnology.com/"> (New Audio Technology)<br> Spatial Audio Designer </a> 
+     <tr>
+      <td>/adm/obj/(k)/azim 
+      <td>
+      <td>
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/elev 
+      <td>
+      <td>
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/dist 
+      <td>
+      <td>
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/aed 
+      <td>
+      <td>✓
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/x 
+      <td>
+      <td>✓
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>✓
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/y 
+      <td>
+      <td>✓
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>✓
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/z 
+      <td>
+      <td>✓
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>✓
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/xy 
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>✓
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/xyz 
+      <td>tx
+      <td>✓
+      <td>tx
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>rx
+      <td>✓
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/w 
+      <td>
+      <td>✓
+      <td>tx
+      <td>
+      <td>✓
+      <td>✓
+      <td>✓
+      <td>
+      <td>rx
+      <td>✓
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/dref
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>✓
+      <td>
+     <tr>
+      <td>/adm/obj/(k)/dmax
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>✓
+      <td>
+     <tr>
+      <td>/adm/obj/(k)/gain
+      <td>
+      <td>✓
+      <td>
+      <td>tx
+      <td>✓
+      <td>✓
+      <td>
+      <td>✓
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/mute
+      <td>
+      <td>✓
+      <td>
+      <td>
+      <td>✓
+      <td>✓
+      <td>
+      <td>
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/obj/(k)/name
+      <td>
+      <td>
+      <td>tx
+      <td>
+      <td>✓
+      <td>
+      <td>
+      <td>
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/env/change
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>✓
+      <td>
+      <td>
+      <td>
+      <td>✓
+      <td>
+      <td>✓
+      <td>
+     <tr>
+      <td>/adm/lis/xyz
+      <td>tx
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+     <tr>
+      <td>/adm/lis/ypr
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>
+      <td>rx
+      <td>
+      <td>✓
+      <td>✓
+   </table>
    <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">Basic ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
    <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
