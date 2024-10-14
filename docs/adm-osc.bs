@@ -275,7 +275,7 @@ These could be expanded to include program changes and other global data. They a
 Listener messages {#lis}
 ------------------------
 
-These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head tracking data and listener position in a [=6DOF=]setting.
+These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head tracking data and listener position in a [=6DOF=] setting.
 
 <table class="def">
     <thead>
@@ -339,7 +339,7 @@ Issue(immersive-audio-live/adm-osc#24):
 
 <table class="def impl">
     <tr>
-        <th style="writing-mode:horizontal-tb;"">&#x2713; = transmit and receive<br>
+        <th style="writing-mode:horizontal-tb;">&#x2713; = transmit and receive<br>
             tx = transmit only<br>
             rx = receive only</th>
         <th>
