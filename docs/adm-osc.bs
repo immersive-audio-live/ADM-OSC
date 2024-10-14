@@ -327,83 +327,86 @@ sending `/adm/obj/4/xyz` to a device should trigger a reply like `/adm/obj/4/xyz
 Implementation Matrix {#implementation}
 =======================================
 
-[1.0 version in progress here](https://immersive-audio-live.github.io/ADM-OSC/html/implementation_matrix.html)
-
 Issue(immersive-audio-live/adm-osc#24):
 
 <style>
-  .impl { border-collapse: collapse; }
-  .impl th, .impl td { padding: 5px; border: solid 1px #777; }
-  .impl th { background-color: lightblue; }
+  .impl {  border-collapse: collapse; }
+  .impl th, .impl td { border: solid 1px #777; }
+  .impl th { background-color: lightblue; writing-mode:vertical-lr; }
   .impl td { text-align: center; }
   .impl td:first-child { text-align: left; }
 </style>
 
-<table class="impl">
+<table class="def impl">
     <tr>
-        <th>&#x2713; = transmit and receive<br>
+        <th style="writing-mode:horizontal-tb;"">&#x2713; = transmit and receive<br>
             tx = transmit only<br>
             rx = receive only</th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.zactrack.com/">
             Zactrack
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.merging.com/products/ovation/">
             (Merging Technologies)<br>
             Ovation
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.merging.com/products/pyramix">
              (Merging Technologies)<br>
              Pyramix
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://qlab.app/">
-            QLab (Figure 53)
+            (Figure 53)<br>
+            QLab
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.flux.audio/project/spat-revolution/">
-            Spat Revolution (Flux::)
+            (Flux::)<br>
+            Spat Revolution
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://l-isa.l-acoustics.com/">
             (L-Acoustics)<br>
             L-ISA Controller
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://lawo.com//">
             (Lawo)<br>
             mc<sup>2</sup> consoles</a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.dbsoundscape.com/">
-            En-Bridge (d&amp;b Soundscape)
+            (d&amp;b Soundscape)<br>
+            En-Bridge
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://meyersound.com/product/spacemap-go/">
             (Meyer Sound Laboratories)<br>
             SpaceMap Go
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.steinberg.net/nuendo/">
-            Nuendo (Steinberg)
+            (Steinberg)<br>
+            Nuendo
             </as>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://adamson-fletcher-machine.com/">
-            FletcherMachine (Adamson)
+            (Adamson)<br>
+            FletcherMachine
             </a>
         </th>
-        <th style="writing-mode:vertical-lr;">
+        <th>
             <a href="https://www.newaudiotechnology.com/">
             (New Audio Technology)<br>
             Spatial Audio Designer
@@ -411,7 +414,7 @@ Issue(immersive-audio-live/adm-osc#24):
         </th>
     </tr>
     <tr>
-        <td>/adm/obj/(k)/azim </td>
+        <td>/adm/obj/<var>n</var>/azim </td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -426,7 +429,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/elev </td>
+        <td>/adm/obj/<var>n</var>/elev </td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -441,7 +444,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/dist </td>
+        <td>/adm/obj/<var>n</var>/dist </td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -456,7 +459,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/aed </td>
+        <td>/adm/obj/<var>n</var>/aed </td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -471,7 +474,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/x </td>
+        <td>/adm/obj/<var>n</var>/x </td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -486,7 +489,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/y </td>
+        <td>/adm/obj/<var>n</var>/y </td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -501,7 +504,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/z </td>
+        <td>/adm/obj/<var>n</var>/z </td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -516,7 +519,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/xy </td>
+        <td>/adm/obj/<var>n</var>/xy </td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -531,7 +534,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/xyz </td>
+        <td>/adm/obj/<var>n</var>/xyz </td>
         <td>tx</td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
@@ -546,7 +549,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/w </td>
+        <td>/adm/obj/<var>n</var>/w </td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
@@ -561,7 +564,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/dref</td>
+        <td>/adm/obj/<var>n</var>/dref</td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -576,7 +579,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/dmax</td>
+        <td>/adm/obj/<var>n</var>/dmax</td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -587,11 +590,11 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- d&b -->
         <td></td> <!-- meyer -->
         <td></td> <!-- nuendo -->
-        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713; *</td> <!-- adamson -->
         <td></td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/gain</td>
+        <td>/adm/obj/<var>n</var>/gain</td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -606,7 +609,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/mute</td>
+        <td>/adm/obj/<var>n</var>/mute</td>
         <td></td> <!-- zactrack -->
         <td>&#x2713;</td> <!-- ovation -->
         <td></td> <!-- pyramix -->
@@ -621,7 +624,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- new audio-->
     </tr>
     <tr>
-        <td>/adm/obj/(k)/name</td>
+        <td>/adm/obj/<var>n</var>/name</td>
         <td></td> <!-- zactrack -->
         <td></td> <!-- ovation -->
         <td>tx</td> <!-- pyramix -->
@@ -682,6 +685,7 @@ Issue(immersive-audio-live/adm-osc#24):
     </tr>
 </table>
 
+Note: * FletcherMachine supports <i>dmax</i> as a global message only: <i>/adm/obj/*/dmax</i>
 
 Basic ADM-OSC principals {#basics}
 ============================
