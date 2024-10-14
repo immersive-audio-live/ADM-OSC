@@ -38,6 +38,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Merging Technologies](https://www.merging.com/)
 * [Meyer Sound Laboratories](https://meyersound.com/)
 * [Naostage](https://www.naostage.com/)
+* [New Audio Technology](https://www.newaudiotechnology.com/)
 * [QLab](https://qlab.app/)
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
@@ -77,22 +78,6 @@ Project Contributors
 
 [Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound Laboratories](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
 
-Currently supported in
------------------------
-
-- SPAT Revolution (FLUX::SE)
-- L-ISA Controller (L-Acoustics)
-- Ovation (Merging Technologies)
-- Nuendo (Steinberg)
-- [SpaceMap Go](https://meyersound.com/product/spacemap-go/), (Meyer Sound Laboratories)
-- QLAB 5 (Figure 53)
-- Space Controller (Sound Particles)
-- Modulo Kinetic (Modulo Pi)
-- Iosono (Barco)
-- FletcherMachine (Adamson)
-- En-Bridge (d&amp;b audiotechnik)
-- mc<sup>2</sup> consoles (Lawo)
-
 Current spec (v1.0) {#v1.0}
 ================================
 
@@ -121,7 +106,7 @@ Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</va
             <td>degrees</td>
             <td>-180.0</td>
             <td>180.0</td>
-            <td>-</td>
+            <td></td>
             <td><b>azimuth</b> “theta - &#952;” of sound location<br>[[#polar]]</td>
             <td>/adm/obj/4/azim -22.5</td>
         </tr>
@@ -131,7 +116,7 @@ Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</va
             <td>degrees</td>
             <td>-90.0</td>
             <td>90.0</td>
-            <td>-</td>
+            <td></td>
             <td><b>elevation</b> “phi - &#632;” of sound location<br>[[#polar]]</td>
             <td>/adm/obj/4/elev 12.7</td>
         </tr>
@@ -345,6 +330,358 @@ Implementation Matrix {#implementation}
 [1.0 version in progress here](https://immersive-audio-live.github.io/ADM-OSC/html/implementation_matrix.html)
 
 Issue(immersive-audio-live/adm-osc#24):
+
+<style>
+  .impl { border-collapse: collapse; }
+  .impl th, .impl td { padding: 5px; border: solid 1px #777; }
+  .impl th { background-color: lightblue; }
+  .impl td { text-align: center; }
+  .impl td:first-child { text-align: left; }
+</style>
+
+<table class="impl">
+    <tr>
+        <th>&#x2713; = transmit and receive<br>
+            tx = transmit only<br>
+            rx = receive only</th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.zactrack.com/">
+            Zactrack
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.merging.com/products/ovation/">
+            (Merging Technologies)<br>
+            Ovation
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.merging.com/products/pyramix">
+             (Merging Technologies)<br>
+             Pyramix
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://qlab.app/">
+            QLab (Figure 53)
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.flux.audio/project/spat-revolution/">
+            Spat Revolution (Flux::)
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://l-isa.l-acoustics.com/">
+            (L-Acoustics)<br>
+            L-ISA Controller
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://lawo.com//">
+            (Lawo)<br>
+            mc<sup>2</sup> consoles</a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.dbsoundscape.com/">
+            En-Bridge (d&amp;b Soundscape)
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://meyersound.com/product/spacemap-go/">
+            (Meyer Sound Laboratories)<br>
+            SpaceMap Go
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.steinberg.net/nuendo/">
+            Nuendo (Steinberg)
+            </as>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://adamson-fletcher-machine.com/">
+            FletcherMachine (Adamson)
+            </a>
+        </th>
+        <th style="writing-mode:vertical-lr;">
+            <a href="https://www.newaudiotechnology.com/">
+            (New Audio Technology)<br>
+            Spatial Audio Designer
+            </a>
+        </th>
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/azim </td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/elev </td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/dist </td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td><!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/aed </td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>rx</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/x </td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td><!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>&#x2713;</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/y </td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td><!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>&#x2713;</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/z </td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>&#x2713;</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/xy </td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td></td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td>&#x2713;</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/xyz </td>
+        <td>tx</td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td>tx</td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td>&#x2713;</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/w </td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td>tx</td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td>&#x2713;</td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td>&#x2713;</td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/dref</td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td></td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td></td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td></td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/dmax</td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td></td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td></td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td></td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/gain</td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td>tx</td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td>&#x2713;</td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/mute</td>
+        <td></td> <!-- zactrack -->
+        <td>&#x2713;</td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713;</td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/obj/(k)/name</td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td>tx</td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/env/change</td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td>&#x2713;</td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td>&#x2713;</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td></td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/lis/xyz</td>
+        <td>tx</td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td></td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+    <tr>
+        <td>/adm/lis/ypr</td>
+        <td></td> <!-- zactrack -->
+        <td></td> <!-- ovation -->
+        <td></td> <!-- pyramix -->
+        <td></td> <!-- qlab -->
+        <td></td> <!-- spat -->
+        <td></td> <!-- l-isa -->
+        <td></td> <!-- lawo -->
+        <td></td> <!-- d&b -->
+        <td>rx</td> <!-- meyer -->
+        <td></td> <!-- nuendo -->
+        <td>&#x2713;</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- new audio-->
+    </tr>
+</table>
+
 
 Basic ADM-OSC principals {#basics}
 ============================
