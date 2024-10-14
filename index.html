@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 82ce88815, updated Thu Sep 7 16:33:55 2023 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="2043b4202a9d7f1d9934429872c7a693742a32af" name="document-revision">
+  <meta content="a72d8685487bbf379351052a3f951469d76f09a0" name="document-revision">
 <style>
   .impl {  border-collapse: collapse; }
   .impl th, .impl td { border: solid 1px #777; }
@@ -2298,7 +2298,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>/adm/obj/<i>n</i>/aed
       <td>f f f
       <td colspan="4">azimuth elevation distance
-      <td>for synchronicity and reduced network traffic
+      <td>synchronicity and reduced network traffic
       <td>/adm/obj/4/aed -22.5 12.7 0.9
      <tr>
       <td>/adm/obj/<i>n</i>/x
@@ -2328,10 +2328,16 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>top/bottom<br><a href="#cartesian">§ 4.4.2 Cartesian</a>
       <td>/adm/obj/4/z 0.7
      <tr>
+      <td>/adm/obj/<i>n</i>/xy
+      <td>f f
+      <td colspan="4">see above
+      <td>synchronicity and reduced network traffic
+      <td>/adm/obj/4/xy 0.62 -0.33
+     <tr>
       <td>/adm/obj/<i>n</i>/xyz
       <td>f f f
       <td colspan="4">see above
-      <td>for synchronicity and reduced network traffic
+      <td>synchronicity and reduced network traffic
       <td>/adm/obj/4/xyz -0.9 0.15 0.7
      <tr>
       <td>/adm/obj/<i>n</i>/w
@@ -2377,7 +2383,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>1
       <td>0
       <td>1 means “true”, so muted
-      <td>//adm/obj/2/mute 0
+      <td>/adm/obj/2/mute 0
      <tr>
       <td>/adm/obj/<var>n</var>/name
       <td>s
