@@ -37,6 +37,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Lawo](https://lawo.com/)
 * [Merging Technologies](https://www.merging.com/)
 * [Meyer Sound Laboratories](https://meyersound.com/)
+* [Modulo Pi](https://www.modulo-pi.com/)
 * [Naostage](https://www.naostage.com/)
 * [New Audio Technology](https://www.newaudiotechnology.com/)
 * [QLab](https://qlab.app/)
