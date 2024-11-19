@@ -203,24 +203,24 @@ Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</va
             <td>/adm/obj/3/gain 0.707</td>
         </tr>
         <tr>
-            <td>/adm/obj/<var>n</var>/dRef</td>
+            <td>/adm/obj/<var>n</var>/dref</td>
             <td>f</td>
             <td>normalized</td>
             <td>0.0</td>
             <td>1.0</td>
             <td>1.0</td>
             <td>Distance where dimensionless rendering is replaced with with physics-based rendering.<br>[[#distance]]</td>
-            <td>/adm/obj/1/dRef 0.2</td>
+            <td>/adm/obj/1/dref 0.2</td>
         </tr>
         <tr>
-            <td>/adm/obj/<var>n</var>/dMax</td>
+            <td>/adm/obj/<var>n</var>/dmax</td>
             <td>f</td>
             <td>meters</td>
             <td>0.</td>
             <td></td>
             <td></td>
-            <td>Distance signified by a normalized dRef value of 1<br>[[#distance]]</td>
-            <td>/adm/obj/1/dMax 21.3</td>
+            <td>Distance signified by a normalized dref value of 1<br>[[#distance]]</td>
+            <td>/adm/obj/1/dmax 21.3</td>
         </tr>
         <tr>
             <td>/adm/obj/<var>n</var>/mute </td>
@@ -375,8 +375,8 @@ Issue(immersive-audio-live/adm-osc#24):
         </th>
         <th>
             <a href="https://www.flux.audio/project/spat-revolution/">
-            (Flux::)<br>
-            Spat Revolution
+            (FLUX::)<br>
+            SPAT Revolution
             </a>
         </th>
         <th>
@@ -545,7 +545,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
         <td></td> <!-- qlab -->
-        <td></td> <!-- spat -->
+        <td>rx</td> <!-- spat -->
         <td></td> <!-- l-isa -->
         <td></td> <!-- lawo -->
         <td>&#x2713;</td> <!-- d&b -->
@@ -593,7 +593,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
         <td></td> <!-- qlab -->
-        <td></td> <!-- spat -->
+        <td>&#x2713;</td> <!-- spat -->
         <td></td> <!-- l-isa -->
         <td></td> <!-- lawo -->
         <td></td> <!-- d&b -->
@@ -609,7 +609,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
         <td></td> <!-- qlab -->
-        <td></td> <!-- spat -->
+        <td>&#x2713;</td> <!-- spat -->
         <td></td> <!-- l-isa -->
         <td></td> <!-- lawo -->
         <td></td> <!-- d&b -->
@@ -689,7 +689,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
         <td></td> <!-- qlab -->
-        <td></td> <!-- spat -->
+        <td>rx</td> <!-- spat -->
         <td></td> <!-- l-isa -->
         <td></td> <!-- lawo -->
         <td></td> <!-- d&b -->
@@ -705,7 +705,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
         <td></td> <!-- qlab -->
-        <td></td> <!-- spat -->
+        <td>rx</td> <!-- spat -->
         <td></td> <!-- l-isa -->
         <td></td> <!-- lawo -->
         <td></td> <!-- d&b -->
@@ -717,7 +717,7 @@ Issue(immersive-audio-live/adm-osc#24):
     </tr>
 </table>
 
-Note: * FletcherMachine supports *dmax* as a global message only: <i>/adm/obj/*/dmax</i>
+Note: * FletcherMachine and SPAT Revolution supports *dmax* as a global message only: <i>/adm/obj/*/dmax</i>
 
 Basic ADM-OSC principals {#basics}
 ============================
@@ -938,13 +938,13 @@ An object position in a physics-based world can be described as:
     <figcaption>physics-based spherical</figcaption>
 </figure>
 
-In ADM-OSC, **/dMax** corresponds to the `absoluteDistance` parameter in an ADM audioPackFormat element.
+In ADM-OSC, **/dmax** corresponds to the `absoluteDistance` parameter in an ADM audioPackFormat element.
 
-**/dRef** is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.
+**/dref** is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.
 
 <!----
 Fig. 3. (from Jot et. al.) [16] The volume of reference is defined by
-dm < dRef and shows an amplitude behavior (dB) independent from the distance.
+dm < dref and shows an amplitude behavior (dB) independent from the distance.
 ---->
 
 By definition: 
