@@ -609,13 +609,13 @@ Issue(immersive-audio-live/adm-osc#24):
         <td></td> <!-- ovation -->
         <td></td> <!-- pyramix -->
         <td></td> <!-- qlab -->
-        <td>&#x2713;</td> <!-- spat -->
+        <td>&#x2713; *</td> <!-- spat -->
         <td></td> <!-- l-isa -->
         <td></td> <!-- lawo -->
         <td></td> <!-- d&b -->
         <td></td> <!-- meyer -->
         <td></td> <!-- nuendo -->
-        <td>&#x2713; *</td> <!-- adamson -->
+        <td>&#x2713;</td> <!-- adamson -->
         <td></td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
     </tr>
