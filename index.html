@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 742f3d674, updated Mon Nov 4 14:56:54 2024 -0800" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="53105988245a70e2e446a2188077666c74eaab6c" name="revision">
+  <meta content="18e3fc5790d5077e10bf57fb0c2c449271291ed0" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2461,23 +2461,23 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>Apply a gain to the audio in the object.
       <td>/adm/obj/3/gain 0.707
      <tr>
-      <td>/adm/obj/<var>n</var>/dRef
+      <td>/adm/obj/<var>n</var>/dref
       <td>f
       <td>normalized
       <td>0.0
       <td>1.0
       <td>1.0
       <td>Distance where dimensionless rendering is replaced with with physics-based rendering.<br><a href="#distance">§ 4.4.4 Distance</a>
-      <td>/adm/obj/1/dRef 0.2
+      <td>/adm/obj/1/dref 0.2
      <tr>
-      <td>/adm/obj/<var>n</var>/dMax
+      <td>/adm/obj/<var>n</var>/dmax
       <td>f
       <td>meters
       <td>0.
       <td>
       <td>
-      <td>Distance signified by a normalized dRef value of 1<br><a href="#distance">§ 4.4.4 Distance</a>
-      <td>/adm/obj/1/dMax 21.3
+      <td>Distance signified by a normalized dref value of 1<br><a href="#distance">§ 4.4.4 Distance</a>
+      <td>/adm/obj/1/dmax 21.3
      <tr>
       <td>/adm/obj/<var>n</var>/mute 
       <td>i
@@ -2572,7 +2572,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <th> <a href="https://www.merging.com/products/ovation/"> (Merging Technologies)<br> Ovation </a> 
       <th> <a href="https://www.merging.com/products/pyramix"> (Merging Technologies)<br> Pyramix </a> 
       <th> <a href="https://qlab.app/"> (Figure 53)<br> QLab </a> 
-      <th> <a href="https://www.flux.audio/project/spat-revolution/"> (Flux::)<br> Spat Revolution </a> 
+      <th> <a href="https://www.flux.audio/project/spat-revolution/"> (FLUX::)<br> SPAT Revolution </a> 
       <th> <a href="https://l-isa.l-acoustics.com/"> (L-Acoustics)<br> L-ISA Controller </a> 
       <th> <a href="https://lawo.com//"> (Lawo)<br> mc<sup>2</sup> consoles</a> 
       <th> <a href="https://www.dbsoundscape.com/"> (d&amp;b Soundscape)<br> En-Bridge </a> 
@@ -2692,7 +2692,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
-      <td>
+      <td>rx
       <td>
       <td>
       <td>✓
@@ -2827,7 +2827,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
-      <td>
+      <td>rx
       <td>
       <td>
       <td>
@@ -2842,7 +2842,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>
       <td>
       <td>
-      <td>
+      <td>rx
       <td>
       <td>
       <td>
@@ -2852,7 +2852,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>✓
       <td>
    </table>
-   <p class="note" role="note"><span class="marker">Note:</span> * FletcherMachine supports <em>dmax</em> as a global message only: <i>/adm/obj/*/dmax</i></p>
+   <p class="note" role="note"><span class="marker">Note:</span> * FletcherMachine and SPAT Revolution supports <em>dmax</em> as a global message only: <i>/adm/obj/*/dmax</i></p>
    <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">Basic ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
    <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
@@ -3203,8 +3203,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
     <br> 
     <figcaption>physics-based spherical</figcaption>
    </figure>
-   <p>In ADM-OSC, <strong>/dMax</strong> corresponds to the <code>absoluteDistance</code> parameter in an ADM audioPackFormat element.</p>
-   <p><strong>/dRef</strong> is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.</p>
+   <p>In ADM-OSC, <strong>/dmax</strong> corresponds to the <code>absoluteDistance</code> parameter in an ADM audioPackFormat element.</p>
+   <p><strong>/dref</strong> is a new parameter can be defined as the radius in meters of a volume of reference, which would serve the two purposes. It coincides with the dimensionless volume used in the ADM standard and it is used by physically informed renderers as the “volume of reference” where the laws of physics do not apply, and the gain(dB) is constant regardless of distance.</p>
    <p>By definition:</p>
    <math>
     <mn>0</mn>
