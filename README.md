@@ -63,7 +63,7 @@ See Issues.
 
 ## Current development & tests tools
 
-* [**Specifications**](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx)
+* [**Specification v1.0 and implementation guide**](https://aes2.org/publications/elibrary-page/?id=22722)
 
 * [Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) (Mathieu Delquignies / d&b audiotechnik)
   * to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware with OSC protocol.
