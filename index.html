@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 742f3d674, updated Mon Nov 4 14:56:54 2024 -0800" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="ecc391bc73209a86f1fdd6446e3f9e12df1df295" name="revision">
+  <meta content="aa898e9e49909d36ef2e2ca62f3cb8e592b5338e" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2201,7 +2201,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>An industry initiative for standardization of <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio">Object-Based Audio</a> positioning data in live production ecosystems by implementing the <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model">Audio Definition Model</a> over <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control">Open Sound Control</a>.</p>
+   <p>An industry initiative for standardization of <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio">Object-Based Audio</a> positioning data in live production ecosystems by implementing the <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model">Audio Definition Model</a> over <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control">Open Sound Control</a>. See: <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a></p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -2321,6 +2321,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li data-md>
      <p><a href="https://timaxspatial.com/">TiMax Spatial</a></p>
    </ul>
+   <p>Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a>.</p>
    <h3 class="heading settled" data-level="1.1" id="why-adm"><span class="secno">1.1. </span><span class="content">Why ADM?</span><a class="self-link" href="#why-adm"></a></h3>
    <p>Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.</p>
    <h3 class="heading settled" data-level="1.2" id="why-osc"><span class="secno">1.2. </span><span class="content">Why OSC?</span><a class="self-link" href="#why-osc"></a></h3>
@@ -3392,7 +3393,7 @@ defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OSC" data-noexport id="open-sound-control">Open Sound Control</dfn></p>
    <p>OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music &amp; Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.</p>
    <p>There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
-specification has been published in 2002 [8].</p>
+specification has been published in 2002.</p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="renderer">Renderer</dfn></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="6DOF" data-noexport id="six-degrees-of-freedom">Six Degrees of Freedom</dfn></p>
    <p>Forward/backward, up/down, left/right translation, combined orientation (yaw, pitch, and roll).</p>
@@ -3413,6 +3414,8 @@ specification has been published in 2002 [8].</p>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-adm-osc-1">[ADM-OSC-1]
+   <dd>M. Delquignies, J. Gaudin, S. Thevenard, H. Larin, M. Zbyszynski, L. Zwicker. <a href="https://aes2.org/publications/elibrary-page/?id=22722"><cite>Implementation of ADM-OSC v1.0</cite></a>. 2024. URL: <a href="https://aes2.org/publications/elibrary-page/?id=22722">https://aes2.org/publications/elibrary-page/?id=22722</a>
    <dt id="biblio-admix">[ADMix]
    <dd><a href="https://forum.ircam.fr/projects/detail/admix/"><cite>Admix Player</cite></a>. 2019. URL: <a href="https://forum.ircam.fr/projects/detail/admix/">https://forum.ircam.fr/projects/detail/admix/</a>
    <dt id="biblio-atmos-profile">[Atmos-Profile]
