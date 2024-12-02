@@ -426,6 +426,11 @@ Issue(immersive-audio-live/adm-osc#24):
             Modulo Kinetic
             </a>
         </th>
+        <th>
+            <a href="https://timaxspatial.com/">
+            (TiMax Spatial)<br>
+            Timax panLab
+        </th>
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/azim </td>
@@ -442,6 +447,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/elev </td>
@@ -458,6 +464,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/dist </td>
@@ -474,6 +481,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/aed </td>
@@ -490,6 +498,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/x </td>
@@ -506,6 +515,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/y </td>
@@ -522,6 +532,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/z </td>
@@ -538,6 +549,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/xy </td>
@@ -554,6 +566,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/xyz </td>
@@ -570,6 +583,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/w </td>
@@ -586,6 +600,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/dref</td>
@@ -602,6 +617,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td></td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/dmax</td>
@@ -618,6 +634,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td></td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/gain</td>
@@ -634,6 +651,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td>&#x2713;</td> <!-- modulo kinetic-->
+        <td>rx</td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/mute</td>
@@ -650,6 +668,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/obj/<var>n</var>/name</td>
@@ -666,6 +685,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/env/change</td>
@@ -682,6 +702,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td></td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/lis/xyz</td>
@@ -698,6 +719,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
     <tr>
         <td>/adm/lis/ypr</td>
@@ -714,6 +736,7 @@ Issue(immersive-audio-live/adm-osc#24):
         <td>&#x2713;</td> <!-- adamson -->
         <td>&#x2713;</td> <!-- new audio-->
         <td></td> <!-- modulo kinetic-->
+        <td></td> <!-- timax -->
     </tr>
 </table>
 
