@@ -14,7 +14,7 @@ Editor: Mathieu Delquignies, d&amp;b audiotechnik https://www.dbaudio.com/, math
 Editor: Michael Zbyszyński, L-Acoustics https://l-isa.l-acoustics.com/, michael.zbyszynski@l-acoustics.com
 Inline Github Issues: true
 Markup Shorthands: markdown yes
-Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=].
+Abstract: An industry initiative for standardization of [=Object-Based Audio=] positioning data in live production ecosystems by implementing the [=Audio Definition Model=] over [=Open Sound Control=]. See: [[ADM-OSC-1]]
 </pre>
 
 Introduction {#intro}
@@ -44,6 +44,8 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
 * [TiMax Spatial](https://timaxspatial.com/)
+
+Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 [[ADM-OSC-1]].
 
 Why ADM?
 --------
@@ -1129,7 +1131,7 @@ Object-based representation encodes audio tracks along with positional and other
 OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music & Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.
 
 There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
-specification has been published in 2002 [8].
+specification has been published in 2002.
 
 <dfn>Renderer</dnf>
 
@@ -1146,6 +1148,13 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
         "publisher" : "IRCAM",
         "date" : "2019",
         "href" : "https://forum.ircam.fr/projects/detail/admix/"
+    },
+    "ADM-OSC-1": {
+        "authors": [ "M. Delquignies, J. Gaudin, S. Thevenard, H. Larin, M. Zbyszynski, L. Zwicker" ],
+        "title": "Implementation of ADM-OSC v1.0",
+        "date": "2024",
+        "publisher": "Journal of the Audio Engineering Society",
+        "href": "https://aes2.org/publications/elibrary-page/?id=22722"
     },
     "Atmos-Profile" : {
         "title" : "Dolby Atmos ADM Profile specification",
