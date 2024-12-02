@@ -895,9 +895,9 @@ To convert the coordinate system, Euler trigonometry can be used to represent th
 </figure>
 
 To help conversions seamlessly, here are code examples on GitHub in SWIFT [[convert-swift]], in
-CPP [[convert-cpp]] or JavaScript [convert-js].
+CPP [[convert-cpp]] or JavaScript [[convert-js]].
 
-For full [=ADM=] compatibility, there is another recommended conversion approach in section 10.1 of: [[EBU-BS-2127]].
+For full [=ADM=] compatibility, there is another recommended conversion approach in section 10.1 of: [[EBU-BS-2127]]. C++ code for that conversion can be found at [[EBU-convert-cpp]].
 
 Issue(immersive-audio-live/adm-osc#25):
 
@@ -1157,6 +1157,10 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
         "status": "Spec",
         "publisher": "EBU",
         "href": "https://tech.ebu.ch/publications/tech3396"
+    },
+    "EBU-convert-cpp": {
+        "title": "EBU conversion between polar and cartesian coordinates",
+        "href": "https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion"
     },
     "OpenSoundControl.org": {
         "title": "OpenSoundControl website",
