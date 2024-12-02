@@ -43,6 +43,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [QLab](https://qlab.app/)
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
+* [TiMax Spatial](https://timaxspatial.com/)
 
 Why ADM?
 --------
