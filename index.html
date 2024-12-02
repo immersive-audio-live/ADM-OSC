@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 742f3d674, updated Mon Nov 4 14:56:54 2024 -0800" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="18e3fc5790d5077e10bf57fb0c2c449271291ed0" name="revision">
+  <meta content="8bfcf787b78150a74a93e72c87aa8497afaa5a03" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2179,7 +2179,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 150px"> <img alt="ADM-OSC" height="122" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"> </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-11-26">26 November 2024</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2024-12-02">2 December 2024</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3090,8 +3090,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <figcaption>polar to Cartesian converision</figcaption>
    </figure>
    <p>To help conversions seamlessly, here are code examples on GitHub in SWIFT <a data-link-type="biblio" href="#biblio-convert-swift" title="SWIFT polar<>cartesian code examples">[convert-swift]</a>, in
-CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cartesian code example">[convert-cpp]</a> or JavaScript [convert-js].</p>
-   <p>For full <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> compatibility, there is another recommended conversion approach in section 10.1 of: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>.</p>
+CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cartesian code example">[convert-cpp]</a> or JavaScript <a data-link-type="biblio" href="#biblio-convert-js" title="Javascript polar<>cartesian code example">[convert-js]</a>.</p>
+   <p>For full <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑥">ADM</a> compatibility, there is another recommended conversion approach in section 10.1 of: <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a>. C++ code for that conversion can be found at <a data-link-type="biblio" href="#biblio-ebu-convert-cpp" title="EBU conversion between polar and cartesian coordinates">[EBU-convert-cpp]</a>.</p>
    <div class="issue no-marker" id="issue-d41d8cd9①">
     <a class="self-link" href="#issue-d41d8cd9①"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/25">Issue #25 on GitHub: “Polar to Cartesian and vice-versa conversion”</a>
     <p dir="auto">We probably cannot settle on an aligned approach on how to convert Polar to Cartesian systems and vice-versa. However can we at least propose something everybody can stand behind so that when someone uses ADM-OSC, the same results are achieved?</p>
@@ -3398,12 +3398,16 @@ specification has been published in 2002 [8].</p>
    <dd><a href="https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification"><cite>Dolby Atmos ADM Profile specification</cite></a>. 2022. URL: <a href="https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification">https://professionalsupport.dolby.com/s/article/Dolby-Atmos-ADM-Profile-specification</a>
    <dt id="biblio-convert-cpp">[CONVERT-CPP]
    <dd><a href="https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp"><cite>CPP polar&lt;>cartesian code example</cite></a>. URL: <a href="https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp">https://github.com/ChristianAhrens/RemoteProtocolBridgeCore/blob/master/Source/ProcessingEngine/ProtocolProcessor/OSCProtocolProcessor/ADMOSCProtocolProcessor.cpp</a>
+   <dt id="biblio-convert-js">[CONVERT-JS]
+   <dd><a href="https://github.com/madees/ADM-OSC-Chataigne-Module"><cite>Javascript polar&lt;>cartesian code example</cite></a>. URL: <a href="https://github.com/madees/ADM-OSC-Chataigne-Module">https://github.com/madees/ADM-OSC-Chataigne-Module</a>
    <dt id="biblio-convert-swift">[CONVERT-SWIFT]
    <dd><a href="https://github.com/Daniel-Higgott/ADMCoordinateConversion"><cite>SWIFT polar&lt;>cartesian code examples</cite></a>. URL: <a href="https://github.com/Daniel-Higgott/ADMCoordinateConversion">https://github.com/Daniel-Higgott/ADMCoordinateConversion</a>
    <dt id="biblio-ebu-bs-2076">[EBU-BS-2076]
    <dd><a href="https://www.itu.int/rec/R-REC-BS.2076"><cite>Audio Definition Model</cite></a>. Spec. URL: <a href="https://www.itu.int/rec/R-REC-BS.2076">https://www.itu.int/rec/R-REC-BS.2076</a>
    <dt id="biblio-ebu-bs-2127">[EBU-BS-2127]
    <dd><a href="https://www.itu.int/rec/R-REC-BS.2127"><cite>Audio Definition Model renderer for advanced sound systems</cite></a>. Spec. URL: <a href="https://www.itu.int/rec/R-REC-BS.2127">https://www.itu.int/rec/R-REC-BS.2127</a>
+   <dt id="biblio-ebu-convert-cpp">[EBU-convert-cpp]
+   <dd><a href="https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion"><cite>EBU conversion between polar and cartesian coordinates</cite></a>. URL: <a href="https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion">https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion</a>
    <dt id="biblio-ebu-tech-3396">[EBU-Tech-3396]
    <dd><a href="https://tech.ebu.ch/publications/tech3396"><cite>BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES</cite></a>. Spec. URL: <a href="https://tech.ebu.ch/publications/tech3396">https://tech.ebu.ch/publications/tech3396</a>
    <dt id="biblio-opensoundcontrolorg">[OpenSoundControl.org]
