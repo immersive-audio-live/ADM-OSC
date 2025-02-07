@@ -409,7 +409,7 @@ Issue(immersive-audio-live/adm-osc#24):
             <a href="https://www.steinberg.net/nuendo/">
             (Steinberg)<br>
             Nuendo
-            </as>
+            </a>
         </th>
         <th>
             <a href="https://adamson-fletcher-machine.com/">
