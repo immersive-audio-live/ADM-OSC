@@ -433,6 +433,7 @@ Issue(immersive-audio-live/adm-osc#24):
             <a href="https://timaxspatial.com/">
             (TiMax Spatial)<br>
             Timax panLab
+            </a>
         </th>
     </tr>
     <tr>
@@ -1133,7 +1134,7 @@ OpenSoundControl (OSC) is a data transport specification (an encoding) for realt
 There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
 specification has been published in 2002.
 
-<dfn>Renderer</dnf>
+<dfn>Renderer</dfn>
 
 <dfn local-lt="6DOF">Six Degrees of Freedom</dfn>
 
@@ -1186,7 +1187,7 @@ Forward/backward, up/down, left/right translation, combined orientation (yaw, pi
         "href" : "https://www.itu.int/rec/R-REC-BS.2127"
     },
     "EBU-Tech-3396": {
-	    "title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
+        "title": "BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES",
         "status": "Spec",
         "publisher": "EBU",
         "href": "https://tech.ebu.ch/publications/tech3396"
