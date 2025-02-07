@@ -10,7 +10,7 @@ An industry initiative to standardization of Object Based Audio (OBA) positionin
 
 ## Project Contributors
 
-Adamson, d&b Audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg
+Adamson, d&b audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg
 
 ## Context
 
@@ -158,4 +158,5 @@ See Issues.
 
 ## Currently supported in
 
-SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson), Fulcrum One (Fulcrum Acoustic)
+SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson), En-Bridge (d&b audiotechnik), Fulcrum One (Fulcrum Acoustic)
+
