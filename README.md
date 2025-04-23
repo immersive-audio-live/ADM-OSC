@@ -67,6 +67,8 @@ See Issues.
 
 * [Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) (Mathieu Delquignies / d&b audiotechnik)
   * to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware with OSC protocol.
+  * The same repositories also includes some 3D polar<>cartesian converter javascript functions, and
+  * An OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.
   
 * Tester **Desktop application** (Jose Gaudin / Meyer Sound)
   * [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
