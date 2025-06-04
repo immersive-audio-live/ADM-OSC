@@ -26,6 +26,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Adamson](http://www.adamsonsystems.com/)
 * [Amadeus Acoustics GmbH](https://amadeus-acoustics.com/)
 * <a href="https://www.bbc.com/">BBC</a>
+* [Audiofields](https://www.audiofields.de/)
 * [d&amp;b audiotechnik](https://www.dbaudio.com/)
 * [DiGiCo](https://digico.biz/)
 * [Dolby](https://www.dolby.com)
@@ -40,10 +41,12 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Modulo Pi](https://www.modulo-pi.com/)
 * [Naostage](https://www.naostage.com/)
 * [New Audio Technology](https://www.newaudiotechnology.com/)
+* [NEXO](https://www.nexo-sa.com/)
 * [QLab](https://qlab.app/)
 * [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 * [Steinberg](https://www.steinberg.net/)
 * [TiMax Spatial](https://timaxspatial.com/)
+* [Yamaha](https://www.yamaha.com/)
 
 Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 [[ADM-OSC-1]].
 
