@@ -32,6 +32,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Dolby](https://www.dolby.com)
 * [FLUX::SE](https://www.flux.audio/)
 * [FollowMe](https://follow-me.nu/)
+* [Fulcrum Acoustic](https://www.fulcrum-acoustic.com/)
 * [Grapes3D](https://www.grapes3d.com/)
 * [Holophonix](https://holophonix.xyz/)
 * [L-Acoustics](https://www.l-acoustics.com/)
