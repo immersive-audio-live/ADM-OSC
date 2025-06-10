@@ -25,7 +25,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Atlas](https://www.atlas-control.app/)
 * [Adamson](http://www.adamsonsystems.com/)
 * [Amadeus Acoustics GmbH](https://amadeus-acoustics.com/)
-* [Audiofields](https://www.audiofields.de/)
+* [Audiofields ARTIST](https://www.audiofields.de/)
 * <a href="https://www.bbc.com/">BBC</a>
 * [d&amp;b audiotechnik](https://www.dbaudio.com/)
 * [DiGiCo](https://digico.biz/)
