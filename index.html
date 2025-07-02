@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 9a7a6709a, updated Tue May 27 16:45:34 2025 -0700" name="generator">
+  <meta content="Bikeshed version 618007319, updated Thu Jun 26 17:23:55 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="9abcbd5e926483c3e07ccc0ea8fddaaecb212220" name="revision">
+  <meta content="3353d8c7aa07fc8ec5385a84f65032b953cbdf07" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2177,9 +2177,12 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 150px"> <img alt="ADM-OSC" height="122" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150"> </a></p>
+   <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 150px">
+    <img alt="ADM-OSC" height="122" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150">
+</a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard, <time class="dt-updated" datetime="2025-06-10">10 June 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
+    <time class="dt-updated" datetime="2025-07-02">2 July 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2318,6 +2321,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <p><a href="https://www.newaudiotechnology.com/">New Audio Technology</a></p>
     <li data-md>
      <p><a href="https://www.nexo-sa.com/">NEXO</a></p>
+    <li data-md>
+     <p><a href="https://prefrontalcortex.de/en/projects/dome-tools/">Prefrontal Cortex: Dome Tools</a></p>
     <li data-md>
      <p><a href="https://qlab.app/">QLab</a></p>
     <li data-md>
@@ -2568,31 +2573,104 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </table>
    <h3 class="heading settled" data-level="2.4" id="queries-and-bi-directional-communication"><span class="secno">2.4. </span><span class="content">Queries and bi-directional communication</span><a class="self-link" href="#queries-and-bi-directional-communication"></a></h3>
    <p>The <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol is unidirectional, so the commands should be considered as <strong>SET</strong> from a sender to a receiver. A particular device might also be interested to <strong>GET</strong> the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.</p>
-   <div class="example" id="example-06ad4b23"><a class="self-link" href="#example-06ad4b23"></a> sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <code>/adm/obj/4/xyz -0.9 0.15 0.0</code> </div>
+   <div class="example" id="example-06ad4b23"><a class="self-link" href="#example-06ad4b23"></a>
+sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <code>/adm/obj/4/xyz -0.9 0.15 0.0</code>
+</div>
    <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
    <div class="issue no-marker" id="issue-d41d8cd9">
     <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
     <p dir="auto">Table of implementations.</p>
-    <p dir="auto">What do they support?<br> What they would like to support?</p>
+    <p dir="auto">What do they support?<br>
+What they would like to support?</p>
    </div>
    <table class="def impl">
     <tbody>
      <tr>
-      <th style="writing-mode:horizontal-tb;">✓ = transmit and receive<br> tx = transmit only<br> rx = receive only
-      <th> <a href="https://www.zactrack.com/"> Zactrack </a> 
-      <th> <a href="https://www.merging.com/products/ovation/"> (Merging Technologies)<br> Ovation </a> 
-      <th> <a href="https://www.merging.com/products/pyramix"> (Merging Technologies)<br> Pyramix </a> 
-      <th> <a href="https://qlab.app/"> (Figure 53)<br> QLab </a> 
-      <th> <a href="https://www.flux.audio/project/spat-revolution/"> (FLUX::)<br> SPAT Revolution </a> 
-      <th> <a href="https://l-isa.l-acoustics.com/"> (L-Acoustics)<br> L-ISA Controller </a> 
-      <th> <a href="https://lawo.com//"> (Lawo)<br> mc<sup>2</sup> consoles</a> 
-      <th> <a href="https://www.dbsoundscape.com/"> (d&amp;b Soundscape)<br> En-Bridge </a> 
-      <th> <a href="https://meyersound.com/product/spacemap-go/"> (Meyer Sound Laboratories)<br> SpaceMap Go </a> 
-      <th> <a href="https://www.steinberg.net/nuendo/"> (Steinberg)<br> Nuendo </a> 
-      <th> <a href="https://adamson-fletcher-machine.com/"> (Adamson)<br> FletcherMachine </a> 
-      <th> <a href="https://www.newaudiotechnology.com/"> (New Audio Technology)<br> Spatial Audio Designer </a> 
-      <th> <a href="https://www.modulo-pi.com/"> (Modulo Pi)<br> Modulo Kinetic </a> 
-      <th> <a href="https://timaxspatial.com/"> (TiMax Spatial)<br> Timax panLab </a> 
+      <th style="writing-mode:horizontal-tb;">✓ = transmit and receive<br>
+            tx = transmit only<br>
+            rx = receive only
+      <th>
+            <a href="https://www.zactrack.com/">
+            Zactrack
+            </a>
+        
+      <th>
+            <a href="https://www.merging.com/products/ovation/">
+            (Merging Technologies)<br>
+            Ovation
+            </a>
+        
+      <th>
+            <a href="https://www.merging.com/products/pyramix">
+             (Merging Technologies)<br>
+             Pyramix
+            </a>
+        
+      <th>
+            <a href="https://qlab.app/">
+            (Figure 53)<br>
+            QLab
+            </a>
+        
+      <th>
+            <a href="https://www.flux.audio/project/spat-revolution/">
+            (FLUX::)<br>
+            SPAT Revolution
+            </a>
+        
+      <th>
+            <a href="https://l-isa.l-acoustics.com/">
+            (L-Acoustics)<br>
+            L-ISA Controller
+            </a>
+        
+      <th>
+            <a href="https://lawo.com//">
+            (Lawo)<br>
+            mc<sup>2</sup> consoles</a>
+        
+      <th>
+            <a href="https://www.dbsoundscape.com/">
+            (d&amp;b Soundscape)<br>
+            En-Bridge
+            </a>
+        
+      <th>
+            <a href="https://meyersound.com/product/spacemap-go/">
+            (Meyer Sound Laboratories)<br>
+            SpaceMap Go
+            </a>
+        
+      <th>
+            <a href="https://www.steinberg.net/nuendo/">
+            (Steinberg)<br>
+            Nuendo
+            </a>
+        
+      <th>
+            <a href="https://adamson-fletcher-machine.com/">
+            (Adamson)<br>
+            FletcherMachine
+            </a>
+        
+      <th>
+            <a href="https://www.newaudiotechnology.com/">
+            (New Audio Technology)<br>
+            Spatial Audio Designer
+            </a>
+        
+      <th>
+            <a href="https://www.modulo-pi.com/">
+            (Modulo Pi)<br>
+            Modulo Kinetic
+            </a>
+        
+      <th>
+            <a href="https://timaxspatial.com/">
+            (TiMax Spatial)<br>
+            Timax panLab
+            </a>
+        
      <tr>
       <td>/adm/obj/<var>n</var>/azim 
       <td>
@@ -2932,21 +3010,24 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <mo>=</mo>
       <mi>1.0</mi>
      </math>
-      is right 
+      is right
+
     <li data-md>
      <math>
       <mi>y</mi>
       <mo>=</mo>
       <mi>1.0</mi>
      </math>
-      is forward 
+      is forward
+
     <li data-md>
      <math>
       <mi>z</mi>
       <mo>=</mo>
       <mi>1.0</mi>
      </math>
-      is up 
+      is up
+
    </ul>
    <h4 class="heading settled" data-level="4.4.3" id="conversions"><span class="secno">4.4.3. </span><span class="content">Conversions</span><a class="self-link" href="#conversions"></a></h4>
    <p>To convert the coordinate system, Euler trigonometry can be used to represent the polar sphere in cartesian coordinates. The equations are provided in ITU-R BS.2127 section 6.8 <a data-link-type="biblio" href="#biblio-ebu-bs-2127" title="Audio Definition Model renderer for advanced sound systems">[EBU-BS-2127]</a></p>
@@ -2988,7 +3069,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </mfrac>
      <mo>)</mo>
     </math>
-    <br> 
+    <br>
+
+
     <math>
      <mi>y</mi>
      <mo>=</mo>
@@ -3025,7 +3108,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </mfrac>
      <mo>)</mo>
     </math>
-    <br> 
+    <br>
+
+
     <math>
      <mi>z</mi>
      <mo>=</mo>
@@ -3049,7 +3134,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </mfrac>
      <mo>)</mo>
     </math>
-    <br> 
+    <br>
+
     <figcaption>Cartesian to polar conversion</figcaption>
    </figure>
    <figure>
@@ -3073,7 +3159,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <mi>y</mi>
      <mo>)</mo>
     </math>
-    <br> 
+    <br>
+
+
     <math>
      <mi>e</mi>
      <mo>=</mo>
@@ -3095,7 +3183,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      </mfrac>
      <mo>)</mo>
     </math>
-    <br> 
+    <br>
+
+
     <math>
      <mi>d</mi>
      <mo>=</mo>
@@ -3116,7 +3206,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       </msup>
      </msqrt>
     </math>
-    <br> 
+    <br>
+
     <figcaption>polar to Cartesian converision</figcaption>
    </figure>
    <p>To help conversions seamlessly, here are code examples on GitHub in SWIFT <a data-link-type="biblio" href="#biblio-convert-swift" title="SWIFT polar<>cartesian code examples">[convert-swift]</a>, in
@@ -3136,7 +3227,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      <mo>≤</mo>
      <mn>1.0</mn>
     </math>
-    <br> 
+    <br>
+    
     <math>
      <mn>-1.0</mn>
      <mo>≤</mo>
@@ -3144,7 +3236,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      <mo>≤</mo>
      <mn>1.0</mn>
     </math>
-    <br> 
+    <br>
+    
     <math>
      <mn>-1.0</mn>
      <mo>≤</mo>
@@ -3162,7 +3255,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      <mo>≤</mo>
      <mn>1.0</mn>
     </math>
-    <br> 
+    <br>
+    
     <math>
      <mi>d</mi>
      <mo>=</mo>
@@ -3189,7 +3283,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      </msub>
      <mtext>(meters)</mtext>
     </math>
-    <br> 
+    <br>
+    
     <math>
      <msub>
       <mi>y</mi>
@@ -3201,7 +3296,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      <mi>xMax</mi>
      <mtext>(meters)</mtext>
     </math>
-    <br> 
+    <br>
+    
     <math>
      <msub>
       <mi>z</mi>
@@ -3230,7 +3326,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      </msub>
      <mtext>(meters)</mtext>
     </math>
-    <br> 
+    <br>
+    
     <figcaption>physics-based spherical</figcaption>
    </figure>
    <p>In ADM-OSC, <strong>/dmax</strong> corresponds to the <code>absoluteDistance</code> parameter in an ADM audioPackFormat element.</p>
@@ -3268,7 +3365,8 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      <mi>max</mi>
     </msub>
    </math>
-    volume, matching the ADM standard<br> 
+    volume, matching the ADM standard<br>
+
    <math>
     <msub>
      <mi>d</mi>
@@ -3284,7 +3382,9 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
      <mi>max</mi>
     </msub>
    </math>
-    world 
+    world
+
+
    <div class="issue no-marker" id="issue-d41d8cd9②">
     <a class="self-link" href="#issue-d41d8cd9②"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/12">Issue #12 on GitHub: “Distance”</a>
     <p dir="auto">Different rendering systems handle distance differently. ADM uses a "dimensionless" reference volume, the interior of a cube or sphere. There are also physics-based renderers (eg Game engines) that try to acoustically represent distance based on a simulation of distance in meters, for example.</p>
@@ -3454,7 +3554,8 @@ specification has been published in 2002.</p>
    <div class="issue no-marker">
     <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
     <p dir="auto">Table of implementations.</p>
-    <p dir="auto">What do they support?<br> What they would like to support?</p>
+    <p dir="auto">What do they support?<br>
+What they would like to support?</p>
      <a class="issue-return" href="#issue-d41d8cd9" title="Jump to section">↵</a>
    </div>
    <div class="issue no-marker">
