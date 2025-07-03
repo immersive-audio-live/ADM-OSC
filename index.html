@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 618007319, updated Thu Jun 26 17:23:55 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="3353d8c7aa07fc8ec5385a84f65032b953cbdf07" name="revision">
+  <meta content="2f4627d9ef0e11b1367c2cb42f5c137ab091aef1" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2182,7 +2182,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-07-02">2 July 2025</time></span></h2>
+    <time class="dt-updated" datetime="2025-07-03">3 July 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -3477,7 +3477,7 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
    </ul>
    <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
    <h3 class="heading settled" data-level="6.1" id="draft-05"><span class="secno">6.1. </span><span class="content">Draft 0.5</span><a class="self-link" href="#draft-05"></a></h3>
-   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate</p>
+   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem.</p>
    <h3 class="heading settled" data-level="6.2" id="relationship-to-adm"><span class="secno">6.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
    <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑧">ADM</a> tag should not be in the <code>/adm</code> namespace.</p>
    <div class="issue no-marker" id="issue-d41d8cd9③">
