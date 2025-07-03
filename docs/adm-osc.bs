@@ -1108,7 +1108,7 @@ Discussion {#discuss}
 Draft 0.5
 ----------
 
-A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP. Whereas loosing a few high-rate 
+A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem.
 
 Relationship to ADM
 --------------------
