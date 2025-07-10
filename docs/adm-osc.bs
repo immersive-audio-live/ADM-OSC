@@ -281,7 +281,7 @@ These could be expanded to include program changes and other global data. They a
             <td>string</td>
             <td>0</td>
             <td>128 char</td>
-            <td>128 char</td>
+            <td></td>
             <td>program changes</td>
             <td>/adm/env/change day</td>
         </tr>
@@ -336,14 +336,14 @@ Queries and bi-directional communication
 
 The [=OSC=] protocol is unidirectional, so the commands should be considered as **SET** from a sender to a receiver. A particular device might also be interested to **GET** the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.
 
+<object type="text/html" data="table.html"></object>
+
 <div class="example">
 sending `/adm/obj/4/xyz` to a device should trigger a reply like `/adm/obj/4/xyz -0.9 0.15 0.0`
 </div>
 
 Implementation Matrix {#implementation}
 =======================================
-
-Issue(immersive-audio-live/adm-osc#24):
 
 <style>
   .impl {  border-collapse: collapse; }
@@ -750,6 +750,12 @@ Issue(immersive-audio-live/adm-osc#24):
 </table>
 
 Note: * FletcherMachine and SPAT Revolution supports *dmax* as a global message only: <i>/adm/obj/*/dmax</i>
+
+Issue(immersive-audio-live/adm-osc#24):
+
+<pre class=include>
+path: table.html
+</pre>
 
 Basic ADM-OSC principals {#basics}
 ============================
