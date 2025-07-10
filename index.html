@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 618007319, updated Thu Jun 26 17:23:55 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="a8a2440be6fd71a2e274b5d9cedd4b2747134c07" name="revision">
+  <meta content="e55a8cd30961897ce8d2c587489b303098eb4541" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2534,7 +2534,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>string
       <td>0
       <td>128 char
-      <td>128 char
+      <td>
       <td>program changes
       <td>/adm/env/change day
    </table>
@@ -2573,16 +2573,11 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </table>
    <h3 class="heading settled" data-level="2.4" id="queries-and-bi-directional-communication"><span class="secno">2.4. </span><span class="content">Queries and bi-directional communication</span><a class="self-link" href="#queries-and-bi-directional-communication"></a></h3>
    <p>The <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol is unidirectional, so the commands should be considered as <strong>SET</strong> from a sender to a receiver. A particular device might also be interested to <strong>GET</strong> the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.</p>
+   <object data="table.html" type="text/html"></object>
    <div class="example" id="example-06ad4b23"><a class="self-link" href="#example-06ad4b23"></a>
 sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <code>/adm/obj/4/xyz -0.9 0.15 0.0</code>
 </div>
    <h2 class="heading settled" data-level="3" id="implementation"><span class="secno">3. </span><span class="content">Implementation Matrix</span><a class="self-link" href="#implementation"></a></h2>
-   <div class="issue no-marker" id="issue-d41d8cd9">
-    <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
-    <p dir="auto">Table of implementations.</p>
-    <p dir="auto">What do they support?<br>
-What they would like to support?</p>
-   </div>
    <table class="def impl">
     <tbody>
      <tr>
@@ -2961,6 +2956,15 @@ What they would like to support?</p>
       <td>
    </table>
    <p class="note" role="note"><span class="marker">Note:</span> * FletcherMachine and SPAT Revolution supports <em>dmax</em> as a global message only: <i>/adm/obj/*/dmax</i></p>
+   <div class="issue no-marker" id="issue-d41d8cd9">
+    <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
+    <p dir="auto">Table of implementations.</p>
+    <p dir="auto">What do they support?<br>
+What they would like to support?</p>
+   </div>
+   <p></p>
+   <h1>My First Heading</h1>
+   <p>My first paragraph.</p>
    <h2 class="heading settled" data-level="4" id="basics"><span class="secno">4. </span><span class="content">Basic ADM-OSC principals</span><a class="self-link" href="#basics"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="roles"><span class="secno">4.1. </span><span class="content">Roles</span><a class="self-link" href="#roles"></a></h3>
    <h4 class="heading settled" data-level="4.1.1" id="sender-client"><span class="secno">4.1.1. </span><span class="content">Sender (client)</span><a class="self-link" href="#sender-client"></a></h4>
