@@ -754,7 +754,7 @@ Note: * FletcherMachine and SPAT Revolution supports *dmax* as a global message 
 Issue(immersive-audio-live/adm-osc#24):
 
 <pre class=include>
-path: table.html
+path: html/data.html
 </pre>
 
 Basic ADM-OSC principals {#basics}
