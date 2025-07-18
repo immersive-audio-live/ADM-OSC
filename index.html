@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 618007319, updated Thu Jun 26 17:23:55 2025 -0700" name="generator">
+  <meta content="Bikeshed version 7a96e07ec, updated Mon Jul 14 11:12:36 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="a5f1ca3b09043afb17cd2e4e189a451159777469" name="revision">
+  <meta content="287a41bd7cd89905e67095f28e3ab27ee6dccfeb" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2182,7 +2182,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-07-10">10 July 2025</time></span></h2>
+    <time class="dt-updated" datetime="2025-07-18">18 July 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2213,11 +2213,11 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
-      <li><a href="#why-adm"><span class="secno">1.1</span> <span class="content">Why ADM?</span></a>
-      <li><a href="#why-osc"><span class="secno">1.2</span> <span class="content">Why OSC?</span></a>
+      <li><a href="#why_adm"><span class="secno">1.1</span> <span class="content">Why ADM?</span></a>
+      <li><a href="#why-osc-why_osc"><span class="secno">1.2</span> <span class="content">Why OSC? {#why_osc</span></a>
       <li><a href="#goals"><span class="secno">1.3</span> <span class="content">Motivation &amp; goals</span></a>
-      <li><a href="#project-originators"><span class="secno">1.4</span> <span class="content">Project Originators</span></a>
-      <li><a href="#project-contributors"><span class="secno">1.5</span> <span class="content">Project Contributors</span></a>
+      <li><a href="#originators"><span class="secno">1.4</span> <span class="content">Project Originators</span></a>
+      <li><a href="#contributors"><span class="secno">1.5</span> <span class="content">Project Contributors</span></a>
      </ol>
     <li>
      <a href="#v1.0"><span class="secno">2</span> <span class="content">Current spec (v1.0)</span></a>
@@ -2225,7 +2225,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#obj"><span class="secno">2.1</span> <span class="content">Object position messages</span></a>
       <li><a href="#env"><span class="secno">2.2</span> <span class="content">Environment messages</span></a>
       <li><a href="#lis"><span class="secno">2.3</span> <span class="content">Listener messages</span></a>
-      <li><a href="#queries-and-bi-directional-communication"><span class="secno">2.4</span> <span class="content">Queries and bi-directional communication</span></a>
+      <li><a href="#queries"><span class="secno">2.4</span> <span class="content">Queries and bi-directional communication</span></a>
      </ol>
     <li><a href="#implementation"><span class="secno">3</span> <span class="content">Implementation Matrix</span></a>
     <li>
@@ -2251,7 +2251,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <a href="#tools"><span class="secno">5</span> <span class="content">Development &amp; Test tools</span></a>
      <ol class="toc">
-      <li><a href="#chataigne-module"><span class="secno">5.1</span> <span class="content"><span>Chataigne module</span></span></a>
+      <li><a href="#chataigne"><span class="secno">5.1</span> <span class="content"><span>Chataigne module</span></span></a>
       <li><a href="#tester-desktop-application"><span class="secno">5.2</span> <span class="content">Tester Desktop application</span></a>
       <li><a href="#validator-test-and-stress-test-python-module"><span class="secno">5.3</span> <span class="content">Validator, Test and Stress Test Python Module</span></a>
      </ol>
@@ -2335,9 +2335,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <p><a href="https://www.yamaha.com/">Yamaha</a></p>
    </ul>
    <p>Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a>.</p>
-   <h3 class="heading settled" data-level="1.1" id="why-adm"><span class="secno">1.1. </span><span class="content">Why ADM?</span><a class="self-link" href="#why-adm"></a></h3>
+   <h3 class="heading settled" data-level="1.1" id="why_adm"><span class="secno">1.1. </span><span class="content">Why ADM?</span><a class="self-link" href="#why_adm"></a></h3>
    <p>Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.</p>
-   <h3 class="heading settled" data-level="1.2" id="why-osc"><span class="secno">1.2. </span><span class="content">Why OSC?</span><a class="self-link" href="#why-osc"></a></h3>
+   <h3 class="heading settled" data-level="1.2" id="why-osc-why_osc"><span class="secno">1.2. </span><span class="content">Why OSC? {#why_osc</span><a class="self-link" href="#why-osc-why_osc"></a></h3>
    <ul>
     <li data-md>
      <p>Lightweight network protocol</p>
@@ -2367,9 +2367,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li data-md>
      <p>Extend this small grammar to more <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model④">ADM</a> properties (beds, etc.) in the future.</p>
    </ul>
-   <h3 class="heading settled" data-level="1.4" id="project-originators"><span class="secno">1.4. </span><span class="content">Project Originators</span><a class="self-link" href="#project-originators"></a></h3>
+   <h3 class="heading settled" data-level="1.4" id="originators"><span class="secno">1.4. </span><span class="content">Project Originators</span><a class="self-link" href="#originators"></a></h3>
    <p><a href="https://www.l-acoustics.com/">L-Acoustics</a>, <a href="https://www.flux.audio/">FLUX::SE</a>, <a href="https://www.radiofrance.com/innovation-nouveaux-formats">Radio-France</a></p>
-   <h3 class="heading settled" data-level="1.5" id="project-contributors"><span class="secno">1.5. </span><span class="content">Project Contributors</span><a class="self-link" href="#project-contributors"></a></h3>
+   <h3 class="heading settled" data-level="1.5" id="contributors"><span class="secno">1.5. </span><span class="content">Project Contributors</span><a class="self-link" href="#contributors"></a></h3>
    <p><a href="http://www.adamsonsystems.com/">Adamson</a>, <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>, <a href="https://digico.biz/">DiGiCo</a>, <a href="https://www.dolby.com">Dolby</a>, <a href="https://lawo.com/">Lawo</a>, <a href="https://www.magix.com/">Magix</a>, <a href="https://www.merging.com/">Merging Technologies</a>, <a href="https://meyersound.com/">Meyer Sound Laboratories</a>, <a href="https://www.steinberg.net/">Steinberg</a></p>
    <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Current spec (v1.0)</span><a class="self-link" href="#v1.0"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="obj"><span class="secno">2.1. </span><span class="content">Object position messages</span><a class="self-link" href="#obj"></a></h3>
@@ -2571,9 +2571,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>listener position
       <td>/adm/lis/xyz 0.0 0.5 -0.2
    </table>
-   <h3 class="heading settled" data-level="2.4" id="queries-and-bi-directional-communication"><span class="secno">2.4. </span><span class="content">Queries and bi-directional communication</span><a class="self-link" href="#queries-and-bi-directional-communication"></a></h3>
+   <h3 class="heading settled" data-level="2.4" id="queries"><span class="secno">2.4. </span><span class="content">Queries and bi-directional communication</span><a class="self-link" href="#queries"></a></h3>
    <p>The <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control②">OSC</a> protocol is unidirectional, so the commands should be considered as <strong>SET</strong> from a sender to a receiver. A particular device might also be interested to <strong>GET</strong> the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.</p>
-   <object data="table.html" type="text/html"></object>
    <div class="example" id="example-06ad4b23"><a class="self-link" href="#example-06ad4b23"></a>
 sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <code>/adm/obj/4/xyz -0.9 0.15 0.0</code>
 </div>
@@ -2667,6 +2666,12 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
             Timax panLab
             </a>
         
+      <th>
+            <a href="https://www.audiofields.de/">
+            (Audifields l)<br>
+            Audiofields ARTIST
+            </a>
+        
      <tr>
       <td>/adm/obj/<var>n</var>/azim 
       <td>
@@ -2683,6 +2688,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/elev 
       <td>
@@ -2699,6 +2705,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/dist 
       <td>
@@ -2715,6 +2722,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/aed 
       <td>
@@ -2731,6 +2739,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>rx
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/x 
       <td>
@@ -2747,6 +2756,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/y 
       <td>
@@ -2763,6 +2773,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/z 
       <td>
@@ -2779,6 +2790,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/xy 
       <td>
@@ -2795,6 +2807,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>rx
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/xyz 
       <td>tx
@@ -2811,6 +2824,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>rx
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/w 
       <td>
@@ -2826,6 +2840,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>✓
+      <td>
       <td>
      <tr>
       <td>/adm/obj/<var>n</var>/dref
@@ -2843,6 +2858,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/dmax
       <td>
@@ -2859,6 +2875,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/gain
       <td>
@@ -2875,6 +2892,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>✓
       <td>rx
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/mute
       <td>
@@ -2891,6 +2909,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/obj/<var>n</var>/name
       <td>
@@ -2907,6 +2926,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/env/change
       <td>
@@ -2923,6 +2943,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>rx
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/lis/xyz
       <td>tx
@@ -2939,6 +2960,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>
       <td>
       <td>
+      <td>✓
      <tr>
       <td>/adm/lis/ypr
       <td>
@@ -2955,6 +2977,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
       <td>✓
       <td>
       <td>
+      <td>✓
    </table>
    <p class="note" role="note"><span class="marker">Note:</span> * FletcherMachine and SPAT Revolution supports <em>dmax</em> as a global message only: <i>/adm/obj/*/dmax</i></p>
    <div class="issue no-marker" id="issue-d41d8cd9">
@@ -3393,7 +3416,7 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
     <p dir="auto">The proposal is to define both reference distance (dRef) and a maximum distance (dMax) messages in ADM-OSC so to communicate the intended rendering approach.  The default (and current behaviour of the ADM standard) would be dRef = dMax = 1m.  If dRef &lt; dMax, then distance based tranforms (such as gain changes) could be applied when an object's distance is > dRef.  Inside of dRef, no transforms would be applied.</p>
    </div>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="chataigne-module"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne-module"></a></h3>
+   <h3 class="heading settled" data-level="5.1" id="chataigne"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
    <p>To retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control③">OSC</a> protocol.</p>
    <h3 class="heading settled" data-level="5.2" id="tester-desktop-application"><span class="secno">5.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
