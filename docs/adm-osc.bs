@@ -52,12 +52,12 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 
 Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 [[ADM-OSC-1]].
 
-Why ADM?
+Why ADM? {#why_adm}
 --------
 
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [=ADM=] is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
 
-Why OSC?
+Why OSC? {#why_osc
 --------
 
 * Lightweight network protocol
@@ -77,12 +77,12 @@ Motivation &amp; goals {#goals}
 * Share this proposal with the EBU so they can become a relay, publish and support this initiative.
 * Extend this small grammar to more [=ADM=] properties (beds, etc.) in the future.
 
-Project Originators
+Project Originators {#originators}
 ----------------------
 
 [L-Acoustics](https://www.l-acoustics.com/), [FLUX::SE](https://www.flux.audio/), [Radio-France](https://www.radiofrance.com/innovation-nouveaux-formats)
 
-Project Contributors
+Project Contributors {#contributors}
 --------------------
 
 [Adamson](http://www.adamsonsystems.com/), <a href="https://www.bbc.com/">BBC</a>, [d&amp;b audiotechnik](https://www.dbaudio.com/), [DiGiCo](https://digico.biz/), [Dolby](https://www.dolby.com), [Lawo](https://lawo.com/), [Magix](https://www.magix.com/), [Merging Technologies](https://www.merging.com/), [Meyer Sound Laboratories](https://meyersound.com/), [Steinberg](https://www.steinberg.net/)
@@ -331,7 +331,7 @@ These messages could be used by a binaural renderer [[EBU-Tech-3396]] for head t
     </tbody>
 </table>
 
-Queries and bi-directional communication
+Queries and bi-directional communication {#queries}
 ----------------------------------------
 
 The [=OSC=] protocol is unidirectional, so the commands should be considered as **SET** from a sender to a receiver. A particular device might also be interested to **GET** the state of a particular parameter in another device. To do so, it should send a command without any arguments. The receiver should answer back to this IP with the data.
@@ -354,7 +354,7 @@ Issue(immersive-audio-live/adm-osc#24):
 Basic ADM-OSC principals {#basics}
 ============================
 
-Roles
+Roles {#roles}
 ------------
 
 ### Sender (client)
@@ -601,7 +601,7 @@ Issue(immersive-audio-live/adm-osc#12):
 Development &amp; Test tools {#tools}
 =====================================
 
-[Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module)
+[Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) {#chataigne}
 ---------------------------------
 
 (Mathieu Delquignies / d&amp;b audiotechnik)
