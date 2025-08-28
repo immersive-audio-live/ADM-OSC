@@ -10,7 +10,7 @@ An industry initiative to standardization of Object Based Audio (OBA) positionin
 
 ## Project Contributors
 
-Adamson, d&b Audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg
+Adamson, d&b audiotechnik, DiGiCo, Dolby, Lawo, Magix, Merging Technologies, Meyer Sound, Steinberg
 
 ## Context
 
@@ -63,10 +63,12 @@ See Issues.
 
 ## Current development & tests tools
 
-* [**Specifications**](https://github.com/immersive-audio-live/ADM-OSC/blob/main/Source/ADM-OSC%20Specification.xlsx)
+* [**Specification v1.0 and implementation guide**](https://aes2.org/publications/elibrary-page/?id=22722)
 
 * [Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) (Mathieu Delquignies / d&b audiotechnik)
   * to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware with OSC protocol.
+  * The same repositories also includes some 3D polar<>cartesian converter javascript functions, and
+  * An OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.
   
 * Tester **Desktop application** (Jose Gaudin / Meyer Sound)
   * [download from resources directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources)
@@ -158,4 +160,5 @@ See Issues.
 
 ## Currently supported in
 
-SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson)
+SPAT Revolution (FLUX::), L-ISA Controller (L-Acoustics), Ovation (Merging Technologies), Nuendo (Steinberg), SpaceMap Go (Meyer Sound), QLAB 5 (Figure 53), Space Controller (Sound Particles), Modulo Kinetic (Modulo Pi), Iosono (Barco). FletcherMAchine (Adamson), En-Bridge (d&b audiotechnik), Fulcrum One (Fulcrum Acoustic)
+
