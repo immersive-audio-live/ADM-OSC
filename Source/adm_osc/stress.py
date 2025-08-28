@@ -36,8 +36,8 @@ __all__ = ['StressClient']
 #  |____/ \__|_|  \___||___/___/  \____|_|_|\___|_| |_|\__|
 class StressClient(TestClient):
 
-    def __init__(self, address: str = '127.0.0.1', out_port: int = 9000, in_port: int = 9001) -> None:
-        super().__init__(address, out_port, in_port)
+    def __init__(self, address: str = '127.0.0.1', out_port: int = 9000, in_port: int = 9001, out_address: str = None) -> None:
+        super().__init__(address, out_port, in_port, out_address)
 
     def stress_polar_position(self, number_of_objects: int = 1, duration_in_second: float = 10.0, interval_in_milliseconds: float = 10.0):
 
