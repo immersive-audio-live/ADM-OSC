@@ -40,8 +40,8 @@ class TestClient(OscClientServer):
     predefined_object = 1
     predefined_value_type = ValueType.Default
 
-    def __init__(self, address: str = '127.0.0.1', out_port: int = 9000, in_port: int = 9001) -> None:
-        super().__init__(address, out_port, in_port)
+    def __init__(self, address: str = '127.0.0.1', out_port: int = 9000, in_port: int = 9001, out_address: str = None) -> None:
+        super().__init__(address, out_port, in_port, False, out_address)
 
     #   _            _      __                  _             _              _     _           _
     #  | |_ ___  ___| |_   / _| ___  _ __   ___(_)_ __   __ _| | ___    ___ | |__ (_) ___  ___| |_

@@ -19,7 +19,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='adm_osc',  # Required
-    version='1.0.1',  # Required
+    version='1.0.2',  # Required
     description='ADM-OSC client/server Python module for ADM-OSC protocol validation, tests and stress',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
@@ -55,6 +55,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         'Programming Language :: Python :: 3 :: Only',
     ],
 

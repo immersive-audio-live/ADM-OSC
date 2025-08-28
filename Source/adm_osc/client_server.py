@@ -47,7 +47,7 @@ class OscClientServer(SimpleUDPClient):
     default_object = 1
 
     def __init__(self, address: str = '127.0.0.1', out_port: int = 9000, in_port: int = 9001,
-                 allow_broadcast: bool = False) -> None:
+                 allow_broadcast: bool = False, out_address: str = None) -> None:
         """Initialize client
 
                As this is UDP it will not actually make any attempt to connect to the
@@ -58,9 +58,13 @@ class OscClientServer(SimpleUDPClient):
                    out_port: Port of server
                    in_port: listening Port
                    allow_broadcast: Allow for broadcast transmissions
+                   out_address: IP address of the client (outgoing messages) ; address will be used by default if out_address is not provided
                """
 
-        super().__init__(address, out_port, allow_broadcast)
+        if out_address is None:
+            out_address = address
+
+        super().__init__(out_address, out_port, allow_broadcast)
 
         self.dispatcher = Dispatcher()
         self.dispatcher.map(f"/{message_root}/*", self.__adm_message_handler)
