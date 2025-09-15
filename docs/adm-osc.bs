@@ -739,17 +739,22 @@ There are several open-source implementations that simplify developers’ adopti
 specification has been published in 2002. See [[OpenSoundControl.org]].
 
 <dfn>Renderer</dfn>
+
 With object-based audio, where you have positional metadata attached to audio channels, you need something that processes this metadata and audio and converts them to audio signals that can be sent to conventional channels that eventually feed loudspeakers. This process is called rendering, and the processor is called a renderer.
+
 A renderer receives audio and metadata, as well as information about the desired output format (usually a loudspeaker layout), and interprets the metadata to process the input audio channels in a way that generates the sounds described by the metadata.
 For object-based audio (that is where the metadata is describing the positions of the audio objects), a renderer is always required if the audio signals are to be listened to with the correct spatial positioning (otherwise all the channels would just be treated as mono signals). Downmixing can be considered to be a simple form of rendering.
 
 <dfn local-lt="6DOF">Six Degrees of Freedom</dfn>
+
 Listener head can move in 3D space, and turn its head.
 So, we need 6 parameters to describe its position and orientation.
+
 Axis convention : yaw following z axis, pitch following x axis, and roll y axis.
 • Yaw (right -> left --- where rotating right is negative)
 • Pitch (down -> up --- where rotating down is negative)
 • Roll (tilt left -> tilt right --- where rotating down left is negative)
+
 See [[ADM-OSC-1]] for illustrations pictures.
 
 
