@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="8c2e2ff1b14a5710a3583da91494862ed64436b2" name="revision">
+  <meta content="ca3f2f8ca003e8fbd9c68b7fd1a4d9ae560325e4" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2256,10 +2256,10 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#validator-test-and-stress-test-python-module"><span class="secno">5.3</span> <span class="content">Validator, Test and Stress Test Python Module</span></a>
      </ol>
     <li>
-     <a href="#discuss"><span class="secno">6</span> <span class="content">Discussion</span></a>
+     <a href="#discuss"><span class="secno">6</span> <span class="content">Discussions</span></a>
      <ol class="toc">
       <li><a href="#draft-05"><span class="secno">6.1</span> <span class="content">Draft 0.5</span></a>
-      <li><a href="#relationship-to-adm"><span class="secno">6.2</span> <span class="content">Relationship to ADM</span></a>
+      <li><a href="#relationship-to-s-adm"><span class="secno">6.2</span> <span class="content">Relationship to S-ADM</span></a>
      </ol>
     <li><a href="#define"><span class="secno">7</span> <span class="content">Definitions</span></a>
     <li>
@@ -2334,7 +2334,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li data-md>
      <p><a href="https://www.yamaha.com/">Yamaha</a></p>
    </ul>
-   <p>Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a>.</p>
+   <p>Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024, open access convention paper is available to download as a hitchhicker’s guide to ADM-OSC, for any coder interrested to implement it : <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a>.</p>
    <h3 class="heading settled" data-level="1.1" id="why_adm"><span class="secno">1.1. </span><span class="content">Why ADM?</span><a class="self-link" href="#why_adm"></a></h3>
    <p>Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.</p>
    <h3 class="heading settled" data-level="1.2" id="why_osc"><span class="secno">1.2. </span><span class="content">Why OSC?</span><a class="self-link" href="#why_osc"></a></h3>
@@ -3500,20 +3500,15 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
     <li data-md>
      <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source">Source directory</a></p>
    </ul>
-   <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussion</span><a class="self-link" href="#discuss"></a></h2>
+   <h2 class="heading settled" data-level="6" id="discuss"><span class="secno">6. </span><span class="content">Discussions</span><a class="self-link" href="#discuss"></a></h2>
+   
+Discussions on this living open standard are hapenning in Issues above. You’re welcome to contribute, and we hope to close them all with implementation improvements in the future !
+
+
    <h3 class="heading settled" data-level="6.1" id="draft-05"><span class="secno">6.1. </span><span class="content">Draft 0.5</span><a class="self-link" href="#draft-05"></a></h3>
-   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem.</p>
-   <h3 class="heading settled" data-level="6.2" id="relationship-to-adm"><span class="secno">6.2. </span><span class="content">Relationship to ADM</span><a class="self-link" href="#relationship-to-adm"></a></h3>
-   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don’t translate into one (or more) <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑧">ADM</a> tag should not be in the <code>/adm</code> namespace.</p>
-   <div class="issue no-marker" id="issue-d41d8cd9③">
-    <a class="self-link" href="#issue-d41d8cd9③"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
-    <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
-    <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
-<pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
-</code></pre>
-    </div>
-    <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
-   </div>
+   <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem. Discussions move form /confg namespace to a configuration file (not real time) with configuration parameters.</p>
+   <h3 class="heading settled" data-level="6.2" id="relationship-to-s-adm"><span class="secno">6.2. </span><span class="content">Relationship to S-ADM</span><a class="self-link" href="#relationship-to-s-adm"></a></h3>
+   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages should translate from and to S-ADM in real time.</p>
    <h2 class="heading settled" data-level="7" id="define"><span class="secno">7. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="ADM" data-noexport id="audio-definition-model">Audio Definition Model</dfn></p>
    <p>The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
@@ -3526,10 +3521,19 @@ defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OSC" data-noexport id="open-sound-control">Open Sound Control</dfn></p>
    <p>OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music &amp; Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.</p>
    <p>There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
-specification has been published in 2002.</p>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="renderer">Renderer</dfn></p>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="6DOF" data-noexport id="six-degrees-of-freedom">Six Degrees of Freedom</dfn></p>
-   <p>Forward/backward, up/down, left/right translation, combined orientation (yaw, pitch, and roll).</p>
+specification has been published in 2002. See <a data-link-type="biblio" href="#biblio-opensoundcontrolorg" title="OpenSoundControl website">[OpenSoundControl.org]</a>.</p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="renderer">Renderer</dfn>
+With object-based audio, where you have positional metadata attached to audio channels, you need something that processes this metadata and audio and converts them to audio signals that can be sent to conventional channels that eventually feed loudspeakers. This process is called rendering, and the processor is called a renderer.
+A renderer receives audio and metadata, as well as information about the desired output format (usually a loudspeaker layout), and interprets the metadata to process the input audio channels in a way that generates the sounds described by the metadata.
+For object-based audio (that is where the metadata is describing the positions of the audio objects), a renderer is always required if the audio signals are to be listened to with the correct spatial positioning (otherwise all the channels would just be treated as mono signals). Downmixing can be considered to be a simple form of rendering.</p>
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="6DOF" data-noexport id="six-degrees-of-freedom">Six Degrees of Freedom</dfn>
+Listener head can move in 3D space, and turn its head.
+So, we need 6 parameters to describe its position and orientation.
+Axis convention : yaw following z axis, pitch following x axis, and roll y axis.
+• Yaw (right -> left --- where rotating right is negative)
+• Pitch (down -> up --- where rotating down is negative)
+• Roll (tilt left -> tilt right --- where rotating down left is negative)
+See <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a> for illustrations pictures.</p>
   </main>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -3593,16 +3597,6 @@ What they would like to support?</p>
     <p dir="auto">Different rendering systems handle distance differently. ADM uses a "dimensionless" reference volume, the interior of a cube or sphere. There are also physics-based renderers (eg Game engines) that try to acoustically represent distance based on a simulation of distance in meters, for example.</p>
     <p dir="auto">The proposal is to define both reference distance (dRef) and a maximum distance (dMax) messages in ADM-OSC so to communicate the intended rendering approach.  The default (and current behaviour of the ADM standard) would be dRef = dMax = 1m.  If dRef &lt; dMax, then distance based tranforms (such as gain changes) could be applied when an object's distance is > dRef.  Inside of dRef, no transforms would be applied.</p>
      <a class="issue-return" href="#issue-d41d8cd9②" title="Jump to section">↵</a>
-   </div>
-   <div class="issue no-marker">
-    <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/33">Issue #33 on GitHub: “Quaternions?”</a>
-    <p dir="auto">We've added some head tracker messages to ADM-OSC 1.0. Specifically, yaw-pitch-roll like:</p>
-    <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="/adm/lis/ypr f f f">
-<pre class="notranslate"><code class="notranslate">/adm/lis/ypr f f f
-</code></pre>
-    </div>
-    <p dir="auto">Quaternions are more useful in many situations. Should we also have something like <code class="notranslate">/quat</code>?</p>
-     <a class="issue-return" href="#issue-d41d8cd9③" title="Jump to section">↵</a>
    </div>
   </div>
 <script>/* Boilerplate: script-dom-helper */
@@ -3805,7 +3799,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"audio-definition-model": {"dfnID":"audio-definition-model","dfnText":"Audio Definition Model","external":false,"refSections":[{"refs":[{"id":"ref-for-audio-definition-model\u2460"}],"title":"1.1. Why ADM?"},{"refs":[{"id":"ref-for-audio-definition-model\u2461"},{"id":"ref-for-audio-definition-model\u2462"},{"id":"ref-for-audio-definition-model\u2463"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-audio-definition-model\u2464"}],"title":"4.1.2. Receiver (server)"},{"refs":[{"id":"ref-for-audio-definition-model\u2465"}],"title":"4.4.3. Conversions"},{"refs":[{"id":"ref-for-audio-definition-model\u2466"}],"title":"6.1. Draft 0.5"},{"refs":[{"id":"ref-for-audio-definition-model\u2467"}],"title":"6.2. Relationship to ADM"}],"url":"#audio-definition-model"},
+"audio-definition-model": {"dfnID":"audio-definition-model","dfnText":"Audio Definition Model","external":false,"refSections":[{"refs":[{"id":"ref-for-audio-definition-model\u2460"}],"title":"1.1. Why ADM?"},{"refs":[{"id":"ref-for-audio-definition-model\u2461"},{"id":"ref-for-audio-definition-model\u2462"},{"id":"ref-for-audio-definition-model\u2463"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-audio-definition-model\u2464"}],"title":"4.1.2. Receiver (server)"},{"refs":[{"id":"ref-for-audio-definition-model\u2465"}],"title":"4.4.3. Conversions"},{"refs":[{"id":"ref-for-audio-definition-model\u2466"}],"title":"6.1. Draft 0.5"}],"url":"#audio-definition-model"},
 "object-based-audio": {"dfnID":"object-based-audio","dfnText":"Object-Based Audio","external":false,"refSections":[{"refs":[{"id":"ref-for-object-based-audio\u2460"}],"title":"5.1. Chataigne module and OSCAR VST Plugin configuration file"},{"refs":[{"id":"ref-for-object-based-audio\u2461"}],"title":"7. Definitions"}],"url":"#object-based-audio"},
 "open-sound-control": {"dfnID":"open-sound-control","dfnText":"Open Sound Control","external":false,"refSections":[{"refs":[{"id":"ref-for-open-sound-control\u2460"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-open-sound-control\u2461"}],"title":"2.4. Queries and bi-directional communication"},{"refs":[{"id":"ref-for-open-sound-control\u2462"}],"title":"5.1. Chataigne module and OSCAR VST Plugin configuration file"}],"url":"#open-sound-control"},
 "renderer": {"dfnID":"renderer","dfnText":"Renderer","external":false,"refSections":[],"url":"#renderer"},
