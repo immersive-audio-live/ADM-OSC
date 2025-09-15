@@ -57,7 +57,7 @@ Why ADM? {#why_adm}
 
 Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. [=ADM=] is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.
 
-Why OSC? {#why_osc
+Why OSC? {#why_osc}
 --------
 
 * Lightweight network protocol
@@ -601,7 +601,7 @@ Issue(immersive-audio-live/adm-osc#12):
 Development &amp; Test tools {#tools}
 =====================================
 
-[Chataigne module](https://github.com/madees/ADM-OSC-Chataigne-Module) {#chataigne}
+[Chataigne module and OSCAR VST Plugin configuration file](https://github.com/madees/ADM-OSC-Chataigne-Module) {#chataigne}
 ---------------------------------
 
 (Mathieu Delquignies / d&amp;b audiotechnik)
