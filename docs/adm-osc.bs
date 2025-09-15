@@ -50,7 +50,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [TiMax Spatial](https://timaxspatial.com/)
 * [Yamaha](https://www.yamaha.com/)
 
-Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 [[ADM-OSC-1]].
+Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024, open access convention paper is available to download as a hitchhicker's guide to ADM-OSC, for any coder interrested to implement it : [[ADM-OSC-1]].
 
 Why ADM? {#why_adm}
 --------
@@ -702,20 +702,19 @@ sender.stress_polar_position(number_of_objects=64, duration_in_second=60.0, inte
 * [Full documentation](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source/adm_osc/doc/documentation.md)
 * [Source directory](https://github.com/immersive-audio-live/ADM-OSC/tree/main/Source)
 
-Discussion {#discuss}
+Discussions {#discuss}
 =====================
+Discussions on this living open standard are hapenning in Issues above. You're welcome to contribute, and we hope to close them all with implementation improvements in the future !
 
 Draft 0.5
 ----------
 
-A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem.
+A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html) was proposed but not adopted. This draft contains messages for greater compatibility with [=ADM=] in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem. Discussions move form /confg namespace to a configuration file (not real time) with configuration parameters.
 
-Relationship to ADM
+Relationship to S-ADM
 --------------------
 
-ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages that don't translate into one (or more) [=ADM=] tag should not be in the `/adm` namespace.
-
-Issue(immersive-audio-live/adm-osc#33):
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages should translate from and to S-ADM in real time.
 
 Definitions {#define}
 =====================
@@ -737,13 +736,22 @@ Object-based representation encodes audio tracks along with positional and other
 OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music & Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.
 
 There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
-specification has been published in 2002.
+specification has been published in 2002. See [[OpenSoundControl.org]].
 
 <dfn>Renderer</dfn>
+With object-based audio, where you have positional metadata attached to audio channels, you need something that processes this metadata and audio and converts them to audio signals that can be sent to conventional channels that eventually feed loudspeakers. This process is called rendering, and the processor is called a renderer.
+A renderer receives audio and metadata, as well as information about the desired output format (usually a loudspeaker layout), and interprets the metadata to process the input audio channels in a way that generates the sounds described by the metadata.
+For object-based audio (that is where the metadata is describing the positions of the audio objects), a renderer is always required if the audio signals are to be listened to with the correct spatial positioning (otherwise all the channels would just be treated as mono signals). Downmixing can be considered to be a simple form of rendering.
 
 <dfn local-lt="6DOF">Six Degrees of Freedom</dfn>
+Listener head can move in 3D space, and turn its head.
+So, we need 6 parameters to describe its position and orientation.
+Axis convention : yaw following z axis, pitch following x axis, and roll y axis.
+• Yaw (right -> left --- where rotating right is negative)
+• Pitch (down -> up --- where rotating down is negative)
+• Roll (tilt left -> tilt right --- where rotating down left is negative)
+See [[ADM-OSC-1]] for illustrations pictures.
 
-Forward/backward, up/down, left/right translation, combined orientation (yaw, pitch, and roll).
 
 <!-- Big Text: Refs -->
 
