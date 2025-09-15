@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="d2c323d42f71267e12e0976b04fd8734a341c02a" name="revision">
+  <meta content="8c2e2ff1b14a5710a3583da91494862ed64436b2" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2182,7 +2182,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-08-28">28 August 2025</time></span></h2>
+    <time class="dt-updated" datetime="2025-09-15">15 September 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2214,7 +2214,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
      <ol class="toc">
       <li><a href="#why_adm"><span class="secno">1.1</span> <span class="content">Why ADM?</span></a>
-      <li><a href="#why-osc-why_osc"><span class="secno">1.2</span> <span class="content">Why OSC? {#why_osc</span></a>
+      <li><a href="#why_osc"><span class="secno">1.2</span> <span class="content">Why OSC?</span></a>
       <li><a href="#goals"><span class="secno">1.3</span> <span class="content">Motivation &amp; goals</span></a>
       <li><a href="#originators"><span class="secno">1.4</span> <span class="content">Project Originators</span></a>
       <li><a href="#contributors"><span class="secno">1.5</span> <span class="content">Project Contributors</span></a>
@@ -2251,7 +2251,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <a href="#tools"><span class="secno">5</span> <span class="content">Development &amp; Test tools</span></a>
      <ol class="toc">
-      <li><a href="#chataigne"><span class="secno">5.1</span> <span class="content"><span>Chataigne module</span></span></a>
+      <li><a href="#chataigne"><span class="secno">5.1</span> <span class="content"><span>Chataigne module and OSCAR VST Plugin configuration file</span></span></a>
       <li><a href="#tester-desktop-application"><span class="secno">5.2</span> <span class="content">Tester Desktop application</span></a>
       <li><a href="#validator-test-and-stress-test-python-module"><span class="secno">5.3</span> <span class="content">Validator, Test and Stress Test Python Module</span></a>
      </ol>
@@ -2337,7 +2337,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p>Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024 <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a>.</p>
    <h3 class="heading settled" data-level="1.1" id="why_adm"><span class="secno">1.1. </span><span class="content">Why ADM?</span><a class="self-link" href="#why_adm"></a></h3>
    <p>Immersive audio is gaining ground in different industries, from music streaming to gaming, from live sound to broadcast. <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model①">ADM</a> is becoming a popular standard metadata model in some of these industries, with serialADM used in broadcast or ADM bwf or xml files used in the studio.</p>
-   <h3 class="heading settled" data-level="1.2" id="why-osc-why_osc"><span class="secno">1.2. </span><span class="content">Why OSC? {#why_osc</span><a class="self-link" href="#why-osc-why_osc"></a></h3>
+   <h3 class="heading settled" data-level="1.2" id="why_osc"><span class="secno">1.2. </span><span class="content">Why OSC?</span><a class="self-link" href="#why_osc"></a></h3>
    <ul>
     <li data-md>
      <p>Lightweight network protocol</p>
@@ -3416,7 +3416,7 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
     <p dir="auto">The proposal is to define both reference distance (dRef) and a maximum distance (dMax) messages in ADM-OSC so to communicate the intended rendering approach.  The default (and current behaviour of the ADM standard) would be dRef = dMax = 1m.  If dRef &lt; dMax, then distance based tranforms (such as gain changes) could be applied when an object's distance is > dRef.  Inside of dRef, no transforms would be applied.</p>
    </div>
    <h2 class="heading settled" data-level="5" id="tools"><span class="secno">5. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="chataigne"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module</a></span><a class="self-link" href="#chataigne"></a></h3>
+   <h3 class="heading settled" data-level="5.1" id="chataigne"><span class="secno">5.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module and OSCAR VST Plugin configuration file</a></span><a class="self-link" href="#chataigne"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
    <p>To retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control③">OSC</a> protocol.</p>
    <h3 class="heading settled" data-level="5.2" id="tester-desktop-application"><span class="secno">5.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
@@ -3806,8 +3806,8 @@ function parseHTML(markup) {
 {
 let dfnPanelData = {
 "audio-definition-model": {"dfnID":"audio-definition-model","dfnText":"Audio Definition Model","external":false,"refSections":[{"refs":[{"id":"ref-for-audio-definition-model\u2460"}],"title":"1.1. Why ADM?"},{"refs":[{"id":"ref-for-audio-definition-model\u2461"},{"id":"ref-for-audio-definition-model\u2462"},{"id":"ref-for-audio-definition-model\u2463"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-audio-definition-model\u2464"}],"title":"4.1.2. Receiver (server)"},{"refs":[{"id":"ref-for-audio-definition-model\u2465"}],"title":"4.4.3. Conversions"},{"refs":[{"id":"ref-for-audio-definition-model\u2466"}],"title":"6.1. Draft 0.5"},{"refs":[{"id":"ref-for-audio-definition-model\u2467"}],"title":"6.2. Relationship to ADM"}],"url":"#audio-definition-model"},
-"object-based-audio": {"dfnID":"object-based-audio","dfnText":"Object-Based Audio","external":false,"refSections":[{"refs":[{"id":"ref-for-object-based-audio\u2460"}],"title":"5.1. Chataigne module"},{"refs":[{"id":"ref-for-object-based-audio\u2461"}],"title":"7. Definitions"}],"url":"#object-based-audio"},
-"open-sound-control": {"dfnID":"open-sound-control","dfnText":"Open Sound Control","external":false,"refSections":[{"refs":[{"id":"ref-for-open-sound-control\u2460"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-open-sound-control\u2461"}],"title":"2.4. Queries and bi-directional communication"},{"refs":[{"id":"ref-for-open-sound-control\u2462"}],"title":"5.1. Chataigne module"}],"url":"#open-sound-control"},
+"object-based-audio": {"dfnID":"object-based-audio","dfnText":"Object-Based Audio","external":false,"refSections":[{"refs":[{"id":"ref-for-object-based-audio\u2460"}],"title":"5.1. Chataigne module and OSCAR VST Plugin configuration file"},{"refs":[{"id":"ref-for-object-based-audio\u2461"}],"title":"7. Definitions"}],"url":"#object-based-audio"},
+"open-sound-control": {"dfnID":"open-sound-control","dfnText":"Open Sound Control","external":false,"refSections":[{"refs":[{"id":"ref-for-open-sound-control\u2460"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-open-sound-control\u2461"}],"title":"2.4. Queries and bi-directional communication"},{"refs":[{"id":"ref-for-open-sound-control\u2462"}],"title":"5.1. Chataigne module and OSCAR VST Plugin configuration file"}],"url":"#open-sound-control"},
 "renderer": {"dfnID":"renderer","dfnText":"Renderer","external":false,"refSections":[],"url":"#renderer"},
 "six-degrees-of-freedom": {"dfnID":"six-degrees-of-freedom","dfnText":"Six Degrees of Freedom","external":false,"refSections":[{"refs":[{"id":"ref-for-six-degrees-of-freedom"}],"title":"2.3. Listener messages"}],"url":"#six-degrees-of-freedom"},
 };
