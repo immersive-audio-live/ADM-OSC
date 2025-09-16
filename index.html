@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="ca3f2f8ca003e8fbd9c68b7fd1a4d9ae560325e4" name="revision">
+  <meta content="aa1074d5a488ac6096effe1de76c20e314e49a83" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2182,7 +2182,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-09-15">15 September 2025</time></span></h2>
+    <time class="dt-updated" datetime="2025-09-16">16 September 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2668,7 +2668,7 @@ sending <code>/adm/obj/4/xyz</code> to a device should trigger a reply like <cod
         
       <th>
             <a href="https://www.audiofields.de/">
-            (Audifields l)<br>
+            (Audifields)<br>
             Audiofields ARTIST
             </a>
         
@@ -3508,7 +3508,7 @@ Discussions on this living open standard are hapenning in Issues above. You’re
    <h3 class="heading settled" data-level="6.1" id="draft-05"><span class="secno">6.1. </span><span class="content">Draft 0.5</span><a class="self-link" href="#draft-05"></a></h3>
    <p>A <a href="https://immersive-audio-live.github.io/ADM-OSC/html/adm_spec_0.5_draft.html">draft for version 0.5</a> was proposed but not adopted. This draft contains messages for greater compatibility with <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model⑦">ADM</a> in broadcast use cases. It brings up a potential problem of sending critical configuration messages over UDP, which is inherantly unreliable. Whereas loosing a few high-rate messages might be imperceptable, loosing a major configuration message could be a serious problem. Discussions move form /confg namespace to a configuration file (not real time) with configuration parameters.</p>
    <h3 class="heading settled" data-level="6.2" id="relationship-to-s-adm"><span class="secno">6.2. </span><span class="content">Relationship to S-ADM</span><a class="self-link" href="#relationship-to-s-adm"></a></h3>
-   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages should translate from and to S-ADM in real time.</p>
+   <p>ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages should translate from and to S-ADM at least for all real time productions metadatas. As S-ADM is still work in progess, we’ll follow closely <a data-link-type="biblio" href="#biblio-ebu_audio_systems_and_workflows_groups" title="EBU Audio Systems and Workflows - Helps Members to maximise the quality and availability of sound production technology.">[EBU_Audio_Systems_and_Workflows_Groups]</a></p>
    <h2 class="heading settled" data-level="7" id="define"><span class="secno">7. </span><span class="content">Definitions</span><a class="self-link" href="#define"></a></h2>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="ADM" data-noexport id="audio-definition-model">Audio Definition Model</dfn></p>
    <p>The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
@@ -3522,18 +3522,18 @@ defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu
    <p>OpenSoundControl (OSC) is a data transport specification (an encoding) for realtime message communication among applications and hardware. OSC was developed by researchers Matt Wright and Adrian Freed during their time at the Center for New Music &amp; Audio Technologies (CNMAT). OSC was originally designed as a highly accurate, low latency, lightweight, and flexible method of communication for use in realtime musical performance. They proposed OSC in 1997 as “a new protocol for communication among computers, sound synthesizers, and other multimedia devices that is optimized for modern networking technology”.</p>
    <p>There are several open-source implementations that simplify developers’ adoption, The OSC 1.0
 specification has been published in 2002. See <a data-link-type="biblio" href="#biblio-opensoundcontrolorg" title="OpenSoundControl website">[OpenSoundControl.org]</a>.</p>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="renderer">Renderer</dfn>
-With object-based audio, where you have positional metadata attached to audio channels, you need something that processes this metadata and audio and converts them to audio signals that can be sent to conventional channels that eventually feed loudspeakers. This process is called rendering, and the processor is called a renderer.
-A renderer receives audio and metadata, as well as information about the desired output format (usually a loudspeaker layout), and interprets the metadata to process the input audio channels in a way that generates the sounds described by the metadata.
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="renderer">Renderer</dfn></p>
+   <p>With object-based audio, where you have positional metadata attached to audio channels, you need something that processes this metadata and audio and converts them to audio signals that can be sent to conventional channels that eventually feed loudspeakers. This process is called rendering, and the processor is called a renderer.</p>
+   <p>A renderer receives audio and metadata, as well as information about the desired output format (usually a loudspeaker layout), and interprets the metadata to process the input audio channels in a way that generates the sounds described by the metadata.
 For object-based audio (that is where the metadata is describing the positions of the audio objects), a renderer is always required if the audio signals are to be listened to with the correct spatial positioning (otherwise all the channels would just be treated as mono signals). Downmixing can be considered to be a simple form of rendering.</p>
-   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="6DOF" data-noexport id="six-degrees-of-freedom">Six Degrees of Freedom</dfn>
-Listener head can move in 3D space, and turn its head.
-So, we need 6 parameters to describe its position and orientation.
-Axis convention : yaw following z axis, pitch following x axis, and roll y axis.
+   <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="6DOF" data-noexport id="six-degrees-of-freedom">Six Degrees of Freedom</dfn></p>
+   <p>Listener head can move in 3D space, and turn its head.
+So, we need 6 parameters to describe its position and orientation.</p>
+   <p>Axis convention : yaw following z axis, pitch following x axis, and roll y axis.
 • Yaw (right -> left --- where rotating right is negative)
 • Pitch (down -> up --- where rotating down is negative)
-• Roll (tilt left -> tilt right --- where rotating down left is negative)
-See <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a> for illustrations pictures.</p>
+• Roll (tilt left -> tilt right --- where rotating down left is negative)</p>
+   <p>See <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a> for illustrations pictures.</p>
   </main>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
@@ -3571,6 +3571,8 @@ See <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of
    <dd><a href="https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion"><cite>EBU conversion between polar and cartesian coordinates</cite></a>. URL: <a href="https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion">https://github.com/ebu/ear-production-suite/tree/main/reaper-adm-extension/src/reaper_adm/coordinate_conversion</a>
    <dt id="biblio-ebu-tech-3396">[EBU-Tech-3396]
    <dd><a href="https://tech.ebu.ch/publications/tech3396"><cite>BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES</cite></a>. Spec. URL: <a href="https://tech.ebu.ch/publications/tech3396">https://tech.ebu.ch/publications/tech3396</a>
+   <dt id="biblio-ebu_audio_systems_and_workflows_groups">[EBU_Audio_Systems_and_Workflows_Groups]
+   <dd><a href="https://tech.ebu.ch/groups/as"><cite>EBU Audio Systems and Workflows - Helps Members to maximise the quality and availability of sound production technology.</cite></a>. URL: <a href="https://tech.ebu.ch/groups/as">https://tech.ebu.ch/groups/as</a>
    <dt id="biblio-opensoundcontrolorg">[OpenSoundControl.org]
    <dd><a href="https://ccrma.stanford.edu/groups/osc/index.html"><cite>OpenSoundControl website</cite></a>. URL: <a href="https://ccrma.stanford.edu/groups/osc/index.html">https://ccrma.stanford.edu/groups/osc/index.html</a>
    <dt id="biblio-tsingos-2017">[Tsingos-2017]
