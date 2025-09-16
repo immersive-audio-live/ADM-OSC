@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+       GH_TOKEN: ${{ secrets.MZED_TOKEN }}
     steps:
       - uses: actions/checkout@v4
-      - uses: w3c/spec-prod@v2
+      - uses: w3c/spec-prod@v2      
         with:
           TOOLCHAIN: bikeshed
 
