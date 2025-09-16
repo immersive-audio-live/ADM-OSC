@@ -714,7 +714,7 @@ A [draft for version 0.5](https://immersive-audio-live.github.io/ADM-OSC/html/ad
 Relationship to S-ADM
 --------------------
 
-ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages should translate from and to S-ADM at least for all real time productions metadatas. As S-ADM is still work in progess, we'll follow closely [[EBU Audio Systems and Workflows Groups]]
+ADM-OSC messages are designed to be translatable to (S-)ADM if needed. Messages should translate from and to S-ADM at least for all real time productions metadatas. As S-ADM is still work in progess, we'll follow closely [[EBU_Audio_Systems_and_Workflows_Groups]]
 
 Definitions {#define}
 =====================
@@ -792,7 +792,7 @@ See [[ADM-OSC-1]] for illustrations pictures.
         "title" : "Javascript polar<>cartesian code example",
         "href" : "https://github.com/madees/ADM-OSC-Chataigne-Module"
     },
-    "EBU Audio Systems and Workflows Groups" : {
+    "EBU_Audio_Systems_and_Workflows_Groups" : {
         "title" : "EBU Audio Systems and Workflows - Helps Members to maximise the quality and availability of sound production technology.",
         "href" : "https://tech.ebu.ch/groups/as"
     },
