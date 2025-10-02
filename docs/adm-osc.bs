@@ -102,11 +102,11 @@ path: html/current_obj_spec.html
 Note: Type tags are defined as OSC 1.0 specification: i=int32, f=float32, s=OSC-string
 
 ### Gain 
-ADM-OSC follows ADM specification for gain, which states:
+ADM-OSC follows the ADM specification for gain, which states:
 
->The gain parameter is a linear gain and controls the level of the audio signal in the object. At rendering the level of signal will be multiplied by the gain value. If the gain parameter is not set a value of 1.0 is assumed, so the audio signal’s level is not adjusted.
+>The gain parameter is a linear gain and controls the level of the audio signal in the object. At rendering the level of signal will be multiplied by the gain value. If the gain parameter is not set a value of 1.0 is assumed, so the audio signal's level is not adjusted.
 
-No maximum gain is specified. The maximum possible gain is a parameter specific to a given renderer. The relationship betwen linear gain and decibels is the standard voltage gain conversion, specified by:
+No maximum gain is specified. The maximum possible gain is a parameter specific to a given renderer. The receiver should clamp the value according to its capabilities. The relationship betwen linear gain and decibels is the standard voltage gain conversion, specified by:
 
 <figure>
 <math>
