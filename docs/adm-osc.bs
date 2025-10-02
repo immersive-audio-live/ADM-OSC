@@ -90,14 +90,65 @@ Project Contributors {#contributors}
 Current spec (v1.0) {#v1.0}
 ================================
 
-Object position messages {#obj}
+Object messages {#obj}
 -----------------
 
 Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> signifies object number
 
 <pre class=include>
-path: html/current_spec.html
+path: html/current_obj_spec.html
 </pre>
+
+Note: Type tags are defined as OSC 1.0 specification: i=int32, f=float32, s=OSC-string
+
+### Gain 
+ADM-OSC follows ADM specification for gain, which states:
+
+>The gain parameter is a linear gain and controls the level of the audio signal in the object. At rendering the level of signal will be multiplied by the gain value. If the gain parameter is not set a value of 1.0 is assumed, so the audio signal’s level is not adjusted.
+
+No maximum gain is specified. The maximum possible gain is a parameter specific to a given renderer. The relationship betwen linear gain and decibels is the standard voltage gain conversion, specified by:
+
+<figure>
+<math>
+    <mi>dB</mi>
+     <mo>=</mo>
+     <mn>20</mn><mo>*</mo><msub><mo>log</mo><mn>10</mn></msub><mo>(</mo><msub><mi>gain</mi><mi>linear</mi></msub><mo>)</mo>
+</math>
+<figcaption>linear to dB conversion</figcaption>
+</figure>
+
+Environment messages {#env}
+--------------------------------
+
+These could be expanded to include program changes and other global data. They are not specific to any individual object.
+
+<table class="def">
+    <thead>
+        <tr>
+            <th>address</th>
+            <th>type</th>
+            <th>units</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+            <th>example</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/adm/env/change</td>
+            <td>s</td>
+            <td>string</td>
+            <td>0</td>
+            <td>128 char</td>
+            <td></td>
+            <td>program changes</td>
+            <td>/adm/env/change day</td>
+        </tr>
+    </tbody>
+</table>
 
 
 Listener messages {#lis}
