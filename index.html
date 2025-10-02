@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="d63a5a1b956011f33d67cd7c6d3f1ff78ce9e37e" name="revision">
+  <meta content="b4ee1ee0b6533e6f8bc7d6d9466c502f175bfa2e" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2182,7 +2182,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-09-16">16 September 2025</time></span></h2>
+    <time class="dt-updated" datetime="2025-10-02">2 October 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2222,7 +2222,11 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <a href="#v1.0"><span class="secno">2</span> <span class="content">Current spec (v1.0)</span></a>
      <ol class="toc">
-      <li><a href="#obj"><span class="secno">2.1</span> <span class="content">Object position messages</span></a>
+      <li>
+       <a href="#obj"><span class="secno">2.1</span> <span class="content">Object messages</span></a>
+       <ol class="toc">
+        <li><a href="#gain"><span class="secno">2.1.1</span> <span class="content">Gain</span></a>
+       </ol>
       <li><a href="#env"><span class="secno">2.2</span> <span class="content">Environment messages</span></a>
       <li><a href="#lis"><span class="secno">2.3</span> <span class="content">Listener messages</span></a>
       <li><a href="#queries"><span class="secno">2.4</span> <span class="content">Queries and bi-directional communication</span></a>
@@ -2372,7 +2376,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <h3 class="heading settled" data-level="1.5" id="contributors"><span class="secno">1.5. </span><span class="content">Project Contributors</span><a class="self-link" href="#contributors"></a></h3>
    <p><a href="http://www.adamsonsystems.com/">Adamson</a>, <a href="https://www.bbc.com/">BBC</a>, <a href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>, <a href="https://digico.biz/">DiGiCo</a>, <a href="https://www.dolby.com">Dolby</a>, <a href="https://lawo.com/">Lawo</a>, <a href="https://www.magix.com/">Magix</a>, <a href="https://www.merging.com/">Merging Technologies</a>, <a href="https://meyersound.com/">Meyer Sound Laboratories</a>, <a href="https://www.steinberg.net/">Steinberg</a></p>
    <h2 class="heading settled" data-level="2" id="v1.0"><span class="secno">2. </span><span class="content">Current spec (v1.0)</span><a class="self-link" href="#v1.0"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="obj"><span class="secno">2.1. </span><span class="content">Object position messages</span><a class="self-link" href="#obj"></a></h3>
+   <h3 class="heading settled" data-level="2.1" id="obj"><span class="secno">2.1. </span><span class="content">Object messages</span><a class="self-link" href="#obj"></a></h3>
    <p class="note" role="note"><span class="marker">Note:</span> These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> signifies object number</p>
    <p></p>
    <table class="def">
@@ -2515,6 +2519,34 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <td>/adm/obj/1/name kickdrum
    </table>
    <p class="note" role="note"><span class="marker">Note:</span> Type tags are defined as OSC 1.0 specification: i=int32, f=float32, s=OSC-string</p>
+   <h4 class="heading settled" data-level="2.1.1" id="gain"><span class="secno">2.1.1. </span><span class="content">Gain</span><a class="self-link" href="#gain"></a></h4>
+   
+ADM-OSC follows ADM specification for gain, which states:
+
+
+   <blockquote>
+    <p>The gain parameter is a linear gain and controls the level of the audio signal in the object. At rendering the level of signal will be multiplied by the gain value. If the gain parameter is not set a value of 1.0 is assumed, so the audio signal’s level is not adjusted.</p>
+   </blockquote>
+   <p>No maximum gain is specified. The maximum possible gain is a parameter specific to a given renderer. The relationship betwen linear gain and decibels is the standard voltage gain conversion, specified by:</p>
+   <figure>
+    <math>
+     <mi>dB</mi>
+     <mo>=</mo>
+     <mn>20</mn>
+     <mo>*</mo>
+     <msub>
+      <mo>log</mo>
+      <mn>10</mn>
+     </msub>
+     <mo>(</mo>
+     <msub>
+      <mi>gain</mi>
+      <mi>linear</mi>
+     </msub>
+     <mo>)</mo>
+    </math>
+    <figcaption>linear to dB conversion</figcaption>
+   </figure>
    <h3 class="heading settled" data-level="2.2" id="env"><span class="secno">2.2. </span><span class="content">Environment messages</span><a class="self-link" href="#env"></a></h3>
    <p>These could be expanded to include program changes and other global data. They are not specific to any individual object.</p>
    <table class="def">
