@@ -26,8 +26,9 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Adamson](http://www.adamsonsystems.com/)
 * [Amadeus Acoustics GmbH](https://amadeus-acoustics.com/)
 * [Audiofields ARTIST](https://www.audiofields.de/)
-* <a href="https://www.bbc.com/">BBC</a>
-* [d&amp;b audiotechnik](https://www.dbaudio.com/)
+* [BBC](https://www.bbc.com/)
+* [d&amp;b audiotechnik](https://www.dbsoundscape.com/global/en/interoperability/)
+* [BrooksAudio - PrePosition](https://brooksaudio.co.uk/preposition/)
 * [DiGiCo](https://digico.biz/)
 * [Dolby](https://www.dolby.com)
 * [FLUX::SE](https://www.flux.audio/)
