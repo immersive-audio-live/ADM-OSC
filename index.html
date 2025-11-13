@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 3f621ba99, updated Mon Jul 28 15:38:36 2025 -0700" name="generator">
+  <meta content="Bikeshed version 7b3ff057a, updated Sun Nov 9 18:39:50 2025 -0800" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="bf671b50a0d376ad6953f32428dd93b6993a2343" name="revision">
+  <meta content="3dc7ab44a5b6ae6acc412e0d301937da4278d7bd" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -1809,7 +1809,7 @@ body {
 }
 .invalid.example:not(.no-marker)::before,
 .illegal.example:not(.no-marker)::before {
-    content: "Invalid Example" counter(example);
+    content: "Invalid Example " counter(example);
 }
 
 figcaption {
@@ -2180,9 +2180,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <p data-fill-with="logo"><a class="logo" href="https://immersive-audio-live.github.io/ADM-OSC/" style="width: 150px">
     <img alt="ADM-OSC" height="122" src="https://immersive-audio-live.github.io/ADM-OSC/assets/images/logo.png" width="150">
 </a></p>
-   <h1 class="p-name no-ref allcaps" id="title">ADM-OSC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2025-10-28">28 October 2025</time></span></h2>
+   <h1 class="allcaps no-ref p-name" id="title">ADM-OSC</h1>
+   <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
+    <time class="dt-updated" datetime="2025-11-13">13 November 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2195,20 +2195,20 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <dd><a href="https://github.com/immersive-audio-live/ADM-OSC/issues/">GitHub</a>
      <dd><a href="#issues-index">Inline In Spec</a>
      <dt class="editor">Editors:
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:mathieu.delquignies@dbaudio.com">Mathieu Delquignies</a> (<a class="p-org org" href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>)
-     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:michael.zbyszynski@l-acoustics.com">Michael Zbyszyński</a> (<a class="p-org org" href="https://l-isa.l-acoustics.com/">L-Acoustics</a>)
+     <dd class="editor h-card p-author vcard"><a class="email fn p-name u-email" href="mailto:mathieu.delquignies@dbaudio.com">Mathieu Delquignies</a> (<a class="org p-org" href="https://www.dbaudio.com/">d&amp;b audiotechnik</a>)
+     <dd class="editor h-card p-author vcard"><a class="email fn p-name u-email" href="mailto:michael.zbyszynski@l-acoustics.com">Michael Zbyszyński</a> (<a class="org p-org" href="https://l-isa.l-acoustics.com/">L-Acoustics</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
    <hr title="Separator for header">
   </div>
   <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <h2 class="heading no-num no-ref no-toc settled" id="abstract"><span class="content">Abstract</span></h2>
    <p>An industry initiative for standardization of <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio">Object-Based Audio</a> positioning data in live production ecosystems by implementing the <a data-link-type="dfn" href="#audio-definition-model" id="ref-for-audio-definition-model">Audio Definition Model</a> over <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control">Open Sound Control</a>. See: <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a></p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
+   <h2 class="no-num no-ref no-toc" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li>
      <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
@@ -2294,9 +2294,9 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li data-md>
      <p><a href="https://www.bbc.com/">BBC</a></p>
     <li data-md>
-     <p><a href="https://www.dbsoundscape.com/global/en/interoperability/">d&amp;b audiotechnik</a></p>
-    <li data-md>
      <p><a href="https://brooksaudio.co.uk/preposition/">BrooksAudio - PrePosition</a></p>
+    <li data-md>
+     <p><a href="https://www.dbsoundscape.com/global/en/interoperability/">d&amp;b audiotechnik</a></p>
     <li data-md>
      <p><a href="https://digico.biz/">DiGiCo</a></p>
     <li data-md>
@@ -2327,6 +2327,8 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <p><a href="https://www.newaudiotechnology.com/">New Audio Technology</a></p>
     <li data-md>
      <p><a href="https://www.nexo-sa.com/">NEXO</a></p>
+    <li data-md>
+     <p><a href="https://panaudia.com/#panaudia-link/">Panaudia Link - Uncompressed 32-bit object-based audio streaming</a></p>
     <li data-md>
      <p><a href="https://prefrontalcortex.de/en/projects/dome-tools/">Prefrontal Cortex: Dome Tools</a></p>
     <li data-md>
@@ -3460,10 +3462,10 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
    <h3 class="heading settled" data-level="5.3" id="validator-test-and-stress-test-python-module"><span class="secno">5.3. </span><span class="content">Validator, Test and Stress Test Python Module</span><a class="self-link" href="#validator-test-and-stress-test-python-module"></a></h3>
    <p>(Gael Martinet / FLUX::)</p>
    <p>adm_osc module is available to install through pip:</p>
-<pre class="language-shell highlight">pip install adm-osc
+<pre class="highlight language-shell">pip install adm-osc
 </pre>
    <p>quick examples:</p>
-<pre class="language-python highlight"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>OscClientServer</c->
+<pre class="highlight language-python"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>OscClientServer</c->
 
 <c- c1># create a basic client/server that implement basic ADM-OSC communication with stable parameters </c->
 <c- c1># + command monitoring and analyze</c->
@@ -3495,7 +3497,7 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
 <c- c1># >>     argument 0 "1.4791083335876465" out of range ! it should be less or equal than "1.0"</c->
 
 </pre>
-<pre class="language-python highlight"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>TestClient</c->
+<pre class="highlight language-python"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>TestClient</c->
 <c- c1># create a test client, assume default address (local: '127.0.0.1')</c->
 <c- c1># test client can be used to test how receiver will handle all kind of parameters and parameters value range</c->
 <c- n>sender</c-> <c- o>=</c-> <c- n>TestClient</c-><c- p>(</c-><c- n>out_port</c-><c- o>=</c-><c- mi>9000</c-><c- p>)</c->
@@ -3520,7 +3522,7 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
 
 <c- c1># see documentation for full list of available functions</c->
 </pre>
-<pre class="language-python highlight"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>StressClient</c->
+<pre class="highlight language-python"><c- kn>from</c-> <c- nn>adm_osc</c-> <c- kn>import</c-> <c- n>StressClient</c->
 <c- c1># create a stress client, assume default address (local: '127.0.0.1')</c->
 <c- c1># stress client will send huge amount of data to stress test the receivers</c->
 <c- n>sender</c-> <c- o>=</c-> <c- n>StressClient</c-><c- p>(</c-><c- n>out_port</c-><c- o>=</c-><c- mi>9000</c-><c- p>)</c->
@@ -3570,8 +3572,8 @@ So, we need 6 parameters to describe its position and orientation.</p>
 • Roll (tilt left -> tilt right --- where rotating down left is negative)</p>
    <p>See <a data-link-type="biblio" href="#biblio-adm-osc-1" title="Implementation of ADM-OSC v1.0">[ADM-OSC-1]</a> for illustrations pictures.</p>
   </main>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
    <li><a href="#six-degrees-of-freedom">6DOF</a><span>, in § 7</span>
    <li><a href="#audio-definition-model">ADM</a><span>, in § 7</span>
@@ -3583,8 +3585,8 @@ So, we need 6 parameters to describe its position and orientation.</p>
    <li><a href="#renderer">Renderer</a><span>, in § 7</span>
    <li><a href="#six-degrees-of-freedom">Six Degrees of Freedom</a><span>, in § 7</span>
   </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-adm-osc-1">[ADM-OSC-1]
    <dd>M. Delquignies, J. Gaudin, S. Thevenard, H. Larin, M. Zbyszynski, L. Zwicker. <a href="https://aes2.org/publications/elibrary-page/?id=22722"><cite>Implementation of ADM-OSC v1.0</cite></a>. 2024. URL: <a href="https://aes2.org/publications/elibrary-page/?id=22722">https://aes2.org/publications/elibrary-page/?id=22722</a>
@@ -3615,7 +3617,7 @@ So, we need 6 parameters to describe its position and orientation.</p>
    <dt id="biblio-what-is-adm">[What-is-ADM]
    <dd><a href="https://adm.ebu.io/background/what_is_the_adm.html"><cite>What is the ADM?</cite></a>. URL: <a href="https://adm.ebu.io/background/what_is_the_adm.html">https://adm.ebu.io/background/what_is_the_adm.html</a>
   </dl>
-  <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
+  <h2 class="heading no-num no-ref settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
    <div class="issue no-marker">
     <a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
