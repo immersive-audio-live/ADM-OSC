@@ -29,3 +29,22 @@ jobs:
           # with .html extension instead,
           # but if you want to customize it:
           DESTINATION: index.html
+      - name: Deploy additional docs to GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp docs/adm-osc-quick-reference.md /tmp/adm-osc-quick-reference.md
+          cp docs/adm-osc-schema.json /tmp/adm-osc-schema.json
+          git fetch origin
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git checkout -B gh-pages origin/gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf .
+          fi
+          cp /tmp/adm-osc-quick-reference.md adm-osc-quick-reference.md
+          cp /tmp/adm-osc-schema.json adm-osc-schema.json
+          git add adm-osc-quick-reference.md adm-osc-schema.json
+          git diff --cached --quiet || git commit -m "chore: deploy quick reference and schema to GitHub Pages"
+          git push origin gh-pages
