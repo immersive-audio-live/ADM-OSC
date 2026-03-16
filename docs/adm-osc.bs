@@ -92,16 +92,67 @@ Project Contributors {#contributors}
 Current spec (v1.0) {#v1.0}
 ================================
 
+Quick Reference {#quick-ref}
+-----------------------------
+
+A machine-readable JSON schema of the full protocol is available at [`docs/adm-osc-schema.json`](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-schema.json). A compact human-readable quick reference is available at [`docs/adm-osc-quick-reference.md`](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-quick-reference.md).
+
+### All messages at a glance
+
+<table class="def">
+    <thead>
+        <tr>
+            <th>address</th>
+            <th>type</th>
+            <th>min</th>
+            <th>max</th>
+            <th>default</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>/adm/obj/<var>n</var>/azim</td><td>f</td><td>−180.0°</td><td>180.0°</td><td>—</td><td>azimuth (polar)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/elev</td><td>f</td><td>−90.0°</td><td>90.0°</td><td>—</td><td>elevation (polar)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/dist</td><td>f</td><td>0.0</td><td>1.0</td><td>1.0</td><td>distance, normalized (polar)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/aed</td><td>f f f</td><td colspan=2>see above</td><td>—</td><td>packed polar: azimuth, elevation, distance</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/x</td><td>f</td><td>−1.0</td><td>1.0</td><td>0.0</td><td>X position, normalized (Cartesian)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/y</td><td>f</td><td>−1.0</td><td>1.0</td><td>0.0</td><td>Y position, normalized (Cartesian)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/z</td><td>f</td><td>−1.0</td><td>1.0</td><td>0.0</td><td>Z position, normalized (Cartesian)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/xy</td><td>f f</td><td colspan=2>see above</td><td>—</td><td>packed Cartesian: x, y</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/xyz</td><td>f f f</td><td colspan=2>see above</td><td>—</td><td>packed Cartesian: x, y, z</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/w</td><td>f</td><td>0.0</td><td>1.0</td><td>0.0</td><td>horizontal extent (width)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/gain</td><td>f</td><td>0.0</td><td>—</td><td>1.0</td><td>linear gain</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/dref</td><td>f</td><td>0.0</td><td>1.0</td><td>1.0</td><td>reference distance (normalized)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/dmax</td><td>f</td><td>0.0</td><td>—</td><td>—</td><td>maximum distance (meters)</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/mute</td><td>i</td><td>0</td><td>1</td><td>0</td><td>mute: 1=muted, 0=active</td></tr>
+        <tr><td>/adm/obj/<var>n</var>/name</td><td>s</td><td colspan=2>0–128 chars</td><td>—</td><td>object label</td></tr>
+        <tr><td>/adm/lis/xyz</td><td>f f f</td><td>−1.0</td><td>1.0</td><td>0.0</td><td>listener position: x, y, z</td></tr>
+        <tr><td>/adm/lis/ypr</td><td>f f f</td><td>−180.0°</td><td>180.0°</td><td>0.0</td><td>listener orientation: yaw, pitch, roll</td></tr>
+        <tr><td>/adm/env/change</td><td>s</td><td colspan=2>0–128 chars</td><td>—</td><td>scene/program change</td></tr>
+    </tbody>
+</table>
+
 Object messages {#obj}
 -----------------
 
-Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> signifies object number
+Note: These messages take the form of /adm/obj/<var>n</var>..., where <var>n</var> is the **object number** (a positive integer, starting at 1).
 
 <pre class=include>
 path: html/current_obj_spec.html
 </pre>
 
-Note: Type tags are defined as OSC 1.0 specification: i=int32, f=float32, s=OSC-string
+Note: Type tags are defined as per the OSC 1.0 specification:
+
+<table class="def">
+    <thead><tr><th>tag</th><th>type</th><th>notes</th></tr></thead>
+    <tbody>
+        <tr><td><code>i</code></td><td>int32</td><td>32-bit signed integer</td></tr>
+        <tr><td><code>f</code></td><td>float32</td><td>IEEE 754 single-precision floating-point</td></tr>
+        <tr><td><code>s</code></td><td>string</td><td>Null-terminated, padded to a 4-byte boundary</td></tr>
+    </tbody>
+</table>
+
+Note: Multiple packed values (e.g. `f f f` for `xyz`) are sent as multiple arguments in a single OSC message. They can also be grouped with other messages in an **OSC bundle** for atomic/synchronous delivery with a shared timestamp.
 
 ### Gain 
 ADM-OSC follows the ADM specification for gain, which states:
@@ -205,6 +256,12 @@ The [=OSC=] protocol is unidirectional, so the commands should be considered as 
 sending `/adm/obj/4/xyz` to a device should trigger a reply like `/adm/obj/4/xyz -0.9 0.15 0.0`
 </div>
 
+<div class="example">
+sending `/adm/obj/1/gain` (no arguments) queries the gain of object 1; receiver replies with `/adm/obj/1/gain 0.75`
+</div>
+
+Any message in this specification can be queried in this way. The receiver replies to the sender's IP address, using the return port (default: 4002).
+
 Implementation Matrix {#implementation}
 =======================================
 
@@ -218,6 +275,27 @@ Issue(immersive-audio-live/adm-osc#24):
 
 Basic ADM-OSC principals {#basics}
 ============================
+
+Minimum Viable Implementation {#mvi}
+--------------------------------------
+
+The following is the minimum that a conforming implementation should support:
+
+### Sender (minimum)
+
+- Send UDP packets to port **4001** by default
+- Implement at least one of:
+    - `/adm/obj/{n}/xyz` (Cartesian, packed) for position
+    - `/adm/obj/{n}/aed` (polar, packed) for position
+- Object numbers are positive integers, starting at **1**
+- Use packed messages (`xyz` or `aed`) for position updates to ensure atomic delivery
+
+### Receiver (minimum)
+
+- Listen for UDP on port **4001** by default
+- Handle at least one of `/adm/obj/{n}/xyz` or `/adm/obj/{n}/aed`
+- Clamp out-of-range values to the valid range rather than failing
+- Reply to query messages (messages with no arguments) on port **4002**
 
 Roles {#roles}
 ------------
@@ -462,6 +540,14 @@ and the following cases arise:
 Issue(immersive-audio-live/adm-osc#12):
 
 <!-- Big Text: Tools -->
+
+Machine-Readable Resources {#machine-readable}
+===============================================
+
+For programmatic use, LLM integration, or quick developer reference, the following resources are available in the repository:
+
+* [ADM-OSC JSON Schema](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-schema.json) — complete machine-readable specification of all ADM-OSC messages, including addresses, type tags, ranges, defaults, and examples.
+* [ADM-OSC Quick Reference](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-quick-reference.md) — compact, human-readable Markdown reference covering all messages with examples, coordinate diagrams, and implementation checklists. Suitable for embedding in LLM context windows.
 
 Development &amp; Test tools {#tools}
 =====================================
