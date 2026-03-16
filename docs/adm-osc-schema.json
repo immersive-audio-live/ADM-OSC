@@ -1,0 +1,346 @@
+{
+  "protocol": "ADM-OSC",
+  "version": "1.0",
+  "description": "ADM-OSC is an industry initiative for standardization of Object-Based Audio (OBA) positioning data in live production ecosystems, implementing the Audio Definition Model (ADM) over Open Sound Control (OSC).",
+  "references": {
+    "spec_website": "https://immersive-audio-live.github.io/ADM-OSC/",
+    "github": "https://github.com/immersive-audio-live/ADM-OSC",
+    "paper": "https://aes2.org/publications/elibrary-page/?id=22722"
+  },
+  "transport": {
+    "protocol": "UDP",
+    "default_send_port": 4001,
+    "default_receive_port": 4002,
+    "note": "Ports should be user-editable. Port 4001 is recommended for one-way communication. Port 4002 is recommended for return/query messages."
+  },
+  "osc_type_tags": {
+    "i": "int32",
+    "f": "float32",
+    "s": "OSC-string (null-terminated, padded to 4-byte boundary)"
+  },
+  "addressing": {
+    "pattern": "/adm/{object_type}/{object_number}/{parameter}",
+    "object_number_note": "Object numbers are positive integers, starting from 1. The maximum number of objects is implementation-dependent.",
+    "wildcard_support": "OSC wildcards (* and ?) are supported in addresses. For example, /adm/obj/*/gain 0.5 sets gain on all objects.",
+    "bundle_support": "OSC bundles can be used to group multiple messages with a common timestamp for synchronicity."
+  },
+  "object_types": {
+    "obj": {
+      "description": "An audio object (source) in 3D space. The most commonly used type.",
+      "address_prefix": "/adm/obj/{n}"
+    },
+    "lis": {
+      "description": "The listener position and orientation, used for binaural rendering and 6DOF (Six Degrees of Freedom) applications.",
+      "address_prefix": "/adm/lis"
+    },
+    "env": {
+      "description": "Global scene or environment messages, not specific to an individual object.",
+      "address_prefix": "/adm/env"
+    }
+  },
+  "queries": {
+    "description": "To GET the current state of a parameter, send the OSC message without any arguments. The receiver replies with the current value(s) to the sender's IP on the return port.",
+    "example": {
+      "query": "/adm/obj/4/xyz",
+      "reply": "/adm/obj/4/xyz -0.9 0.15 0.0"
+    }
+  },
+  "coordinate_systems": {
+    "polar": {
+      "description": "Spherical coordinates centered on the listening position.",
+      "axes": {
+        "azimuth": "Horizontal angle. 0° = straight ahead. Positive = left. Range: -180° to 180°.",
+        "elevation": "Vertical angle. 0° = horizontal. Positive = up. Range: -90° to 90°.",
+        "distance": "Radius from origin. Normalized 0.0–1.0. Default 1.0 = on the reference sphere."
+      }
+    },
+    "cartesian": {
+      "description": "Normalized Cartesian coordinates. All values are dimensionless in range -1.0 to 1.0.",
+      "axes": {
+        "x": "Left/right. -1.0 = full left, +1.0 = full right.",
+        "y": "Back/front. -1.0 = full back, +1.0 = full front.",
+        "z": "Bottom/top. -1.0 = full bottom, +1.0 = full top."
+      },
+      "diagram": "(-1,1,0)---(1,1,0) front corners | | (-1,-1,0)---(1,-1,0) rear corners"
+    },
+    "conversion_reference": "ITU-R BS.2127 section 6.8 and section 10.1"
+  },
+  "messages": {
+    "object": {
+      "description": "Messages targeting a specific audio object. Replace {n} with the object number (positive integer, starting from 1).",
+      "polar_position": [
+        {
+          "address": "/adm/obj/{n}/azim",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "degrees",
+          "min": -180.0,
+          "max": 180.0,
+          "default": null,
+          "description": "Azimuth angle of the sound object. 0° = front, positive = left, -90° = right, ±180° = back.",
+          "example": "/adm/obj/4/azim -22.5"
+        },
+        {
+          "address": "/adm/obj/{n}/elev",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "degrees",
+          "min": -90.0,
+          "max": 90.0,
+          "default": null,
+          "description": "Elevation angle of the sound object. 0° = horizontal, +90° = directly above.",
+          "example": "/adm/obj/4/elev 12.7"
+        },
+        {
+          "address": "/adm/obj/{n}/dist",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "normalized",
+          "min": 0.0,
+          "max": 1.0,
+          "default": 1.0,
+          "description": "Distance from the origin (listening position). 0.0 = at origin, 1.0 = on the reference sphere. Note: in most renderers, distance does not affect object gain directly.",
+          "example": "/adm/obj/4/dist 0.9"
+        },
+        {
+          "address": "/adm/obj/{n}/aed",
+          "type_tag": "f f f",
+          "type": "float32 float32 float32",
+          "parameters": ["azim", "elev", "dist"],
+          "description": "Packed polar position: azimuth, elevation, distance. Preferred over individual messages for synchronized position updates.",
+          "example": "/adm/obj/4/aed -22.5 12.7 0.9"
+        }
+      ],
+      "cartesian_position": [
+        {
+          "address": "/adm/obj/{n}/x",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "normalized",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0,
+          "description": "Cartesian X position (left/right). -1.0 = full left, +1.0 = full right.",
+          "example": "/adm/obj/4/x -0.9"
+        },
+        {
+          "address": "/adm/obj/{n}/y",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "normalized",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0,
+          "description": "Cartesian Y position (back/front). -1.0 = full back, +1.0 = full front.",
+          "example": "/adm/obj/4/y 0.15"
+        },
+        {
+          "address": "/adm/obj/{n}/z",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "normalized",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0,
+          "description": "Cartesian Z position (bottom/top). -1.0 = full bottom, +1.0 = full top.",
+          "example": "/adm/obj/4/z 0.7"
+        },
+        {
+          "address": "/adm/obj/{n}/xy",
+          "type_tag": "f f",
+          "type": "float32 float32",
+          "parameters": ["x", "y"],
+          "description": "Packed 2D Cartesian position: x and y. For horizontal-plane-only control.",
+          "example": "/adm/obj/4/xy 0.62 -0.33"
+        },
+        {
+          "address": "/adm/obj/{n}/xyz",
+          "type_tag": "f f f",
+          "type": "float32 float32 float32",
+          "parameters": ["x", "y", "z"],
+          "description": "Packed 3D Cartesian position: x, y, z. Preferred over individual messages for synchronized position updates.",
+          "example": "/adm/obj/4/xyz -0.9 0.15 0.7"
+        }
+      ],
+      "extent": [
+        {
+          "address": "/adm/obj/{n}/w",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "normalized",
+          "min": 0.0,
+          "max": 1.0,
+          "default": 0.0,
+          "description": "Horizontal extent (width) of the sound object. 0.0 = point source, 1.0 = maximum width.",
+          "example": "/adm/obj/3/w 0.2"
+        }
+      ],
+      "gain_and_level": [
+        {
+          "address": "/adm/obj/{n}/gain",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "linear gain",
+          "min": 0.0,
+          "max": null,
+          "default": 1.0,
+          "description": "Linear gain applied to the audio in the object. 1.0 = unity gain (0 dB). No maximum is specified; receiver should clamp to its capabilities. Conversion: dB = 20 * log10(gain). Example: 0.707 ≈ -3 dB, 0.0 = silence.",
+          "example": "/adm/obj/3/gain 0.707"
+        },
+        {
+          "address": "/adm/obj/{n}/dref",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "normalized",
+          "min": 0.0,
+          "max": 1.0,
+          "default": 1.0,
+          "description": "Reference distance for physics-based rendering. The normalized distance below which rendering is dimensionless (gain is constant regardless of distance). When dref=1.0, the entire space is the dimensionless reference volume (ADM standard behavior). When dref=0.0, physics-based attenuation applies throughout.",
+          "example": "/adm/obj/1/dref 0.2"
+        },
+        {
+          "address": "/adm/obj/{n}/dmax",
+          "type_tag": "f",
+          "type": "float32",
+          "units": "meters",
+          "min": 0.0,
+          "max": null,
+          "default": null,
+          "description": "Maximum physical distance in meters corresponding to the normalized distance value of 1.0. Maps the normalized distance coordinate to real-world meters. Also corresponds to the ADM absoluteDistance parameter.",
+          "example": "/adm/obj/1/dmax 21.3"
+        },
+        {
+          "address": "/adm/obj/{n}/mute",
+          "type_tag": "i",
+          "type": "int32",
+          "units": "boolean",
+          "min": 0,
+          "max": 1,
+          "default": 0,
+          "description": "Mute state of the object. 1 = muted, 0 = unmuted (active).",
+          "example": "/adm/obj/2/mute 0"
+        }
+      ],
+      "metadata": [
+        {
+          "address": "/adm/obj/{n}/name",
+          "type_tag": "s",
+          "type": "string",
+          "units": "string",
+          "min": null,
+          "max": "128 characters",
+          "default": null,
+          "description": "Human-readable name for the audio object. Maximum 128 characters.",
+          "example": "/adm/obj/1/name kickdrum"
+        }
+      ]
+    },
+    "listener": {
+      "description": "Messages for listener position and orientation, used in binaural/6DOF rendering. The listener has no object number.",
+      "position": [
+        {
+          "address": "/adm/lis/xyz",
+          "type_tag": "f f f",
+          "type": "float32 float32 float32",
+          "parameters": ["x", "y", "z"],
+          "units": "normalized",
+          "min": -1.0,
+          "max": 1.0,
+          "default": 0.0,
+          "description": "Listener 3D position in normalized Cartesian coordinates.",
+          "example": "/adm/lis/xyz 0.0 0.5 -0.2"
+        }
+      ],
+      "orientation": [
+        {
+          "address": "/adm/lis/ypr",
+          "type_tag": "f f f",
+          "type": "float32 float32 float32",
+          "parameters": ["yaw", "pitch", "roll"],
+          "units": "degrees",
+          "min": -180.0,
+          "max": 180.0,
+          "default": 0.0,
+          "description": "Listener head orientation: yaw (left/right rotation around Z axis), pitch (up/down rotation around X axis), roll (tilt around Y axis). Positive yaw = left, positive pitch = up.",
+          "example": "/adm/lis/ypr -45.0 30.0 5.0"
+        }
+      ]
+    },
+    "environment": {
+      "description": "Global scene or environment messages, not specific to any individual object.",
+      "scene": [
+        {
+          "address": "/adm/env/change",
+          "type_tag": "s",
+          "type": "string",
+          "units": "string",
+          "min": null,
+          "max": "128 characters",
+          "default": null,
+          "description": "Program change or scene change event. Signals a change in the global scene or environment.",
+          "example": "/adm/env/change day"
+        }
+      ]
+    }
+  },
+  "roles": {
+    "sender_client": {
+      "description": "An Object Editor or tracking system sending positioning data to one or more receivers.",
+      "notes": [
+        "Sends OSC messages over UDP.",
+        "Cartesian position data is always normalized (-1.0 to 1.0).",
+        "Recommended transmit rate: up to 50 Hz for position data (one message per 20 ms).",
+        "Use packed messages (aed, xyz) for atomic position updates."
+      ]
+    },
+    "receiver_server": {
+      "description": "A DAW, ADM renderer, object editor, or bridge that receives and processes ADM-OSC messages.",
+      "notes": [
+        "Handles optional local scaling of normalized data to physical units.",
+        "Should clamp out-of-range values rather than fail.",
+        "Should reply to queries (messages without arguments) with current values.",
+        "Examples: DAW (Nuendo, Ovation), renderers (L-ISA, SPAT Revolution, d&b Soundscape)."
+      ]
+    }
+  },
+  "implementation_guidelines": {
+    "minimum_viable_sender": [
+      "Implement /adm/obj/{n}/xyz or /adm/obj/{n}/aed for object position (at least one coordinate system)",
+      "Send over UDP to port 4001",
+      "Object numbers start at 1"
+    ],
+    "minimum_viable_receiver": [
+      "Listen on UDP port 4001",
+      "Handle /adm/obj/{n}/xyz (Cartesian) and/or /adm/obj/{n}/aed (polar)",
+      "Handle /adm/obj/{n}/gain",
+      "Respond to queries (messages without arguments) by replying to sender",
+      "Clamp out-of-range values to valid range"
+    ],
+    "recommended_additions": [
+      "/adm/obj/{n}/x, /y, /z — individual Cartesian axes",
+      "/adm/obj/{n}/azim, /elev, /dist — individual polar parameters",
+      "/adm/obj/{n}/w — object width/extent",
+      "/adm/obj/{n}/mute — mute state",
+      "/adm/obj/{n}/name — object label",
+      "/adm/env/change — scene/program changes",
+      "OSC wildcard support: /adm/obj/*/gain to address all objects at once"
+    ]
+  },
+  "rate_and_timing": {
+    "recommended_max_rate": "50 Hz (one message per 20 ms) for position data",
+    "note": "Sampling is optional if a parameter has not changed. Do not overload receivers; high-rate position data should use packed messages (xyz/aed) to minimize UDP overhead.",
+    "interpolation": "Interpolation between position updates is not defined in ADM-OSC 1.0 and is left to the implementation."
+  },
+  "examples": {
+    "set_object_1_front_left": "/adm/obj/1/xyz -0.5 0.8 0.0",
+    "set_object_1_polar": "/adm/obj/1/aed 30.0 0.0 1.0",
+    "set_object_2_gain_minus6dB": "/adm/obj/2/gain 0.501",
+    "mute_object_3": "/adm/obj/3/mute 1",
+    "unmute_object_3": "/adm/obj/3/mute 0",
+    "name_object_4": "/adm/obj/4/name drums",
+    "set_all_objects_gain": "/adm/obj/*/gain 1.0",
+    "query_object_1_position": "/adm/obj/1/xyz",
+    "program_change": "/adm/env/change verse",
+    "listener_head_turn_left": "/adm/lis/ypr 45.0 0.0 0.0"
+  }
+}
