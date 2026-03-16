@@ -95,7 +95,7 @@ Current spec (v1.0) {#v1.0}
 Quick Reference {#quick-ref}
 -----------------------------
 
-A machine-readable JSON schema of the full protocol is available at [`docs/adm-osc-schema.json`](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-schema.json). A compact human-readable quick reference is available at [`docs/adm-osc-quick-reference.md`](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-quick-reference.md).
+A machine-readable JSON schema of the full protocol is available at [`adm-osc-schema.json`](adm-osc-schema.json). A compact human-readable quick reference is available at [`adm-osc-quick-reference.md`](adm-osc-quick-reference.md).
 
 ### All messages at a glance
 
@@ -546,8 +546,8 @@ Machine-Readable Resources {#machine-readable}
 
 For programmatic use, LLM integration, or quick developer reference, the following resources are available in the repository:
 
-* [ADM-OSC JSON Schema](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-schema.json) — complete machine-readable specification of all ADM-OSC messages, including addresses, type tags, ranges, defaults, and examples.
-* [ADM-OSC Quick Reference](https://github.com/immersive-audio-live/ADM-OSC/blob/main/docs/adm-osc-quick-reference.md) — compact, human-readable Markdown reference covering all messages with examples, coordinate diagrams, and implementation checklists. Suitable for embedding in LLM context windows.
+* [ADM-OSC JSON Schema](adm-osc-schema.json) — complete machine-readable specification of all ADM-OSC messages, including addresses, type tags, ranges, defaults, and examples.
+* [ADM-OSC Quick Reference](adm-osc-quick-reference.md) — compact, human-readable Markdown reference covering all messages with examples, coordinate diagrams, and implementation checklists. Suitable for embedding in LLM context windows.
 
 Development &amp; Test tools {#tools}
 =====================================
