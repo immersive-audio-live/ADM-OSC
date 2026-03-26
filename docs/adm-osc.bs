@@ -51,6 +51,7 @@ ADM-OSC has been designed to solve real problems for live and broadcast sound pr
 * [Steinberg](https://www.steinberg.net/)
 * [TiMax Spatial](https://timaxspatial.com/)
 * [Yamaha](https://www.yamaha.com/)
+* [Zactrack](https://www.zactrack.com/)
 
 Version 1.0 of the ADM-OSC specification was announced at the AES Show in 2024, open access convention paper is available to download as a hitchhiker's guide to ADM-OSC, for any coder interested to implement it : [[ADM-OSC-1]].
 
