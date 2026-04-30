@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version 5d4d5b9a8, updated Fri Apr 17 13:49:40 2026 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="59aba680a0539156ac5f770fff42eaea29809847" name="revision">
+  <meta content="6bcc3550f91a2bd6bcbfdccdcee6c80e495ed298" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2744,9 +2744,8 @@ ADM-OSC follows the ADM specification for gain, which states:
     <figcaption>linear to dB conversion</figcaption>
    </figure>
    <h3 class="heading settled" data-level="2.3" id="env"><span class="secno">2.3. </span><span class="content">Environment messages</span><a class="self-link" href="#env"></a></h3>
-   <p>This string type command could be useful to use labels on production to triggers global settings or configuration changes, like MIDI program changes integers, but also scene names or numbers like 1.03. They are not specific to any individual object.
-Could be useful to document those static settings in a file, trasmitted by another way than OSC.
-This file would describes labels and their corresponding settings following ADM recommendations.</p>
+   <p>This string-type command enables production use of labels to trigger global settings or configuration changes—such as MIDI program changes or scene identifiers (e.g., "1.03"). These settings apply system-wide and are not tied to any individual object.</p>
+   <p>It is recommended to document these static settings in a separate XML file, transmitted through alternative means outside of OSC. This configuration file should map label names to their corresponding settings according to ADM specifications.</p>
    <table class="def">
     <thead>
      <tr>
@@ -3499,9 +3498,9 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
    <h2 class="heading settled" data-level="6" id="tools"><span class="secno">6. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="6.1" id="chataigne"><span class="secno">6.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module and OSCAR VST Plugin configuration file</a></span><a class="self-link" href="#chataigne"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
-   <p>Use Chataigne free open source software as a ADM-OSC implementer testing sand box, build custom bridge to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware or use it as live production controler controller.
-The same repositories also includes some 3D polar&lt;>cartesian converter javascript functions, that can be used inside Chataigne mappings as filters scripts, and
-An OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.</p>
+   <p>Use Chataigne free open source software as an ADM-OSC sand box to beta test your implementation, build custom bridge to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware or use it as live production controller.</p>
+   <p>The same repositories also includes some 3D polar&lt;>cartesian converter javascript functions, that can be used inside Chataigne mappings as filters scripts, and an</p>
+   <p>OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.</p>
    <h3 class="heading settled" data-level="6.2" id="tester-desktop-application"><span class="secno">6.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
    <p>(Jose Gaudin / Meyer Sound Laboratories)</p>
    <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a></p>
