@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 0ef803fdf, updated Tue Jan 6 11:59:39 2026 -0800" name="generator">
+  <meta content="Bikeshed version 5d4d5b9a8, updated Fri Apr 17 13:49:40 2026 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="7accc2352afe864ac7973599c2244c2e7303c977" name="revision">
+  <meta content="59aba680a0539156ac5f770fff42eaea29809847" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -1792,7 +1792,7 @@ pre .property::before, pre .property::after {
 </style>
 <style>/* Boilerplate: style-counters */
 body {
-    counter-reset: example figure issue;
+    counter-reset: example figure issue table;
 }
 .issue {
     counter-increment: issue;
@@ -1817,6 +1817,13 @@ figcaption {
 }
 figcaption:not(.no-marker)::before {
     content: "Figure " counter(figure) " ";
+}
+
+figure.table figcaption {
+    counter-increment: table;
+}
+figure.table figcaption:not(.no-marker)::before {
+    content: "Table " counter(table) " ";
 }
 </style>
 <style>/* Boilerplate: style-dfn-panel */
@@ -2174,6 +2181,30 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
     c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
 }
+
+@media print {
+    /* Darken colors for print that would otherwise print too faintly */
+    c-[c]  { color: #555555 } /* Comment */
+    c-[d]  { color: #555555 } /* Comment.Multiline */
+    c-[cp] { color: #555555 } /* Comment.Preproc */
+    c-[c1] { color: #555555 } /* Comment.Single */
+    c-[cs] { color: #555555 } /* Comment.Special */
+    c-[o]  { color: #222222 } /* Operator */
+    c-[p]  { color: #222222 } /* Punctuation */
+    c-[ow] { color: #222222 } /* Operator.Word */
+    c-[s]  { color: #664400 } /* Literal.String */
+    c-[t]  { color: #664400 } /* Literal.String.Single */
+    c-[u]  { color: #664400 } /* Literal.String.Double */
+    c-[sb] { color: #664400 } /* Literal.String.Backtick */
+    c-[sc] { color: #664400 } /* Literal.String.Char */
+    c-[sd] { color: #664400 } /* Literal.String.Doc */
+    c-[se] { color: #664400 } /* Literal.String.Escape */
+    c-[sh] { color: #664400 } /* Literal.String.Heredoc */
+    c-[si] { color: #664400 } /* Literal.String.Interpol */
+    c-[sx] { color: #664400 } /* Literal.String.Other */
+    c-[sr] { color: #664400 } /* Literal.String.Regex */
+    c-[ss] { color: #664400 } /* Literal.String.Symbol */
+}
 </style>
  <body class="h-entry">
   <div class="head">
@@ -2182,7 +2213,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="allcaps no-ref p-name" id="title">ADM-OSC</h1>
    <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2026-03-26">26 March 2026</time></span></h2>
+    <time class="dt-updated" datetime="2026-04-30">30 April 2026</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2286,7 +2317,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
     <li>
      <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
      <ol class="toc">
-      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Non-Normative References</span></a>
      </ol>
     <li><a href="#issues-index"><span class="secno"></span> <span class="content">Issues Index</span></a>
    </ol>
@@ -2713,7 +2744,9 @@ ADM-OSC follows the ADM specification for gain, which states:
     <figcaption>linear to dB conversion</figcaption>
    </figure>
    <h3 class="heading settled" data-level="2.3" id="env"><span class="secno">2.3. </span><span class="content">Environment messages</span><a class="self-link" href="#env"></a></h3>
-   <p>These could be expanded to include program changes and other global data. They are not specific to any individual object.</p>
+   <p>This string type command could be useful to use labels on production to triggers global settings or configuration changes, like MIDI program changes integers, but also scene names or numbers like 1.03. They are not specific to any individual object.
+Could be useful to document those static settings in a file, trasmitted by another way than OSC.
+This file would describes labels and their corresponding settings following ADM recommendations.</p>
    <table class="def">
     <thead>
      <tr>
@@ -3466,7 +3499,9 @@ CPP <a data-link-type="biblio" href="#biblio-convert-cpp" title="CPP polar<>cart
    <h2 class="heading settled" data-level="6" id="tools"><span class="secno">6. </span><span class="content">Development &amp; Test tools</span><a class="self-link" href="#tools"></a></h2>
    <h3 class="heading settled" data-level="6.1" id="chataigne"><span class="secno">6.1. </span><span class="content"><a href="https://github.com/madees/ADM-OSC-Chataigne-Module">Chataigne module and OSCAR VST Plugin configuration file</a></span><a class="self-link" href="#chataigne"></a></h3>
    <p>(Mathieu Delquignies / d&amp;b audiotechnik)</p>
-   <p>To retreive parameters or control ADM-OSC <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a> software or hardware with <a data-link-type="dfn" href="#open-sound-control" id="ref-for-open-sound-control③">OSC</a> protocol.</p>
+   <p>Use Chataigne free open source software as a ADM-OSC implementer testing sand box, build custom bridge to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware or use it as live production controler controller.
+The same repositories also includes some 3D polar&lt;>cartesian converter javascript functions, that can be used inside Chataigne mappings as filters scripts, and
+An OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.</p>
    <h3 class="heading settled" data-level="6.2" id="tester-desktop-application"><span class="secno">6.2. </span><span class="content">Tester Desktop application</span><a class="self-link" href="#tester-desktop-application"></a></h3>
    <p>(Jose Gaudin / Meyer Sound Laboratories)</p>
    <p><a href="https://github.com/immersive-audio-live/ADM-OSC/tree/main/Resources">download from resources directory</a></p>
@@ -3565,7 +3600,7 @@ Discussions on this living open standard are happening in Issues above. You’re
    <p>The Audio Definition Model (ADM) was first published by the European Broadcast Union (EBU) in
 2015 as a standard representation of audio metadata [1]. The goal of ADM is to support a broad range of
 use cases that include spatial and immersive audio, as well as interactive personalization and accessibility
-features <a data-link-type="biblio" href="#biblio-what-is-adm" title="What is the ADM?">[What-is-ADM]</a>. ADM can be used to represent channel-based, scene-based, and <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio②">object-based audio</a>. It is
+features <a data-link-type="biblio" href="#biblio-what-is-adm" title="What is the ADM?">[What-is-ADM]</a>. ADM can be used to represent channel-based, scene-based, and <a data-link-type="dfn" href="#object-based-audio" id="ref-for-object-based-audio①">object-based audio</a>. It is
 defined by the EBU in ITU-R BS.2076 <a data-link-type="biblio" href="#biblio-ebu-bs-2076" title="Audio Definition Model">[EBU-BS-2076]</a></p>
    <p><dfn class="dfn-paneled" data-dfn-type="dfn" data-local-lt="OBA" data-noexport id="object-based-audio">Object-Based Audio</dfn></p>
    <p>Object-based representation encodes audio tracks along with positional and other data about how that audio should be reproduced, or rendered, during playback. Positional data is speaker-agnostic, allowing object-based mixes to be highly portable. A musician might audition a mix on headphones using a binaural renderer <a data-link-type="biblio" href="#biblio-ebu-tech-3396" title="BINAURAL EBU ADM RENDERER (BEAR) FOR OBJECT-BASED SOUND OVER HEADPHONES">[EBU-Tech-3396]</a> then perform at a venue with dozens of loudspeakers using a spatial renderer. That mix might then be rendered for streaming with a third renderer. <a data-link-type="biblio" href="#biblio-tsingos-2017" title="Object-based audio">[Tsingos-2017]</a></p>
@@ -3600,7 +3635,7 @@ So, we need 6 parameters to describe its position and orientation.</p>
    <li><a href="#six-degrees-of-freedom">Six Degrees of Freedom</a><span>, in § 8</span>
   </ul>
   <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <h3 class="heading no-num no-ref settled" id="informative"><span class="content">Non-Normative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-adm-osc-1">[ADM-OSC-1]
    <dd>M. Delquignies, J. Gaudin, S. Thevenard, H. Larin, M. Zbyszynski, L. Zwicker. <a href="https://aes2.org/publications/elibrary-page/?id=22722"><cite>Implementation of ADM-OSC v1.0</cite></a>. 2024. URL: <a href="https://aes2.org/publications/elibrary-page/?id=22722">https://aes2.org/publications/elibrary-page/?id=22722</a>
@@ -3853,8 +3888,8 @@ function parseHTML(markup) {
 {
 let dfnPanelData = {
 "audio-definition-model": {"dfnID":"audio-definition-model","dfnText":"Audio Definition Model","external":false,"refSections":[{"refs":[{"id":"ref-for-audio-definition-model\u2460"}],"title":"1.1. Why ADM?"},{"refs":[{"id":"ref-for-audio-definition-model\u2461"},{"id":"ref-for-audio-definition-model\u2462"},{"id":"ref-for-audio-definition-model\u2463"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-audio-definition-model\u2464"}],"title":"4.2.2. Receiver (server)"},{"refs":[{"id":"ref-for-audio-definition-model\u2465"}],"title":"4.5.3. Conversions"},{"refs":[{"id":"ref-for-audio-definition-model\u2466"}],"title":"7.1. Draft 0.5"}],"url":"#audio-definition-model"},
-"object-based-audio": {"dfnID":"object-based-audio","dfnText":"Object-Based Audio","external":false,"refSections":[{"refs":[{"id":"ref-for-object-based-audio\u2460"}],"title":"6.1. Chataigne module and OSCAR VST Plugin configuration file"},{"refs":[{"id":"ref-for-object-based-audio\u2461"}],"title":"8. Definitions"}],"url":"#object-based-audio"},
-"open-sound-control": {"dfnID":"open-sound-control","dfnText":"Open Sound Control","external":false,"refSections":[{"refs":[{"id":"ref-for-open-sound-control\u2460"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-open-sound-control\u2461"}],"title":"2.5. Queries and bi-directional communication"},{"refs":[{"id":"ref-for-open-sound-control\u2462"}],"title":"6.1. Chataigne module and OSCAR VST Plugin configuration file"}],"url":"#open-sound-control"},
+"object-based-audio": {"dfnID":"object-based-audio","dfnText":"Object-Based Audio","external":false,"refSections":[{"refs":[{"id":"ref-for-object-based-audio\u2460"}],"title":"8. Definitions"}],"url":"#object-based-audio"},
+"open-sound-control": {"dfnID":"open-sound-control","dfnText":"Open Sound Control","external":false,"refSections":[{"refs":[{"id":"ref-for-open-sound-control\u2460"}],"title":"1.3. Motivation & goals"},{"refs":[{"id":"ref-for-open-sound-control\u2461"}],"title":"2.5. Queries and bi-directional communication"}],"url":"#open-sound-control"},
 "renderer": {"dfnID":"renderer","dfnText":"Renderer","external":false,"refSections":[],"url":"#renderer"},
 "six-degrees-of-freedom": {"dfnID":"six-degrees-of-freedom","dfnText":"Six Degrees of Freedom","external":false,"refSections":[{"refs":[{"id":"ref-for-six-degrees-of-freedom"}],"title":"2.4. Listener messages"}],"url":"#six-degrees-of-freedom"},
 };
