@@ -174,7 +174,9 @@ No maximum gain is specified. The maximum possible gain is a parameter specific 
 Environment messages {#env}
 --------------------------------
 
-These could be expanded to include program changes and other global data. They are not specific to any individual object.
+This string type command could be useful to use labels on production to triggers global settings or configuration changes, like MIDI program changes integers, but also scene names or numbers like 1.03. They are not specific to any individual object.
+Could be useful to document those static settings in a file, trasmitted by another way than OSC.
+This file would describes labels and their corresponding settings following ADM recommendations.
 
 <table class="def">
     <thead>
@@ -558,7 +560,9 @@ Development &amp; Test tools {#tools}
 
 (Mathieu Delquignies / d&amp;b audiotechnik)
 
-To retreive parameters or control ADM-OSC [=object-based audio=] software or hardware with [=OSC=] protocol.
+Use Chataigne free open source software as a ADM-OSC implementer testing sand box, build custom bridge to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware or use it as live production controler controller.
+The same repositories also includes some 3D polar<>cartesian converter javascript functions, that can be used inside Chataigne mappings as filters scripts, and
+An OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.
 
 Tester Desktop application 
 -----------------------------------
