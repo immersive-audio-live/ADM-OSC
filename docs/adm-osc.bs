@@ -174,9 +174,10 @@ No maximum gain is specified. The maximum possible gain is a parameter specific 
 Environment messages {#env}
 --------------------------------
 
-This string type command could be useful to use labels on production to triggers global settings or configuration changes, like MIDI program changes integers, but also scene names or numbers like 1.03. They are not specific to any individual object.
-Could be useful to document those static settings in a file, trasmitted by another way than OSC.
-This file would describes labels and their corresponding settings following ADM recommendations.
+This string-type command enables production use of labels to trigger global settings or configuration changes—such as MIDI program changes or scene identifiers (e.g., "1.03"). These settings apply system-wide and are not tied to any individual object.
+
+It is recommended to document these static settings in a separate XML file, transmitted through alternative means outside of OSC. This configuration file should map label names to their corresponding settings according to ADM specifications.
+
 
 <table class="def">
     <thead>
@@ -560,9 +561,11 @@ Development &amp; Test tools {#tools}
 
 (Mathieu Delquignies / d&amp;b audiotechnik)
 
-Use Chataigne free open source software as a ADM-OSC implementer testing sand box, build custom bridge to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware or use it as live production controler controller.
-The same repositories also includes some 3D polar<>cartesian converter javascript functions, that can be used inside Chataigne mappings as filters scripts, and
-An OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.
+Use Chataigne free open source software as an ADM-OSC sand box to beta test your implementation, build custom bridge to retreive parameters or control ADM-OSC object based audio (OBA) software or hardware or use it as live production controller.
+
+The same repositories also includes some 3D polar<>cartesian converter javascript functions, that can be used inside Chataigne mappings as filters scripts, and an 
+
+OSCAR ADM-OSC mapping file for https://forum.ircam.fr/projects/detail/oscar/ VST Plug in.
 
 Tester Desktop application 
 -----------------------------------
