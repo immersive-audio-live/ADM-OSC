@@ -1488,9 +1488,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version d113b2e81, updated Tue Jun 9 14:57:55 2026 -0700" name="generator">
+  <meta content="Bikeshed version 49e9fdd4f, updated Tue Oct 13 14:27:53 2026 -0700" name="generator">
   <link href="https://immersive-audio-live.github.io/ADM-OSC/" rel="canonical">
-  <meta content="62c2423fcc02ee91562a23b670b600bc4f84fe37" name="revision">
+  <meta content="d1bfb9cc7e5dbfce9cb7ecade298b8dc8902847e" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>
   .impl {  border-collapse: collapse; }
@@ -2213,7 +2213,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </a></p>
    <h1 class="allcaps no-ref p-name" id="title">ADM-OSC</h1>
    <h2 class="heading no-num no-ref no-toc settled" id="profile-and-date"><span class="content">Living Standard,
-    <time class="dt-updated" datetime="2026-06-15">15 June 2026</time></span></h2>
+    <time class="dt-updated" datetime="2026-10-16">16 October 2026</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -2907,6 +2907,11 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
             Audiofields ARTIST
             </a>
         
+     <th>
+            <a href="https://holophonix.xyz/">
+            HOLOPHONIX
+            </a>
+        
     <tr>
      <td>/adm/obj/<var>n</var>/azim 
      <td>
@@ -2923,6 +2928,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>✓
      <td>rx
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/elev 
@@ -2941,6 +2947,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>rx
      <td>✓
+     <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/dist 
      <td>
@@ -2957,6 +2964,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>✓
      <td>rx
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/aed 
@@ -2975,6 +2983,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>rx
      <td>✓
+     <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/x 
      <td>
@@ -2991,6 +3000,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>✓
      <td>rx
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/y 
@@ -3009,6 +3019,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>rx
      <td>✓
+     <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/z 
      <td>
@@ -3025,6 +3036,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>✓
      <td>rx
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/xy 
@@ -3043,6 +3055,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/xyz 
      <td>tx
@@ -3059,6 +3072,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>rx
      <td>✓
      <td>rx
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/w 
@@ -3077,6 +3091,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>
      <td>
+     <td>rx **
     <tr>
      <td>/adm/obj/<var>n</var>/dref
      <td>
@@ -3094,6 +3109,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>
     <tr>
      <td>/adm/obj/<var>n</var>/dmax
      <td>
@@ -3111,6 +3127,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>
     <tr>
      <td>/adm/obj/<var>n</var>/gain
      <td>
@@ -3127,6 +3144,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>✓
      <td>rx
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/mute
@@ -3145,6 +3163,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>✓
     <tr>
      <td>/adm/obj/<var>n</var>/name
      <td>
@@ -3161,6 +3180,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>✓
      <td>
      <td>
+     <td>✓
      <td>✓
     <tr>
      <td>/adm/env/change
@@ -3179,6 +3199,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>
     <tr>
      <td>/adm/lis/xyz
      <td>tx
@@ -3196,6 +3217,7 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>
     <tr>
      <td>/adm/lis/ypr
      <td>
@@ -3213,8 +3235,10 @@ sending <code>/adm/obj/1/gain</code> (no arguments) queries the gain of object 1
      <td>
      <td>
      <td>✓
+     <td>rx
    </table>
    <p class="note" role="note"><span class="marker">Note:</span> * FletcherMachine and SPAT Revolution supports <em>dmax</em> as a global message only: <i>/adm/obj/*/dmax</i></p>
+   <p class="note" role="note"><span class="marker">Note:</span> ** HOLOPHONIX applies <em>w</em> to stereo objects only.</p>
    <div class="issue no-marker" id="issue-d41d8cd9">
     <a class="self-link" href="#issue-d41d8cd9"></a><a class="marker" href="https://github.com/immersive-audio-live/adm-osc/issues/24">Issue #24 on GitHub: “Implementation matrix”</a>
     <p dir="auto">Table of implementations.</p>
