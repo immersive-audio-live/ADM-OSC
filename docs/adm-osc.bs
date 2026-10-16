@@ -276,6 +276,8 @@ path: html/implementation_table.html
 
 Note: * FletcherMachine and SPAT Revolution supports *dmax* as a global message only: <i>/adm/obj/*/dmax</i>
 
+Note: ** HOLOPHONIX applies *w* to stereo objects only.
+
 Issue(immersive-audio-live/adm-osc#24):
 
 Basic ADM-OSC principals {#basics}
